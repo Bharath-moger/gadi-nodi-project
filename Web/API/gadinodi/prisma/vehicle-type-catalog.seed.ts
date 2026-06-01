@@ -35,7 +35,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Scooter",
     description:
       "Gearless and sporty scooters — everyday mileage champions with straightforward paperwork paths.",
-    imageUrl: `https://i.pinimg.com/736x/4d/7f/be/4d7fbeea9710b77e7a6f319b1fa40d63.jpg`,
+    imageUrl: `https://images.unsplash.com/photo-1628744876497-e957956feb74?${q}`,
     sortOrder: 2,
   },
   {
@@ -53,7 +53,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Hatchback",
     description:
       "Compact cars built for tight parking and low running costs — ideal first cars and city fleets.",
-    imageUrl: `https://i.pinimg.com/1200x/1d/10/97/1d109759f90908738972de7faf304f10.jpg`,
+    imageUrl: `https://images.unsplash.com/photo-1494976388532-dfff843299e1?${q}`,
     sortOrder: 4,
   },
   {
@@ -80,7 +80,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "MUV / MPV",
     description:
       "Six- and seven-seater people movers for extended families, fleets, and airport transfers.",
-    imageUrl: `https://i.pinimg.com/1200x/6a/15/ea/6a15eaaaa6d51844788a698002edc573.jpg`,
+    imageUrl: `https://images.unsplash.com/photo-1544636331-2687092eb9d5?${q}`,
     sortOrder: 7,
   },
   {
@@ -98,7 +98,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Convertible",
     description:
       "Open-top touring — seasonal glamour cars with roof mechanisms spelled out in every listing.",
-    imageUrl: `https://i.pinimg.com/1200x/37/c5/56/37c5562312e9a284420115015944330b.jpg`,
+    imageUrl: `https://images.unsplash.com/photo-1568605117036-5fe5e7bab67b?${q}`,
     sortOrder: 9,
   },
   {
@@ -125,7 +125,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Pickup truck",
     description:
       "Open-bed utility for farms, contractors, and weekend hauliers — 4x4 and lifestyle trims.",
-    imageUrl: `https://i.pinimg.com/736x/b2/66/66/b26666a989526e68f24bf661f644acc8.jpg`,
+    imageUrl: `https://images.unsplash.com/photo-1586528116311-ad8dd3cb8314?${q}`,
     sortOrder: 12,
   },
   {
@@ -134,7 +134,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Mini truck",
     description:
       "Last-mile cargo warriors — narrow footprints for intra-city loads and kirana distribution.",
-    imageUrl: `https://i.pinimg.com/736x/b4/6a/ba/b46abaceafd52af6c7a5e291cf18b3d4.jpg`,
+    imageUrl: `https://images.unsplash.com/photo-1601584115197-04ecc0da2d9b?${q}`,
     sortOrder: 13,
   },
   {
@@ -143,7 +143,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Truck",
     description:
       "Rigid haulage — freight-rated tractors and rigs listed with GVW and compliance signals.",
-    imageUrl: `https://i.pinimg.com/736x/cf/16/2b/cf162b8f67e142ad987b9176ab698168.jpg`,
+    imageUrl: `https://images.unsplash.com/photo-1565610222533-922619766b3f?${q}`,
     sortOrder: 14,
   },
   {
@@ -152,7 +152,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Tipper",
     description:
       "Dump trucks for aggregates, fly ash, and site spoil — hydraulic hoist-ready inventory segments.",
-    imageUrl: `https://i.pinimg.com/1200x/68/93/8d/68938d7ded4ee54b0c1f3c48a6f1f399.jpg`,
+    imageUrl: `https://images.unsplash.com/photo-1589939705384-5185137b7b41?${q}`,
     sortOrder: 15,
   },
   {
@@ -161,7 +161,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Trailer",
     description:
       "Flatbeds, tankers, and skeletal trailers — line haul matched equipment disclosed clearly.",
-    imageUrl: `https://i.pinimg.com/736x/c6/67/c3/c667c38fb91d89105ae5381637155c36.jpg`,
+    imageUrl: `https://images.unsplash.com/photo-1519003722824-194445845092?${q}`,
     sortOrder: 16,
   },
   {
@@ -188,7 +188,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Bulldozer",
     description:
       "Tracked pushing power — grading and clearing assets listed with blade widths where supplied.",
-    imageUrl: `https://i.pinimg.com/1200x/1b/eb/4a/1beb4aa1ec4c2ed9048cc3a3a13effe2.jpg`,
+    imageUrl: `https://images.unsplash.com/photo-1589939705384-5185137b7b41?${q}`,
     sortOrder: 19,
   },
   {
