@@ -1,0 +1,18 @@
+import { Controller, Get } from "@nestjs/common";
+
+import { MarketplaceService } from "./marketplace.service";
+
+@Controller("marketplace")
+export class MarketplaceController {
+  constructor(private readonly marketplaceService: MarketplaceService) {}
+
+  @Get("home")
+  getHomePageData() {
+    return this.marketplaceService.getHomePageData();
+  }
+
+  @Get("facets")
+  getMarketplaceFacets() {
+    return this.marketplaceService.getMarketplaceFacets();
+  }
+}

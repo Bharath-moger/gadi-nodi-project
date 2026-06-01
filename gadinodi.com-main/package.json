@@ -1,0 +1,22 @@
+{
+  "name": "gadinodi-platform",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0 <23 || >=24.0.0"
+  },
+  "scripts": {
+    "preflight": "node scripts/preflight.mjs",
+    "env:sync": "node scripts/sync-env.mjs",
+    "install:all": "npm run preflight && npm install --prefix Web/API/gadinodi && npm install --prefix Web/UI/gadinodi",
+    "bootstrap": "npm run preflight && npm run env:sync && npm run install:all",
+    "db:up": "node scripts/start-db.mjs",
+    "db:prepare": "npm --prefix Web/API/gadinodi run db:prepare",
+    "dev": "npm run preflight && npm run env:sync && concurrently -k -n api,ui -c blue,magenta \"npm --prefix Web/API/gadinodi run start:dev\" \"npm --prefix Web/UI/gadinodi run dev\"",
+    "dev:stack": "npm run preflight && npm run env:sync && npm run db:up && npm run db:prepare && npm run dev",
+    "build": "npm run preflight && npm --prefix Web/API/gadinodi run build && npm --prefix Web/UI/gadinodi run build",
+    "start": "npm run preflight && concurrently -k -n api,ui -c blue,magenta \"npm --prefix Web/API/gadinodi run start\" \"npm --prefix Web/UI/gadinodi run start\""
+  },
+  "devDependencies": {
+    "concurrently": "9.2.1"
+  }
+}

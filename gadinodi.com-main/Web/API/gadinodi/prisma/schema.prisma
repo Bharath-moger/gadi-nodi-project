@@ -1,0 +1,168 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum VehicleCondition {
+  New
+  Used
+}
+
+enum FuelType {
+  Petrol
+  Diesel
+  Electric
+  Hybrid
+  CNG
+  Other
+}
+
+enum Transmission {
+  Automatic
+  Manual
+}
+
+enum UserRole {
+  Buyer
+  Admin
+  Superadmin
+}
+
+model User {
+  id             String          @id @default(cuid())
+  email          String          @unique
+  passwordHash   String
+  name           String?
+  role           UserRole        @default(Buyer)
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  partnerProfile PartnerProfile?
+  ownedVehicles  Vehicle[]       @relation("VehicleOwner")
+
+  @@index([role])
+}
+
+model MarketStat {
+  id        String   @id @default(cuid())
+  sortOrder Int      @unique
+  label     String   @unique
+  value     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model VehicleTypeCatalog {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  code        String   @unique
+  displayName String
+  description String
+  imageUrl    String
+  sortOrder   Int      @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model PartnerType {
+  id               String           @id @default(cuid())
+  slug             String           @unique
+  name             String
+  shortLabel       String
+  badge            String
+  description      String
+  audience         String
+  highlights       String[]         @default([])
+  metrics          Json
+  ctaLabel         String
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  vehicles         Vehicle[]
+  partnerProfiles  PartnerProfile[]
+}
+
+model PartnerProfile {
+  id                    String      @id @default(cuid())
+  userId                String      @unique
+  user                  User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  partnerTypeId       String
+  partnerType           PartnerType @relation(fields: [partnerTypeId], references: [id], onDelete: Restrict)
+  businessName          String
+  phone                 String
+  city                  String
+  onboardingCompleted   Boolean     @default(true)
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+
+  @@index([partnerTypeId])
+}
+
+model SparePart {
+  id            String           @id @default(cuid())
+  slug          String           @unique
+  title         String
+  subtitle      String
+  category      String
+  partNumber    String?
+  condition     VehicleCondition
+  price         Int
+  location      String
+  sellerName    String
+  sellerType    String
+  compatibility String
+  description   String
+  summary       String
+  warranty      String?
+  features      String[]         @default([])
+  heroTone      String
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+
+  @@index([category])
+  @@index([condition])
+}
+
+model Vehicle {
+  id              String           @id @default(cuid())
+  slug            String           @unique
+  title           String
+  subtitle        String
+  make            String
+  model           String
+  year            Int
+  condition       VehicleCondition
+  price           Int
+  mileage         String
+  fuel            FuelType
+  bodyStyle       String
+  transmission    Transmission
+  location        String
+  sellerName      String
+  sellerType      String
+  description     String
+  summary         String
+  color           String
+  seats           Int
+  financeEstimate Int
+  rating          Float
+  heroTone        String
+  features        String[]          @default([])
+  specs           Json
+  isFeatured      Boolean          @default(false)
+  partnerTypeId   String?
+  partnerType     PartnerType?     @relation(fields: [partnerTypeId], references: [id], onDelete: SetNull)
+  ownerUserId     String?
+  ownerUser       User?            @relation("VehicleOwner", fields: [ownerUserId], references: [id], onDelete: SetNull)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  @@index([bodyStyle])
+  @@index([condition])
+  @@index([fuel])
+  @@index([sellerType])
+  @@index([isFeatured])
+  @@index([ownerUserId])
+}

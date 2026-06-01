@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>Gadinodi icon</title>
+  <defs>
+    <linearGradient id="gadinodiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="55%" stop-color="#4338ca" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#gadinodiGradient)" />
+  <path
+    d="M28 76c0-9.941 8.059-18 18-18h36c9.941 0 18 8.059 18 18v10H28V76Z"
+    fill="#eef2ff"
+    opacity=".92"
+  />
+  <path
+    d="M43 50c2.667-8.667 9.667-13 21-13s18.333 4.333 21 13"
+    fill="none"
+    stroke="#eef2ff"
+    stroke-linecap="round"
+    stroke-width="10"
+  />
+  <circle cx="44" cy="89" r="9" fill="#1e1b4b" />
+  <circle cx="84" cy="89" r="9" fill="#1e1b4b" />
+</svg>

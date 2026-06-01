@@ -1,0 +1,268 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+
+import { StructuredData } from "@/components/structured-data";
+import { VehicleCard } from "@/components/vehicle-card";
+import { getRelatedVehicles, getVehicleBySlug } from "@/lib/api";
+import { getSession } from "@/lib/auth/session";
+import { siteConfig } from "@/lib/site-config";
+import { formatCurrency } from "@/lib/utils";
+
+interface VehicleDetailPageProps {
+  params: Promise<{ slug: string }>;
+}
+
+function enquiryMailto(title: string) {
+  const subject = encodeURIComponent(`Enquiry: ${title}`);
+  return `mailto:${siteConfig.contactEmail}?subject=${subject}`;
+}
+
+export async function generateStaticParams() {
+  return [];
+}
+
+export async function generateMetadata({
+  params,
+}: VehicleDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const vehicle = await getVehicleBySlug(slug);
+
+  if (!vehicle) {
+    return {
+      title: "Vehicle not found",
+    };
+  }
+
+  return {
+    title: vehicle.title,
+    description: vehicle.summary,
+    alternates: {
+      canonical: `/vehicles/${vehicle.slug}`,
+    },
+    openGraph: {
+      title: `${vehicle.title} | Gadinodi`,
+      description: vehicle.summary,
+      url: `${siteConfig.url}/vehicles/${vehicle.slug}`,
+      type: "website",
+    },
+  };
+}
+
+export default async function VehicleDetailPage({ params }: VehicleDetailPageProps) {
+  const { slug } = await params;
+
+  const [vehicle, relatedVehicles, session] = await Promise.all([
+    getVehicleBySlug(slug),
+    getRelatedVehicles(slug, 3),
+    getSession(),
+  ]);
+
+  if (!vehicle) {
+    notFound();
+  }
+
+  const isSignedIn = Boolean(session);
+
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: siteConfig.url,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Vehicles",
+          item: `${siteConfig.url}/vehicles`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: vehicle.title,
+          item: `${siteConfig.url}/vehicles/${vehicle.slug}`,
+        },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: vehicle.title,
+      description: vehicle.summary,
+      category: vehicle.bodyStyle,
+      brand: {
+        "@type": "Brand",
+        name: vehicle.make,
+      },
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "INR",
+        price: vehicle.price,
+        availability: "https://schema.org/InStock",
+        seller: {
+          "@type": "Organization",
+          name: vehicle.sellerName,
+        },
+      },
+    },
+  ];
+
+  return (
+    <>
+      <StructuredData data={schema} />
+
+      <section className="page-hero">
+        <div className="container">
+          <div className="breadcrumb">
+            <Link href="/">Home</Link>
+            <span>/</span>
+            <Link href="/vehicles">Vehicles</Link>
+            <span>/</span>
+            <span>{vehicle.title}</span>
+          </div>
+
+          <div className="pdp-hero">
+            <div className="pdp-hero__media" style={{ background: vehicle.heroTone }}>
+              <span className="vehicle-card__badge">{vehicle.condition}</span>
+              <span className="vehicle-card__seller">{vehicle.sellerType}</span>
+            </div>
+
+            <div className="pdp-hero__content">
+              <p className="eyebrow">{vehicle.location}</p>
+              <h1>{vehicle.title}</h1>
+              <p className="page-copy">{vehicle.description}</p>
+
+              <div className="pdp-inline-meta">
+                <span>{vehicle.year}</span>
+                <span>{vehicle.fuel}</span>
+                <span>{vehicle.transmission}</span>
+                <span>{vehicle.mileage}</span>
+              </div>
+
+              <div className="pdp-highlight-grid">
+                {vehicle.specs.map((spec) => (
+                  <article key={spec.label} className="mini-stat">
+                    <span>{spec.label}</span>
+                    <strong>{spec.value}</strong>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <aside className="purchase-panel">
+              <p className="eyebrow">Price</p>
+              <strong className="purchase-panel__price">
+                {formatCurrency(vehicle.price)}
+              </strong>
+              <p>Indicative EMI from {formatCurrency(vehicle.financeEstimate)}/month</p>
+              <div className="purchase-panel__actions">
+                {isSignedIn ? (
+                  <Link className="button button--primary" href={enquiryMailto(vehicle.title)}>
+                    Email your enquiry
+                  </Link>
+                ) : (
+                  <Link className="button button--primary" href="/login">
+                    Sign in to enquire
+                  </Link>
+                )}
+                <Link className="button button--secondary" href="/partners">
+                  Seller types on Gadinodi
+                </Link>
+              </div>
+              <ul className="compact-list">
+                <li>Seller: {vehicle.sellerName}</li>
+                <li>Colour: {vehicle.color}</li>
+                <li>Seats: {vehicle.seats}</li>
+                <li>Seller rating: {vehicle.rating}/5</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container pdp-layout">
+          <div className="pdp-content">
+            <article className="panel">
+              <p className="eyebrow">Overview</p>
+              <h2>Why buyers shortlist this vehicle</h2>
+              <p>{vehicle.summary}</p>
+              <ul className="feature-list">
+                {vehicle.features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
+            </article>
+
+            <article className="panel">
+              <p className="eyebrow">Next steps</p>
+              <h2>Talk to someone when you are ready</h2>
+              <p>
+                Review the seller profile below, compare EMI against your budget, and reach out
+                with questions about inspection, registration, or delivery. Signed-in buyers can
+                email Gadinodi directly from this page to route their enquiry.
+              </p>
+            </article>
+
+            <article className="panel">
+              <p className="eyebrow">Seller</p>
+              <h2>{vehicle.sellerType} listing</h2>
+              <p>
+                Each seller category follows clear obligations around transparency and buyer
+                communication. Ask how test drives, paperwork, and handover work before you
+                commit.
+              </p>
+            </article>
+          </div>
+
+          <aside className="pdp-sidebar">
+            <article className="panel">
+              <p className="eyebrow">Seller details</p>
+              <h3>{vehicle.sellerName}</h3>
+              <p>{vehicle.sellerType}</p>
+              <ul className="compact-list">
+                <li>Location: {vehicle.location}</li>
+                <li>Registration support available through the seller</li>
+                <li>Test drives scheduled directly with the seller</li>
+              </ul>
+            </article>
+
+            <article className="panel">
+              <p className="eyebrow">Typical buying path</p>
+              <ol className="ordered-list">
+                <li>Confirm specification, pricing, and inventory status.</li>
+                <li>Arrange inspection or test drive with the seller.</li>
+                <li>Complete finance, exchange, insurance, and handover.</li>
+              </ol>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section className="section section--muted">
+        <div className="container">
+          <div className="section-heading">
+            <p className="eyebrow">Similar stock</p>
+            <h2>Often compared with this listing</h2>
+            <p>Browse related vehicles from the same filters sellers use on Gadinodi.</p>
+          </div>
+
+          <div className="vehicle-grid">
+            {relatedVehicles.map((candidate) => (
+              <VehicleCard
+                key={candidate.id}
+                vehicle={candidate}
+                isSignedIn={isSignedIn}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
