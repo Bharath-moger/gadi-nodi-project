@@ -59,7 +59,7 @@ export default async function VehicleTypesIndexPage() {
           />
 
           {vehicleTypes.length > 0 ? (
-            <div className="home-types-scroll">
+            <div className="vt-index-grid">
               {vehicleTypes.map((vt) => (
                 <VehicleTypeTile key={vt.slug} vehicleType={vt} size="strip" />
               ))}
