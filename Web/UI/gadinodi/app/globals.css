@@ -3277,11 +3277,15 @@ main {
 }
 
 .vehicles-catalog__grid.vehicle-grid {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 22px;
 }
 
 .vehicles-catalog__grid .vehicle-card {
+  width: 100%;
+  min-width: 0;
   border-radius: var(--vc-radius);
   border: 1px solid var(--vc-line);
   background: rgba(255, 255, 255, 0.95);
@@ -3332,6 +3336,7 @@ main {
 .vehicles-catalog__grid .vehicle-card__meta {
   gap: 8px;
   font-size: 0.8125rem;
+  min-width: 0;
 }
 
 .vehicles-catalog__grid .vehicle-card__meta span {
@@ -3353,6 +3358,10 @@ main {
 
 .vehicles-catalog__grid .vehicle-card__features {
   font-size: 0.875rem;
+}
+
+.vehicles-catalog__grid .vehicle-card__actions {
+  min-width: 0;
 }
 
 .vehicles-catalog__grid .vehicle-card__actions .button--primary {
