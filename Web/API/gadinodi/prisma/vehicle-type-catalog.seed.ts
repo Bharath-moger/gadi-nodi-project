@@ -35,7 +35,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Scooter",
     description:
       "Gearless and sporty scooters — everyday mileage champions with straightforward paperwork paths.",
-    imageUrl: `https://images.unsplash.com/photo-1628744876497-e957956feb74?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1554223789-df81106a45ed?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
     sortOrder: 2,
   },
   {
@@ -53,7 +53,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Hatchback",
     description:
       "Compact cars built for tight parking and low running costs — ideal first cars and city fleets.",
-    imageUrl: `https://images.unsplash.com/photo-1494976388532-dfff843299e1?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
     sortOrder: 4,
   },
   {
@@ -80,7 +80,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "MUV / MPV",
     description:
       "Six- and seven-seater people movers for extended families, fleets, and airport transfers.",
-    imageUrl: `https://images.unsplash.com/photo-1544636331-2687092eb9d5?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1717520149739-d4ee690f39ed?q=80&w=1066&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
     sortOrder: 7,
   },
   {
@@ -98,7 +98,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Convertible",
     description:
       "Open-top touring — seasonal glamour cars with roof mechanisms spelled out in every listing.",
-    imageUrl: `https://images.unsplash.com/photo-1568605117036-5fe5e7bab67b?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1656011475851-23f591606c0c?q=80&w=1092&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
     sortOrder: 9,
   },
   {
@@ -125,7 +125,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Pickup truck",
     description:
       "Open-bed utility for farms, contractors, and weekend hauliers — 4x4 and lifestyle trims.",
-    imageUrl: `https://images.unsplash.com/photo-1586528116311-ad8dd3cb8314?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1551830820-330a71b99659?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
     sortOrder: 12,
   },
   {
@@ -134,7 +134,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Mini truck",
     description:
       "Last-mile cargo warriors — narrow footprints for intra-city loads and kirana distribution.",
-    imageUrl: `https://images.unsplash.com/photo-1601584115197-04ecc0da2d9b?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1720236178658-ef1edfa8ac68?q=80&w=1219&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
     sortOrder: 13,
   },
   {
@@ -143,7 +143,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Truck",
     description:
       "Rigid haulage — freight-rated tractors and rigs listed with GVW and compliance signals.",
-    imageUrl: `https://images.unsplash.com/photo-1565610222533-922619766b3f?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1605705658744-45f0fe8f9663?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
     sortOrder: 14,
   },
   {
@@ -152,7 +152,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Tipper",
     description:
       "Dump trucks for aggregates, fly ash, and site spoil — hydraulic hoist-ready inventory segments.",
-    imageUrl: `https://images.unsplash.com/photo-1589939705384-5185137b7b41?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1695746279633-150a5fe85594?q=80&w=743&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
     sortOrder: 15,
   },
   {
@@ -161,7 +161,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Trailer",
     description:
       "Flatbeds, tankers, and skeletal trailers — line haul matched equipment disclosed clearly.",
-    imageUrl: `https://images.unsplash.com/photo-1519003722824-194445845092?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1694965503001-d4b326119483?q=80&w=1285&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
     sortOrder: 16,
   },
   {
@@ -188,7 +188,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Bulldozer",
     description:
       "Tracked pushing power — grading and clearing assets listed with blade widths where supplied.",
-    imageUrl: `https://images.unsplash.com/photo-1589939705384-5185137b7b41?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1629807473015-41699c4471b5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
     sortOrder: 19,
   },
   {
