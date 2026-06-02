@@ -98,52 +98,43 @@ export default async function HomePage() {
                   anyone.
                 </p>
               </div>
-              <div className="home-hero-card">
-                <p className="home-hero-card__label">Popular types</p>
-                <p className="home-hero-card__hint">
-                  Tap a type for a full guide and live listings—from bicycles to tippers and plant.
-                </p>
-                <div className="home-hero-type-strip">
-                  {heroTypePicks.length > 0 ? (
-                    heroTypePicks.map((vt) => (
-                      <Link
-                        key={vt.slug}
-                        href={`/vehicle-types/${vt.slug}`}
-                        className="home-hero-type-pill"
-                      >
-                        <span className="home-hero-type-pill__thumb">
-                          <Image
-                            src={vt.imageUrl}
-                            alt=""
-                            width={44}
-                            height={44}
-                            className="home-hero-type-pill__img"
-                          />
-                        </span>
-                        <span className="home-hero-type-pill__text">{vt.displayName}</span>
-                      </Link>
-                    ))
-                  ) : categories.length > 0 ? (
-                    categories.map((category) => (
-                      <Link
-                        key={category}
-                        className="home-chip"
-                        href={`/vehicles?bodyStyle=${encodeURIComponent(category)}`}
-                      >
-                        {category}
-                      </Link>
-                    ))
-                  ) : (
-                    <span className="home-hero-card__muted">
-                      <Link href="/vehicle-types">Browse vehicle types</Link> when the catalogue is
-                      online.
-                    </span>
-                  )}
-                </div>
-                <Link href="/vehicle-types" className="home-hero-card__link-all">
-                  All vehicle types →
-                </Link>
-              </div>
+             <div className="home-hero-card">
+  <p className="home-hero-card__label">Popular types</p>
+  <p className="home-hero-card__hint">
+    Tap a type for a full guide and live listings—from bicycles to tippers and plant.
+  </p>
+  
+  <div className="home-hero-type-strip">
+    {heroTypePicks.length > 0 ? (
+      heroTypePicks.map((vt) => (
+        <Link
+          key={vt.slug}
+          href={`/vehicle-types/${vt.slug}`}
+          className="home-hero-type-pill"
+        >
+          <span className="home-hero-type-pill__thumb">
+            <Image
+              src={vt.imageUrl}
+              alt={vt.displayName}
+              width={44}
+              height={44}
+              className="home-hero-type-pill__img"
+            />
+          </span>
+          <span className="home-hero-type-pill__text">{vt.displayName}</span>
+        </Link>
+      ))
+    ) : (
+      <span className="home-hero-card__muted">
+        <Link href="/vehicle-types">Browse vehicle types</Link> when the catalogue is online.
+      </span>
+    )}
+  </div>
+  
+  <Link href="/vehicle-types" className="home-hero-card__link-all">
+    All vehicle types →
+  </Link>
+</div>
             </aside>
           </div>
         </section>
