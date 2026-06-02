@@ -11,31 +11,31 @@ export interface VehicleTypeCatalogSeedRow {
 }
 
 export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
-  {
+    {
     slug: "bicycle",
     code: "Bicycle",
     displayName: "Bicycle",
     description:
       "City commuters and fitness riders — lightweight frames, gears, and accessories from trusted sellers.",
-    imageUrl: `https://images.unsplash.com/photo-1485965120184-e220f721d03e?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?${q}`,
     sortOrder: 0,
   },
   {
-    slug: "e-bike",
-    code: "EBike",
-    displayName: "E-bike",
-    description:
-      "Pedal-assist and throttle e-bikes for urban hops and last-mile delivery with battery clarity upfront.",
-    imageUrl: `https://images.unsplash.com/photo-1571068316344-75bc76f77890?${q}`,
-    sortOrder: 1,
-  },
+      slug: "e-bike",
+      code: "EBike",
+      displayName: "E-bike",
+      description:
+        "Pedal-assist and throttle e-bikes for urban hops and last-mile delivery with battery clarity upfront.",
+      imageUrl: `https://images.unsplash.com/photo-1673969206245-7da3eb7cde76?${q}`,
+      sortOrder: 1,
+    },
   {
     slug: "scooter",
     code: "Scooter",
     displayName: "Scooter",
     description:
       "Gearless and sporty scooters — everyday mileage champions with straightforward paperwork paths.",
-    imageUrl: `https://images.unsplash.com/photo-1554223789-df81106a45ed?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
+    imageUrl: `https://images.unsplash.com/photo-1554223789-df81106a45ed?${q}`,
     sortOrder: 2,
   },
   {
