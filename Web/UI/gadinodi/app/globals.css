@@ -2538,7 +2538,7 @@ main {
   gap: clamp(16px, 2.2vw, 26px);
 }
 
-/* Horizontal row: cards can be swiped/scrolled while the scrollbar stays hidden */
+/* Horizontal row: smaller type cards, swipe / scroll on narrow viewports */
 .home-types-scroll {
   display: flex;
   flex-direction: row;
@@ -2551,13 +2551,13 @@ main {
   scroll-snap-type: x proximity;
   scroll-padding-inline: 2px;
   overscroll-behavior-x: contain;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
 }
 
-.home-types-scroll::-webkit-scrollbar {
-  display: none;
+.home-types-scroll .vt-tile--strip {
+  flex: 0 0 clamp(188px, 38vw, 232px);
+  scroll-snap-align: start;
+  min-height: unset;
 }
 
 .home-types-showcase .home-section-cta {
@@ -3277,15 +3277,11 @@ main {
 }
 
 .vehicles-catalog__grid.vehicle-grid {
-  width: 100%;
-  min-width: 0;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: 22px;
 }
 
 .vehicles-catalog__grid .vehicle-card {
-  width: 100%;
-  min-width: 0;
   border-radius: var(--vc-radius);
   border: 1px solid var(--vc-line);
   background: rgba(255, 255, 255, 0.95);
@@ -3336,7 +3332,6 @@ main {
 .vehicles-catalog__grid .vehicle-card__meta {
   gap: 8px;
   font-size: 0.8125rem;
-  min-width: 0;
 }
 
 .vehicles-catalog__grid .vehicle-card__meta span {
@@ -3358,10 +3353,6 @@ main {
 
 .vehicles-catalog__grid .vehicle-card__features {
   font-size: 0.875rem;
-}
-
-.vehicles-catalog__grid .vehicle-card__actions {
-  min-width: 0;
 }
 
 .vehicles-catalog__grid .vehicle-card__actions .button--primary {
