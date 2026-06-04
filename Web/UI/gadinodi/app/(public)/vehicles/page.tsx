@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 
 import { CatalogOfflineBanner } from "@/components/catalog-offline-banner";
 import { StructuredData } from "@/components/structured-data";
@@ -26,6 +27,8 @@ interface VehiclesPageProps {
     bodyStyle?: string | string[];
     condition?: string | string[];
     fuel?: string | string[];
+    showAllTypes?: string;
+    showAllFuels?: string;
   }>;
 }
 
@@ -42,6 +45,8 @@ function buildFilterHref(
     bodyStyle: readParam(searchParams.bodyStyle),
     condition: readParam(searchParams.condition),
     fuel: readParam(searchParams.fuel),
+    showAllTypes: readParam(searchParams.showAllTypes),
+    showAllFuels: readParam(searchParams.showAllFuels),
   };
 
   const nextValue =
@@ -61,6 +66,8 @@ function hrefClearingFilter(
     bodyStyle: readParam(searchParams.bodyStyle),
     condition: readParam(searchParams.condition),
     fuel: readParam(searchParams.fuel),
+    showAllTypes: readParam(searchParams.showAllTypes),
+    showAllFuels: readParam(searchParams.showAllFuels),
   };
   return `/vehicles${buildQueryString({
     ...current,
@@ -70,6 +77,7 @@ function hrefClearingFilter(
 
 export default async function VehiclesPage({ searchParams }: VehiclesPageProps) {
   const resolvedSearchParams = searchParams ? await searchParams : {};
+  
   const bodyStyle = readParam(resolvedSearchParams.bodyStyle) as
     | VehicleBodyStyle
     | undefined;
@@ -77,6 +85,9 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
     | VehicleCondition
     | undefined;
   const fuel = readParam(resolvedSearchParams.fuel) as VehicleFuel | undefined;
+
+  const showAllTypes = readParam(resolvedSearchParams.showAllTypes) === "true";
+  const showAllFuels = readParam(resolvedSearchParams.showAllFuels) === "true";
 
   const [{ filteredVehicles, partnerTypes, facets, apiAvailable }, session] =
     await Promise.all([
@@ -105,6 +116,19 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
   };
 
   const hasActiveFilters = Boolean(condition || bodyStyle || fuel);
+
+  const TYPE_LIMIT = 4;
+  const FUEL_LIMIT = 3;
+
+  const activeTypeIndex = bodyStyle ? facets.categories.indexOf(bodyStyle) : -1;
+  const visibleCategories = showAllTypes 
+    ? facets.categories 
+    : facets.categories.slice(0, Math.max(TYPE_LIMIT, activeTypeIndex + 1));
+
+  const activeFuelIndex = fuel ? facets.fuels.indexOf(fuel) : -1;
+  const visibleFuels = showAllFuels 
+    ? facets.fuels 
+    : facets.fuels.slice(0, Math.max(FUEL_LIMIT, activeFuelIndex + 1));
 
   return (
     <div className="vehicles-catalog">
@@ -206,7 +230,8 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
               </Link>
             </article>
 
-            <div className="vehicles-catalog__filter-block filter-group">
+            {/* 1. Condition Filter Section */}
+            <div className={`vehicles-catalog__filter-block filter-group${condition ? " js-mobile-expanded" : ""}`}>
               <p className="vehicles-catalog__filter-label">Condition</p>
               <div className="chip-row vehicles-catalog__chips">
                 {facets.conditions.map((value) => (
@@ -214,6 +239,7 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
                     key={value}
                     className={condition === value ? "chip chip--active" : "chip"}
                     href={buildFilterHref(resolvedSearchParams, "condition", value)}
+                    scroll={false}
                   >
                     {value}
                   </Link>
@@ -221,33 +247,71 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
               </div>
             </div>
 
-            <div className="vehicles-catalog__filter-block filter-group">
+            {/* 2. Vehicle Type Filter Section */}
+            <div className={`vehicles-catalog__filter-block filter-group${bodyStyle ? " js-mobile-expanded" : ""}`}>
               <p className="vehicles-catalog__filter-label">Vehicle type</p>
               <div className="chip-row vehicles-catalog__chips">
-                {facets.categories.map((value) => (
+                {visibleCategories.map((value) => (
                   <Link
                     key={value}
                     className={bodyStyle === value ? "chip chip--active" : "chip"}
                     href={buildFilterHref(resolvedSearchParams, "bodyStyle", value)}
+                    scroll={false}
                   >
                     {value}
                   </Link>
                 ))}
+
+                {facets.categories.length > TYPE_LIMIT && (
+                  <Link
+                    className="vehicles-catalog__toggle-button"
+                    href={`/vehicles${buildQueryString({
+                      condition: condition,
+                      bodyStyle: bodyStyle,
+                      fuel: fuel,
+                      showAllFuels: showAllFuels ? "true" : undefined,
+                      showAllTypes: showAllTypes ? undefined : "true",
+                    })}`}
+                    scroll={false}
+                  >
+                    <span>{showAllTypes ? "Show less" : "Show more"}</span>
+                    <span className="arrow">{showAllTypes ? "▲" : "▼"}</span>
+                  </Link>
+                )}
               </div>
             </div>
 
-            <div className="vehicles-catalog__filter-block filter-group">
+            {/* 3. Fuel Filter Section */}
+            <div className={`vehicles-catalog__filter-block filter-group${fuel ? " js-mobile-expanded" : ""}`}>
               <p className="vehicles-catalog__filter-label">Fuel</p>
               <div className="chip-row vehicles-catalog__chips">
-                {facets.fuels.map((value) => (
+                {visibleFuels.map((value) => (
                   <Link
                     key={value}
                     className={fuel === value ? "chip chip--active" : "chip"}
                     href={buildFilterHref(resolvedSearchParams, "fuel", value)}
+                    scroll={false}
                   >
                     {value}
                   </Link>
                 ))}
+
+                {facets.fuels.length > FUEL_LIMIT && (
+                  <Link
+                    className="vehicles-catalog__toggle-button"
+                    href={`/vehicles${buildQueryString({
+                      condition: condition,
+                      bodyStyle: bodyStyle,
+                      fuel: fuel,
+                      showAllTypes: showAllTypes ? "true" : undefined,
+                      showAllFuels: showAllFuels ? undefined : "true",
+                    })}`}
+                    scroll={false}
+                  >
+                    <span>{showAllFuels ? "Show less" : "Show more"}</span>
+                    <span className="arrow">{showAllFuels ? "▲" : "▼"}</span>
+                  </Link>
+                )}
               </div>
             </div>
 
@@ -283,6 +347,7 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
                         href={hrefClearingFilter(resolvedSearchParams, "condition")}
                         className="vehicles-catalog__active-pill"
                         aria-label={`Remove condition filter: ${condition}`}
+                        scroll={false}
                       >
                         <span>{condition}</span>
                         <span className="vehicles-catalog__active-pill-x" aria-hidden>
@@ -295,6 +360,7 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
                         href={hrefClearingFilter(resolvedSearchParams, "bodyStyle")}
                         className="vehicles-catalog__active-pill"
                         aria-label={`Remove vehicle type filter: ${bodyStyle}`}
+                        scroll={false}
                       >
                         <span>{bodyStyle}</span>
                         <span className="vehicles-catalog__active-pill-x" aria-hidden>
@@ -307,6 +373,7 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
                         href={hrefClearingFilter(resolvedSearchParams, "fuel")}
                         className="vehicles-catalog__active-pill"
                         aria-label={`Remove fuel filter: ${fuel}`}
+                        scroll={false}
                       >
                         <span>{fuel}</span>
                         <span className="vehicles-catalog__active-pill-x" aria-hidden>
@@ -315,7 +382,7 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
                       </Link>
                     ) : null}
                   </div>
-                  <Link className="vehicles-catalog__clear-all" href="/vehicles">
+                  <Link className="vehicles-catalog__clear-all" href="/vehicles" scroll={false}>
                     Clear all
                   </Link>
                 </div>
@@ -328,7 +395,7 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
                 <p className="vehicles-catalog__empty-copy">
                   Try removing a filter or browse all vehicles again.
                 </p>
-                <Link className="button button--primary" href="/vehicles">
+                <Link className="button button--primary" href="/vehicles" scroll={false}>
                   Show all vehicles
                 </Link>
               </div>
@@ -346,6 +413,26 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
           </div>
         </div>
       </section>
+
+      {/* Lightweight client-side engine executing toggles on mobile screens */}
+    <Script id="mobile-filter-toggle" strategy="afterInteractive">
+  {`
+    (function () {
+      document.addEventListener("click", function (e) {
+        if (window.innerWidth > 780) return;
+
+        var label = e.target.closest(".vehicles-catalog__filter-label");
+        if (!label) return;
+
+        var block = label.closest(".vehicles-catalog__filter-block");
+
+        if (block) {
+          block.classList.toggle("js-mobile-expanded");
+        }
+      });
+    })();
+  `}
+</Script>
     </div>
   );
 }

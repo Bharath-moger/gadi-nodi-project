@@ -466,10 +466,11 @@ main {
 .breadcrumb,
 .catalog-results__topline,
 .pdp-inline-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
+  display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important; /* Adds consistent spacing between options */
+    width: 100% !important;
 }
 
 .hero-copy {
@@ -512,23 +513,131 @@ main {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
-
-.chip {
-  display: inline-flex;
+/* 1. Update all standard buttons to a clean box style */
+.vehicles-catalog__filter-block button,
+.vehicles-catalog__filter-block a,
+.vehicles-catalog__filter-block label,
+.vehicles-catalog__filter-block [class*="chip"],
+.vehicles-catalog__filter-block [class*="item"] {
+  display: flex !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
   align-items: center;
-  justify-content: center;
+  
+  /* FIX: Corrected the typo from 'lef' to 'center' or 'flex-start' */
+  justify-content: left; 
+  text-align: center;
+  
   min-height: 40px;
-  padding: 0 14px;
-  border-radius: 999px;
+  padding: 10px 14px;
+  
+  /* CHANGED FROM 999px TO BOX STYLE */
+  border-radius: 6px !important; 
+  
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(24, 33, 47, 0.08);
+  border: 1px solid rgba(24, 33, 47, 0.08) !important;
   color: var(--foreground);
+  
+  white-space: nowrap;
+  font-size: 0.88rem;
+  margin-bottom: 8px;
+}
+
+/* 2. REMOVE OUTER BORDERS FOR ALL CONTAINED WRAPPERS (Condition, Type, Fuel groups) */
+.vehicles-catalog__filter-block fieldset,
+.vehicles-catalog__filter-block .vehicles-catalog__chips,
+.vehicles-catalog__filter-block div,
+.vehicles-catalog__filter-block form {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 0 16px 0 !important; /* Retains clean spacing beneath headers */
+  width: 100% !important;
+}
+/* /* Maintain the consistent vertical spacing between your filter cards */
+.vehicles-catalog__filter-block .chip-row.vehicles-catalog__chips {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Correct layout gap between all cards */
+}
+/* Beautiful, Center-Justified Blue UI Highlight Card */
+/* Increased specificity chain to cleanly override the global item configurations above */
+.vehicles-catalog__filter-block .chip-row .vehicles-catalog__toggle-button,
+.vehicles-catalog__filter-block .vehicles-catalog__toggle-button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important; /* Absolutely forces text & arrow horizontal centering */
+  text-align: center !important;      /* Perfect typography middle alignment */
+  gap: 8px !important;                /* Explicit clean separation space */
+  width: 100% !important;
+  min-height: 44px !important;        /* Slightly optimized target height vs normal links */
+  padding: 12px 16px !important;      
+  margin-top: 4px !important;         /* Consistent grid item top margin spacing */
+  margin-bottom: 0 !important;
+  
+  /* Typography Symmetry */
+  font-family: inherit !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;        /* Crisp weight ensures action stands out clearly */
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  text-decoration: none !important;
+  
+  /* Priority Highlighted Blue UI Theme Theme */
+  color: #2563eb !important;          /* Vibrant interactive brand blue */
+  background: #f0f6ff !important;     /* Identifiable light blue accent background tint */
+  border: 1px solid #bfdbfe !important; /* Clean matching light blue framing border line */
+  border-radius: 8px !important;      /* Consistent rounding layout */
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.04) !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Priority Smooth Hover Interaction Overlays */
+.vehicles-catalog__filter-block .chip-row .vehicles-catalog__toggle-button:hover,
+.vehicles-catalog__filter-block .vehicles-catalog__toggle-button:hover {
+  color: #1d4ed8 !important;          /* Deepens text to premium cobalt blue on hover */
+  background: #e0f2fe !important;     /* Distinct deep blue backdrop shift */
+  border-color: #bae6fd !important;   /* Refined responsive border layout shift */
+  text-decoration: none !important;
+}
+
+/* Accessibility Focus Ring for Keyboard Navigation */
+.vehicles-catalog__filter-block .vehicles-catalog__toggle-button:focus-visible {
+  outline: 2px solid #2563eb !important;
+  outline-offset: 2px !important;
+}
+
+/* Arrow Icon Alignment Balance Adjustments */
+.vehicles-catalog__filter-block .vehicles-catalog__toggle-button .arrow {
+  font-size: 0.65rem !important;
+  display: inline-block !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  width: auto !important;
+  min-height: auto !important;
+  transition: transform 0.2s ease-in-out !important;
+}
+
+/* Micro-scale feedback on element hover */
+.vehicles-catalog__filter-block .vehicles-catalog__toggle-button:hover .arrow {
+  transform: scale(1.15) !important;
 }
 
 .chip--active {
-  background: rgba(99, 102, 241, 0.14);
-  border-color: rgba(99, 102, 241, 0.36);
-  color: var(--accent-deep);
+  /* Matches the exact deep blue/violet shade of your upper card */
+  background: #312ecb !important; 
+  border-color: #312ecb !important;
+  
+  /* Crisp white text so it stands out sharply against the deep blue background */
+  color: #ffffff !important; 
+  
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(49, 46, 203, 0.2); /* Matching colorful glow */
 }
 
 .stats-grid,
@@ -3226,7 +3335,12 @@ object-fit: cover !important;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--vc-line);
   box-shadow: var(--vc-shadow);
+  position: -webkit-sticky; /* Safari compatibility */
+  position: sticky;
+  top: 10px; /* Distance from the top of the screen when stuck */
+  z-index: 50;
 }
+
 
 .vehicles-catalog__panel--accent {
   background: linear-gradient(145deg, #1e1b4b 0%, #4338ca 52%, #3730a3 100%);
@@ -3621,7 +3735,17 @@ object-fit: cover !important;
     align-self: start;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
-    scrollbar-gutter: stable;
+    
+    /* 1. Hide scrollbar for Safari, Chrome, and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* 2. Hide scrollbar for IE, Edge */
+    -ms-overflow-style: none;
+    
+    /* 3. Hide scrollbar for Firefox */
+    scrollbar-width: none;
   }
 
   .vehicles-catalog .vehicles-catalog__toolbar {
@@ -4052,5 +4176,288 @@ object-fit: cover !important;
   .partners-hub__closing-actions .button {
     width: 100%;
     justify-content: center;
+  }
+} 
+/* ==========================================================================
+   Complete Desktop Layout Breakout (Min-Width: 1024px)
+ /* ==========================================================================
+   Desktop, Laptop & Tablet Responsive Engine (From 781px Wide and Above)
+   ========================================================================== */
+@media (min-width: 999px) {
+  
+  /* 1. Force Main Split: Left Sidebar (280px) & Right Listings Content (1fr) */
+  .vehicles-catalog .vehicles-catalog__layout.catalog-layout {
+    display: grid !important;
+    grid-template-columns: 280px 1fr !important;
+    gap: 40px !important;
+    align-items: start !important;
+    max-width: 1280px !important;
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+
+  /* 2. Format Sidebar Panel Container Boundaries */
+  .vehicles-catalog .vehicles-catalog__sidebar.catalog-sidebar {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    position: sticky !important;
+    top: 100px !important; /* Prevents slipping behind headers or nav bars */
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
+    box-sizing: border-box !important;
+    align-self: start !important;
+  }
+
+  /* Ensure structural filter sub-blocks take full sidebar width */
+  .vehicles-catalog .vehicles-catalog__filter-block.filter-group {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* 3. Transform Horizontal Scrolling Pills into an Elegant Vertical Menu */
+  .vehicles-catalog .vehicles-catalog__chips.chip-row {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+    overflow-x: visible !important; /* Disables mobile touch-sliding track */
+  }
+
+  /* 4. Reset Chip Buttons & Show More Action Links to Span Full Column Width */
+  .vehicles-catalog .vehicles-catalog__chips.chip-row .chip,
+  .vehicles-catalog .vehicles-catalog__chips.chip-row .vehicles-catalog__toggle-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 12px 16px !important;
+    margin: 0 !important;
+    text-align: left !important;
+    flex: unset !important; /* Breaks mobile squishing behaviors */
+  }
+
+  /* Ensure arrow alignment fits the vertical block grid */
+  .vehicles-catalog .vehicles-catalog__toggle-button .arrow {
+    margin-left: auto !important;
+  }
+
+  /* 5. Set up the Right Column Layout Panel */
+  .vehicles-catalog .vehicles-catalog__results.catalog-results {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+
+  /* 6. Standardize "12 vehicles" Counter Box Element on the Right Side */
+  .vehicles-catalog .vehicles-catalog__toolbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 16px 24px !important;
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    border: 1px solid #eceef8 !important;
+    box-sizing: border-box !important;
+    position: static !important; /* Clears sticky collision locks */
+    margin-bottom: 8px !important;
+  }
+
+  .vehicles-catalog .vehicles-catalog__toolbar-summary {
+    font-size: 1.15rem !important;
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+
+  /* 7. Grid Matrix For Vehicle Listings Cards on Right Side */
+  .vehicles-catalog .vehicles-catalog__grid.vehicle-grid {
+    display: grid !important;
+    /* Dynamically manages columns. Adapts gracefully between 2 or 3 wide based on panel size */
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)) !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+}
+/* /* ==========================================================================
+   Complete Mobile & Tablet Responsive Engine (Up to 780px Wide)
+   ========================================================================== */
+@media (max-width: 999px) {
+  
+  /* 1. Reset Main Catalog Layout Structure into a Column Stacker */
+  .vehicles-catalog__layout.catalog-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 100% !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. Setup Sidebar Wrapper Layout Flow */
+  .vehicles-catalog__sidebar.catalog-sidebar {
+    order: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+    margin-top: 16px !important;
+    /* Permits children sticky values to calculate properly against the page root */
+    overflow: visible !important; 
+  }
+
+  /* Structural filter header text info */
+  .vehicles-catalog__filters-head {
+    order: 1 !important;
+  }
+
+  /* 3. Lock Blue Card STICKY right below the Gadinodi header */
+  .vehicles-catalog__panel.vehicles-catalog__panel--accent {
+    order: 2 !important; 
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 56px !important; /* Adjust exactly to your main Gadinodi header height */
+    z-index: 10 !important; /* Kept lower than main header (usually z-index: 100+) so it slides underneath */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    margin-top: 4px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* 4. Dropdowns Accordion Containers sit cleanly below the sticky cards */
+  .vehicles-catalog__filter-block.filter-group {
+    order: 3 !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0px !important;
+    width: 100% !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    padding-bottom: 12px !important;
+    background: #ffffff !important;
+  }
+
+  /* 5. Keep Seller Network card sticky right beneath the blue card */
+  .vehicles-catalog__panel:not(.vehicles-catalog__panel--accent) {
+    order: 4 !important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    /* Calculated stack height: Header height (56px) + Blue card height (~170px) */
+    top: 236px !important; 
+    z-index: 9 !important; /* Layered slightly below the blue card */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  /* 6. Interactive Category Header Layout */
+  .vehicles-catalog__filter-label {
+    margin: 0 !important;
+    padding: 12px 0 !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: var(--muted, #666);
+    cursor: pointer !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .vehicles-catalog__filter-label::after {
+    content: "▼" !important;
+    font-size: 0.7rem !important;
+    transition: transform 0.2s ease !important;
+    display: inline-block !important;
+    opacity: 0.6;
+  }
+
+  .vehicles-catalog__filter-block.filter-group.js-mobile-expanded .vehicles-catalog__filter-label::after {
+    transform: rotate(180deg) !important;
+  }
+
+  /* 7. Enforce Full-Width Left-to-Right Scrolling Track */
+  .vehicles-catalog__filter-block.filter-group .vehicles-catalog__chips.chip-row {
+    display: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .vehicles-catalog__filter-block.filter-group.js-mobile-expanded .vehicles-catalog__chips.chip-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    padding-top: 8px !important;
+    padding-bottom: 12px !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .vehicles-catalog__filter-block.filter-group .vehicles-catalog__chips.chip-row::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .vehicles-catalog__chips.chip-row .chip,
+  .vehicles-catalog__chips.chip-row a {
+    flex: 0 0 auto !important;
+    display: inline-flex !important;
+    width: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 16px !important;
+    border-radius: 999px !important;
+    white-space: nowrap !important;
+    font-size: 0.875rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .vehicles-catalog__chips.chip-row .vehicles-catalog__toggle-button {
+    flex: 0 0 auto !important;
+    display: inline-flex !important;
+    width: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    padding: 8px 14px !important;
+    background: rgba(99, 102, 241, 0.08) !important;
+    border: 1px dashed rgba(99, 102, 241, 0.3) !important;
+    color: #4f46e5 !important;
+    border-radius: 999px !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+  }
+
+  /* 8. Bottom Results Feed Column Reset */
+  .vehicles-catalog__results.catalog-results {
+    order: 2 !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .vehicles-catalog__grid.vehicle-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .vehicles-catalog__toolbar {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
   }
 }
