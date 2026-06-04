@@ -73,10 +73,18 @@ export function SiteHeaderShell({ isSignedIn, email }: SiteHeaderShellProps) {
           <span className="visually-hidden">{menuOpen ? "Close menu" : "Open menu"}</span>
         </button>
 
-        <div
-          id={panelId}
-          className={`site-header__panel ${menuOpen ? "site-header__panel--open" : ""}`}
-        >
+          <div
+            id={panelId}
+            className={`site-header__panel ${menuOpen ? "site-header__panel--open" : ""}`}
+          >
+            <button
+              type="button"
+              className="site-header__close"
+              onClick={closeMenu}
+              aria-label="Close menu"
+            >
+              ✕
+            </button>
           <nav className="site-nav" aria-label="Primary">
             {NAV_LINKS.map((item) => (
               <Link key={item.href} href={item.href} onClick={closeMenu}>
