@@ -2576,8 +2576,8 @@ main {
 }
 
 .home-hero-type-strip {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 10px;
   max-height: 220px;
     overflow-y:auto;
@@ -2617,15 +2617,25 @@ main {
 }
 
 .home-hero-type-pill__thumb {
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
+width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important; 
+  flex-shrink: 0 !important;  
+  
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #f1f5f9;
 }
-
 .home-hero-type-pill__img {
-  object-fit: cover;
+ width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+object-fit: cover !important; 
+  object-position: center !important ;
 }
 
 .home-hero-card__link-all {

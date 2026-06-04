@@ -117,7 +117,7 @@ export default async function HomePage() {
                             alt=""
                             width={44}
                             height={44}
-                            quality={95}
+                           
                             className="home-hero-type-pill__img"
                             style={{ objectFit: "contain", imageRendering: "auto" }}
                           />
