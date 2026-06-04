@@ -2560,6 +2560,14 @@ main {
   display: none;
 }
 
+.home-types-scroll .vt-tile--strip {
+  flex: 0 0 clamp(188px, 42vw, 232px);
+  width: clamp(188px, 42vw, 232px);
+  min-width: 188px;
+  scroll-snap-align: start;
+  min-height: unset;
+}
+
 .home-types-showcase .home-section-cta {
   display: flex;
   flex-wrap: wrap;
