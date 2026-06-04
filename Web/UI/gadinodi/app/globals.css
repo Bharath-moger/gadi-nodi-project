@@ -388,7 +388,21 @@ main {
     visibility 0.3s ease;
 }
 
+.site-header__close {
+  align-self: flex-end;
+ 
+  border: none;
 
+  background: #f3f4f6;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+ 
+}
+
+.site-header__close:hover {
+  background: #e5e7eb;
+}
 
 .site-header__panel--open {
   transform: translateX(0);
