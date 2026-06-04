@@ -2552,6 +2552,14 @@ main {
   scroll-padding-inline: 2px;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
+
+  /* Hide scrollbar */
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE/old Edge */
+}
+
+.home-types-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .home-types-scroll .vt-tile--strip {
