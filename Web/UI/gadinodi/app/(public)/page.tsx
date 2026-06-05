@@ -117,7 +117,9 @@ export default async function HomePage() {
                             alt=""
                             width={44}
                             height={44}
+                           
                             className="home-hero-type-pill__img"
+                            style={{ objectFit: "contain", imageRendering: "auto" }}
                           />
                         </span>
                         <span className="home-hero-type-pill__text">{vt.displayName}</span>
