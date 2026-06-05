@@ -41,3 +41,15 @@ PLP and PDP support:
 
 - `?mode=guest`
 - `?mode=user`
+
+## Tailwind CSS
+
+Tailwind CSS is configured for new UI changes.
+
+Important project rule:
+
+- existing screens still rely on the custom global stylesheet
+- Tailwind utilities should be used for new work
+- use the `tw:` prefix, for example `tw:flex tw:gap-4 tw:rounded-2xl`
+
+This setup intentionally skips Tailwind Preflight so older styles are not reset unexpectedly.
