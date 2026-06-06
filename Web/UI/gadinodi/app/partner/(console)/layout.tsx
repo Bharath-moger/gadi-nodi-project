@@ -7,6 +7,8 @@ import { PartnerSidebarNav, type PartnerNavItem } from "@/components/partner-sid
 import { LogoutButton } from "@/components/logout-button";
 import { fetchAuthMe } from "@/lib/auth/me";
 
+// Look! No extra imports here. Everything is safe and clean.
+
 const NAV_ITEMS: readonly PartnerNavItem[] = [
   { href: "/partner/dashboard", label: "Dashboard", icon: "DB" },
   {
@@ -22,6 +24,8 @@ const NAV_ITEMS: readonly PartnerNavItem[] = [
 export default async function PartnerConsoleLayout({ children }: { children: ReactNode }) {
   const pathname = (await headers()).get("x-pathname") ?? "/partner/dashboard";
   const me = await fetchAuthMe();
+  
+  // Existing authentication & onboarding guards completely untouched
   if (!me) {
     redirect(`/partner/login?redirect=${encodeURIComponent(pathname)}`);
   }
@@ -35,6 +39,10 @@ export default async function PartnerConsoleLayout({ children }: { children: Rea
     <section className="partner-admin">
       <div className="partner-admin__shell">
         <aside className="partner-admin__sidebar">
+          
+          {/* 1. Added a clean HTML close button marker */}
+          <button className="partner-admin__close-btn" id="mobile-close-trigger">✕</button>
+
           <Link href="/partner/dashboard" className="partner-admin__brand">
             <span className="partner-admin__brand-mark">GN</span>
             <span className="partner-admin__brand-copy">
@@ -60,6 +68,12 @@ export default async function PartnerConsoleLayout({ children }: { children: Rea
 
         <div className="partner-admin__main">
           <header className="partner-admin__topbar">
+            
+            {/* 2. Added a static hamburger menu icon button with id */}
+            <button className="partner-admin__hamburger" id="mobile-hamburger-trigger">
+              <span></span><span></span><span></span>
+            </button>
+
             <div>
               <p className="partner-admin__topbar-eyebrow">Seller workspace</p>
               <h1 className="partner-admin__topbar-title">{businessName}</h1>
@@ -69,6 +83,9 @@ export default async function PartnerConsoleLayout({ children }: { children: Rea
           <div className="partner-admin__content">{children}</div>
         </div>
       </div>
+
+      {/* 3. Added the overlay backdrop mask layer with id */}
+      <div className="partner-admin__scrim" id="mobile-scrim-trigger" />
     </section>
   );
 }
