@@ -789,6 +789,15 @@ main {
   pointer-events: none;
 }
 
+.pdp-hero__media--contain::after {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.02), rgba(15, 23, 42, 0.16));
+}
+
+.pdp-hero__image {
+  object-fit: contain;
+  padding: 14px;
+}
+
 .vehicle-card__badge,
 .vehicle-card__seller {
   position: relative;
@@ -821,24 +830,37 @@ main {
   margin-top: 18px;
 }
 
+.pdp-hero--image-first {
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.55fr);
+  align-items: start;
+}
+
+.pdp-hero--image-first .pdp-hero__media {
+  min-height: clamp(360px, 42vw, 560px);
+}
+
+.pdp-hero--image-first .pdp-hero__content {
+  grid-column: 1;
+}
+
+.pdp-hero--image-first .purchase-panel {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
 .vehicle-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 14px;
   margin-top: 18px;
+  scrollbar-color: rgba(99, 102, 241, 0.42) rgba(255, 255, 255, 0.7);
+  scrollbar-width: thin;
 }
 
 .vehicle-gallery__item {
-  border-radius: 18px;
-  overflow: hidden;
   border: 1px solid rgba(24, 33, 47, 0.08);
-  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
 }
 
 .vehicle-gallery__image {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
+  background: #ffffff;
 }
 
 .pdp-hero__content {
@@ -957,6 +979,12 @@ main {
 
   .purchase-panel {
     position: static;
+  }
+
+  .pdp-hero--image-first .pdp-hero__content,
+  .pdp-hero--image-first .purchase-panel {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
 

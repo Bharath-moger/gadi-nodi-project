@@ -131,15 +131,18 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
             <span>{vehicle.title}</span>
           </div>
 
-          <div className="pdp-hero">
-            <div className="pdp-hero__media" style={{ background: vehicle.heroTone }}>
+          <div className="pdp-hero pdp-hero--image-first tw:gap-6">
+            <div
+              className="pdp-hero__media pdp-hero__media--contain tw:min-h-[420px] tw:overflow-hidden tw:bg-white"
+              style={{ background: vehicle.imageUrls[0] ? "#ffffff" : vehicle.heroTone }}
+            >
               {vehicle.imageUrls[0] ? (
                 <Image
                   src={vehicle.imageUrls[0]}
                   alt={vehicle.title}
                   fill
                   sizes="(max-width: 900px) 100vw, 40vw"
-                  className="vehicle-card__media-image"
+                  className="pdp-hero__image"
                 />
               ) : null}
               <span className="vehicle-card__badge">{vehicle.condition}</span>
@@ -198,15 +201,21 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
           </div>
 
           {vehicle.imageUrls.length > 1 ? (
-            <div className="vehicle-gallery">
+            <div
+              className="vehicle-gallery tw:flex tw:gap-4 tw:overflow-x-auto tw:scroll-smooth tw:snap-x tw:snap-mandatory tw:pb-2"
+              aria-label={`${vehicle.title} image gallery`}
+            >
               {vehicle.imageUrls.map((url, index) => (
-                <div key={url} className="vehicle-gallery__item">
+                <div
+                  key={url}
+                  className="vehicle-gallery__item tw:relative tw:h-[180px] tw:min-w-[min(78vw,360px)] tw:snap-start tw:overflow-hidden tw:rounded-2xl tw:bg-white"
+                >
                   <Image
                     src={url}
                     alt={`${vehicle.title} image ${index + 1}`}
-                    width={240}
-                    height={160}
-                    className="vehicle-gallery__image"
+                    fill
+                    sizes="(max-width: 900px) 78vw, 360px"
+                    className="vehicle-gallery__image tw:object-contain tw:p-3"
                   />
                 </div>
               ))}
