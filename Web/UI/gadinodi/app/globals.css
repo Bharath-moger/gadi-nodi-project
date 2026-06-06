@@ -3957,3 +3957,290 @@ object-fit: cover !important;
     justify-content: center;
   }
 }
+/* ==========================================
+   /* =======================================================
+   CLEANED & FIXED PARTNER DASHBOARD MOBILE OVERLAY CODES
+   ======================================================= */
+
+/* 1. Explicitly hide mobile elements on large desktop screens */
+.partner-admin__close-btn {
+  display: none !important;
+}
+.partner-admin__hamburger {
+  display: none !important;
+}
+.partner-admin__scrim {
+  display: none !important;
+}
+
+/* 2. Responsive Mobile Viewport Configurations */
+@media (max-width: 860px) {
+  
+  /* Freeze screen viewport scrolling ONLY when menu drawer layout is actively open */
+  body.mobile-nav-active {
+    overflow: hidden !important; 
+    height: 100vh !important;
+  }
+
+  /* Restores normal, vertical fluid scrolling behavior to your dashboard layout contents */
+  .partner-admin {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-y: auto !important;
+  }
+
+  .partner-admin__shell {
+    display: block !important;
+    height: auto !important; /* Allows layout height to grow with content dynamically */
+  }
+
+  .partner-admin__main {
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .partner-admin__content {
+    flex: 1;
+    overflow-y: visible !important; /* Let content stretch downward naturally */
+    padding: 20px 16px 32px;
+  }
+
+  /* Pinned absolute layer converts the sidebar structural container into a drawer */
+  .partner-admin__sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 272px !important;
+    height: 100vh !important; /* Menu overlay layout stretches full viewport height */
+    z-index: 100 !important;
+    transition: transform 0.25s ease-in-out !important;
+    transform: translateX(-100%) !important; /* Pushed completely out of sight by default */
+  }
+
+  /* Slide sidebar sheet onto screen viewport when toggle modifier class matches */
+  body.mobile-nav-active .partner-admin__sidebar {
+    transform: translateX(0) !important;
+    box-shadow: 4px 0 24px rgba(15, 23, 42, 0.25) !important;
+  }
+
+  /* Structural styles for your active hamburger line components */
+  .partner-admin__hamburger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 14px;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  .partner-admin__hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #0f172a !important; /* Dark color provides proper contrast against light header */
+    border-radius: 2px;
+  }
+
+  /* Close text trigger cross configuration placement adjustments */
+  .partner-admin__close-btn {
+    display: block !important;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.25rem;
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    cursor: pointer;
+    z-index: 101;
+  }
+
+  /* Semi-transparent dark background layer backdrop configurations */
+  .partner-admin__scrim {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(15, 23, 42, 0.45) !important;
+    backdrop-filter: blur(2px) !important;
+    z-index: 90 !important;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease !important;
+  }
+
+  body.mobile-nav-active .partner-admin__scrim {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+}
+/* ==========================================================================
+   FIX: Partner Dashboard Mobile Responsive Navigation & Scroll Restoration
+   ========================================================================== */
+
+@media (max-width: 860px) {
+  /* 1. Stop the main shell from forcing a 2-column grid layout on phone screens */
+  .partner-admin__shell {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  /* 2. Turn the sidebar into a hidden floating overlay drawer */
+  .partner-admin__sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 272px !important;
+    height: 100vh !important;
+    z-index: 100 !important;
+    transition: transform 0.25s ease-in-out !important;
+    transform: translateX(-100%) !important; /* Tucked away off-screen */
+  }
+
+  /* 3. Slide the sidebar out smoothly when the mobile button toggles it open */
+  body.mobile-nav-active .partner-admin__sidebar {
+    transform: translateX(0) !important;
+    box-shadow: 4px 0 24px rgba(15, 23, 42, 0.25) !important;
+  }
+
+  /* 4. Fix the Main Area container layout space */
+  .partner-admin__main {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 0 !important; /* Crucial to prevent content blowing past layout bounds */
+    height: 100% !important;
+  }
+
+  /* 5. RESTORE SMOOTH VERTICAL SCROLLING TO ALL YOUR DASHBOARD CONTENTS */
+  .partner-admin__content {
+    flex: 1 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important; /* Enables perfect native phone scrolling */
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 16px 40px !important;
+  }
+
+  /* 6. Display formatting for your hamburger and close navigation icons */
+  .partner-admin__hamburger {
+    display: flex !important;
+  }
+
+  .partner-admin__close-btn {
+    display: block !important;
+  }
+
+  /* 7. Animated semi-transparent mask background overlay */
+  .partner-admin__scrim {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(15, 23, 42, 0.45) !important;
+    backdrop-filter: blur(2px) !important;
+    z-index: 90 !important;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease !important;
+  }
+
+  body.mobile-nav-active .partner-admin__scrim {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  body.mobile-nav-active {
+    overflow: hidden !important; /* Stops the background content area from moving while looking at menu options */
+  }
+}
+/* ==========================================================
+   FINAL COMPONENT SCROLL UNLOCK PATCH
+   ========================================================== */
+@media (max-width: 860px) {
+  /* 1. Unbind the strict viewport height lock from all layout containers */
+  html, 
+  body, 
+  .partner-admin, 
+  .partner-admin__shell, 
+  .partner-admin__main {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-y: auto !important; /* Forces the browser framework to enable vertical scrolling everywhere */
+  }
+
+  /* 2. Unclamp the content box container layout lines */
+  .partner-admin__content {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important; /* Stops the system from clipping text lists or cards below the fold */
+    padding-bottom: 120px !important; /* Adds a clean vertical cushion so descriptions never touch the screen edge */
+  }
+}
+/* ==========================================================
+   FINAL RESPONSIVE SCROLL UNLOCKER - OVERRIDES ALL CONSTRAINTS
+   ========================================================== */
+@media (max-width: 860px) {
+  /* 1. Unlocks basic scrolling capabilities across root document layers */
+  html, 
+  body {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* 2. Forces structural wrappers to expand fluidly with page text contents */
+  .partner-admin,
+  .partner-admin__shell,
+  .layout-shell-wrapper,
+  .partner-admin__main {
+    display: block !important;
+    height: auto !important;
+    min-height: unset !important;
+    overflow: visible !important;
+  }
+
+  /* 3. Ensures the card viewport container always remains elastic and accessible */
+ /* 3. Ensures the card viewport container always remains elastic and accessible */
+  .partner-admin__content {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow: visible !important;
+    /* Increased from 140px to 260px to give tall screens the extra runway they need */
+    padding: 24px 16px 260px !important; 
+  }
+  /* 4. Completely keeps mobile overlay drawer animations intact */
+  .partner-admin__sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 272px !important;
+    height: 100vh !important;
+    z-index: 1000 !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.25s ease-in-out !important;
+    overflow-y: auto !important;
+  }
+
+  body.mobile-nav-active .partner-admin__sidebar {
+    transform: translateX(0) !important;
+  }
+
+  /* 5. Freezes background content movement ONLY while menu selection is open */
+  body.mobile-nav-active {
+    overflow: hidden !important;
+    height: 100vh !important;
+  }
+}
+
