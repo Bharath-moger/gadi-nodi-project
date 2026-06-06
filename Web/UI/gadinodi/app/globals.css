@@ -942,14 +942,22 @@ main {
 }
 
 .site-footer {
-  padding: 36px 0 54px;
+  padding: 40px 0 60px;
   border-top: 1px solid rgba(24, 33, 47, 0.08);
-  background: rgba(255, 255, 255, 0.52);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .footer-grid {
-  grid-template-columns: 1.2fr 0.8fr 0.8fr;
+  grid-template-columns: 1.4fr repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  align-items: start;
 }
+
+.footer-grid > div {
+  display: grid;
+  gap: 12px;
+}
+
 
 .footer-grid a {
   display: block;
@@ -994,7 +1002,6 @@ main {
   .partner-grid,
   .enterprise-list,
   .vehicle-grid,
-  .footer-grid,
   .mode-card-grid,
   .partner-detail-grid {
     grid-template-columns: 1fr;
@@ -1008,6 +1015,28 @@ main {
 
   .page-hero__header {
     flex-direction: column;
+  }
+
+}@media (max-width: 900px) {
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* GadiNodi section on top */
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  /* Shop column (left) */
+  .footer-grid > div:nth-child(2) {
+    grid-column: 1;
+  }
+
+  /* Sell & Partner column (right) */
+  .footer-grid > div:nth-child(3) {
+    grid-column: 2;
   }
 }
 
@@ -2184,23 +2213,21 @@ main {
 }
 
 .home-stat-strip {
-  padding: 36px 0;
-  border-top: 1px solid rgba(30, 27, 75, 0.06);
-  border-bottom: 1px solid rgba(30, 27, 75, 0.06);
-  background: rgba(255, 255, 255, 0.62);
-}
-
-.home-stat-strip__grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
-  text-align: center;
+  margin: 40px 0;
+  padding: 48px 0;
+  border-top: 1px solid rgba(30, 27, 75, 0.08);
+  border-bottom: 1px solid rgba(30, 27, 75, 0.08);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .home-stat-strip__item {
-  padding: 8px 12px;
-}
-
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 18px;
+    border-bottom: 1px solid rgba(24, 33, 47, 0.06); 
+  }
 .home-stat-strip__value {
   display: block;
   font-size: clamp(1.65rem, 3vw, 2.15rem);
@@ -2596,12 +2623,12 @@ main {
     text-align: left;
   }
 
-  .home-stat-strip__item {
+   .home-stat-strip__item {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     gap: 16px;
-    padding: 12px 0;
+    padding: 14px 16px;
     border-bottom: 1px solid rgba(24, 33, 47, 0.06);
   }
 
@@ -2867,6 +2894,7 @@ object-fit: cover !important;
   color: var(--muted);
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -4052,5 +4080,114 @@ object-fit: cover !important;
   .partners-hub__closing-actions .button {
     width: 100%;
     justify-content: center;
+  }
+}
+/* ==========================================================================
+   TICKET: GN-006 - Mobile Layout (Custom Footer & Stats Structure)
+   ========================================================================== */
+
+/* ==========================================================================
+   TICKET: GN-006 - Mobile Layout (Gadinodi Top, Shop Left, Sell & Partner Right)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  
+  /* 1. Mobile Footer Container Grid / Flex Setup */
+  footer, 
+  .footer-container {
+    display: flex !important;
+    flex-direction: row !important;      /* Sit columns side-by-side */
+    flex-wrap: wrap !important;         /* Allow Gadinodi block to wrap on top */
+    justify-content: space-between !important; /* Pushes one to far left, one to far right */
+    padding: 3rem 1.5rem !important;    /* Prevents screen-edge crowding */
+    gap: 2.5rem 0 !important;           /* Clear 2.5rem vertical spacing between sections */
+  }
+
+  /* Target Gadinodi block (Logo/Info) - Anchored at the Top Center */
+  .footer-brand,
+  footer > div:first-child {
+    width: 100% !important;
+    order: 1 !important;                /* Forces it to the top */
+    text-align: center !important;      /* Balanced alignment for branding on mobile */
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Target Column 1: "Shop" (Left Side) */
+  /* If you use specific classes, apply them here (e.g., .footer-shop-col) */
+  footer > div:nth-child(2) {
+    width: 48% !important;              /* Spans roughly half the screen width */
+    order: 2 !important;                /* Placed on the second row */
+    text-align: left !important;        /* Flushed to the left edge */
+  }
+
+  /* Target Column 2: "Sell & Partner" (Right Side) */
+  /* If you use specific classes, apply them here (e.g., .footer-partner-col) */
+  footer > div:nth-child(3) {
+    width: 48% !important;              /* Spans roughly half the screen width */
+    order: 3 !important;                /* Placed right next to Shop on the second row */
+    text-align: right !important;       /* Flushed perfectly to the right edge */
+  }
+
+  /* Formatting lists inside the columns so they look crisp and alignment stays intact */
+  .footer-container ul,
+  footer div ul {
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.8rem !important;             /* Accessible touch-target gap for links */
+  }
+
+
+  /* 2. Statistics Section Mobile Adjustments (Retained from criteria) */
+  .statistics-section,
+  .stats-container {
+    margin-top: 3.5rem !important;     
+    margin-bottom: 3.5rem !important;  
+    padding-left: 1.5rem !important;   
+    padding-right: 1.5rem !important;  
+    
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    width: 100% !important;
+  }
+
+  .stat-item,
+  .counter-box {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+@media (max-width: 900px) {
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-grid > div:nth-child(2) {
+    grid-column: 1;
+  }
+
+  .footer-grid > div:nth-child(3) {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
   }
 }
