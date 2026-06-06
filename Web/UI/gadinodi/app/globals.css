@@ -2774,18 +2774,28 @@ main {
 .vt-detail-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(15, 23, 42, 0.2) 0%,
-    rgba(15, 23, 42, 0.88) 100%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.92) 0%,
+      rgba(15, 23, 42, 0.75) 35%,
+      rgba(15, 23, 42, 0.35) 70%,
+      rgba(15, 23, 42, 0.15) 100%
+    );
 }
 
 .vt-detail-hero__content {
   position: relative;
-  width: 100%;
-  padding: 44px 0 52px;
+  padding: 72px 0;
   color: #f8fafc;
+}
+
+.vt-detail-breadcrumb,
+.vt-detail-hero__eyebrow,
+.vt-detail-hero__title,
+.vt-detail-hero__lead,
+.vt-detail-hero__actions {
+  max-width: 640px;
 }
 
 .vt-detail-breadcrumb {
@@ -2811,25 +2821,26 @@ main {
 }
 
 .vt-detail-hero__title {
-  margin: 0 0 14px;
-  font-size: clamp(2rem, 4.2vw, 3.05rem);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1.06;
+  margin: 0 0 18px;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
 }
 
 .vt-detail-hero__lead {
-  margin: 0 0 26px;
-  max-width: 54ch;
-  font-size: 1.06rem;
-  line-height: 1.55;
-  color: rgba(226, 232, 240, 0.93);
+  margin: 0 0 32px;
+  max-width: 60ch;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(226, 232, 240, 0.95);
 }
 
 .vt-detail-hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
+  align-items: center;
 }
 
 .vt-detail-hero__ghost {
@@ -2912,6 +2923,34 @@ main {
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 768px) {
+  .vt-detail-hero {
+    min-height: 500px;
+  }
+
+  .vt-detail-hero__content {
+    padding: 48px 0;
+  }
+
+  .vt-detail-hero__title {
+    font-size: 2.25rem;
+  }
+
+  .vt-detail-hero__lead {
+    font-size: 1rem;
+  }
+
+  .vt-detail-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vt-detail-hero__actions .button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 
 /* —— Vehicles catalog (/vehicles) —— */
 .vehicles-catalog {
