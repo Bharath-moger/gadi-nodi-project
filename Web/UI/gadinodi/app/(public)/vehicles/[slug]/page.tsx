@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -45,6 +46,9 @@ export async function generateMetadata({
       description: vehicle.summary,
       url: `${siteConfig.url}/vehicles/${vehicle.slug}`,
       type: "website",
+      images: vehicle.imageUrls[0]
+        ? [{ url: vehicle.imageUrls[0], width: 1600, height: 900 }]
+        : undefined,
     },
   };
 }
@@ -94,6 +98,7 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
       "@type": "Product",
       name: vehicle.title,
       description: vehicle.summary,
+      image: vehicle.imageUrls,
       category: vehicle.bodyStyle,
       brand: {
         "@type": "Brand",
@@ -128,6 +133,15 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
 
           <div className="pdp-hero">
             <div className="pdp-hero__media" style={{ background: vehicle.heroTone }}>
+              {vehicle.imageUrls[0] ? (
+                <Image
+                  src={vehicle.imageUrls[0]}
+                  alt={vehicle.title}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 40vw"
+                  className="vehicle-card__media-image"
+                />
+              ) : null}
               <span className="vehicle-card__badge">{vehicle.condition}</span>
               <span className="vehicle-card__seller">{vehicle.sellerType}</span>
             </div>
@@ -182,6 +196,22 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
               </ul>
             </aside>
           </div>
+
+          {vehicle.imageUrls.length > 1 ? (
+            <div className="vehicle-gallery">
+              {vehicle.imageUrls.map((url, index) => (
+                <div key={url} className="vehicle-gallery__item">
+                  <Image
+                    src={url}
+                    alt={`${vehicle.title} image ${index + 1}`}
+                    width={240}
+                    height={160}
+                    className="vehicle-gallery__image"
+                  />
+                </div>
+              ))}
+            </div>
+          ) : null}
         </div>
       </section>
 

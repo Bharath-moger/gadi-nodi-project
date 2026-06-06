@@ -53,6 +53,7 @@ export interface VehicleListing {
   financeEstimate: number;
   rating: number;
   heroTone: string;
+  imageUrls: string[];
   features: string[];
   specs: VehicleSpec[];
 }
