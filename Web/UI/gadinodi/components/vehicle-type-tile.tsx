@@ -41,7 +41,7 @@ export function VehicleTypeTile({ vehicleType: vt, size = "compact" }: VehicleTy
           {vt.listingCount}{" "}
           {vt.listingCount === 1 ? "listing" : "listings"}
         </span>
-        <h3 className="vt-tile__title">{vt.displayName}</h3>
+        <p className="vt-tile__title">{vt.displayName}</p>
         <p className="vt-tile__desc">{vt.description}</p>
         <span className="vt-tile__cta">
           Explore type <span aria-hidden>→</span>
