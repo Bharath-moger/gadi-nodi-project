@@ -446,9 +446,18 @@ main {
     .site-nav a {
     width: 100%;
     text-align: left;
-    border-radius: 12px;
+    border-radius: 999px;
     padding: 12px 14px;
   }
+  .site-nav__link--active {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--brand-deep) !important;
+  font-weight: 700;
+}
+
+.site-nav__link--active::after {
+  display: none;
+}
 }
 
 @media (min-width: 961px) {
