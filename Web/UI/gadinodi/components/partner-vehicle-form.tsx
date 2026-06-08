@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, type FormEvent } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 
 function apiErrorMessage(data: unknown, fallback: string) {
   if (!data || typeof data !== "object") {
@@ -40,6 +41,7 @@ export type PartnerVehicleInitial = {
   summary?: string;
   color?: string;
   seats?: number;
+  imageUrls?: string[];
 };
 
 type PartnerVehicleFormProps = {
@@ -51,6 +53,51 @@ export function PartnerVehicleForm({ mode, initial }: PartnerVehicleFormProps) {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
+  const [existingImageUrls, setExistingImageUrls] = useState<string[]>(initial?.imageUrls ?? []);
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+
+  function onImageSelection(event: ChangeEvent<HTMLInputElement>) {
+    const files = Array.from(event.target.files ?? []);
+    const total = existingImageUrls.length + files.length;
+    if (total > 8) {
+      setError("You can keep up to 8 vehicle images per listing.");
+      event.target.value = "";
+      return;
+    }
+
+    setError(null);
+    setSelectedFiles(files);
+  }
+
+  function removeExistingImage(index: number) {
+    setExistingImageUrls((current) => current.filter((_, currentIndex) => currentIndex !== index));
+  }
+
+  async function uploadImages(files: File[]) {
+    if (files.length === 0) {
+      return [];
+    }
+
+    const body = new FormData();
+    files.forEach((file) => body.append("images", file));
+
+    const response = await fetch("/api/uploads/vehicle-images", {
+      method: "POST",
+      body,
+    });
+    const data: unknown = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      throw new Error(apiErrorMessage(data, "Could not upload images"));
+    }
+
+    const urls = (data as { urls?: unknown }).urls;
+    if (!Array.isArray(urls) || urls.some((value) => typeof value !== "string")) {
+      throw new Error("Image upload returned an invalid response");
+    }
+
+    return urls as string[];
+  }
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -87,6 +134,9 @@ export function PartnerVehicleForm({ mode, initial }: PartnerVehicleFormProps) {
     if (seatsRaw) payload.seats = Number(seatsRaw);
 
     try {
+      const uploadedUrls = await uploadImages(selectedFiles);
+      payload.imageUrls = [...existingImageUrls, ...uploadedUrls];
+
       if (mode === "create") {
         const res = await fetch("/api/partner/vehicles", {
           method: "POST",
@@ -116,8 +166,8 @@ export function PartnerVehicleForm({ mode, initial }: PartnerVehicleFormProps) {
         router.push("/partner/inventory");
       }
       router.refresh();
-    } catch {
-      setError("Network error. Try again.");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Network error. Try again.");
       setPending(false);
     }
   }
@@ -230,6 +280,54 @@ export function PartnerVehicleForm({ mode, initial }: PartnerVehicleFormProps) {
           disabled={pending}
           defaultValue={initial?.mileage}
         />
+      </div>
+
+      <div className="field">
+        <label htmlFor="pv-images">Vehicle images</label>
+        <input
+          id="pv-images"
+          name="images"
+          type="file"
+          accept="image/*"
+          multiple
+          disabled={pending}
+          onChange={onImageSelection}
+        />
+        <p className="auth-switch">
+          Upload up to 8 images. New files are uploaded to ImgBB and saved against this listing.
+        </p>
+
+        {existingImageUrls.length > 0 ? (
+          <div className="partner-vehicle-images">
+            {existingImageUrls.map((url, index) => (
+              <div key={url} className="partner-vehicle-images__item">
+                <Image
+                  src={url}
+                  alt={`Vehicle image ${index + 1}`}
+                  width={240}
+                  height={160}
+                  className="partner-vehicle-images__thumb"
+                />
+                <button
+                  type="button"
+                  className="button button--secondary partner-vehicle-images__remove"
+                  onClick={() => removeExistingImage(index)}
+                  disabled={pending}
+                >
+                  Remove
+                </button>
+              </div>
+            ))}
+          </div>
+        ) : null}
+
+        {selectedFiles.length > 0 ? (
+          <ul className="compact-list">
+            {selectedFiles.map((file) => (
+              <li key={`${file.name}-${file.size}`}>{file.name}</li>
+            ))}
+          </ul>
+        ) : null}
       </div>
 
       <div className="field partner-vehicle-form__row">

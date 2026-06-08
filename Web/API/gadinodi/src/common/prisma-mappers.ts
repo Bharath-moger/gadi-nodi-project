@@ -126,6 +126,7 @@ export function serializeVehicle(record: VehicleRecord): VehicleListing {
     financeEstimate: record.financeEstimate,
     rating: record.rating,
     heroTone: record.heroTone,
+    imageUrls: record.imageUrls,
     features: record.features,
     specs: parseVehicleSpecList(record.specs),
   };
