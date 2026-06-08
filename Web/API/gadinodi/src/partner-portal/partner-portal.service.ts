@@ -93,6 +93,7 @@ export class PartnerPortalService {
         summary: true,
         color: true,
         seats: true,
+        imageUrls: true,
         updatedAt: true,
       },
     });
@@ -169,6 +170,7 @@ export class PartnerPortalService {
         financeEstimate,
         rating: 4.5,
         heroTone: "linear-gradient(135deg, #1e1b4b, #6366f1)",
+        imageUrls: dto.imageUrls ?? [],
         features: [],
         specs: [] as unknown as Prisma.InputJsonValue,
         isFeatured: false,
@@ -217,6 +219,7 @@ export class PartnerPortalService {
     if (dto.summary !== undefined) data.summary = dto.summary.trim();
     if (dto.color !== undefined) data.color = dto.color.trim();
     if (dto.seats !== undefined) data.seats = dto.seats;
+    if (dto.imageUrls !== undefined) data.imageUrls = dto.imageUrls;
 
     if (Object.keys(data).length === 0) {
       throw new BadRequestException("No fields to update.");
