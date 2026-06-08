@@ -344,123 +344,113 @@ main {
 }
 
 @media (max-width: 960px) {
+  /* Fixes the main header container row to stay pinned edge-to-edge */
   .site-header__inner {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-rows: auto auto;
-    column-gap: 12px;
-    row-gap: 0;
-    align-items: center;
-    padding: 12px 0 0;
-    min-height: unset;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 16px !important;
+    min-height: 64px !important;
   }
 
+  /* Keeps logo on left and hamburger toggle button on the far right */
   .brand {
-    grid-column: 1;
-    grid-row: 1;
-    padding-bottom: 12px;
+    padding-bottom: 0 !important;
   }
 
   .site-header__menu-toggle {
-    display: inline-flex;
-    grid-column: 2;
-    grid-row: 1;
-    margin-bottom: 12px;
+    display: inline-flex !important;
+    margin-bottom: 0 !important;
   }
 
-.site-header__panel {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  /* Fixes the menu panel to cover 50% width and exactly 30% height of the screen */
+  .site-header__panel {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: auto !important; 
+    
+    width: 50vw !important;  /* Takes up half the screen width */
+    min-width: 250px;        
+    
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
 
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+    background: #ffffff !important;
+    box-shadow: -4px 4px 24px rgba(15, 23, 42, 0.15) !important;
+    padding: 16px 20px !important;
+    border-bottom-left-radius: 16px !important; /* Rounds the bottom corner for a premium look */
+    z-index: 2000 !important;
 
-  background: rgba(252, 252, 255, 0.98);
-  backdrop-filter: blur(12px);
+    transform: translateX(100%) !important;
+    opacity: 1 !important;
+    visibility: hidden !important;
+    transition: transform 0.25s ease, visibility 0.25s ease !important;
+  }
 
-  padding: 16px;
-  z-index: 1000;
+  /* Makes the close button visible and positions it nicely at the top right of the drawer */
+  .site-header__close {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    width: 32px !important;
+    height: 32px !important;
+    margin-left: auto !important; 
+    margin-bottom: 4px !important;
+    
+    border: none !important;
+    background: #f1f5f9 !important; 
+    border-radius: 50% !important;
+    font-size: 20px !important;
+    color: #565c78 !important;
+    cursor: pointer !important;
+  }
 
-  transform: translateX(100%);
-  opacity: 1;
-  visibility: hidden;
+  /* Slide-in action trigger */
+  .site-header__panel--open {
+    transform: translateX(0) !important;
+    visibility: visible !important;
+  }
 
-  transition:
-    transform 0.3s ease,
-    visibility 0.3s ease;
-}
-
-.site-header__close {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-
-  width: 40px;
-  height: 40px;
-
-  margin-left: auto;
-
-
-  border: none;
-  background: #fff;
-
-  font-size: 28px;
-  color: #565c78;
-
-  cursor: pointer;
-  z-index: 1100;
-}
-
-.site-header__panel--open {
-  transform: translateX(0);
-  visibility: visible;
-}
-
+  /* Stacks navigation links vertically—optimized for a shorter container box */
   .site-nav {
-    flex: unset;
-    flex-direction: column;
-    align-items: stretch;
-    overflow: visible;
-    mask-image: none;
-    padding: 12px 0 4px;
-    gap: 4px;
+    flex: 1 !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    overflow-y: auto !important; /* Allows scrolling inside the drawer if links overflow 30% height */
+    mask-image: none !important;
+    padding: 4px 0 !important;
+    gap: 4px !important;
   }
 
   .site-nav a {
-    width: 100%;
-    text-align: left;
-    border-radius: 12px;
-    padding: 12px 14px;
+    width: 100% !important;
+    text-align: left !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    font-size: 0.9rem !important;
   }
 
+  /* Stacks action buttons neatly at the bottom edge of the 30% height window */
   .site-actions {
-    flex-direction: column;
-    align-items: stretch;
-    padding-top: 12px;
-    margin-top: 8px;
-    border-top: 1px solid rgba(30, 27, 75, 0.06);
-    gap: 10px;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding-top: 8px !important;
+    margin-top: auto !important; 
+    border-top: 1px solid rgba(30, 27, 75, 0.08) !important;
+    gap: 8px !important;
   }
-
+  
   .site-actions .button {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .site-user-email {
-    max-width: none;
-    text-align: center;
-    padding: 4px 0;
-  }
-
-  .brand__subline {
-    display: none;
+    width: 100% !important;
+    min-height: 38px !important; /* Slightly reduces button height to save vertical breathing space */
+    font-size: 0.85rem !important;
+    justify-content: center !important;
   }
 }
-
 .site-header__close {
   display: none;
 }
