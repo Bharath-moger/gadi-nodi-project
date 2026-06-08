@@ -164,6 +164,7 @@ export const vehicles: VehicleListing[] = [
     financeEstimate: 47200,
     rating: 4.8,
     heroTone: "linear-gradient(135deg, #0f172a, #0f766e)",
+    imageUrls: ["https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&h=900&q=80"],
     features: [
       "6 airbags and 360-degree camera",
       "Panoramic sunroof",
@@ -203,6 +204,7 @@ export const vehicles: VehicleListing[] = [
     financeEstimate: 14800,
     rating: 4.6,
     heroTone: "linear-gradient(135deg, #172554, #2563eb)",
+    imageUrls: ["https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1600&h=900&q=80"],
     features: [
       "360-point inspection report",
       "Rear camera and head-up display",
@@ -242,6 +244,7 @@ export const vehicles: VehicleListing[] = [
     financeEstimate: 37100,
     rating: 4.9,
     heroTone: "linear-gradient(135deg, #14532d, #22c55e)",
+    imageUrls: ["https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1600&h=900&q=80"],
     features: [
       "465 km MIDC range",
       "Battery health assurance plan",
@@ -281,6 +284,7 @@ export const vehicles: VehicleListing[] = [
     financeEstimate: 35600,
     rating: 4.5,
     heroTone: "linear-gradient(135deg, #3f3f46, #0f766e)",
+    imageUrls: ["https://images.unsplash.com/photo-1544636331-2687092eb9d5?auto=format&fit=crop&w=1600&h=900&q=80"],
     features: [
       "Documented fleet maintenance history",
       "Captain-seat conversion ready",
@@ -320,6 +324,7 @@ export const vehicles: VehicleListing[] = [
     financeEstimate: 32900,
     rating: 4.7,
     heroTone: "linear-gradient(135deg, #4c1d95, #2563eb)",
+    imageUrls: ["https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1600&h=900&q=80"],
     features: [
       "Turbo petrol powertrain",
       "Dual-screen cockpit",
@@ -359,6 +364,7 @@ export const vehicles: VehicleListing[] = [
     financeEstimate: 3100,
     rating: 4.4,
     heroTone: "linear-gradient(135deg, #7c2d12, #ea580c)",
+    imageUrls: ["https://images.unsplash.com/photo-1558980664-769d59546b3d?auto=format&fit=crop&w=1600&h=900&q=80"],
     features: [
       "Service records included",
       "Accessory pack available",
@@ -398,6 +404,7 @@ export const vehicles: VehicleListing[] = [
     financeEstimate: 40200,
     rating: 4.5,
     heroTone: "linear-gradient(135deg, #292524, #b45309)",
+    imageUrls: ["https://images.unsplash.com/photo-1621913209992-a8b8fe29959d?auto=format&fit=crop&w=1600&h=900&q=80"],
     features: [
       "Canopy and bedliner included",
       "Off-road ready tyres",
@@ -437,6 +444,7 @@ export const vehicles: VehicleListing[] = [
     financeEstimate: 24900,
     rating: 4.6,
     heroTone: "linear-gradient(135deg, #083344, #0891b2)",
+    imageUrls: ["https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&h=900&q=80"],
     features: [
       "Dual-fuel efficiency proposition",
       "Connected infotainment",
@@ -475,6 +483,7 @@ export const vehicles: VehicleListing[] = [
     financeEstimate: 450,
     rating: 4.5,
     heroTone: "linear-gradient(135deg, #14532d, #166534)",
+    imageUrls: ["https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=1600&h=900&q=80"],
     features: ["Front suspension fork", "Included mudguards", "Size-fit guidance"],
     specs: [
       { label: "Frame", value: "6061 Alloy" },
@@ -508,6 +517,7 @@ export const vehicles: VehicleListing[] = [
     financeEstimate: 1650,
     rating: 4.6,
     heroTone: "linear-gradient(135deg, #1e3a5f, #0ea5e9)",
+    imageUrls: ["https://images.unsplash.com/photo-1554223789-df81106a45ed?auto=format&fit=crop&w=1600&h=900&q=80"],
     features: ["Combined braking system", "Digital meter", "Recent belt service"],
     specs: [
       { label: "Engine", value: "109.51 cc" },
@@ -541,6 +551,7 @@ export const vehicles: VehicleListing[] = [
     financeEstimate: 92000,
     rating: 4.3,
     heroTone: "linear-gradient(135deg, #713f12, #ca8a04)",
+    imageUrls: ["https://images.unsplash.com/photo-1565610222533-922619766b3f?auto=format&fit=crop&w=1600&h=900&q=80"],
     features: ["Rock body condition report", "Fitness valid", "Hydraulic hoist inspection"],
     specs: [
       { label: "GVW", value: "28,000 kg" },
@@ -574,6 +585,7 @@ export const vehicles: VehicleListing[] = [
     financeEstimate: 68000,
     rating: 4.4,
     heroTone: "linear-gradient(135deg, #422006, #ea580c)",
+    imageUrls: ["https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1600&h=900&q=80"],
     features: ["Joystick controls", "Auxiliary hydraulics ready", "Major services logged"],
     specs: [
       { label: "Engine", value: "76 hp Diesel" },

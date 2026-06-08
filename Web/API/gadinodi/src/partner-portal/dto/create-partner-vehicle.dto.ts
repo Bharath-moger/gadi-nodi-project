@@ -1,9 +1,11 @@
 import { Type } from "class-transformer";
 import {
+  ArrayMaxSize,
   IsEnum,
   IsInt,
   IsOptional,
   IsPositive,
+  IsUrl,
   IsString,
   MaxLength,
   Min,
@@ -85,4 +87,10 @@ export class CreatePartnerVehicleDto {
   @Min(2)
   @IsOptional()
   seats?: number;
+
+  @IsOptional()
+  @ArrayMaxSize(8)
+  @IsUrl({ require_protocol: true }, { each: true })
+  @MaxLength(2048, { each: true })
+  imageUrls?: string[];
 }
