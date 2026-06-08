@@ -209,9 +209,23 @@ export default async function HomePage() {
                 {featuredVehicles.map((vehicle) => (
                   <article key={vehicle.id} className="home-feature-card">
                     <Link href={`/vehicles/${vehicle.slug}`} className="home-feature-card__media-link">
-                      <div className="home-feature-card__media" style={{ background: vehicle.heroTone }}>
-                        <span className="home-feature-card__tag">{vehicle.condition}</span>
-                        <span className="home-feature-card__tag home-feature-card__tag--ghost">
+                      <div
+                        className="home-feature-card__media tw:overflow-hidden"
+                        style={{ background: vehicle.heroTone }}
+                      >
+                        {vehicle.imageUrls[0] ? (
+                          <Image
+                            src={vehicle.imageUrls[0]}
+                            alt={vehicle.title}
+                            fill
+                            sizes="(max-width: 900px) 100vw, 33vw"
+                            className="tw:object-cover"
+                          />
+                        ) : null}
+                        <span className="home-feature-card__tag tw:relative tw:z-[1]">
+                          {vehicle.condition}
+                        </span>
+                        <span className="home-feature-card__tag home-feature-card__tag--ghost tw:relative tw:z-[1]">
                           {vehicle.bodyStyle}
                         </span>
                       </div>
