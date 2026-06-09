@@ -49,13 +49,13 @@ export default async function VehicleTypesIndexPage() {
       <section className="section vt-index-section">
         <div className="container">
           <SectionHeading
-            eyebrow="All categories"
-            title={
+            eyebrow="Browse categories"
+            title="All categories"
+            description={
               vehicleTypes.length > 0
-                ? `${vehicleTypes.length} vehicle and equipment types`
-                : "Vehicle and equipment types"
+                ? `${vehicleTypes.length} vehicle and equipment types. Counts update from live listings. Types with zero listings still include buying guidance and filters.`
+                : "Vehicle and equipment types. Counts update from live listings. Types with zero listings still include buying guidance and filters."
             }
-            description="Counts update from live listings. Types with zero listings still include buying guidance and filters."
           />
 
           {vehicleTypes.length > 0 ? (
