@@ -149,6 +149,7 @@ model Vehicle {
   financeEstimate Int
   rating          Float
   heroTone        String
+  imageUrls       String[]         @default([])
   features        String[]          @default([])
   specs           Json
   isFeatured      Boolean          @default(false)

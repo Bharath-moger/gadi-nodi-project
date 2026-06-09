@@ -23,6 +23,7 @@ type VehiclePayload = {
   summary?: string;
   color?: string;
   seats?: number;
+  imageUrls?: string[];
 };
 
 export async function generateMetadata({
@@ -61,6 +62,7 @@ function toInitial(v: VehiclePayload): PartnerVehicleInitial {
     summary: v.summary,
     color: v.color,
     seats: v.seats,
+    imageUrls: v.imageUrls ?? [],
   };
 }
 
