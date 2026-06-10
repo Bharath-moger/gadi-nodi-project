@@ -51,6 +51,7 @@ export default async function VehicleTypesIndexPage() {
           <SectionHeading
             eyebrow="Browse categories"
             title="All categories"
+            titleClassName="tw:text-[clamp(1.75rem,3vw,2.6rem)] tw:leading-[1.06] tw:tracking-[-0.03em]"
             description={
               vehicleTypes.length > 0
                 ? `${vehicleTypes.length} vehicle and equipment types. Counts update from live listings. Types with zero listings still include buying guidance and filters.`
