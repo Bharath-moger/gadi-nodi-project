@@ -1,3 +1,9 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme) prefix(tw);
+@import "tailwindcss/utilities.css" layer(utilities) prefix(tw);
+
+/* Tailwind is enabled only for new UI work.
+   We intentionally skip Preflight and use the `tw:` prefix so existing global CSS keeps working. */
 :root {
   /* Royal modern: cool neutrals, indigo–violet accents, subtle gold on dark UI */
   --background: #f3f4fb;
@@ -770,6 +776,34 @@ main {
   color: #fff;
 }
 
+.vehicle-card__media-image {
+  object-fit: cover;
+}
+
+.vehicle-card__media::after,
+.pdp-hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.06), rgba(15, 23, 42, 0.38));
+  pointer-events: none;
+}
+
+.pdp-hero__media--contain::after {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.02), rgba(15, 23, 42, 0.16));
+}
+
+.pdp-hero__image {
+  object-fit: contain;
+  padding: 14px;
+}
+
+.vehicle-card__badge,
+.vehicle-card__seller {
+  position: relative;
+  z-index: 1;
+}
+
 .vehicle-card__features {
   margin: 0;
   padding-left: 18px;
@@ -794,6 +828,39 @@ main {
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) minmax(280px, 360px);
   gap: 20px;
   margin-top: 18px;
+}
+
+.pdp-hero--image-first {
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.55fr);
+  align-items: start;
+}
+
+.pdp-hero--image-first .pdp-hero__media {
+  min-height: clamp(360px, 42vw, 560px);
+}
+
+.pdp-hero--image-first .pdp-hero__content {
+  grid-column: 1;
+}
+
+.pdp-hero--image-first .purchase-panel {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.vehicle-gallery {
+  margin-top: 18px;
+  scrollbar-color: rgba(99, 102, 241, 0.42) rgba(255, 255, 255, 0.7);
+  scrollbar-width: thin;
+}
+
+.vehicle-gallery__item {
+  border: 1px solid rgba(24, 33, 47, 0.08);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+}
+
+.vehicle-gallery__image {
+  background: #ffffff;
 }
 
 .pdp-hero__content {
@@ -912,6 +979,12 @@ main {
 
   .purchase-panel {
     position: static;
+  }
+
+  .pdp-hero--image-first .pdp-hero__content,
+  .pdp-hero--image-first .purchase-panel {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
 
@@ -1324,6 +1397,30 @@ main {
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+}
+
+.partner-vehicle-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.partner-vehicle-images__item {
+  display: grid;
+  gap: 10px;
+}
+
+.partner-vehicle-images__thumb {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.partner-vehicle-images__remove {
+  min-height: 40px;
 }
 
 .partner-admin-stats {
@@ -2552,6 +2649,14 @@ main {
   scroll-padding-inline: 2px;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
+
+  /* Hide scrollbar */
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE/old Edge */
+}
+
+.home-types-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .home-types-scroll .vt-tile--strip {
@@ -2576,13 +2681,22 @@ main {
 }
 
 .home-hero-type-strip {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 10px;
   max-height: 220px;
-  overflow-y: auto;
-  padding-bottom: 2px;
+    overflow-y:auto;
+ padding-bottom: 2px;
+
+  &::-webkit-scrollbar {
+        display: none;
+    }
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
 }
+
+
 
 .home-hero-type-pill {
   display: inline-flex;
@@ -2608,15 +2722,25 @@ main {
 }
 
 .home-hero-type-pill__thumb {
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
+width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important; 
+  flex-shrink: 0 !important;  
+  
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #f1f5f9;
 }
-
 .home-hero-type-pill__img {
-  object-fit: cover;
+ width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+object-fit: cover !important; 
+  object-position: center !important ;
 }
 
 .home-hero-card__link-all {

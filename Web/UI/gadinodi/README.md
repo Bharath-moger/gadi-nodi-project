@@ -25,6 +25,7 @@ Create `.env.local` from `.env.local.example` if you want to point the UI at a n
 NEXT_PUBLIC_SITE_URL=http://127.0.0.1:3000
 NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:4000/api
 API_BASE_URL=http://127.0.0.1:4000/api
+IMGBB_API_KEY=your_imgbb_key
 ```
 
 ## Extend user types
@@ -35,9 +36,23 @@ Runtime content now comes only from the API and database. To extend user types o
 npm --prefix ../../API/gadinodi run db:seed
 ```
 
+Seller vehicle image uploads use `imgbb` through the UI server route. Keep `IMGBB_API_KEY` only in `.env.local`; do not expose it in client-side environment variables.
+
 ## Audience modes
 
 PLP and PDP support:
 
 - `?mode=guest`
 - `?mode=user`
+
+## Tailwind CSS
+
+Tailwind CSS is configured for new UI changes.
+
+Important project rule:
+
+- existing screens still rely on the custom global stylesheet
+- Tailwind utilities should be used for new work
+- use the `tw:` prefix, for example `tw:flex tw:gap-4 tw:rounded-2xl`
+
+This setup intentionally skips Tailwind Preflight so older styles are not reset unexpectedly.

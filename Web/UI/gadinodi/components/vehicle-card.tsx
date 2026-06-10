@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import type { VehicleListing } from "@/lib/types";
@@ -14,6 +15,15 @@ export function VehicleCard({ vehicle, isSignedIn }: VehicleCardProps) {
   return (
     <article className="vehicle-card">
       <div className="vehicle-card__media" style={{ background: vehicle.heroTone }}>
+        {vehicle.imageUrls[0] ? (
+          <Image
+            src={vehicle.imageUrls[0]}
+            alt={vehicle.title}
+            fill
+            sizes="(max-width: 900px) 100vw, 50vw"
+            className="vehicle-card__media-image"
+          />
+        ) : null}
         <span className="vehicle-card__badge">{vehicle.condition}</span>
         <span className="vehicle-card__seller">{vehicle.sellerType}</span>
       </div>

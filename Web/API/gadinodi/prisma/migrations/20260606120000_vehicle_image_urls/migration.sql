@@ -1,0 +1,2 @@
+ALTER TABLE "Vehicle"
+ADD COLUMN "imageUrls" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[];

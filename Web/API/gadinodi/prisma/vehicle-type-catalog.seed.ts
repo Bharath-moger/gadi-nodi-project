@@ -11,31 +11,31 @@ export interface VehicleTypeCatalogSeedRow {
 }
 
 export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
-  {
+    {
     slug: "bicycle",
     code: "Bicycle",
     displayName: "Bicycle",
     description:
       "City commuters and fitness riders — lightweight frames, gears, and accessories from trusted sellers.",
-    imageUrl: `https://images.unsplash.com/photo-1485965120184-e220f721d03e?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?${q}`,
     sortOrder: 0,
   },
   {
-    slug: "e-bike",
-    code: "EBike",
-    displayName: "E-bike",
-    description:
-      "Pedal-assist and throttle e-bikes for urban hops and last-mile delivery with battery clarity upfront.",
-    imageUrl: `https://images.unsplash.com/photo-1571068316344-75bc76f77890?${q}`,
-    sortOrder: 1,
-  },
+      slug: "e-bike",
+      code: "EBike",
+      displayName: "E-bike",
+      description:
+        "Pedal-assist and throttle e-bikes for urban hops and last-mile delivery with battery clarity upfront.",
+      imageUrl: `https://images.unsplash.com/photo-1673969206245-7da3eb7cde76?${q}`,
+      sortOrder: 1,
+    },
   {
     slug: "scooter",
     code: "Scooter",
     displayName: "Scooter",
     description:
       "Gearless and sporty scooters — everyday mileage champions with straightforward paperwork paths.",
-    imageUrl: `https://images.unsplash.com/photo-1554223789-df81106a45ed?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
+    imageUrl: `https://images.unsplash.com/photo-1554223789-df81106a45ed?${q}`,
     sortOrder: 2,
   },
   {
@@ -116,7 +116,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Van",
     description:
       "Panel vans and passenger vans — tradespeople and shuttle operators compare payloads clearly.",
-    imageUrl: `https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1597685204565-110abf469a1e?${q}`,
     sortOrder: 11,
   },
   {
@@ -143,7 +143,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Truck",
     description:
       "Rigid haulage — freight-rated tractors and rigs listed with GVW and compliance signals.",
-    imageUrl: `https://images.unsplash.com/photo-1605705658744-45f0fe8f9663?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
+    imageUrl: `https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?${q}`,
     sortOrder: 14,
   },
   {
@@ -179,7 +179,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Excavator",
     description:
       "Tracked and wheeled diggers — hour-meter transparency for contractors benchmarking fleets.",
-    imageUrl: `https://images.unsplash.com/photo-1590674899484-d5640e854abe?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1649807533255-bbc9c9fb7d77?${q}`,
     sortOrder: 18,
   },
   {
@@ -188,7 +188,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Bulldozer",
     description:
       "Tracked pushing power — grading and clearing assets listed with blade widths where supplied.",
-    imageUrl: `https://images.unsplash.com/photo-1629807473015-41699c4471b5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
+    imageUrl: `https://images.unsplash.com/photo-1630288214032-2c4cc2c080ca?${q}`,  
     sortOrder: 19,
   },
   {
@@ -197,7 +197,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Wheel loader",
     description:
       "Front-end loaders for quarries and ports — bucket sizing and breakout specs highlighted.",
-    imageUrl: `https://images.unsplash.com/photo-1621905251189-08b45d6a269e?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1629807473015-41699c4471b5?${q}`,
     sortOrder: 20,
   },
   {
@@ -206,7 +206,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Crane",
     description:
       "Mobile and crawler cranes — reach charts matter; sellers advertise capacities plainly.",
-    imageUrl: `https://images.unsplash.com/photo-1503387762-592deb58ef4e?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1586458995526-09ce6839babe?${q}`,
     sortOrder: 21,
   },
   {
@@ -215,7 +215,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Forklift",
     description:
       "Warehouse and yard forklifts — diesel, electric, and LPG options classified consistently.",
-    imageUrl: `https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1700304759756-05c3ae7551bb?${q}`,
     sortOrder: 22,
   },
   {
@@ -224,7 +224,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Road roller",
     description:
       "Compaction rollers — infra fleets dispose surplus drums with vibration specs spelled out.",
-    imageUrl: `https://images.unsplash.com/photo-1590674899484-d5640e854abe?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1640723559855-c27b649ad231?${q}`,
     sortOrder: 23,
   },
   {
@@ -233,8 +233,8 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Motor grader",
     description:
       "Precision grading blades — highway contractors compare mouldboard widths before sourcing.",
-    imageUrl: `https://images.unsplash.com/photo-1621905251189-08b45d6a269e?${q}`,
-    sortOrder: 24,
+    imageUrl: `https://images.unsplash.com/photo-1779384368699-a40b62f921ec?${q}`,
+      sortOrder: 24,
   },
   {
     slug: "concrete-mixer",
@@ -242,7 +242,7 @@ export const vehicleTypeCatalogSeedRows: VehicleTypeCatalogSeedRow[] = [
     displayName: "Concrete mixer",
     description:
       "Transit mixers and static drums — volume badges help buyers match pump fleets accurately.",
-    imageUrl: `https://images.unsplash.com/photo-1590674899484-d5640e854abe?${q}`,
+    imageUrl: `https://images.unsplash.com/photo-1705382063926-e26ac23ecf4e?${q}`,
     sortOrder: 25,
   },
 ];
