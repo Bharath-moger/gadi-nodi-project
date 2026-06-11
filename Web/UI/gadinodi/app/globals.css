@@ -1000,6 +1000,13 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
   .hero-panel__stack,
   .pdp-highlight-grid,
   .metric-grid {
