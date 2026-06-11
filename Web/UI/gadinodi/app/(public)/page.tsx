@@ -328,22 +328,19 @@ export default async function HomePage() {
               description="Different seller types—one consistent way to discover and compare listings."
             />
 
-            <div className="home-partner-grid">
+            <div className="home-partner-grid tw:mt-12">
               {partnerTypes.map((partnerType) => (
-                <article key={partnerType.slug} className="home-partner-card">
-                  <span className="home-partner-card__badge">{partnerType.badge}</span>
-                  <h3 className="home-partner-card__title">{partnerType.name}</h3>
-                  <p className="home-partner-card__desc">{partnerType.description}</p>
-                  <ul className="home-partner-card__list">
-                    {partnerType.highlights.slice(0, 3).map((highlight) => (
-                      <li key={highlight}>{highlight}</li>
-                    ))}
-                  </ul>
-                  <Link href={`/partners/${partnerType.slug}`} className="home-partner-card__link">
-                    {partnerType.ctaLabel}
-                    <span aria-hidden> →</span>
-                  </Link>
-                </article>
+               
+<article key={partnerType.slug} className="home-partner-card">
+  <span className="home-partner-card__badge">{partnerType.badge}</span>
+  <h3 className="home-partner-card__title">{partnerType.name}</h3>
+  <p className="home-partner-card__desc">{partnerType.description}</p>
+  <ul className="home-partner-card__list tw:mb-0">
+    {partnerType.highlights.slice(0, 3).map((highlight) => (
+      <li key={highlight}>{highlight}</li>
+    ))}
+  </ul>
+</article>
               ))}
             </div>
           </div>
