@@ -328,7 +328,7 @@ export default async function HomePage() {
               description="Different seller types—one consistent way to discover and compare listings."
             />
 
-            <div className="home-partner-grid tw:mt-12">
+            <div className="home-partner-grid">
               {partnerTypes.map((partnerType) => (
 <<<<<<< Updated upstream
                
