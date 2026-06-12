@@ -330,6 +330,7 @@ export default async function HomePage() {
 
             <div className="home-partner-grid tw:mt-12">
               {partnerTypes.map((partnerType) => (
+<<<<<<< Updated upstream
                
 <article key={partnerType.slug} className="home-partner-card">
   <span className="home-partner-card__badge">{partnerType.badge}</span>
@@ -341,6 +342,19 @@ export default async function HomePage() {
     ))}
   </ul>
 </article>
+=======
+                <article key={partnerType.slug} className="home-partner-card">
+                  <span className="home-partner-card__badge">{partnerType.badge}</span>
+                  <h3 className="home-partner-card__title">{partnerType.name}</h3>
+                  <p className="home-partner-card__desc">{partnerType.description}</p>
+                  <ul className="home-partner-card__list">
+                    {partnerType.highlights.slice(0, 3).map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+              
+                </article>
+>>>>>>> Stashed changes
               ))}
             </div>
           </div>
