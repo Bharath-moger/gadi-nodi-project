@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { href: "/vehicle-types", label: "Vehicle types" },
   { href: "/vehicles", label: "Vehicles" },
   { href: "/spare-parts", label: "Spare parts" },
-  // { href: "/partners", label: "For sellers" },
+  { href: "/partners", label: "For sellers" },
 ] as const;
 
 interface SiteHeaderShellProps {
@@ -101,11 +101,27 @@ export function SiteHeaderShell({ isSignedIn, email }: SiteHeaderShellProps) {
                   key={item.href}
                   href={item.href}
                   onClick={closeMenu}
-                  className={
-                    isActive
-                      ? "site-nav__link site-nav__link--active"
-                      : "site-nav__link"
-                  }
+                  className={`site-nav__link ${
+  isActive
+    ? `
+      tw:font-bold
+      tw:text-indigo-700
+
+      tw:after:content-['']
+      tw:after:absolute
+      tw:after:left-3
+      tw:after:right-3
+      tw:after:bottom-1
+      tw:after:h-[3px]
+      tw:after:bg-indigo-700
+      tw:after:rounded-full
+
+      tw:max-[960px]:bg-indigo-100
+      tw:max-[960px]:rounded-[999px]
+      tw:max-[960px]:after:hidden
+    `
+    : ""
+}`}
                 >
                   {item.label}
                 </Link>
