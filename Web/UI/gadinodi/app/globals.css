@@ -339,7 +339,6 @@ main {
   margin: 0;
   padding: 0;
   border: none;
-  background: rgba(15, 23, 42, 0.35);
   cursor: pointer;
 }
 
@@ -450,6 +449,18 @@ main {
     font-size: 0.85rem !important;
     justify-content: center !important;
   }
+
+  
+}
+
+@media (max-width: 400px) {
+  
+  /* Hides the long vehicle description text completely on mobile view */
+  .brand__subline {
+    display: none !important;
+  }
+
+  /* ... rest of your existing mobile media query styles ... */
 }
 .site-header__close {
   display: none;
