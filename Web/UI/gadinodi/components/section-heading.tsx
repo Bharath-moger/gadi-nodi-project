@@ -5,6 +5,7 @@ interface SectionHeadingProps {
   /** Center-aligned heading block (e.g. homepage sections). */
   align?: "left" | "center";
   className?: string;
+  titleClassName?: string;
 }
 
 export function SectionHeading({
@@ -13,6 +14,7 @@ export function SectionHeading({
   description,
   align = "left",
   className = "",
+  titleClassName = "",
 }: SectionHeadingProps) {
   const alignClass = align === "center" ? "section-heading--center" : "";
   const rootClass = ["section-heading", alignClass, className].filter(Boolean).join(" ");
@@ -20,7 +22,7 @@ export function SectionHeading({
   return (
     <div className={rootClass}>
       <p className="eyebrow">{eyebrow}</p>
-      <h2>{title}</h2>
+      <h2 className={titleClassName}>{title}</h2>
       <p>{description}</p>
     </div>
   );

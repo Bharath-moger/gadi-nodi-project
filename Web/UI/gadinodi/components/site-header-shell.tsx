@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 
 import { LogoutButton } from "@/components/logout-button";
@@ -21,15 +22,20 @@ interface SiteHeaderShellProps {
 export function SiteHeaderShell({ isSignedIn, email }: SiteHeaderShellProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const panelId = useId();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!menuOpen) return;
+
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setMenuOpen(false);
     };
+
     window.addEventListener("keydown", onKeyDown);
+
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+
     return () => {
       window.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = previousOverflow;
@@ -38,10 +44,13 @@ export function SiteHeaderShell({ isSignedIn, email }: SiteHeaderShellProps) {
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 961px)");
+
     const onChange = () => {
       if (mq.matches) setMenuOpen(false);
     };
+
     mq.addEventListener("change", onChange);
+
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
@@ -54,7 +63,9 @@ export function SiteHeaderShell({ isSignedIn, email }: SiteHeaderShellProps) {
           <span className="brand__mark">GN</span>
           <span className="brand__text">
             <strong>Gadinodi</strong>
-            <span className="brand__subline">New &amp; used vehicles, priced transparently</span>
+            <span className="brand__subline">
+              New &amp; used vehicles, priced transparently
+            </span>
           </span>
         </Link>
 
@@ -70,36 +81,86 @@ export function SiteHeaderShell({ isSignedIn, email }: SiteHeaderShellProps) {
             <span />
             <span />
           </span>
-          <span className="visually-hidden">{menuOpen ? "Close menu" : "Open menu"}</span>
+          <span className="visually-hidden">
+            {menuOpen ? "Close menu" : "Open menu"}
+          </span>
         </button>
 
         <div
           id={panelId}
-          className={`site-header__panel ${menuOpen ? "site-header__panel--open" : ""}`}
+          className={`site-header__panel ${
+            menuOpen ? "site-header__panel--open" : ""
+          }`}
         >
           <nav className="site-nav" aria-label="Primary">
-            {NAV_LINKS.map((item) => (
-              <Link key={item.href} href={item.href} onClick={closeMenu}>
-                {item.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((item) => {
+              const isActive = pathname === item.href;
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMenu}
+                  className={`site-nav__link ${
+  isActive
+    ? `
+      tw:font-bold
+      tw:text-indigo-700
+
+      tw:after:content-['']
+      tw:after:absolute
+      tw:after:left-3
+      tw:after:right-3
+      tw:after:bottom-1
+      tw:after:h-[3px]
+      tw:after:bg-indigo-700
+      tw:after:rounded-full
+
+      tw:max-[960px]:bg-indigo-100
+      tw:max-[960px]:rounded-[999px]
+      tw:max-[960px]:after:hidden
+    `
+    : ""
+}`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="site-actions">
             {isSignedIn ? (
               <>
-                <Link className="button button--ghost" href="/partner/dashboard" onClick={closeMenu}>
+                <Link
+                  className="button button--ghost"
+                  href="/partner/dashboard"
+                  onClick={closeMenu}
+                >
                   Seller portal
                 </Link>
-                {email ? <span className="site-user-email">{email}</span> : null}
+
+                {email ? (
+                  <span className="site-user-email">{email}</span>
+                ) : null}
+
                 <LogoutButton />
               </>
             ) : (
               <>
-                <Link className="button button--ghost" href="/login" onClick={closeMenu}>
+                <Link
+                  className="button button--ghost"
+                  href="/login"
+                  onClick={closeMenu}
+                >
                   Sign in
                 </Link>
-                <Link className="button button--primary" href="/register" onClick={closeMenu}>
+
+                <Link
+                  className="button button--primary"
+                  href="/register"
+                  onClick={closeMenu}
+                >
                   Create account
                 </Link>
               </>
@@ -109,7 +170,11 @@ export function SiteHeaderShell({ isSignedIn, email }: SiteHeaderShellProps) {
       </div>
 
       {menuOpen ? (
-        <button type="button" className="site-header__scrim" onClick={closeMenu}>
+        <button
+          type="button"
+          className="site-header__scrim"
+          onClick={closeMenu}
+        >
           <span className="visually-hidden">Close menu</span>
         </button>
       ) : null}

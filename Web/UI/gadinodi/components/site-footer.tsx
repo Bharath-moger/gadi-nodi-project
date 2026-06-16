@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+const footerLinkClass =
+  "tw:block tw:mt-2 tw:!text-[var(--muted)] tw:transition-colors tw:duration-200 tw:ease-out tw:hover:!text-[var(--accent)] tw:hover:!underline tw:hover:!decoration-[var(--accent)] tw:hover:decoration-2 tw:underline-offset-2 tw:focus-visible:tw:!text-[var(--accent)] tw:focus-visible:tw:!underline tw:focus-visible:tw:!decoration-[var(--accent)] tw:focus-visible:tw:decoration-2 tw:focus-visible:tw:underline-offset-2 tw:focus-visible:tw:ring-2 tw:focus-visible:tw:ring-[rgba(99,102,241,0.35)] tw:focus-visible:tw:ring-offset-2 tw:focus-visible:tw:ring-offset-white";
+
 export function SiteFooter() {
   return (
     <footer className="site-footer">
