@@ -1003,7 +1003,6 @@ main {
   .partner-detail-grid {
     grid-template-columns: 1fr;
   }
-
   .hero-panel__stack,
   .pdp-highlight-grid,
   .metric-grid {

@@ -6,49 +6,62 @@ const footerLinkClass =
 export function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div className="container footer-grid">
-        <div>
-          <p className="eyebrow">Gadinodi</p>
+<div className="container footer-grid tw:!grid tw:!grid-cols-2 tw:md:!grid-cols-3 tw:gap-6 tw:items-start tw:w-full tw:px-4">
+<div className="tw:col-span-2 tw:md:col-span-1">
+              <p className="eyebrow">Gadinodi</p>
           <p className="footer-copy">
-            A marketplace for new and used vehicles and spare parts in India—helping buyers compare
-            listings from garages, showrooms, and trusted independent sellers.
+            A marketplace for new and used vehicles and spare parts in India—
+            helping buyers compare listings from garages, showrooms, and trusted
+            independent sellers.
           </p>
         </div>
 
-        <div>
-          <p className="footer-title">Shop</p>
-          <Link className={footerLinkClass} href="/vehicle-types">
+        {/* Shop */}
+        <div className="tw:flex tw:flex-col tw:gap-2 tw:md:order-none">
+          <p className="footer-title tw:font-semibold">Shop</p>
+
+          <Link href="/vehicle-types" className="tw:font-normal">
             Vehicle types
           </Link>
-          <Link className={footerLinkClass} href="/vehicles">
+
+          <Link href="/vehicles" className="tw:font-normal">
             All vehicles
           </Link>
-          <Link className={footerLinkClass} href="/spare-parts">
+
+          <Link href="/spare-parts" className="tw:font-normal">
             Spare parts
           </Link>
-          <Link className={footerLinkClass} href="/register">
+
+          <Link href="/register" className="tw:font-normal">
             Create account
           </Link>
-          <Link className={footerLinkClass} href="/login">
+
+          <Link href="/login" className="tw:font-normal">
             Sign in
           </Link>
         </div>
 
-        <div>
-          <p className="footer-title">Sell &amp; partner</p>
-          <Link className={footerLinkClass} href="/partners">
+        {/* Sell & Partner */}
+        <div className="tw:flex tw:flex-col tw:gap-2 tw:md:order-none">
+          <p className="footer-title tw:font-semibold">Sell &amp; partner</p>
+
+          <Link href="/partners" className="tw:font-normal">
             Seller types
           </Link>
-          <Link className={footerLinkClass} href="/partners/garages">
+
+          <Link href="/partners/garages" className="tw:font-normal">
             Garages
           </Link>
-          <Link className={footerLinkClass} href="/partners/car-showrooms">
+
+          <Link href="/partners/car-showrooms" className="tw:font-normal">
             Car showrooms
           </Link>
-          <Link className={footerLinkClass} href="/partners/individual-dealers">
+
+          <Link href="/partners/individual-dealers" className="tw:font-normal">
             Individual dealers
           </Link>
         </div>
+
       </div>
     </footer>
   );

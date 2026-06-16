@@ -153,9 +153,9 @@ export default async function HomePage() {
 
         {/* Stats */}
         {marketStats.length > 0 ? (
-          <section className="home-stat-strip">
-            <div className="container">
-              <div className="home-stat-strip__grid">
+          <section className="home-stat-strip tw:mt-12">
+  <div className="container tw:px-6">
+    <div className="home-stat-strip__grid tw:gap-8">
                 {marketStats.map((stat) => (
                   <div key={stat.label} className="home-stat-strip__item">
                     <span className="home-stat-strip__value">{stat.value}</span>
