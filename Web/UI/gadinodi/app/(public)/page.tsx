@@ -56,7 +56,7 @@ export default async function HomePage() {
           <div className="home-hero__bg" aria-hidden />
           <div className="container home-hero__inner">
             <div className="home-hero__copy">
-              <p className="home-hero__label tw:text-lg tw:font-semibold">
+              <p className="home-hero__label">
                 India&apos;s vehicle marketplace
               </p>
               <h1 className="home-hero__title">
