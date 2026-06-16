@@ -45,8 +45,9 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
+    /* FIXED: Added data-scroll-behavior="smooth" attribute right here to clear the console warning */
+    <html lang="en" data-scroll-behavior="smooth">
       <body>{children}</body>
     </html>
   );
-} 
+}

@@ -8,8 +8,6 @@ export function MobileMenuToggle() {
     const hamburger = document.getElementById("mobile-hamburger-trigger");
     const closeBtn = document.getElementById("mobile-close-trigger");
     const scrim = document.getElementById("mobile-scrim-trigger");
-    
-    // ALIGNED TARGET MATCH: Grabbing the sidebar layout element securely via its unique ID token
     const sidebar = document.getElementById("mobile-sidebar-container-target");
 
     // 2. Define what happens when opening the menu
@@ -38,16 +36,26 @@ export function MobileMenuToggle() {
       }
     };
 
-    // 4. Attach event listeners to watch for user clicks
+    // 4. AUTO-CLOSE LOGIC: Close drawer immediately when a navigation link is clicked
+    const handleLinkClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (target.closest("a")) {
+        closeMenu();
+      }
+    };
+
+    // 5. Attach event listeners to watch for user clicks
     hamburger?.addEventListener("click", openMenu);
     closeBtn?.addEventListener("click", closeMenu);
     scrim?.addEventListener("click", closeMenu);
+    sidebar?.addEventListener("click", handleLinkClick);
 
-    // 5. Cleanup listeners when the component unmounts to prevent memory leaks
+    // 6. Cleanup listeners when the component unmounts to prevent memory leaks
     return () => {
       hamburger?.removeEventListener("click", openMenu);
       closeBtn?.removeEventListener("click", closeMenu);
       scrim?.removeEventListener("click", closeMenu);
+      sidebar?.removeEventListener("click", handleLinkClick);
     };
   }, []);
 
