@@ -321,6 +321,9 @@ main {
   background: rgba(255, 255, 255, 0.85);
   color: var(--foreground);
 }
+.site-nav__link {
+  position: relative;
+}
 
 .site-actions {
   flex-shrink: 0;
@@ -398,12 +401,6 @@ main {
     gap: 4px;
   }
 
-  .site-nav a {
-    width: 100%;
-    text-align: left;
-    border-radius: 12px;
-    padding: 12px 14px;
-  }
 
   .site-actions {
     flex-direction: column;
@@ -427,6 +424,12 @@ main {
 
   .brand__subline {
     display: none;
+  }
+    .site-nav a {
+    width: 100%;
+    text-align: left;
+    border-radius: 999px;
+    padding: 12px 14px;
   }
 }
 
