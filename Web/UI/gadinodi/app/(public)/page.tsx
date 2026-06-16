@@ -56,7 +56,9 @@ export default async function HomePage() {
           <div className="home-hero__bg" aria-hidden />
           <div className="container home-hero__inner">
             <div className="home-hero__copy">
-              <p className="home-hero__label">India&apos;s vehicle marketplace</p>
+              <p className="home-hero__label">
+                India&apos;s vehicle marketplace
+              </p>
               <h1 className="home-hero__title">
                 Find your next car or bike—clear prices, real sellers.
               </h1>
@@ -117,7 +119,6 @@ export default async function HomePage() {
                             alt=""
                             width={44}
                             height={44}
-                           
                             className="home-hero-type-pill__img"
                             style={{ objectFit: "contain", imageRendering: "auto" }}
                           />
@@ -339,10 +340,6 @@ export default async function HomePage() {
                       <li key={highlight}>{highlight}</li>
                     ))}
                   </ul>
-                  <Link href={`/partners/${partnerType.slug}`} className="home-partner-card__link">
-                    {partnerType.ctaLabel}
-                    <span aria-hidden> →</span>
-                  </Link>
                 </article>
               ))}
             </div>
