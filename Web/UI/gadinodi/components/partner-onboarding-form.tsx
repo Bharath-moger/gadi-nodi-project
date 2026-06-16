@@ -230,24 +230,50 @@ export function PartnerOnboardingForm({
         />
       </div>
 
-      <div className="field">
-        <label htmlFor="partner-city">City</label>
-        <input id="partner-city" name="city" type="text" required disabled={pending} />
-      </div>
-
       <button className="button button--primary auth-submit" type="submit" disabled={pending}>
-        {pending ? "Saving…" : mode === "complete" ? "Finish setup" : "Create seller account"}
-      </button>
+  {pending ? "Saving…" : mode === "complete" ? "Finish setup" : "Create seller account"}
+</button>
 
-      <p className="auth-switch">
-        {mode === "register" ? (
-          <>
-            Already registered? <Link href="/partner/login">Seller sign in</Link>
-          </>
-        ) : (
-          <>Need a different account? Use <strong>Sign out</strong> in the site header first.</>
-        )}
+<div className="tw:mt-6 tw:flex tw:flex-col tw:gap-3 tw:text-center tw:text-sm tw:text-slate-600">
+  {mode === "register" ? (
+    <>
+      <p className="tw:text-slate-600">
+        Already a seller?{" "}
+        <Link
+          href="/partner/login"
+          className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
+        >
+          Sign In
+        </Link>
       </p>
-    </form>
-  );
+
+      <p className="tw:text-slate-600">
+        Looking to buy?{" "}
+        <Link
+          href="/login"
+          className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
+        >
+          Sign In as Buyer
+        </Link>
+      </p>
+
+      <p className="tw:text-slate-600">
+        New buyer?{" "}
+        <Link
+          href="/register"
+          className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
+        >
+          Create Account
+        </Link>
+      </p>
+    </>
+  ) : (
+    <p className="tw:text-slate-600">
+      Need a different account? Use <strong>Sign out</strong> in the site header first.
+    </p>
+  )}
+</div>
+
+</form>
+);
 }

@@ -51,6 +51,7 @@ export function LoginForm({ redirectTo }: LoginFormProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+
       const data: unknown = await res.json().catch(() => ({}));
 
       if (!res.ok) {
@@ -95,13 +96,46 @@ export function LoginForm({ redirectTo }: LoginFormProps) {
         />
       </div>
 
-      <button className="button button--primary auth-submit" type="submit" disabled={pending}>
+      <button
+        className="button button--primary auth-submit"
+        type="submit"
+        disabled={pending}
+      >
         {pending ? "Signing in…" : "Sign in"}
       </button>
 
-      <p className="auth-switch">
-        No account? <Link href="/register">Create one</Link>
-      </p>
+     {/* GN-012 Navigation Links */}
+     <div className="tw:mt-6 tw:flex tw:flex-col tw:gap-3 tw:text-center tw:text-sm tw:text-slate-600">
+       <p className="auth-switch">
+         New buyer?{" "}
+         <Link
+           href="/register"
+           className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
+         >
+           Create Account
+         </Link>
+       </p>
+
+       <p className="auth-switch">
+         Want to sell?{" "}
+         <Link
+           href="/partner/onboarding"
+           className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
+         >
+           Register as Seller
+         </Link>
+       </p>
+
+       <p className="auth-switch">
+         Already a partner?{" "}
+         <Link
+           href="/partner/login"
+           className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
+         >
+           Partner Login
+         </Link>
+       </p>
+     </div>
     </form>
   );
 }

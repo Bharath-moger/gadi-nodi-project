@@ -73,44 +73,73 @@ export function PartnerLoginForm() {
     }
   }
 
-  return (
-    <form className="auth-form" method="post" onSubmit={onSubmit}>
-      {error ? <p className="auth-error">{error}</p> : null}
+ return (
+  <form className="auth-form" method="post" onSubmit={onSubmit}>
+    {error ? <p className="auth-error">{error}</p> : null}
 
-      <div className="field">
-        <label htmlFor="partner-login-email">Email</label>
-        <input
-          id="partner-login-email"
-          name="email"
-          type="email"
-          autoComplete="email"
-          required
-          disabled={pending}
-        />
-      </div>
+    <div className="field">
+      <label htmlFor="partner-login-email">Email</label>
+      <input
+        id="partner-login-email"
+        name="email"
+        type="email"
+        autoComplete="email"
+        required
+        disabled={pending}
+      />
+    </div>
 
-      <div className="field">
-        <label htmlFor="partner-login-password">Password</label>
-        <input
-          id="partner-login-password"
-          name="password"
-          type="password"
-          autoComplete="current-password"
-          required
-          disabled={pending}
-        />
-      </div>
+    <div className="field">
+      <label htmlFor="partner-login-password">Password</label>
+      <input
+        id="partner-login-password"
+        name="password"
+        type="password"
+        autoComplete="current-password"
+        required
+        disabled={pending}
+      />
+    </div>
 
-      <button className="button button--primary auth-submit" type="submit" disabled={pending}>
-        {pending ? "Signing in…" : "Sign in to seller portal"}
-      </button>
+    <button
+      className="button button--primary auth-submit"
+      type="submit"
+      disabled={pending}
+    >
+      {pending ? "Signing in…" : "Sign in to seller portal"}
+    </button>
 
-      <p className="auth-switch">
-        New seller? <Link href="/partner/onboarding">Create seller account</Link>
+    <div className="tw:mt-6 tw:flex tw:flex-col tw:gap-3 tw:text-center tw:text-sm tw:text-slate-600">
+      <p>
+        New to selling?{" "}
+        <Link
+          href="/partner/onboarding"
+          className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
+        >
+          Create Seller Account
+        </Link>
       </p>
-      <p className="auth-switch">
-        Buyer account? <Link href="/login">Standard sign in</Link>
+
+      <p>
+        Buyer?{" "}
+        <Link
+          href="/login"
+          className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
+        >
+          Sign In as Buyer
+        </Link>
       </p>
-    </form>
-  );
+
+      <p>
+        New buyer?{" "}
+        <Link
+          href="/register"
+          className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
+        >
+          Create Account
+        </Link>
+      </p>
+    </div>
+  </form>
+);
 }

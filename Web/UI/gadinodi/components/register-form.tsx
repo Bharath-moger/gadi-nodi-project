@@ -51,6 +51,7 @@ export function RegisterForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+
       const data: unknown = await res.json().catch(() => ({}));
 
       if (!res.ok) {
@@ -119,14 +120,45 @@ export function RegisterForm() {
           disabled={pending}
         />
       </div>
+      <button
+  className="button button--primary auth-submit"
+  type="submit"
+  disabled={pending}
+>
+  {pending ? "Creating account…" : "Create account"}
+</button>
 
-      <button className="button button--primary auth-submit" type="submit" disabled={pending}>
-        {pending ? "Creating account…" : "Create account"}
-      </button>
+<div className="tw:mt-6 tw:flex tw:flex-col tw:gap-3 tw:text-center tw:text-sm tw:text-slate-600">
+  <p>
+    Already have a buyer account?{" "}
+    <Link
+      href="/login"
+      className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
+    >
+      Sign In
+    </Link>
+  </p>
 
-      <p className="auth-switch">
-        Already have an account? <Link href="/login">Sign in</Link>
-      </p>
+  <p>
+    Want to sell?{" "}
+    <Link
+      href="/partner/onboarding"
+      className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
+    >
+      Register as Seller
+    </Link>
+  </p>
+
+  <p>
+    Already a partner?{" "}
+    <Link
+      href="/partner/login"
+      className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
+    >
+      Partner Login
+    </Link>
+  </p>
+</div>
     </form>
   );
 }
