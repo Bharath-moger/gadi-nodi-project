@@ -117,7 +117,6 @@ export default async function HomePage() {
                             alt=""
                             width={44}
                             height={44}
-                           
                             className="home-hero-type-pill__img"
                             style={{ objectFit: "contain", imageRendering: "auto" }}
                           />
@@ -339,10 +338,6 @@ export default async function HomePage() {
                       <li key={highlight}>{highlight}</li>
                     ))}
                   </ul>
-                  <Link href={`/partners/${partnerType.slug}`} className="home-partner-card__link">
-                    {partnerType.ctaLabel}
-                    <span aria-hidden> →</span>
-                  </Link>
                 </article>
               ))}
             </div>
