@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { href: "/vehicle-types", label: "Vehicle types" },
   { href: "/vehicles", label: "Vehicles" },
   { href: "/spare-parts", label: "Spare parts" },
-  { href: "/partners", label: "For sellers" },
+  // { href: "/partners", label: "For sellers" },
 ] as const;
 
 interface SiteHeaderShellProps {
