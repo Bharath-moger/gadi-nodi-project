@@ -836,7 +836,7 @@ main {
 }
 
 .pdp-hero--image-first .pdp-hero__media {
-  min-height: clamp(360px, 42vw, 560px);
+  min-height: clamp(200px, 42vw, 450px);
 }
 
 .pdp-hero--image-first .pdp-hero__content {
@@ -4053,5 +4053,12 @@ object-fit: cover !important;
   .partners-hub__closing-actions .button {
     width: 100%;
     justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .pdp-tag {
+    padding: 4px 8px;
+    font-size: 10px;
+    border-radius: 999px;
   }
 }
