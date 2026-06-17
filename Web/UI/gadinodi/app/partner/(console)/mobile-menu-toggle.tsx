@@ -4,15 +4,11 @@ import { useEffect } from "react";
 
 export function MobileMenuToggle() {
   useEffect(() => {
-    // 1. Grab the elements using explicit IDs for pinpoint accuracy
     const hamburger = document.getElementById("mobile-hamburger-trigger");
     const closeBtn = document.getElementById("mobile-close-trigger");
     const scrim = document.getElementById("mobile-scrim-trigger");
-    
-    // ALIGNED TARGET MATCH: Grabbing the sidebar layout element securely via its unique ID token
     const sidebar = document.getElementById("mobile-sidebar-container-target");
 
-    // 2. Define what happens when opening the menu
     const openMenu = () => {
       if (sidebar && scrim) {
         sidebar.classList.remove("tw:max-lg:-translate-x-full");
@@ -25,7 +21,6 @@ export function MobileMenuToggle() {
       }
     };
 
-    // 3. Define what happens when closing the menu
     const closeMenu = () => {
       if (sidebar && scrim) {
         sidebar.classList.remove("tw:max-lg:translate-x-0", "tw:shadow-2xl");
@@ -38,16 +33,29 @@ export function MobileMenuToggle() {
       }
     };
 
-    // 4. Attach event listeners to watch for user clicks
+    // PINPOINT AUTO-CLOSE: Watch for clicks inside the navigation menu container frame
+    const handleNavigationClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      
+      // Close the drawer if the user clicks a link directly, an icon span, or an inner text component
+      if (target.closest("a") || target.tagName === "A" || target.closest(".partner-admin__nav-link")) {
+        closeMenu();
+      }
+    };
+
+    // Attach core trigger listeners
     hamburger?.addEventListener("click", openMenu);
     closeBtn?.addEventListener("click", closeMenu);
     scrim?.addEventListener("click", closeMenu);
+    
+    // Listen directly to the sidebar area for any link interactions
+    sidebar?.addEventListener("click", handleNavigationClick);
 
-    // 5. Cleanup listeners when the component unmounts to prevent memory leaks
     return () => {
       hamburger?.removeEventListener("click", openMenu);
       closeBtn?.removeEventListener("click", closeMenu);
       scrim?.removeEventListener("click", closeMenu);
+      sidebar?.removeEventListener("click", handleNavigationClick);
     };
   }, []);
 

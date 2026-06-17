@@ -45,8 +45,9 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
+    /* FIXED: Added data-scroll-behavior="smooth" to instantly clear Next.js scroll transition runtime warnings */
+    <html lang="en" data-scroll-behavior="smooth">
       <body>{children}</body>
     </html>
   );
-} 
+}
