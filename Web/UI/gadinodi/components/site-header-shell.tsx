@@ -92,7 +92,7 @@ export function SiteHeaderShell({ isSignedIn, email }: SiteHeaderShellProps) {
           <div id={panelId} className={`site-header__panel ${menuOpen ? "site-header__panel--open" : ""}`}>
             <button
               type="button"
-              className="site-header__close"
+              className="site-header__close site-header__menu-toggle"
               onClick={closeMenu}
               aria-label="Close menu"
             >
