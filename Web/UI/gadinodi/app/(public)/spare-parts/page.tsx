@@ -77,7 +77,6 @@ export default async function SparePartsPage({ searchParams }: SparePartsPagePro
 
   const isSignedIn = Boolean(session);
   const hasActiveFilters = Boolean(category || condition);
-  /** API up but no rows (e.g. migrations applied, seed not run). */
   const catalogueNotSeeded =
     apiAvailable && parts.length === 0 && !hasActiveFilters && facets.categories.length === 0;
 
@@ -116,7 +115,7 @@ export default async function SparePartsPage({ searchParams }: SparePartsPagePro
             <span>Spare parts</span>
           </nav>
 
-          <div className="vehicles-catalog__hero-row">
+          <div className="vehicles-catalog__hero-row tw:flex tw:flex-col tw:gap-4 tw:md:grid tw:md:grid-cols-[1fr_auto]">
             <div className="vehicles-catalog__intro">
               <p className="eyebrow">Parts &amp; accessories</p>
               <h1 id="spare-parts-catalog-title">Vehicle spare parts listings</h1>
@@ -125,26 +124,26 @@ export default async function SparePartsPage({ searchParams }: SparePartsPagePro
                 Check compatibility on each listing before you buy.
               </p>
             </div>
-            <div className="vehicles-catalog__hero-stats">
-              <div className="vehicles-catalog__stat-card">
+            <div className="vehicles-catalog__hero-stats tw:flex tw:flex-row tw:flex-nowrap tw:items-stretch tw:gap-3">
+              <div className="vehicles-catalog__stat-card tw:text-center tw:!py-3 tw:!px-4 tw:!flex-none tw:!w-[clamp(110px,45%,200px)]">
                 <span className="vehicles-catalog__stat-value">{parts.length}</span>
                 <span className="vehicles-catalog__stat-label">
                   {hasActiveFilters ? "Matching parts" : "Live listings"}
                 </span>
               </div>
               {isSignedIn ? (
-                <span className="vehicles-catalog__status-pill vehicles-catalog__status-pill--ok">
+                <span className="vehicles-catalog__status-pill vehicles-catalog__status-pill--ok tw:!flex tw:!items-center tw:!justify-center tw:!rounded-3xl tw:!text-sm tw:!px-3 tw:!min-h-0 tw:!h-full tw:!w-24 tw:!py-4 tw:!self-center">
                   Signed in
                 </span>
               ) : (
-                <Link className="vehicles-catalog__status-pill" href="/login">
+                <Link className="vehicles-catalog__status-pill tw:!flex tw:!items-center tw:!justify-center tw:!rounded-3xl tw:!text-xs tw:!px-3 tw:!min-h-0 tw:!h-full tw:!w-32 tw:!py-4 tw:!self-center tw:!whitespace-nowrap" href="/login">
                   Sign in to enquire
                 </Link>
               )}
             </div>
           </div>
 
-          <div className="vehicles-catalog__notice">
+          <div className="vehicles-catalog__notice tw:flex tw:flex-col tw:gap-3 tw:p-4 tw:md:flex-row tw:md:items-center">
             <p className="vehicles-catalog__notice-text">
               <strong>Fitment matters.</strong> Always confirm part numbers and vehicle variants with the
               seller. Full vehicle inventory stays on{" "}
@@ -153,14 +152,14 @@ export default async function SparePartsPage({ searchParams }: SparePartsPagePro
               </Link>
               .
             </p>
-            <Link className="button button--secondary vehicles-catalog__notice-btn" href="/vehicles">
+            <Link className="button button--secondary vehicles-catalog__notice-btn tw:w-full tw:md:w-auto" href="/vehicles">
               Browse vehicles
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="vehicles-catalog__main">
+      <section className="vehicles-catalog__main tw:!pt-2 tw:md:!pt-[clamp(40px,6vw,72px)]">
         <div className="container catalog-layout vehicles-catalog__layout">
           <aside className="catalog-sidebar vehicles-catalog__sidebar">
             <div className="vehicles-catalog__filters-head">
