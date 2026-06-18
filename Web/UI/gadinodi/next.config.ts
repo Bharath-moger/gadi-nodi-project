@@ -19,6 +19,11 @@ const nextConfig: NextConfig = {
         hostname: "i.ibb.co",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "i.pinimg.com", // 👈 Added Pinterest Domain
+        pathname: "/**",
+      },
     ],
   },
 };
