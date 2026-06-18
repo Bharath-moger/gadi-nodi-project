@@ -275,7 +275,6 @@ main {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  gap: 12px 20px;
   flex: 1;
   min-width: 0;
   justify-content: flex-end;
@@ -343,94 +342,127 @@ main {
   margin: 0;
   padding: 0;
   border: none;
-  background: rgba(15, 23, 42, 0.35);
   cursor: pointer;
 }
 
 @media (max-width: 960px) {
+  /* Fixes the main header container row to stay pinned edge-to-edge */
   .site-header__inner {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-rows: auto auto;
-    column-gap: 12px;
-    row-gap: 0;
-    align-items: center;
-    padding: 12px 0 0;
-    min-height: unset;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 16px !important;
+    min-height: 64px !important;
   }
 
+  /* Keeps logo on left and hamburger toggle button on the far right */
   .brand {
-    grid-column: 1;
-    grid-row: 1;
-    padding-bottom: 12px;
+    padding-bottom: 0 !important;
   }
 
   .site-header__menu-toggle {
-    display: inline-flex;
-    grid-column: 2;
-    grid-row: 1;
-    margin-bottom: 12px;
+    display: inline-flex !important;
+    margin-bottom: 0 !important;
   }
 
+  /* Fixes the menu panel to cover 50% width and exactly 30% height of the screen */
   .site-header__panel {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    flex: unset;
-    gap: 0;
-    padding: 0 0 16px;
-    width: 100%;
-    border-top: 1px solid rgba(30, 27, 75, 0.08);
-    background: rgba(252, 252, 255, 0.98);
-    backdrop-filter: blur(12px);
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    width: min(90vw, 320px) !important;
+    max-width: 100% !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    background: #ffffff !important;
+    box-shadow: -6px 0 32px rgba(15, 23, 42, 0.16) !important;
+    padding: 18px 20px 24px !important;
+    border-bottom-left-radius: 20px !important;
+    z-index: 2000 !important;
+    transform: translateX(100%) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease !important;
   }
 
+  /* Makes the close button visible and positions it nicely at the top right of the drawer */
+  .site-header__close {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    margin-left: auto !important;
+    margin-bottom: 4px !important;
+    border: none !important;
+    background: #f1f5f9 !important;
+    border-radius: 50% !important;
+    font-size: 20px !important;
+    color: #565c78 !important;
+    cursor: pointer !important;
+  }
+
+  /* Slide-in action trigger */
   .site-header__panel--open {
-    display: flex;
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
+  /* Stacks navigation links vertically—optimized for a shorter container box */
   .site-nav {
-    flex: unset;
-    flex-direction: column;
-    align-items: stretch;
-    overflow: visible;
-    mask-image: none;
-    padding: 12px 0 4px;
-    gap: 4px;
+    flex: 1 !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    overflow-y: auto !important; /* Allows scrolling inside the drawer if links overflow 30% height */
+    mask-image: none !important;
+    padding: 4px 0 !important;
+    gap: 4px !important;
+    justify-content: flex-start !important;
   }
 
+  .site-nav a {
+    width: 100% !important;
+    text-align: left !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    font-size: 0.9rem !important;
+  }
 
+  /* Stacks action buttons neatly at the bottom edge of the 30% height window */
   .site-actions {
-    flex-direction: column;
-    align-items: stretch;
-    padding-top: 12px;
-    margin-top: 8px;
-    border-top: 1px solid rgba(30, 27, 75, 0.06);
-    gap: 10px;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding-top: 8px !important;
+    margin-top: auto !important;
+    border-top: 1px solid rgba(30, 27, 75, 0.08) !important;
+    gap: 8px !important;
   }
 
   .site-actions .button {
-    width: 100%;
-    justify-content: center;
+    width: 100% !important;
+    min-height: 38px !important; /* Slightly reduces button height to save vertical breathing space */
+    font-size: 0.85rem !important;
+    justify-content: center !important;
   }
+}
 
-  .site-user-email {
-    max-width: none;
-    text-align: center;
-    padding: 4px 0;
-  }
-
+@media (max-width: 400px) {
+  /* Hides the long vehicle description text completely on mobile view */
   .brand__subline {
-    display: none;
+    display: none !important;
   }
-    .site-nav a {
-    width: 100%;
-    text-align: left;
-    border-radius: 999px;
-    padding: 12px 14px;
-  }
+
+  /* ... rest of your existing mobile media query styles ... */
 }
 
 @media (min-width: 961px) {
@@ -2486,29 +2518,30 @@ main {
 
 @media (max-width: 1024px) {
   .home-hero__inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Changes from 2-columns to 1 full-width column */
+    gap: 32px;
   }
 
   .home-hero__panel {
-    max-width: 480px;
+    max-width: 100%; /* Allows the right-hand panel to fill the screen width */
+    width: 100%;
   }
 
+  /* Ensures the header text stretches nicely instead of staying squeezed */
+  .home-hero__title,
+  .home-hero__lead {
+    max-width: 100%;
+  }
+
+  /* Keep your existing non-hero rules below if you have them */
   .home-stat-strip__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
   .home-feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .home-steps {
-    grid-template-columns: 1fr;
-  }
-
-  .home-partner-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .home-steps,
+  .home-partner-grid,
   .home-closing__cols {
     grid-template-columns: 1fr;
     gap: 22px;
@@ -2632,6 +2665,21 @@ main {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
+@media (max-width: 640px) {
+  /* ... Keep your existing mobile styles here ... */
+
+  /* New additions to fix the category strip on small viewports */
+  .home-hero-type-strip {
+    grid-template-columns: 1fr; /* Stacks categories vertically on mobile phones */
+    max-height: 260px;          /* Gives the scrollbox slightly more breathing room */
+  }
+
+  .home-hero-type-pill {
+    width: 100%; /* Makes each category button span edge-to-edge inside the card */
+  }
+}
+
 
 .home-hero-type-strip::-webkit-scrollbar {
   display: none;
@@ -2835,18 +2883,28 @@ main {
 .vt-detail-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(15, 23, 42, 0.2) 0%,
-    rgba(15, 23, 42, 0.88) 100%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.92) 0%,
+      rgba(15, 23, 42, 0.75) 35%,
+      rgba(15, 23, 42, 0.35) 70%,
+      rgba(15, 23, 42, 0.15) 100%
+    );
 }
 
 .vt-detail-hero__content {
   position: relative;
-  width: 100%;
-  padding: 44px 0 52px;
+  padding: 72px 0;
   color: #f8fafc;
+}
+
+.vt-detail-breadcrumb,
+.vt-detail-hero__eyebrow,
+.vt-detail-hero__title,
+.vt-detail-hero__lead,
+.vt-detail-hero__actions {
+  max-width: 640px;
 }
 
 .vt-detail-breadcrumb {
@@ -2872,25 +2930,26 @@ main {
 }
 
 .vt-detail-hero__title {
-  margin: 0 0 14px;
-  font-size: clamp(2rem, 4.2vw, 3.05rem);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1.06;
+  margin: 0 0 18px;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
 }
 
 .vt-detail-hero__lead {
-  margin: 0 0 26px;
-  max-width: 54ch;
-  font-size: 1.06rem;
-  line-height: 1.55;
-  color: rgba(226, 232, 240, 0.93);
+  margin: 0 0 32px;
+  max-width: 60ch;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(226, 232, 240, 0.95);
 }
 
 .vt-detail-hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
+  align-items: center;
 }
 
 .vt-detail-hero__ghost {
@@ -2973,6 +3032,34 @@ main {
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 768px) {
+  .vt-detail-hero {
+    min-height: 500px;
+  }
+
+  .vt-detail-hero__content {
+    padding: 48px 0;
+  }
+
+  .vt-detail-hero__title {
+    font-size: 2.25rem;
+  }
+
+  .vt-detail-hero__lead {
+    font-size: 1rem;
+  }
+
+  .vt-detail-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vt-detail-hero__actions .button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 
 /* —— Vehicles catalog (/vehicles) —— */
 .vehicles-catalog {
@@ -3991,3 +4078,55 @@ main {
 }
 
 
+@media (max-width: 1100px) {
+  /* Forces ALL structural page layouts to stack instead of splitting into side-by-side columns */
+  .hero-grid,
+  .enterprise-grid,
+  .catalog-layout,
+  .pdp-layout,
+  .pdp-hero,
+  .partner-cta,
+  .home-hero__inner,
+  .vt-detail-body .vt-detail-split {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Allows secondary side elements to scale dynamically instead of retaining rigid pixel definitions */
+  .home-hero__panel,
+  .purchase-panel,
+  .catalog-sidebar,
+  .pdp-sidebar {
+    max-width: 100% !important;
+    width: 100% !important;
+    position: static !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .stats-grid,
+  .spotlight-grid,
+  .partner-grid,
+  .enterprise-list,
+  .vehicle-grid,
+  .footer-grid,
+  .mode-card-grid,
+  .partner-detail-grid,
+  .home-stat-strip__grid,
+  .home-feature-grid,
+  .home-steps,
+  .home-partner-grid,
+  .home-closing__cols,
+  .home-types-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden; /* Prevents the page from ever shifting horizontally */
+}
+
+main {
+  width: 100%;
+  overflow-x: hidden;
+}

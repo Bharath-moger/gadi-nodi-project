@@ -33,12 +33,15 @@ export function SiteHeaderShell({ isSignedIn, email }: SiteHeaderShellProps) {
 
     window.addEventListener("keydown", onKeyDown);
 
-    const previousOverflow = document.body.style.overflow;
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
 
     return () => {
       window.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
     };
   }, [menuOpen]);
 
@@ -86,13 +89,16 @@ export function SiteHeaderShell({ isSignedIn, email }: SiteHeaderShellProps) {
           </span>
         </button>
 
-        <div
-          id={panelId}
-          className={`site-header__panel ${
-            menuOpen ? "site-header__panel--open" : ""
-          }`}
-        >
-          <nav className="site-nav" aria-label="Primary">
+          <div id={panelId} className={`site-header__panel ${menuOpen ? "site-header__panel--open" : ""}`}>
+            <button
+              type="button"
+              className="site-header__close"
+              onClick={closeMenu}
+              aria-label="Close menu"
+            >
+              ✕
+            </button>
+            <nav className="site-nav" aria-label="Primary">
             {NAV_LINKS.map((item) => {
               const isActive = pathname === item.href;
 
@@ -112,7 +118,7 @@ export function SiteHeaderShell({ isSignedIn, email }: SiteHeaderShellProps) {
       tw:after:left-3
       tw:after:right-3
       tw:after:bottom-1
-      tw:after:h-[3px]
+      tw:after:h-0.75
       tw:after:bg-indigo-700
       tw:after:rounded-full
 
@@ -174,6 +180,7 @@ export function SiteHeaderShell({ isSignedIn, email }: SiteHeaderShellProps) {
           type="button"
           className="site-header__scrim"
           onClick={closeMenu}
+          aria-label="Close mobile menu overlay"
         >
           <span className="visually-hidden">Close menu</span>
         </button>
