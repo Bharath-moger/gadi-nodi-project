@@ -1565,66 +1565,7 @@ main {
   }
 }
 
-@media (max-width: 860px) {
-  .partner-admin {
-    height: auto;
-    min-height: 100vh;
-    overflow: visible;
-  }
-
-  .partner-admin__shell {
-    height: auto;
-    display: block;
-  }
-
-  .partner-admin__sidebar {
-    height: auto;
-    overflow: visible;
-    border-right: 0;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.24);
-  }
-
-  .partner-admin__account {
-    margin-top: 20px;
-  }
-
-  .partner-admin__main {
-    height: auto;
-    display: block;
-  }
-
-  .partner-admin__content {
-    height: auto;
-    overflow: visible;
-    padding: 20px 16px 32px;
-  }
-
-  .partner-admin-page__header {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .partner-admin-page__actions {
-    width: 100%;
-  }
-
-  .partner-admin-page__actions .button {
-    flex: 1;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .partner-vehicle-form__row {
-    grid-template-columns: 1fr;
-  }
-
-  .partner-inventory-table th,
-  .partner-inventory-table td {
-    padding: 12px 14px;
-  }
-}
-
+/* Leave non-partner admin core systems untouched */
 .app-admin {
   min-height: 100vh;
   height: 100vh;
@@ -2652,10 +2593,8 @@ main {
   scroll-padding-inline: 2px;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
-
-  /* Hide scrollbar */
-  scrollbar-width: none;      /* Firefox */
-  -ms-overflow-style: none;   /* IE/old Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .home-types-scroll::-webkit-scrollbar {
@@ -2688,18 +2627,15 @@ main {
   grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 10px;
   max-height: 220px;
-    overflow-y:auto;
- padding-bottom: 2px;
-
-  &::-webkit-scrollbar {
-        display: none;
-    }
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
+  overflow-y:auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-
+.home-hero-type-strip::-webkit-scrollbar {
+  display: none;
+}
 
 .home-hero-type-pill {
   display: inline-flex;
@@ -2725,24 +2661,24 @@ main {
 }
 
 .home-hero-type-pill__thumb {
-width: 44px !important;
+  width: 44px !important;
   min-width: 44px !important;
   height: 44px !important;
   border-radius: 50% !important;
   overflow: hidden !important; 
   flex-shrink: 0 !important;  
-  
   position: relative !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   background-color: #f1f5f9;
 }
+
 .home-hero-type-pill__img {
- width: 100% !important;
+  width: 100% !important;
   height: 100% !important;
   border-radius: 50% !important;
-object-fit: cover !important; 
+  object-fit: cover !important; 
   object-position: center !important ;
 }
 
@@ -2768,9 +2704,7 @@ object-fit: cover !important;
   background: #fff;
   border: 1px solid rgba(15, 23, 42, 0.09);
   box-shadow: 0 10px 34px rgba(15, 23, 42, 0.08);
-  transition:
-    transform 200ms ease,
-    box-shadow 200ms ease;
+  transition: transform 200ms ease, box-shadow 200ms ease;
   color: inherit;
 }
 
@@ -3814,9 +3748,7 @@ object-fit: cover !important;
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid var(--ph-line);
   box-shadow: var(--ph-shadow);
-  transition:
-    transform 200ms ease,
-    box-shadow 200ms ease;
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .partners-hub__card:hover {
@@ -4057,3 +3989,5 @@ object-fit: cover !important;
     justify-content: center;
   }
 }
+
+
