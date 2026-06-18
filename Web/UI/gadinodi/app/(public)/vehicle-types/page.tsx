@@ -30,7 +30,7 @@ export default async function VehicleTypesIndexPage() {
     <>
       {!apiAvailable ? <CatalogOfflineBanner /> : null}
 
-      <section className="page-hero vt-index-hero">
+      <section className="page-hero vt-index-hero tw:!py-3 tw:!mb-0">
         <div className="container">
           <div className="breadcrumb vt-index-breadcrumb">
             <Link href="/">Home</Link>
@@ -46,7 +46,7 @@ export default async function VehicleTypesIndexPage() {
         </div>
       </section>
 
-      <section className="section vt-index-section">
+      <section className="section vt-index-section tw:!100 tw:!py-9">
         <div className="container">
           <SectionHeading
             eyebrow="Browse categories"

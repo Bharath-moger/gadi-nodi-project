@@ -105,7 +105,7 @@ export default async function SparePartsPage({ searchParams }: SparePartsPagePro
 
       {!apiAvailable ? <CatalogOfflineBanner /> : null}
 
-      <section className="vehicles-catalog__hero" aria-labelledby="spare-parts-catalog-title">
+      <section className="vehicles-catalog__hero tw:!py-3 tw:!mb-0" aria-labelledby="spare-parts-catalog-title">
         <div className="vehicles-catalog__hero-bg" aria-hidden />
         <div className="container vehicles-catalog__hero-inner">
           <nav className="vehicles-catalog__breadcrumb" aria-label="Breadcrumb">
