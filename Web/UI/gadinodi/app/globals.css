@@ -467,7 +467,7 @@ main {
 .catalog-results__topline,
 .pdp-inline-meta {
   display: flex !important;
-    flex-direction: column !important;
+    
     align-items: flex-start !important;
     gap: 8px !important; /* Adds consistent spacing between options */
     width: 100% !important;
@@ -1079,7 +1079,6 @@ main {
 @media (max-width: 1100px) {
   .hero-grid,
   .enterprise-grid,
-  .catalog-layout,
   .pdp-layout,
   .pdp-hero,
   .partner-cta {
@@ -3336,17 +3335,25 @@ object-fit: cover !important;
   border: 1px solid var(--vc-line);
   box-shadow: var(--vc-shadow);
   position: -webkit-sticky; /* Safari compatibility */
-  position: sticky;
-  top: 10px; /* Distance from the top of the screen when stuck */
-  z-index: 50;
+  position: static;
 }
 
 
 .vehicles-catalog__panel--accent {
   background: linear-gradient(145deg, #1e1b4b 0%, #4338ca 52%, #3730a3 100%);
-  border-color: rgba(255, 255, 255, 0.12);
+  position: sticky !important;
+  top: 3px !important; /* height of main header + spacing */
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #e8eef6;
   box-shadow: 0 16px 40px rgba(30, 27, 75, 0.22);
+  z-index: 10;
+  border-radius: 12px;
+
+}
+.vehicles-catalog__filters-scroll {
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .vehicles-catalog__panel--accent .eyebrow {
@@ -3411,10 +3418,15 @@ object-fit: cover !important;
   gap: 14px;
   padding: 16px 18px;
   margin-bottom: 8px;
-  border-radius: var(--vc-radius);
-  background: rgba(255, 255, 255, 0.94);
+  border-radius:9px;
+  background: rgba(255, 255, 255, 0.951);
   border: 1px solid var(--vc-line);
   box-shadow: var(--vc-shadow);
+  
+  /* Sticky requirements */
+  position: sticky !important;
+  top: 71px !important; 
+  z-index: 10; /* Ensures it stays above other content while scrolling */
 }
 
 .vehicles-catalog__toolbar-summary {
@@ -3728,736 +3740,68 @@ object-fit: cover !important;
   margin-bottom: 0 !important;
 }
 
-@media (min-width: 1101px) {
-  .vehicles-catalog .vehicles-catalog__sidebar {
-    position: sticky;
-    top: 88px;
-    align-self: start;
-    max-height: calc(100vh - 100px);
-    overflow-y: auto;
-    
-    /* 1. Hide scrollbar for Safari, Chrome, and Opera */
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    
-    /* 2. Hide scrollbar for IE, Edge */
-    -ms-overflow-style: none;
-    
-    /* 3. Hide scrollbar for Firefox */
-    scrollbar-width: none;
-  }
-
-  .vehicles-catalog .vehicles-catalog__toolbar {
-    position: sticky;
-    top: 88px;
-    z-index: 11;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
-@media (max-width: 900px) {
-  .vehicles-catalog__hero-row {
-    grid-template-columns: 1fr;
-  }
-
-  .vehicles-catalog__hero-stats {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: stretch;
-  }
-
-  .vehicles-catalog__stat-card {
-    flex: 1 1 160px;
-    text-align: center;
-  }
+.vehicles-catalog__sidebar {
+  position: sticky;
+  top: 24px;
+  height: calc(100vh - 48px);
+  overflow-y: auto;
+  /* 1. Hide scrollbar for Firefox */
+  scrollbar-width: none; 
+  /* 2. Hide scrollbar for IE/Edge */
+  -ms-overflow-style: none;
+  overscroll-behavior: contain;
 }
 
-@media (max-width: 640px) {
-  .vehicles-catalog__notice {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .vehicles-catalog__notice-btn {
-    width: 100%;
-  }
-
-  .vehicles-catalog__active-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .vehicles-catalog__clear-all {
-    align-self: flex-start;
-  }
+/* 3. Hide scrollbar for Chrome, Safari, and Opera */
+.vehicles-catalog__sidebar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
-/* —— Partners index (/partners) —— */
-.partners-hub {
-  --ph-radius: 20px;
-  --ph-line: rgba(30, 27, 75, 0.09);
-  --ph-shadow: 0 8px 28px rgba(30, 27, 75, 0.07);
-  --ph-shadow-hover: 0 16px 44px rgba(30, 27, 75, 0.12);
-}
-
-.partners-hub__hero {
-  position: relative;
-  padding: clamp(28px, 5vw, 48px) 0 clamp(20px, 3vw, 32px);
-  overflow: clip;
-}
-
-.partners-hub__hero-bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 72% 70% at 100% 0%, rgba(99, 102, 241, 0.16), transparent 55%),
-    radial-gradient(ellipse 50% 45% at 0% 40%, rgba(124, 58, 237, 0.09), transparent 48%),
-    linear-gradient(180deg, #f8f9fd 0%, #eceef8 100%);
-}
-
-.partners-hub__hero-inner {
-  position: relative;
-}
-
-.partners-hub__breadcrumb {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 12px;
-  margin: 0 0 20px;
-  font-size: 0.875rem;
-  color: var(--muted);
-}
-
-.partners-hub__breadcrumb a {
-  color: var(--accent-deep);
-  font-weight: 600;
-}
-
-.partners-hub__breadcrumb a:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.partners-hub__hero-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: clamp(20px, 4vw, 40px);
-}
-
-.partners-hub__intro {
-  flex: 1;
-  min-width: min(100%, 320px);
-  max-width: 46rem;
-}
-
-.partners-hub__intro h1 {
-  margin: 0 0 14px;
-  font-size: clamp(1.85rem, 4vw, 2.55rem);
-  line-height: 1.08;
-  letter-spacing: -0.035em;
-}
-
-.partners-hub__lead {
-  margin: 0;
-  font-size: 1.02rem;
-  line-height: 1.58;
-  color: var(--muted);
-}
-
-.partners-hub__stat {
-  flex-shrink: 0;
-  padding: 18px 22px;
-  border-radius: var(--ph-radius);
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--ph-line);
-  box-shadow: var(--ph-shadow);
-  text-align: center;
-  min-width: 140px;
-}
-
-.partners-hub__stat-value {
-  display: block;
-  font-size: clamp(1.75rem, 3.5vw, 2.2rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  color: var(--foreground);
-}
-
-.partners-hub__stat-label {
-  display: block;
-  margin-top: 8px;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--muted);
-}
-
-.partners-hub__buyer-strip {
-  margin-top: clamp(20px, 4vw, 28px);
-  padding: 14px 18px;
-  border-radius: var(--ph-radius);
-  background: rgba(99, 102, 241, 0.07);
-  border: 1px solid rgba(99, 102, 241, 0.15);
-}
-
-.partners-hub__buyer-strip p {
-  margin: 0;
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  color: var(--foreground);
-}
-
-.partners-hub__main {
-  padding: clamp(48px, 7vw, 80px) 0 clamp(56px, 8vw, 88px);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(237, 242, 252, 0.75) 100%);
-}
-
-.partners-hub__section-heading {
-  margin-bottom: clamp(28px, 4vw, 44px) !important;
-}
-
-.partners-hub__grid {
+/* 2. The Wrapper: Ensure grid layout */
+.vehicles-catalog__wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
-  gap: clamp(18px, 2.5vw, 24px);
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  align-items: start;
 }
 
-.partners-hub__card {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  padding: clamp(22px, 3vw, 28px);
-  border-radius: var(--ph-radius);
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid var(--ph-line);
-  box-shadow: var(--ph-shadow);
-  transition:
-    transform 200ms ease,
-    box-shadow 200ms ease;
+.vehicles-catalog__sidebar::-webkit-scrollbar {
+  display: none;
 }
 
-.partners-hub__card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--ph-shadow-hover);
+/* 3. The Blue Card: Make it sticky */
+.your-blue-card-selector {
+  position: sticky;
+  top: 3px; /* Adjust based on your header height */
+  z-index: 10;
 }
 
-.partners-hub__card-head {
-  margin-bottom: 14px;
+/* 4. Seller Network: Remains in flow */
+.your-seller-network-selector {
+  /* No special positioning needed, it will scroll normally */
+}
+/* 3. Main Content: Allows the 12 vehicles to scroll normally */
+.vehicles-catalog__main {
+  /* No special overflow needed here, it will take the remaining grid space */
+  overflow-y: visible;
+}
+.vehicles-catalog__sidebar-inner {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 20px; /* Adjust as needed */
+  margin-right: -20px; /* Pulls the scrollbar out of view */
 }
 
-.partners-hub__badge {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  padding: 0 11px;
-  margin-bottom: 12px;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: rgba(99, 102, 241, 0.12);
-  color: var(--accent-deep);
+
+/* Mobile Filter Section */
+.mobile-filters {
+  display: none;
 }
 
-.partners-hub__card-title {
-  margin: 0 0 8px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  color: var(--foreground);
-}
 
-.partners-hub__audience {
-  margin: 0;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--muted);
-  line-height: 1.4;
-}
-
-.partners-hub__desc {
-  margin: 0 0 16px;
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  color: var(--muted);
-  flex: 1;
-}
-
-.partners-hub__highlights {
-  margin: 0 0 18px;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 8px;
-}
-
-.partners-hub__highlights li {
-  position: relative;
-  padding-left: 22px;
-  font-size: 0.875rem;
-  line-height: 1.45;
-  color: var(--foreground);
-}
-
-.partners-hub__highlights li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.45em;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), #8b5cf6);
-  opacity: 0.9;
-}
-
-.partners-hub__metrics {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin: 0 0 20px;
-  padding: 14px 12px;
-  padding-inline-start: 0;
-  border-radius: 14px;
-  background: rgba(99, 102, 241, 0.05);
-  border: 1px solid rgba(99, 102, 241, 0.1);
-  list-style: none;
-}
-
-.partners-hub__metric {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 4px;
-  min-width: 0;
-}
-
-.partners-hub__metric-label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--muted);
-  line-height: 1.25;
-}
-
-.partners-hub__metric-value {
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--foreground);
-  letter-spacing: -0.02em;
-}
-
-.partners-hub__card-cta {
-  margin-top: auto;
-  width: 100%;
-  justify-content: center;
-}
-
-.partners-hub__empty {
-  max-width: 480px;
-  margin: 0 auto;
-  padding: clamp(36px, 6vw, 52px) 24px;
-  text-align: center;
-  border-radius: var(--ph-radius);
-  border: 1px dashed rgba(99, 102, 241, 0.28);
-  background: rgba(255, 255, 255, 0.75);
-}
-
-.partners-hub__empty-title {
-  margin: 0 0 10px;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.partners-hub__empty-copy {
-  margin: 0 0 20px;
-  color: var(--muted);
-  font-size: 0.98rem;
-  line-height: 1.55;
-}
-
-.partners-hub__closing {
-  padding: clamp(48px, 8vw, 80px) 0;
-  background: linear-gradient(155deg, #1e1b4b 0%, #3730a3 48%, #312e81 100%);
-  color: #e8eef6;
-}
-
-.partners-hub__closing-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: clamp(24px, 4vw, 40px);
-}
-
-.partners-hub__closing .eyebrow {
-  color: rgba(251, 191, 36, 0.92);
-}
-
-.partners-hub__closing-title {
-  margin: 0 0 12px;
-  font-size: clamp(1.45rem, 3vw, 2rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  max-width: 22ch;
-}
-
-.partners-hub__closing-lead {
-  margin: 0;
-  max-width: 46ch;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(226, 232, 240, 0.88);
-}
-
-.partners-hub__closing-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.partners-hub__closing .button--primary {
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-}
-
-.partners-hub__closing .button--secondary {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.28);
-  color: #f8fafc;
-}
-
-.partners-hub__closing .button--secondary:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.38);
-  color: #fff;
-}
-
-@media (max-width: 720px) {
-  .partners-hub__metrics {
-    grid-template-columns: 1fr;
-  }
-
-  .partners-hub__metric {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-    text-align: left;
-    width: 100%;
-  }
-
-  .partners-hub__metric-label {
-    text-align: left;
-    max-width: 55%;
-  }
-
-  .partners-hub__metric-value {
-    text-align: right;
-    flex-shrink: 0;
-  }
-
-  .partners-hub__closing-inner {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .partners-hub__closing-actions {
-    flex-direction: column;
-  }
-
-  .partners-hub__closing-actions .button {
-    width: 100%;
-    justify-content: center;
-  }
-} 
-/* ==========================================================================
-   Complete Desktop Layout Breakout (Min-Width: 1024px)
- /* ==========================================================================
-   Desktop, Laptop & Tablet Responsive Engine (From 781px Wide and Above)
-   ========================================================================== */
-@media (min-width: 999px) {
-  
-  /* 1. Force Main Split: Left Sidebar (280px) & Right Listings Content (1fr) */
-  .vehicles-catalog .vehicles-catalog__layout.catalog-layout {
-    display: grid !important;
-    grid-template-columns: 280px 1fr !important;
-    gap: 40px !important;
-    align-items: start !important;
-    max-width: 1280px !important;
-    margin: 0 auto !important;
-    padding: 0 24px !important;
-    box-sizing: border-box !important;
-    width: 100% !important;
-  }
-
-  /* 2. Format Sidebar Panel Container Boundaries */
-  .vehicles-catalog .vehicles-catalog__sidebar.catalog-sidebar {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 28px !important;
-    position: sticky !important;
-    top: 100px !important; /* Prevents slipping behind headers or nav bars */
-    width: 280px !important;
-    min-width: 280px !important;
-    max-width: 280px !important;
-    box-sizing: border-box !important;
-    align-self: start !important;
-  }
-
-  /* Ensure structural filter sub-blocks take full sidebar width */
-  .vehicles-catalog .vehicles-catalog__filter-block.filter-group {
-    width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  /* 3. Transform Horizontal Scrolling Pills into an Elegant Vertical Menu */
-  .vehicles-catalog .vehicles-catalog__chips.chip-row {
-    display: flex !important;
-    flex-direction: column !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-    width: 100% !important;
-    overflow-x: visible !important; /* Disables mobile touch-sliding track */
-  }
-
-  /* 4. Reset Chip Buttons & Show More Action Links to Span Full Column Width */
-  .vehicles-catalog .vehicles-catalog__chips.chip-row .chip,
-  .vehicles-catalog .vehicles-catalog__chips.chip-row .vehicles-catalog__toggle-button {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 12px 16px !important;
-    margin: 0 !important;
-    text-align: left !important;
-    flex: unset !important; /* Breaks mobile squishing behaviors */
-  }
-
-  /* Ensure arrow alignment fits the vertical block grid */
-  .vehicles-catalog .vehicles-catalog__toggle-button .arrow {
-    margin-left: auto !important;
-  }
-
-  /* 5. Set up the Right Column Layout Panel */
-  .vehicles-catalog .vehicles-catalog__results.catalog-results {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 24px !important;
-    width: 100% !important;
-  }
-
-  /* 6. Standardize "12 vehicles" Counter Box Element on the Right Side */
-  .vehicles-catalog .vehicles-catalog__toolbar {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100% !important;
-    padding: 16px 24px !important;
-    background: #ffffff !important;
-    border-radius: 12px !important;
-    border: 1px solid #eceef8 !important;
-    box-sizing: border-box !important;
-    position: static !important; /* Clears sticky collision locks */
-    margin-bottom: 8px !important;
-  }
-
-  .vehicles-catalog .vehicles-catalog__toolbar-summary {
-    font-size: 1.15rem !important;
-    margin: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-  }
-
-  /* 7. Grid Matrix For Vehicle Listings Cards on Right Side */
-  .vehicles-catalog .vehicles-catalog__grid.vehicle-grid {
-    display: grid !important;
-    /* Dynamically manages columns. Adapts gracefully between 2 or 3 wide based on panel size */
-    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)) !important;
-    gap: 24px !important;
-    width: 100% !important;
-  }
-}
-/* /* ==========================================================================
-   Complete Mobile & Tablet Responsive Engine (Up to 780px Wide)
-   ========================================================================== */
-@media (max-width: 999px) {
-  
-  /* 1. Reset Main Catalog Layout Structure into a Column Stacker */
-  .vehicles-catalog__layout.catalog-layout {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 24px !important;
-    width: 100% !important;
-    padding: 0 16px !important;
-    box-sizing: border-box !important;
-  }
-
-  /* 2. Setup Sidebar Wrapper Layout Flow */
-  .vehicles-catalog__sidebar.catalog-sidebar {
-    order: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px !important;
-    width: 100% !important;
-    margin-top: 16px !important;
-    /* Permits children sticky values to calculate properly against the page root */
-    overflow: visible !important; 
-  }
-
-  /* Structural filter header text info */
-  .vehicles-catalog__filters-head {
-    order: 1 !important;
-  }
-
-  /* 3. Lock Blue Card STICKY right below the Gadinodi header */
-  .vehicles-catalog__panel.vehicles-catalog__panel--accent {
-    order: 2 !important; 
-    position: -webkit-sticky !important;
-    position: sticky !important;
-    top: 56px !important; /* Adjust exactly to your main Gadinodi header height */
-    z-index: 10 !important; /* Kept lower than main header (usually z-index: 100+) so it slides underneath */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
-    margin-top: 4px !important;
-    margin-bottom: 8px !important;
-  }
-
-  /* 4. Dropdowns Accordion Containers sit cleanly below the sticky cards */
-  .vehicles-catalog__filter-block.filter-group {
-    order: 3 !important; 
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0px !important;
-    width: 100% !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-    padding-bottom: 12px !important;
-    background: #ffffff !important;
-  }
-
-  /* 5. Keep Seller Network card sticky right beneath the blue card */
-  .vehicles-catalog__panel:not(.vehicles-catalog__panel--accent) {
-    order: 4 !important;
-    position: -webkit-sticky !important;
-    position: sticky !important;
-    /* Calculated stack height: Header height (56px) + Blue card height (~170px) */
-    top: 236px !important; 
-    z-index: 9 !important; /* Layered slightly below the blue card */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
-  }
-
-  /* 6. Interactive Category Header Layout */
-  .vehicles-catalog__filter-label {
-    margin: 0 !important;
-    padding: 12px 0 !important;
-    font-size: 0.85rem !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
-    color: var(--muted, #666);
-    cursor: pointer !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    -webkit-user-select: none;
-    user-select: none;
-  }
-
-  .vehicles-catalog__filter-label::after {
-    content: "▼" !important;
-    font-size: 0.7rem !important;
-    transition: transform 0.2s ease !important;
-    display: inline-block !important;
-    opacity: 0.6;
-  }
-
-  .vehicles-catalog__filter-block.filter-group.js-mobile-expanded .vehicles-catalog__filter-label::after {
-    transform: rotate(180deg) !important;
-  }
-
-  /* 7. Enforce Full-Width Left-to-Right Scrolling Track */
-  .vehicles-catalog__filter-block.filter-group .vehicles-catalog__chips.chip-row {
-    display: none !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .vehicles-catalog__filter-block.filter-group.js-mobile-expanded .vehicles-catalog__chips.chip-row {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-    overflow-x: auto !important;
-    padding-top: 8px !important;
-    padding-bottom: 12px !important;
-    scrollbar-width: none !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  .vehicles-catalog__filter-block.filter-group .vehicles-catalog__chips.chip-row::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  .vehicles-catalog__chips.chip-row .chip,
-  .vehicles-catalog__chips.chip-row a {
-    flex: 0 0 auto !important;
-    display: inline-flex !important;
-    width: auto !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 8px 16px !important;
-    border-radius: 999px !important;
-    white-space: nowrap !important;
-    font-size: 0.875rem !important;
-    box-sizing: border-box !important;
-  }
-
-  .vehicles-catalog__chips.chip-row .vehicles-catalog__toggle-button {
-    flex: 0 0 auto !important;
-    display: inline-flex !important;
-    width: auto !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 6px !important;
-    padding: 8px 14px !important;
-    background: rgba(99, 102, 241, 0.08) !important;
-    border: 1px dashed rgba(99, 102, 241, 0.3) !important;
-    color: #4f46e5 !important;
-    border-radius: 999px !important;
-    font-size: 0.875rem !important;
-    font-weight: 600 !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-  }
-
-  /* 8. Bottom Results Feed Column Reset */
-  .vehicles-catalog__results.catalog-results {
-    order: 2 !important; 
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 20px !important;
-    width: 100% !important;
-  }
-
-  .vehicles-catalog__grid.vehicle-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    width: 100% !important;
-  }
-
-  .vehicles-catalog__toolbar {
-    width: 100% !important;
-    box-sizing: border-box !important;
-    margin: 0 !important;
-  }
-}
