@@ -121,7 +121,7 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
     <>
       <StructuredData data={schema} />
 
-      <section className="page-hero">
+      <section className="page-hero tw:!py-3 tw:!mb-0">
         <div className="container">
           <div className="breadcrumb">
             <Link href="/">Home</Link>
@@ -131,7 +131,7 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
             <span>{vehicle.title}</span>
           </div>
 
-          <div className="pdp-hero pdp-hero--image-first tw:gap-6">
+          <div className="pdp-hero pdp-hero--image-first tw:gap-4">
             <div
               className="pdp-hero__media pdp-hero__media--contain tw:min-h-[420px] tw:overflow-hidden tw:bg-white"
               style={{ background: vehicle.imageUrls[0] ? "#ffffff" : vehicle.heroTone }}
@@ -201,8 +201,8 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
           </div>
 
           {vehicle.imageUrls.length > 1 ? (
-            <div
-              className="vehicle-gallery tw:flex tw:gap-4 tw:overflow-x-auto tw:scroll-smooth tw:snap-x tw:snap-mandatory tw:pb-2"
+           <div
+  className="vehicle-gallery tw:flex tw:gap-3 tw:overflow-x-auto tw:scroll-smooth tw:snap-x tw:snap-mandatory tw:pb-2 tw:!mt-4"
               aria-label={`${vehicle.title} image gallery`}
             >
               {vehicle.imageUrls.map((url, index) => (
@@ -224,9 +224,9 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
         </div>
       </section>
 
-      <section className="section">
-        <div className="container pdp-layout">
-          <div className="pdp-content">
+      <section className="section tw:!py-8 tw:md:!py-12">
+        <div className="container pdp-layout tw:!gap-5">
+          <div className="pdp-content tw:!gap-4">
             <article className="panel">
               <p className="eyebrow">Overview</p>
               <h2>Why buyers shortlist this vehicle</h2>
@@ -259,7 +259,7 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
             </article>
           </div>
 
-          <aside className="pdp-sidebar">
+          <aside className="pdp-sidebar tw:!gap-4">
             <article className="panel">
               <p className="eyebrow">Seller details</p>
               <h3>{vehicle.sellerName}</h3>
@@ -283,7 +283,7 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
         </div>
       </section>
 
-      <section className="section section--muted">
+      <section className="section section--muted tw:!py-8 tw:md:!py-12">
         <div className="container">
           <div className="section-heading">
             <p className="eyebrow">Similar stock</p>
