@@ -121,7 +121,7 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
             <span>Vehicles</span>
           </nav>
 
-          <div className="vehicles-catalog__hero-row">
+          <div className="vehicles-catalog__hero-row tw:flex tw:flex-col tw:gap-4 tw:md:grid tw:md:grid-cols-[1fr_auto]">
             <div className="vehicles-catalog__intro">
               <p className="eyebrow">Browse inventory</p>
               <h1 id="vehicles-catalog-title">Vehicles from verified sellers</h1>
@@ -130,26 +130,26 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
                 send it to someone else.
               </p>
             </div>
-            <div className="vehicles-catalog__hero-stats">
-              <div className="vehicles-catalog__stat-card">
-                <span className="vehicles-catalog__stat-value">{filteredVehicles.length}</span>
+            <div className="vehicles-catalog__hero-stats tw:flex tw:flex-row tw:items-stretch tw:gap-3 tw:md:flex-col">
+<div className="vehicles-catalog__stat-card tw:text-center tw:!py-2 tw:!px-6 tw:!w-auto tw:!shadow-none tw:!flex-none">
+                  <span className="vehicles-catalog__stat-value">{filteredVehicles.length}</span>
                 <span className="vehicles-catalog__stat-label">
                   {hasActiveFilters ? "Matching listings" : "Live listings"}
                 </span>
               </div>
               {isSignedIn ? (
-                <span className="vehicles-catalog__status-pill vehicles-catalog__status-pill--ok">
-                  Signed in
-                </span>
+         <span className="vehicles-catalog__status-pill vehicles-catalog__status-pill--ok tw:!flex tw:!items-center tw:!justify-center tw:!rounded-3xl tw:!text-sm tw:!px-3 tw:!min-h-0 tw:!h-full tw:!w-24 tw:!py-4 tw:!self-center">
+  Signed in
+</span>
               ) : (
-                <Link className="vehicles-catalog__status-pill" href="/login">
-                  Sign in to enquire
-                </Link>
+          <Link className="vehicles-catalog__status-pill tw:!flex tw:!items-center tw:!justify-center tw:!rounded-3xl tw:!text-xs tw:!px-3 tw:!min-h-0 tw:!h-full tw:!w-32 tw:!py-4 tw:!self-center tw:!whitespace-nowrap" href="/login">
+  Sign in to enquire
+</Link>
               )}
             </div>
           </div>
 
-          <div className="vehicles-catalog__notice">
+          <div className="vehicles-catalog__notice tw:flex tw:flex-col tw:gap-3 tw:p-4 tw:md:flex-row tw:md:items-center">
             <p className="vehicles-catalog__notice-text">
               {isSignedIn ? (
                 <>
@@ -172,11 +172,11 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
               )}
             </p>
             {!isSignedIn ? (
-              <Link className="button button--secondary vehicles-catalog__notice-btn" href="/register">
+              <Link className="button button--secondary vehicles-catalog__notice-btn tw:w-full tw:md:w-auto" href="/register">
                 Create account
               </Link>
             ) : (
-              <Link className="button button--secondary vehicles-catalog__notice-btn" href="/partners">
+              <Link className="button button--secondary vehicles-catalog__notice-btn tw:w-full tw:md:w-auto" href="/partners">
                 Seller types
               </Link>
             )}
@@ -184,8 +184,8 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
         </div>
       </section>
 
-      <section className="vehicles-catalog__main">
-        <div className="container catalog-layout vehicles-catalog__layout">
+<section className="vehicles-catalog__main tw:!pt-2 tw:md:!pt-[clamp(40px,6vw,72px)]">   
+     <div className="container catalog-layout vehicles-catalog__layout">
           <aside className="catalog-sidebar vehicles-catalog__sidebar">
             <div className="vehicles-catalog__filters-head">
               <p className="eyebrow">Filters</p>
