@@ -29,6 +29,7 @@ interface VehiclesPageProps {
     fuel?: string | string[];
     showAllTypes?: string;
     showAllFuels?: string;
+    activeMobileGroup?: string; // New URL key tracking which row filter is dropped down
   }>;
 }
 
@@ -47,6 +48,7 @@ function buildFilterHref(
     fuel: readParam(searchParams.fuel),
     showAllTypes: readParam(searchParams.showAllTypes),
     showAllFuels: readParam(searchParams.showAllFuels),
+    activeMobileGroup: readParam(searchParams.activeMobileGroup),
   };
 
   const nextValue =
@@ -68,10 +70,31 @@ function hrefClearingFilter(
     fuel: readParam(searchParams.fuel),
     showAllTypes: readParam(searchParams.showAllTypes),
     showAllFuels: readParam(searchParams.showAllFuels),
+    activeMobileGroup: readParam(searchParams.activeMobileGroup),
   };
   return `/vehicles${buildQueryString({
     ...current,
     [clearKey]: undefined,
+  })}`;
+}
+
+// Generates correct URL parameters for toggling open an active slider target section
+function buildMobileGroupToggleHref(
+  searchParams: Record<string, string | string[] | undefined>,
+  groupName: string
+) {
+  const current = {
+    bodyStyle: readParam(searchParams.bodyStyle),
+    condition: readParam(searchParams.condition),
+    fuel: readParam(searchParams.fuel),
+    showAllTypes: readParam(searchParams.showAllTypes),
+    showAllFuels: readParam(searchParams.showAllFuels),
+    activeMobileGroup: readParam(searchParams.activeMobileGroup),
+  };
+
+  return `/vehicles${buildQueryString({
+    ...current,
+    activeMobileGroup: current.activeMobileGroup === groupName ? undefined : groupName,
   })}`;
 }
 
@@ -88,6 +111,7 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
 
   const showAllTypes = readParam(resolvedSearchParams.showAllTypes) === "true";
   const showAllFuels = readParam(resolvedSearchParams.showAllFuels) === "true";
+  const activeMobileGroup = readParam(resolvedSearchParams.activeMobileGroup) || "";
 
   const [{ filteredVehicles, partnerTypes, facets, apiAvailable }, session] =
     await Promise.all([
@@ -155,12 +179,10 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
               </p>
             </div>
             <div className="vehicles-catalog__hero-stats">
-              <div className="vehicles-catalog__stat-card">
-                <span className="vehicles-catalog__stat-value">{filteredVehicles.length}</span>
-                <span className="vehicles-catalog__stat-label">
-                  {hasActiveFilters ? "Matching listings" : "Live listings"}
-                </span>
-              </div>
+              <div className="vehicles-catalog__stat-value">{filteredVehicles.length}</div>
+              <span className="vehicles-catalog__stat-label">
+                {hasActiveFilters ? "Matching listings" : "Live listings"}
+              </span>
               {isSignedIn ? (
                 <span className="vehicles-catalog__status-pill vehicles-catalog__status-pill--ok">
                   Signed in
@@ -209,103 +231,131 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
       </section>
 
       <section className="vehicles-catalog__main">
-        <div
-          className="
-            container
-            catalog-layout
-            vehicles-catalog__layout
-            grid
-            items-start
-            gap-6
-
-            /* Desktop */
-            min-[999px]:grid-cols-[minmax(280px,300px)_minmax(0,1fr)]
-
-            /* Tablet */
-            min-[768px]:max-[998px]:grid-cols-[minmax(260px,280px)_minmax(0,1fr)]
-            min-[768px]:max-[998px]:gap-5
-          "
-        >
-          <aside
-            className="
-              /* Hide on all devices by default */
-              hidden 
-              
-              /* Show as a flex column only on screens 999px and wider */
-              min-[999px]:flex 
-              flex-col
-              gap-5
-              vehicles-catalog__sidebar
-              catalog-sidebar
-              sticky
-              top-[88px]
-            "
-          >
+        <div className="container catalog-layout vehicles-catalog__layout">
+          <aside className="catalog-sidebar vehicles-catalog__sidebar">
             <div className="vehicles-catalog__filters-head">
               <p className="eyebrow">Filters</p>
               <h2 className="vehicles-catalog__filters-title">Refine results</h2>
-
               <p className="vehicles-catalog__filters-hint">
                 Tap to toggle. Combine filters; links stay bookmarkable.
               </p>
             </div>
 
-            <article
-              className="
-                vehicles-catalog__panel
-                vehicles-catalog__panel--accent
-
-                sticky
-                top-0
-                z-10
-
-                min-[768px]:top-[88px]
-              "
-            >
+            <article className="vehicles-catalog__panel vehicles-catalog__panel--accent">
               <p className="eyebrow">Browse by type</p>
-
-              <h3 className="vehicles-catalog__panel-title">
-                Vehicle type hubs
-              </h3>
-
+              <h3 className="vehicles-catalog__panel-title">Vehicle type hubs</h3>
               <p className="vehicles-catalog__panel-copy">
                 Imagery, guides, and live counts—from bicycles to heavy equipment.
               </p>
-
-              <Link
-                className="vehicles-catalog__panel-link"
-                href="/vehicle-types"
-              >
+              <Link className="vehicles-catalog__panel-link" href="/vehicle-types">
                 Explore hubs <span aria-hidden>→</span>
               </Link>
             </article>
 
-            {/* 1. Condition Filter Section */}
-            <div
-              className={`
-                hidden
-                md:block
-                vehicles-catalog__filter-block
-                filter-group
-                ${condition ? " js-mobile-expanded" : ""}
-              `}
-            >
-              <p className="vehicles-catalog__filter-label">Condition</p>
+<div className="mobile-sticky-wrapper">
 
+  <div className="custom-filter-row mobile-only-filter-bar">
+    <Link
+      href={buildMobileGroupToggleHref(resolvedSearchParams, "condition")}
+      scroll={false}
+      className={`vehicles-catalog__filter-label mobile-pill-btn ${
+        activeMobileGroup === "condition" ? "is-active-pill" : ""
+      }`}
+    >
+      Condition
+    </Link>
+
+    <Link
+      href={buildMobileGroupToggleHref(resolvedSearchParams, "bodyStyle")}
+      scroll={false}
+      className={`vehicles-catalog__filter-label mobile-pill-btn ${
+        activeMobileGroup === "bodyStyle" ? "is-active-pill" : ""
+      }`}
+    >
+      Vehicle type
+    </Link>
+
+    <Link
+      href={buildMobileGroupToggleHref(resolvedSearchParams, "fuel")}
+      scroll={false}
+      className={`vehicles-catalog__filter-label mobile-pill-btn ${
+        activeMobileGroup === "fuel" ? "is-active-pill" : ""
+      }`}
+    >
+      Fuel
+    </Link>
+  </div>
+
+  <div className="sticky-vehicle-card">
+    <div className="vehicles-catalog__toolbar-summary">
+      <strong>{filteredVehicles.length}</strong>
+      <span>
+        {filteredVehicles.length === 1 ? "vehicle" : "vehicles"}
+        {hasActiveFilters ? " · filtered" : ""}
+      </span>
+    </div>
+
+    {hasActiveFilters ? (
+      <div className="vehicles-catalog__active-row">
+        <span className="vehicles-catalog__active-label">Active</span>
+
+        <div className="vehicles-catalog__active-pills">
+          {condition ? (
+            <Link
+              href={hrefClearingFilter(resolvedSearchParams, "condition")}
+              className="vehicles-catalog__active-pill"
+              scroll={false}
+            >
+              <span>{condition}</span>
+              <span className="vehicles-catalog__active-pill-x">×</span>
+            </Link>
+          ) : null}
+
+          {bodyStyle ? (
+            <Link
+              href={hrefClearingFilter(resolvedSearchParams, "bodyStyle")}
+              className="vehicles-catalog__active-pill"
+              scroll={false}
+            >
+              <span>{bodyStyle}</span>
+              <span className="vehicles-catalog__active-pill-x">×</span>
+            </Link>
+          ) : null}
+
+          {fuel ? (
+            <Link
+              href={hrefClearingFilter(resolvedSearchParams, "fuel")}
+              className="vehicles-catalog__active-pill"
+              scroll={false}
+            >
+              <span>{fuel}</span>
+              <span className="vehicles-catalog__active-pill-x">×</span>
+            </Link>
+          ) : null}
+        </div>
+
+        <Link
+          className="vehicles-catalog__clear-all"
+          href="/vehicles"
+          scroll={false}
+        >
+          Clear all
+        </Link>
+      </div>
+    ) : null}
+
+  </div>
+</div>
+
+            {/* 1. Condition Filter Section */}
+            <div className={`vehicles-catalog__filter-block filter-group ${condition ? " js-mobile-expanded" : ""} ${activeMobileGroup === "condition" ? "is-expanded" : ""}`}>
+              <p className="vehicles-catalog__filter-label desktop-only-label">Condition</p>
               <div className="chip-row vehicles-catalog__chips">
                 {facets.conditions.map((value) => (
                   <Link
                     key={value}
-                    className={
-                      condition === value
-                        ? "chip chip--active"
-                        : "chip"
-                    }
-                    href={buildFilterHref(
-                      resolvedSearchParams,
-                      "condition",
-                      value
-                    )}
+                    className={condition === value ? "chip chip--active" : "chip"}
+                    href={buildFilterHref(resolvedSearchParams, "condition", value)}
                     scroll={false}
                   >
                     {value}
@@ -315,29 +365,14 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
             </div>
 
             {/* 2. Vehicle Type Filter Section */}
-            <div
-              className={`vehicles-catalog__filter-block filter-group${
-                bodyStyle ? " js-mobile-expanded" : ""
-              }`}
-            >
-              <p className="vehicles-catalog__filter-label">
-                Vehicle type
-              </p>
-
+            <div className={`vehicles-catalog__filter-block filter-group ${bodyStyle ? " js-mobile-expanded" : ""} ${activeMobileGroup === "bodyStyle" ? "is-expanded" : ""}`}>
+              <p className="vehicles-catalog__filter-label desktop-only-label">Vehicle type</p>
               <div className="chip-row vehicles-catalog__chips">
                 {visibleCategories.map((value) => (
                   <Link
                     key={value}
-                    className={
-                      bodyStyle === value
-                        ? "chip chip--active"
-                        : "chip"
-                    }
-                    href={buildFilterHref(
-                      resolvedSearchParams,
-                      "bodyStyle",
-                      value
-                    )}
+                    className={bodyStyle === value ? "chip chip--active" : "chip"}
+                    href={buildFilterHref(resolvedSearchParams, "bodyStyle", value)}
                     scroll={false}
                   >
                     {value}
@@ -351,54 +386,28 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
                       condition: condition,
                       bodyStyle: bodyStyle,
                       fuel: fuel,
-                      showAllFuels: showAllFuels
-                        ? "true"
-                        : undefined,
-                      showAllTypes: showAllTypes
-                        ? undefined
-                        : "true",
+                      showAllFuels: showAllFuels ? "true" : undefined,
+                      showAllTypes: showAllTypes ? undefined : "true",
+                      activeMobileGroup: activeMobileGroup || undefined
                     })}`}
                     scroll={false}
                   >
-                    <span>
-                      {showAllTypes
-                        ? "Show less"
-                        : "Show more"}
-                    </span>
-
-                    <span className="arrow">
-                      {showAllTypes ? "▲" : "▼"}
-                    </span>
+                    <span>{showAllTypes ? "Show less" : "Show more"}</span>
+                    <span className="arrow">{showAllTypes ? "▲" : "▼"}</span>
                   </Link>
                 )}
               </div>
             </div>
 
-            <div
-              className={`
-                hidden
-                md:block
-                vehicles-catalog__filter-block
-                filter-group
-                ${fuel ? " js-mobile-expanded" : ""}
-              `}
-            >
-              <p className="vehicles-catalog__filter-label">Fuel</p>
-
+            {/* 3. Fuel Filter Section */}
+            <div className={`vehicles-catalog__filter-block filter-group ${fuel ? " js-mobile-expanded" : ""} ${activeMobileGroup === "fuel" ? "is-expanded" : ""}`}>
+              <p className="vehicles-catalog__filter-label desktop-only-label">Fuel</p>
               <div className="chip-row vehicles-catalog__chips">
                 {visibleFuels.map((value) => (
                   <Link
                     key={value}
-                    className={
-                      fuel === value
-                        ? "chip chip--active"
-                        : "chip"
-                    }
-                    href={buildFilterHref(
-                      resolvedSearchParams,
-                      "fuel",
-                      value
-                    )}
+                    className={fuel === value ? "chip chip--active" : "chip"}
+                    href={buildFilterHref(resolvedSearchParams, "fuel", value)}
                     scroll={false}
                   >
                     {value}
@@ -412,24 +421,14 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
                       condition: condition,
                       bodyStyle: bodyStyle,
                       fuel: fuel,
-                      showAllTypes: showAllTypes
-                        ? "true"
-                        : undefined,
-                      showAllFuels: showAllFuels
-                        ? undefined
-                        : "true",
+                      showAllTypes: showAllTypes ? "true" : undefined,
+                      showAllFuels: showAllFuels ? undefined : "true",
+                      activeMobileGroup: activeMobileGroup || undefined
                     })}`}
                     scroll={false}
                   >
-                    <span>
-                      {showAllFuels
-                        ? "Show less"
-                        : "Show more"}
-                    </span>
-
-                    <span className="arrow">
-                      {showAllFuels ? "▲" : "▼"}
-                    </span>
+                    <span>{showAllFuels ? "Show less" : "Show more"}</span>
+                    <span className="arrow">{showAllFuels ? "▲" : "▼"}</span>
                   </Link>
                 )}
               </div>
@@ -437,176 +436,72 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
 
             <article className="vehicles-catalog__panel">
               <p className="eyebrow">Seller network</p>
-
-              <h3 className="vehicles-catalog__panel-title">
-                Who lists here
-              </h3>
-
+              <h3 className="vehicles-catalog__panel-title">Who lists here</h3>
               <p className="vehicles-catalog__panel-copy">
                 Compare garages, showrooms, and independents—same listing format across seller types.
               </p>
-
               <ul className="vehicles-catalog__seller-list compact-list">
                 {partnerTypes.slice(0, 4).map((partnerType) => (
-                  <li key={partnerType.slug}>
-                    {partnerType.name}
-                  </li>
+                  <li key={partnerType.slug}>{partnerType.name}</li>
                 ))}
               </ul>
             </article>
           </aside>
 
-          <div
-            className="
-              catalog-results
-              vehicles-catalog__results
-              min-w-0
-            "
-          >
-            {/* Mobile Active Filters Wrapper */}
-            <div className="block min-[701px]:hidden mb-6">
-              {hasActiveFilters && (
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {condition && (
-                    <Link
-                      href={hrefClearingFilter(
-                        resolvedSearchParams,
-                        "condition"
-                      )}
-                      className="chip chip--active"
-                      scroll={false}
-                    >
-                      {condition}
-                    </Link>
-                  )}
-
-                  {bodyStyle && (
-                    <Link
-                      href={hrefClearingFilter(
-                        resolvedSearchParams,
-                        "bodyStyle"
-                      )}
-                      className="chip chip--active"
-                      scroll={false}
-                    >
-                      {bodyStyle}
-                    </Link>
-                  )}
-
-                  {fuel && (
-                    <Link
-                      href={hrefClearingFilter(
-                        resolvedSearchParams,
-                        "fuel"
-                      )}
-                      className="chip chip--active"
-                      scroll={false}
-                    >
-                      {fuel}
-                    </Link>
-                  )}
-                </div>
-              )}
-            </div>
-
-            {/* Desktop Toolbar */}
-            <div
-              className="
-                hidden
-                min-[701px]:flex
-                vehicles-catalog__toolbar
-                min-[768px]:max-[998px]:flex-wrap
-                min-[768px]:max-[998px]:gap-[14px]
-              "
-            >
-              <p className="vehicles-catalog__toolbar-summary">
+          <div className="catalog-results vehicles-catalog__results">
+            <div className="vehicles-catalog__toolbar">
+              <div className="vehicles-catalog__toolbar-summary">
                 <strong>{filteredVehicles.length}</strong>
-
                 <span>
-                  {filteredVehicles.length === 1
-                    ? "vehicle"
-                    : "vehicles"}
-
+                  {filteredVehicles.length === 1 ? "vehicle" : "vehicles"}
                   {hasActiveFilters ? " · filtered" : ""}
                 </span>
-              </p>
-
+              </div>
               {hasActiveFilters ? (
                 <div className="vehicles-catalog__active-row">
-                  <span className="vehicles-catalog__active-label">
-                    Active
-                  </span>
-
+                  <span className="vehicles-catalog__active-label">Active</span>
                   <div className="vehicles-catalog__active-pills">
                     {condition ? (
                       <Link
-                        href={hrefClearingFilter(
-                          resolvedSearchParams,
-                          "condition"
-                        )}
+                        href={hrefClearingFilter(resolvedSearchParams, "condition")}
                         className="vehicles-catalog__active-pill"
                         aria-label={`Remove condition filter: ${condition}`}
                         scroll={false}
                       >
                         <span>{condition}</span>
-
-                        <span
-                          className="vehicles-catalog__active-pill-x"
-                          aria-hidden
-                        >
+                        <span className="vehicles-catalog__active-pill-x" aria-hidden>
                           ×
                         </span>
                       </Link>
                     ) : null}
-
                     {bodyStyle ? (
                       <Link
-                        href={hrefClearingFilter(
-                          resolvedSearchParams,
-                          "bodyStyle"
-                        )}
+                        href={hrefClearingFilter(resolvedSearchParams, "bodyStyle")}
                         className="vehicles-catalog__active-pill"
                         aria-label={`Remove vehicle type filter: ${bodyStyle}`}
                         scroll={false}
                       >
                         <span>{bodyStyle}</span>
-
-                        <span
-                          className="vehicles-catalog__active-pill-x"
-                          aria-hidden
-                        >
+                        <span className="vehicles-catalog__active-pill-x" aria-hidden>
                           ×
                         </span>
                       </Link>
                     ) : null}
-
                     {fuel ? (
                       <Link
-                        href={hrefClearingFilter(
-                          resolvedSearchParams,
-                          "fuel"
-                        )}
+                        href={hrefClearingFilter(resolvedSearchParams, "fuel")}
                         className="vehicles-catalog__active-pill"
                         aria-label={`Remove fuel filter: ${fuel}`}
                         scroll={false}
                       >
                         <span>{fuel}</span>
-
-                        <span
-                          className="vehicles-catalog__active-pill-x"
-                          aria-hidden
-                        >
+                        <span className="vehicles-catalog__active-pill-x" aria-hidden>
                           ×
                         </span>
                       </Link>
                     ) : null}
                   </div>
-
-                  <Link
-                    className="vehicles-catalog__clear-all"
-                    href="/vehicles"
-                    scroll={false}
-                  >
+                  <Link className="vehicles-catalog__clear-all" href="/vehicles" scroll={false}>
                     Clear all
                   </Link>
                 </div>
@@ -615,58 +510,49 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
 
             {filteredVehicles.length === 0 ? (
               <div className="vehicles-catalog__empty">
-                <p className="vehicles-catalog__empty-title">
-                  No listings match these filters
-                </p>
-
+                <p className="vehicles-catalog__empty-title">No listings match these filters</p>
                 <p className="vehicles-catalog__empty-copy">
                   Try removing a filter or browse all vehicles again.
                 </p>
-
-                <Link
-                  className="button button--primary"
-                  href="/vehicles"
-                  scroll={false}
-                >
+                <Link className="button button--primary" href="/vehicles" scroll={false}>
                   Show all vehicles
                 </Link>
               </div>
             ) : (
-              <div
-                className="
-                  vehicle-grid
-                  vehicles-catalog__grid
-                  grid
-
-                  /* Desktop = 2 columns */
-                  min-[999px]:grid-cols-2
-                  min-[999px]:gap-5
-
-                  /* Tablet = 1 column */
-                  min-[768px]:max-[998px]:grid-cols-1
-                  min-[768px]:max-[998px]:gap-[18px]
-                "
-              >
+              <div className="vehicle-grid vehicles-catalog__grid">
                 {filteredVehicles.map((vehicle) => (
-                  <div
+                  <VehicleCard
                     key={vehicle.id}
-                    className="
-                      vehicle-card
-                      min-w-0
-                      w-full
-                    "
-                  >
-                    <VehicleCard
-                      vehicle={vehicle}
-                      isSignedIn={isSignedIn}
-                    />
-                  </div>
+                    vehicle={vehicle}
+                    isSignedIn={isSignedIn}
+                  />
                 ))}
               </div>
             )}
           </div>
         </div>
       </section>
+
+      {/* Kept fallback client toggle engine if routing feels slow on high-latency 3G screens */}
+      <Script id="mobile-filter-toggle" strategy="afterInteractive">
+{`
+  (function () {
+    function isMobile() {
+      return window.innerWidth <= 700;
+    }
+
+    document.addEventListener("click", function (e) {
+      if (!isMobile()) return;
+
+      const pill = e.target.closest(".mobile-pill-btn");
+      if (!pill) return;
+
+      // Handle direct responsive toggle smooth feedback before URL returns
+      pill.classList.toggle("is-active-pill");
+    });
+  })();
+`}
+      </Script>
     </div>
   );
 }
