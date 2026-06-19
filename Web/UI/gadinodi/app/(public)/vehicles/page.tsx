@@ -29,7 +29,7 @@ interface VehiclesPageProps {
     fuel?: string | string[];
     showAllTypes?: string;
     showAllFuels?: string;
-    activeMobileGroup?: string; // New URL key tracking which row filter is dropped down
+    activeMobileGroup?: string;
   }>;
 }
 
@@ -50,14 +50,8 @@ function buildFilterHref(
     showAllFuels: readParam(searchParams.showAllFuels),
     activeMobileGroup: readParam(searchParams.activeMobileGroup),
   };
-
-  const nextValue =
-    current[key as keyof typeof current] === value ? undefined : value;
-
-  return `/vehicles${buildQueryString({
-    ...current,
-    [key]: nextValue,
-  })}`;
+  const nextValue = current[key as keyof typeof current] === value ? undefined : value;
+  return `/vehicles${buildQueryString({ ...current, [key]: nextValue })}`;
 }
 
 function hrefClearingFilter(
@@ -72,16 +66,12 @@ function hrefClearingFilter(
     showAllFuels: readParam(searchParams.showAllFuels),
     activeMobileGroup: readParam(searchParams.activeMobileGroup),
   };
-  return `/vehicles${buildQueryString({
-    ...current,
-    [clearKey]: undefined,
-  })}`;
+  return `/vehicles${buildQueryString({ ...current, [clearKey]: undefined })}`;
 }
 
-// Generates correct URL parameters for toggling open an active slider target section
 function buildMobileGroupToggleHref(
   searchParams: Record<string, string | string[] | undefined>,
-  groupName: string
+  groupName: string,
 ) {
   const current = {
     bodyStyle: readParam(searchParams.bodyStyle),
@@ -91,7 +81,6 @@ function buildMobileGroupToggleHref(
     showAllFuels: readParam(searchParams.showAllFuels),
     activeMobileGroup: readParam(searchParams.activeMobileGroup),
   };
-
   return `/vehicles${buildQueryString({
     ...current,
     activeMobileGroup: current.activeMobileGroup === groupName ? undefined : groupName,
@@ -100,13 +89,9 @@ function buildMobileGroupToggleHref(
 
 export default async function VehiclesPage({ searchParams }: VehiclesPageProps) {
   const resolvedSearchParams = searchParams ? await searchParams : {};
-  
-  const bodyStyle = readParam(resolvedSearchParams.bodyStyle) as
-    | VehicleBodyStyle
-    | undefined;
-  const condition = readParam(resolvedSearchParams.condition) as
-    | VehicleCondition
-    | undefined;
+
+  const bodyStyle = readParam(resolvedSearchParams.bodyStyle) as VehicleBodyStyle | undefined;
+  const condition = readParam(resolvedSearchParams.condition) as VehicleCondition | undefined;
   const fuel = readParam(resolvedSearchParams.fuel) as VehicleFuel | undefined;
 
   const showAllTypes = readParam(resolvedSearchParams.showAllTypes) === "true";
@@ -145,84 +130,116 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
   const FUEL_LIMIT = 3;
 
   const activeTypeIndex = bodyStyle ? facets.categories.indexOf(bodyStyle) : -1;
-  const visibleCategories = showAllTypes 
-    ? facets.categories 
+  const visibleCategories = showAllTypes
+    ? facets.categories
     : facets.categories.slice(0, Math.max(TYPE_LIMIT, activeTypeIndex + 1));
 
   const activeFuelIndex = fuel ? facets.fuels.indexOf(fuel) : -1;
-  const visibleFuels = showAllFuels 
-    ? facets.fuels 
+  const visibleFuels = showAllFuels
+    ? facets.fuels
     : facets.fuels.slice(0, Math.max(FUEL_LIMIT, activeFuelIndex + 1));
 
+  // Shared active filter tag pill
+  const activeFilterPill =
+    "tw:inline-flex tw:items-center tw:gap-2 tw:py-[7px] tw:pl-[14px] tw:pr-3 tw:rounded-full tw:text-[0.8125rem] tw:font-bold tw:bg-indigo-500/10 tw:border tw:border-indigo-400/28 tw:text-indigo-700 hover:tw:bg-indigo-500/16 tw:transition-colors";
+
+  // Pill button base + active state
+  const pillBase =
+    "tw:inline-flex tw:items-center tw:justify-center tw:px-[10px] tw:py-2 tw:border tw:border-gray-300 tw:rounded-full tw:bg-white tw:text-[#434547] tw:text-[13px] tw:font-medium tw:no-underline tw:flex-1 tw:min-w-0 tw:whitespace-nowrap tw:overflow-hidden tw:text-ellipsis tw:transition-all";
+  const pillActive = "tw:border-[#5647b9] tw:bg-[#f0f0fd] tw:text-[#260999]";
+
   return (
-    <div className="vehicles-catalog">
+    <div className="vehicles-catalog tw:w-full tw:min-w-0">
       <StructuredData data={schema} />
 
       {!apiAvailable ? <CatalogOfflineBanner /> : null}
 
-      <section className="vehicles-catalog__hero" aria-labelledby="vehicles-catalog-title">
-        <div className="vehicles-catalog__hero-bg" aria-hidden />
-        <div className="container vehicles-catalog__hero-inner">
-          <nav className="vehicles-catalog__breadcrumb" aria-label="Breadcrumb">
-            <Link href="/">Home</Link>
-            <span aria-hidden>/</span>
-            <span>Vehicles</span>
+      {/* ── Hero Section ── */}
+      <section
+        className="vehicles-catalog__hero tw:relative tw:overflow-hidden tw:py-[clamp(28px,5vw,48px)]"
+        aria-labelledby="vehicles-catalog-title"
+      >
+        <div className="vehicles-catalog__hero-bg tw:absolute tw:inset-0 tw:pointer-events-none" aria-hidden />
+
+        <div className="container vehicles-catalog__hero-inner tw:relative tw:w-[min(1180px,calc(100%-32px))] tw:mx-auto">
+
+          {/* Breadcrumb */}
+          <nav
+            className="vehicles-catalog__breadcrumb tw:flex tw:flex-wrap tw:items-center tw:gap-x-3 tw:gap-y-2 tw:mb-[22px] tw:text-sm"
+            aria-label="Breadcrumb"
+          >
+            <Link href="/" className="tw:font-semibold tw:text-indigo-700 hover:tw:underline">Home</Link>
+            <span aria-hidden className="tw:text-gray-400">/</span>
+            <span className="tw:text-gray-500">Vehicles</span>
           </nav>
 
-          <div className="vehicles-catalog__hero-row">
-            <div className="vehicles-catalog__intro">
-              <p className="eyebrow">Browse inventory</p>
-              <h1 id="vehicles-catalog-title">Vehicles from verified sellers</h1>
-              <p className="vehicles-catalog__lead">
-                Filter by condition, type, and fuel—URLs stay shareable so you can save a shortlist or
-                send it to someone else.
+          {/* Hero Row */}
+          <div className="vehicles-catalog__hero-row tw:grid tw:grid-cols-[minmax(0,1fr)_auto] tw:gap-[clamp(20px,4vw,36px)] tw:items-start max-[720px]:tw:grid-cols-1">
+            <div className="vehicles-catalog__intro tw:min-w-0">
+              <p className="eyebrow tw:m-0 tw:mb-3 tw:text-[0.8rem] tw:tracking-[0.18em] tw:uppercase tw:text-indigo-700">
+                Browse inventory
+              </p>
+              <h1
+                id="vehicles-catalog-title"
+                className="tw:mt-0 tw:mb-[14px] tw:text-[clamp(1.85rem,4vw,2.65rem)] tw:leading-[1.08] tw:tracking-[-0.035em] tw:font-bold"
+              >
+                Vehicles from verified sellers
+              </h1>
+              <p className="vehicles-catalog__lead tw:m-0 tw:max-w-[42rem] tw:text-[1.02rem] tw:leading-[1.58] tw:text-[#565c78]">
+                Filter by condition, type, and fuel—URLs stay shareable so you can save a shortlist or send it to someone else.
               </p>
             </div>
-            <div className="vehicles-catalog__hero-stats">
-              <div className="vehicles-catalog__stat-value">{filteredVehicles.length}</div>
-              <span className="vehicles-catalog__stat-label">
+
+            {/* Stats card */}
+            <div className="vehicles-catalog__hero-stats tw:flex tw:flex-col tw:items-stretch tw:gap-3 tw:min-w-[min(200px,100%)]">
+              <div className="tw:block tw:text-[clamp(1.85rem,4vw,2.35rem)] tw:font-extrabold tw:tracking-[-0.04em] tw:leading-none tw:text-[#121329]">
+                {filteredVehicles.length}
+              </div>
+              <span className="vehicles-catalog__stat-label tw:block tw:mt-2 tw:text-[0.8125rem] tw:font-semibold tw:text-[#565c78]">
                 {hasActiveFilters ? "Matching listings" : "Live listings"}
               </span>
               {isSignedIn ? (
-                <span className="vehicles-catalog__status-pill vehicles-catalog__status-pill--ok">
+                <span className="vehicles-catalog__status-pill vehicles-catalog__status-pill--ok tw:inline-flex tw:items-center tw:justify-center tw:min-h-[44px] tw:px-[18px] tw:rounded-full tw:text-sm tw:font-bold tw:bg-indigo-50 tw:border tw:border-indigo-200 tw:text-indigo-700">
                   Signed in
                 </span>
               ) : (
-                <Link className="vehicles-catalog__status-pill" href="/login">
+                <Link
+                  className="vehicles-catalog__status-pill tw:inline-flex tw:items-center tw:justify-center tw:min-h-[44px] tw:px-[18px] tw:rounded-full tw:text-sm tw:font-bold tw:bg-white/90 tw:border tw:border-black/10 tw:text-indigo-700 hover:tw:border-indigo-300 tw:transition-all"
+                  href="/login"
+                >
                   Sign in to enquire
                 </Link>
               )}
             </div>
           </div>
 
-          <div className="vehicles-catalog__notice">
-            <p className="vehicles-catalog__notice-text">
+          {/* Notice banner */}
+          <div className="vehicles-catalog__notice tw:flex tw:flex-wrap tw:items-center tw:justify-between tw:gap-4 tw:mt-[clamp(22px,4vw,30px)] tw:px-[22px] tw:py-[18px] tw:rounded-[20px] tw:bg-gradient-to-br tw:from-indigo-500/8 tw:to-violet-500/6 tw:border tw:border-indigo-300/18">
+            <p className="vehicles-catalog__notice-text tw:m-0 tw:max-w-[min(52rem,100%)] tw:text-[0.9375rem] tw:leading-[1.55]">
               {isSignedIn ? (
                 <>
-                  <strong>Open any listing</strong> for full specs and to reach the marketplace team. Need
-                  components?{" "}
-                  <Link href="/spare-parts" className="text-link">
-                    Browse spare parts
-                  </Link>
-                  .
+                  <strong className="tw:font-bold">Open any listing</strong> for full specs and to reach the marketplace team. Need components?{" "}
+                  <Link href="/spare-parts" className="text-link tw:text-indigo-700 tw:font-bold">Browse spare parts</Link>.
                 </>
               ) : (
                 <>
-                  <strong>Browsing is open to everyone.</strong> Create a free account to save picks and
-                  send structured enquiries. Also see{" "}
-                  <Link href="/spare-parts" className="text-link">
-                    spare parts listings
-                  </Link>
-                  .
+                  <strong className="tw:font-bold">Browsing is open to everyone.</strong> Create a free account to save picks and send structured enquiries. Also see{" "}
+                  <Link href="/spare-parts" className="text-link tw:text-indigo-700 tw:font-bold">spare parts listings</Link>.
                 </>
               )}
             </p>
             {!isSignedIn ? (
-              <Link className="button button--secondary vehicles-catalog__notice-btn" href="/register">
+              <Link
+                className="button button--secondary vehicles-catalog__notice-btn tw:flex-shrink-0 tw:inline-flex tw:items-center tw:justify-center tw:gap-2 tw:min-h-[48px] tw:px-[18px] tw:rounded-full tw:border tw:border-black/12 tw:bg-white/65 tw:font-bold tw:transition-transform hover:tw:-translate-y-px max-[720px]:tw:w-full"
+                href="/register"
+              >
                 Create account
               </Link>
             ) : (
-              <Link className="button button--secondary vehicles-catalog__notice-btn" href="/partners">
+              <Link
+                className="button button--secondary vehicles-catalog__notice-btn tw:flex-shrink-0 tw:inline-flex tw:items-center tw:justify-center tw:gap-2 tw:min-h-[48px] tw:px-[18px] tw:rounded-full tw:border tw:border-black/12 tw:bg-white/65 tw:font-bold tw:transition-transform hover:tw:-translate-y-px max-[720px]:tw:w-full"
+                href="/partners"
+              >
                 Seller types
               </Link>
             )}
@@ -230,168 +247,275 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
         </div>
       </section>
 
-      <section className="vehicles-catalog__main">
-        <div className="container catalog-layout vehicles-catalog__layout">
-          <aside className="catalog-sidebar vehicles-catalog__sidebar">
-            <div className="vehicles-catalog__filters-head">
-              <p className="eyebrow">Filters</p>
-              <h2 className="vehicles-catalog__filters-title">Refine results</h2>
-              <p className="vehicles-catalog__filters-hint">
-                Tap to toggle. Combine filters; links stay bookmarkable.
-              </p>
-            </div>
+      {/* ── Main Catalog Section ── */}
+      <section className="vehicles-catalog__main tw:py-[clamp(40px,6vw,72px)] tw:bg-gradient-to-b tw:from-white/45 tw:to-[#edf2fc]/65">
 
-            <article className="vehicles-catalog__panel vehicles-catalog__panel--accent">
-              <p className="eyebrow">Browse by type</p>
-              <h3 className="vehicles-catalog__panel-title">Vehicle type hubs</h3>
-              <p className="vehicles-catalog__panel-copy">
+        {/* ============================================================
+            MOBILE LAYOUT (≤681px)
+            Rendered before the desktop grid so it appears at the top.
+            Hidden on desktop via CSS.
+            Structure:
+              1. Accent panel  (static, scrolls away)
+              2. Seller network panel (static, scrolls away)
+              3. STICKY WRAPPER — sticks to top:56px when scrolling
+                   ├─ Row: [CONDITION] [VEHICLE TYPE] [FUEL] pill buttons
+                   ├─ Divider
+                   └─ "12 vehicles" count + active filter tags
+              4. Dropdown panel (absolute, overlays grid) — only when a pill active
+              5. Vehicle grid (scrolls freely underneath)
+            ============================================================ */}
+        <div className="mobile-catalog-layout tw:hidden tw:flex-col tw:gap-0 tw:w-full">
+
+          {/* 1. Accent panel */}
+          <div className="tw:px-4 tw:pt-0 tw:pb-4">
+            <article className="vehicles-catalog__panel vehicles-catalog__panel--accent tw:p-[20px_22px] tw:rounded-[20px] tw:border tw:border-white/12 tw:text-[#e8eef6] tw:shadow-[0_16px_40px_rgba(30,27,75,0.22)]">
+              <p className="eyebrow tw:m-0 tw:mb-3 tw:text-[0.8rem] tw:tracking-[0.18em] tw:uppercase tw:text-amber-400/92">Browse by type</p>
+              <h3 className="tw:m-0 tw:mb-[10px] tw:text-[1.08rem] tw:font-bold tw:tracking-[-0.02em]">Vehicle type hubs</h3>
+              <p className="tw:m-0 tw:mb-[14px] tw:text-[0.9rem] tw:leading-[1.5] tw:text-[rgba(226,232,240,0.88)]">
                 Imagery, guides, and live counts—from bicycles to heavy equipment.
               </p>
-              <Link className="vehicles-catalog__panel-link" href="/vehicle-types">
+              <Link className="tw:text-[0.9rem] tw:font-bold tw:text-white hover:tw:underline" href="/vehicle-types">
+                Explore hubs <span aria-hidden>→</span>
+              </Link>
+            </article>
+          </div>
+
+          {/* 2. Seller network panel */}
+          <div className="tw:px-4 tw:pb-4">
+            <article className="vehicles-catalog__panel tw:p-[20px_22px] tw:rounded-[20px] tw:bg-white/92 tw:border tw:border-black/9 tw:shadow-[0_8px_28px_rgba(30,27,75,0.07)]">
+              <p className="eyebrow tw:m-0 tw:mb-3 tw:text-[0.8rem] tw:tracking-[0.18em] tw:uppercase tw:text-indigo-700">Seller network</p>
+              <h3 className="tw:m-0 tw:mb-[10px] tw:text-[1.08rem] tw:font-bold tw:tracking-[-0.02em]">Who lists here</h3>
+              <p className="tw:m-0 tw:mb-[14px] tw:text-[0.9rem] tw:leading-[1.5] tw:text-[#565c78]">
+                Compare garages, showrooms, and independents—same listing format across seller types.
+              </p>
+              <ul className="tw:m-0 tw:pl-[18px] tw:text-[#565c78]">
+                {partnerTypes.slice(0, 4).map((pt) => (
+                  <li key={pt.slug}>{pt.name}</li>
+                ))}
+              </ul>
+            </article>
+          </div>
+
+          {/* 3 + 4. STICKY WRAPPER + DROPDOWN
+              position:relative on the wrapper lets the dropdown use position:absolute
+              relative to it, so the dropdown always aligns directly below the card. */}
+          <div className="mobile-sticky-filter tw:sticky tw:top-[56px] tw:z-[200] tw:px-4 tw:relative">
+
+            {/* The sticky card */}
+            <div className="tw:bg-white tw:rounded-2xl tw:shadow-[0_10px_20px_rgba(0,0,0,0.12)] tw:overflow-hidden">
+
+              {/* Pill row */}
+              <div className="tw:flex tw:flex-row tw:items-center tw:gap-2 tw:p-4 tw:pb-3">
+                <Link
+                  href={buildMobileGroupToggleHref(resolvedSearchParams, "condition")}
+                  scroll={false}
+                  className={[
+                    "tw:flex-1 tw:text-center tw:py-2 tw:px-3 tw:rounded-full tw:border tw:text-[13px] tw:font-semibold tw:uppercase tw:tracking-[0.05em] tw:no-underline tw:transition-all tw:leading-none",
+                    activeMobileGroup === "condition"
+                      ? "tw:border-[#5647b9] tw:bg-[#f0f0fd] tw:text-[#260999]"
+                      : "tw:border-gray-300 tw:bg-white tw:text-[#434547]",
+                  ].join(" ")}
+                >
+                  Condition
+                </Link>
+                <Link
+                  href={buildMobileGroupToggleHref(resolvedSearchParams, "bodyStyle")}
+                  scroll={false}
+                  className={[
+                    "tw:flex-1 tw:text-center tw:py-2 tw:px-3 tw:rounded-full tw:border tw:text-[13px] tw:font-semibold tw:uppercase tw:tracking-[0.05em] tw:no-underline tw:transition-all tw:leading-none",
+                    activeMobileGroup === "bodyStyle"
+                      ? "tw:border-[#5647b9] tw:bg-[#f0f0fd] tw:text-[#260999]"
+                      : "tw:border-gray-300 tw:bg-white tw:text-[#434547]",
+                  ].join(" ")}
+                >
+                  Vehicle type
+                </Link>
+                <Link
+                  href={buildMobileGroupToggleHref(resolvedSearchParams, "fuel")}
+                  scroll={false}
+                  className={[
+                    "tw:flex-1 tw:text-center tw:py-2 tw:px-3 tw:rounded-full tw:border tw:text-[13px] tw:font-semibold tw:uppercase tw:tracking-[0.05em] tw:no-underline tw:transition-all tw:leading-none",
+                    activeMobileGroup === "fuel"
+                      ? "tw:border-[#5647b9] tw:bg-[#f0f0fd] tw:text-[#260999]"
+                      : "tw:border-gray-300 tw:bg-white tw:text-[#434547]",
+                  ].join(" ")}
+                >
+                  Fuel
+                </Link>
+              </div>
+
+              {/* Divider + vehicle count */}
+              <div className="tw:border-t tw:border-[#f3f4f6] tw:px-4 tw:pt-3 tw:pb-4">
+                <div className="tw:flex tw:flex-wrap tw:items-baseline tw:gap-x-2 tw:gap-y-1">
+                  <strong className="tw:text-[1.35rem] tw:font-extrabold tw:tracking-[-0.03em] tw:text-[#121329]">
+                    {filteredVehicles.length}
+                  </strong>
+                  <span className="tw:text-[0.9375rem] tw:text-[#565c78]">
+                    {filteredVehicles.length === 1 ? "vehicle" : "vehicles"}
+                    {hasActiveFilters ? " · filtered" : ""}
+                  </span>
+                </div>
+
+                {/* Active filter tags */}
+                {hasActiveFilters && (
+                  <div className="tw:flex tw:flex-wrap tw:items-center tw:gap-2 tw:mt-2">
+                    {condition && (
+                      <Link href={hrefClearingFilter(resolvedSearchParams, "condition")} scroll={false}
+                        className={`vehicles-catalog__active-pill ${activeFilterPill}`}>
+                        <span>{condition}</span>
+                        <span className="tw:text-[1.1rem] tw:leading-none tw:opacity-75">×</span>
+                      </Link>
+                    )}
+                    {bodyStyle && (
+                      <Link href={hrefClearingFilter(resolvedSearchParams, "bodyStyle")} scroll={false}
+                        className={`vehicles-catalog__active-pill ${activeFilterPill}`}>
+                        <span>{bodyStyle}</span>
+                        <span className="tw:text-[1.1rem] tw:leading-none tw:opacity-75">×</span>
+                      </Link>
+                    )}
+                    {fuel && (
+                      <Link href={hrefClearingFilter(resolvedSearchParams, "fuel")} scroll={false}
+                        className={`vehicles-catalog__active-pill ${activeFilterPill}`}>
+                        <span>{fuel}</span>
+                        <span className="tw:text-[1.1rem] tw:leading-none tw:opacity-75">×</span>
+                      </Link>
+                    )}
+                    <Link href="/vehicles" scroll={false}
+                      className="tw:text-sm tw:font-bold tw:text-indigo-700 tw:underline tw:[text-underline-offset:3px] tw:ml-auto">
+                      Clear all
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* 4. Dropdown — floats absolutely below the card, overlays the grid */}
+            {activeMobileGroup !== "" && (
+              <div className="tw:absolute tw:top-full tw:left-4 tw:right-4 tw:z-[300] tw:mt-2 tw:bg-white tw:rounded-2xl tw:shadow-[0_8px_32px_rgba(0,0,0,0.15)] tw:border tw:border-gray-100 tw:p-3 mobile-filter-dropdown-anim">
+                <div className="tw:flex tw:flex-col tw:gap-[6px]">
+                  {activeMobileGroup === "condition" && facets.conditions.map((value) => (
+                    <Link key={value} scroll={false}
+                      href={buildFilterHref(resolvedSearchParams, "condition", value)}
+                      className={condition === value ? "chip chip--active" : "chip"}>
+                      {value}
+                    </Link>
+                  ))}
+
+                  {activeMobileGroup === "bodyStyle" && (
+                    <>
+                      {visibleCategories.map((value) => (
+                        <Link key={value} scroll={false}
+                          href={buildFilterHref(resolvedSearchParams, "bodyStyle", value)}
+                          className={bodyStyle === value ? "chip chip--active" : "chip"}>
+                          {value}
+                        </Link>
+                      ))}
+                      {facets.categories.length > TYPE_LIMIT && (
+                        <Link scroll={false} className="vehicles-catalog__toggle-button"
+                          href={`/vehicles${buildQueryString({ condition, bodyStyle, fuel, showAllFuels: showAllFuels ? "true" : undefined, showAllTypes: showAllTypes ? undefined : "true", activeMobileGroup: "bodyStyle" })}`}>
+                          <span>{showAllTypes ? "Show less" : "Show more"}</span>
+                          <span className="arrow">{showAllTypes ? "▲" : "▼"}</span>
+                        </Link>
+                      )}
+                    </>
+                  )}
+
+                  {activeMobileGroup === "fuel" && (
+                    <>
+                      {visibleFuels.map((value) => (
+                        <Link key={value} scroll={false}
+                          href={buildFilterHref(resolvedSearchParams, "fuel", value)}
+                          className={fuel === value ? "chip chip--active" : "chip"}>
+                          {value}
+                        </Link>
+                      ))}
+                      {facets.fuels.length > FUEL_LIMIT && (
+                        <Link scroll={false} className="vehicles-catalog__toggle-button"
+                          href={`/vehicles${buildQueryString({ condition, bodyStyle, fuel, showAllTypes: showAllTypes ? "true" : undefined, showAllFuels: showAllFuels ? undefined : "true", activeMobileGroup: "fuel" })}`}>
+                          <span>{showAllFuels ? "Show less" : "Show more"}</span>
+                          <span className="arrow">{showAllFuels ? "▲" : "▼"}</span>
+                        </Link>
+                      )}
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* 5. Vehicle grid — gets a top padding so it starts below the sticky card height */}
+          <div className="tw:px-4 tw:pt-[16px]">
+            {filteredVehicles.length === 0 ? (
+              <div className="tw:p-10 tw:rounded-[20px] tw:text-center tw:bg-white/85 tw:border tw:border-dashed tw:border-indigo-400/28">
+                <p className="tw:m-0 tw:mb-[10px] tw:text-[1.25rem] tw:font-bold">No listings match these filters</p>
+                <p className="tw:m-0 tw:mb-[22px] tw:text-[#565c78] tw:text-[0.98rem]">Try removing a filter or browse all vehicles.</p>
+                <Link className="button button--primary tw:inline-flex tw:items-center tw:justify-center tw:min-h-[48px] tw:px-[18px] tw:rounded-full tw:font-bold tw:text-white tw:bg-gradient-to-br tw:from-indigo-500 tw:to-violet-500" href="/vehicles" scroll={false}>
+                  Show all vehicles
+                </Link>
+              </div>
+            ) : (
+              <div className="tw:grid tw:grid-cols-1 tw:gap-[18px]">
+                {filteredVehicles.map((vehicle) => (
+                  <VehicleCard key={vehicle.id} vehicle={vehicle} isSignedIn={isSignedIn} />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* ============================================================
+            DESKTOP LAYOUT (>681px)
+            Original two-column sidebar + results grid. Hidden on mobile.
+            ============================================================ */}
+        <div className="container catalog-layout vehicles-catalog__layout tw:w-[min(1180px,calc(100%-32px))] tw:mx-auto tw:grid tw:grid-cols-[minmax(250px,300px)_minmax(0,1fr)] tw:items-start tw:gap-[18px] desktop-catalog-layout">
+
+          {/* ── Sidebar ── */}
+          <aside className="catalog-sidebar vehicles-catalog__sidebar tw:grid tw:gap-5 tw:sticky tw:top-6 tw:h-[calc(100vh-48px)] tw:overflow-y-auto tw:[scrollbar-width:none] tw:[-ms-overflow-style:none] tw:overscroll-contain">
+
+            <div className="vehicles-catalog__filters-head tw:mb-2">
+              <p className="eyebrow tw:m-0 tw:mb-3 tw:text-[0.8rem] tw:tracking-[0.18em] tw:uppercase tw:text-indigo-700">Filters</p>
+              <h2 className="tw:m-0 tw:mb-2 tw:text-[1.35rem] tw:font-bold tw:tracking-[-0.025em]">Refine results</h2>
+              <p className="tw:m-0 tw:text-sm tw:leading-[1.45] tw:text-[#565c78]">Tap to toggle. Combine filters; links stay bookmarkable.</p>
+            </div>
+
+            <article className="vehicles-catalog__panel vehicles-catalog__panel--accent tw:p-[20px_22px] tw:rounded-[20px] tw:border tw:border-white/12 tw:text-[#e8eef6] tw:shadow-[0_16px_40px_rgba(30,27,75,0.22)] tw:z-10">
+              <p className="eyebrow tw:m-0 tw:mb-3 tw:text-[0.8rem] tw:tracking-[0.18em] tw:uppercase tw:text-amber-400/92">Browse by type</p>
+              <h3 className="tw:m-0 tw:mb-[10px] tw:text-[1.08rem] tw:font-bold tw:tracking-[-0.02em]">Vehicle type hubs</h3>
+              <p className="tw:m-0 tw:mb-[14px] tw:text-[0.9rem] tw:leading-[1.5] tw:text-[rgba(226,232,240,0.88)]">
+                Imagery, guides, and live counts—from bicycles to heavy equipment.
+              </p>
+              <Link className="tw:text-[0.9rem] tw:font-bold tw:text-white hover:tw:underline hover:tw:[text-underline-offset:3px]" href="/vehicle-types">
                 Explore hubs <span aria-hidden>→</span>
               </Link>
             </article>
 
-<div className="mobile-sticky-wrapper">
-
-  <div className="custom-filter-row mobile-only-filter-bar">
-    <Link
-      href={buildMobileGroupToggleHref(resolvedSearchParams, "condition")}
-      scroll={false}
-      className={`vehicles-catalog__filter-label mobile-pill-btn ${
-        activeMobileGroup === "condition" ? "is-active-pill" : ""
-      }`}
-    >
-      Condition
-    </Link>
-
-    <Link
-      href={buildMobileGroupToggleHref(resolvedSearchParams, "bodyStyle")}
-      scroll={false}
-      className={`vehicles-catalog__filter-label mobile-pill-btn ${
-        activeMobileGroup === "bodyStyle" ? "is-active-pill" : ""
-      }`}
-    >
-      Vehicle type
-    </Link>
-
-    <Link
-      href={buildMobileGroupToggleHref(resolvedSearchParams, "fuel")}
-      scroll={false}
-      className={`vehicles-catalog__filter-label mobile-pill-btn ${
-        activeMobileGroup === "fuel" ? "is-active-pill" : ""
-      }`}
-    >
-      Fuel
-    </Link>
-  </div>
-
-  <div className="sticky-vehicle-card">
-    <div className="vehicles-catalog__toolbar-summary">
-      <strong>{filteredVehicles.length}</strong>
-      <span>
-        {filteredVehicles.length === 1 ? "vehicle" : "vehicles"}
-        {hasActiveFilters ? " · filtered" : ""}
-      </span>
-    </div>
-
-    {hasActiveFilters ? (
-      <div className="vehicles-catalog__active-row">
-        <span className="vehicles-catalog__active-label">Active</span>
-
-        <div className="vehicles-catalog__active-pills">
-          {condition ? (
-            <Link
-              href={hrefClearingFilter(resolvedSearchParams, "condition")}
-              className="vehicles-catalog__active-pill"
-              scroll={false}
-            >
-              <span>{condition}</span>
-              <span className="vehicles-catalog__active-pill-x">×</span>
-            </Link>
-          ) : null}
-
-          {bodyStyle ? (
-            <Link
-              href={hrefClearingFilter(resolvedSearchParams, "bodyStyle")}
-              className="vehicles-catalog__active-pill"
-              scroll={false}
-            >
-              <span>{bodyStyle}</span>
-              <span className="vehicles-catalog__active-pill-x">×</span>
-            </Link>
-          ) : null}
-
-          {fuel ? (
-            <Link
-              href={hrefClearingFilter(resolvedSearchParams, "fuel")}
-              className="vehicles-catalog__active-pill"
-              scroll={false}
-            >
-              <span>{fuel}</span>
-              <span className="vehicles-catalog__active-pill-x">×</span>
-            </Link>
-          ) : null}
-        </div>
-
-        <Link
-          className="vehicles-catalog__clear-all"
-          href="/vehicles"
-          scroll={false}
-        >
-          Clear all
-        </Link>
-      </div>
-    ) : null}
-
-  </div>
-</div>
-
-            {/* 1. Condition Filter Section */}
-            <div className={`vehicles-catalog__filter-block filter-group ${condition ? " js-mobile-expanded" : ""} ${activeMobileGroup === "condition" ? "is-expanded" : ""}`}>
-              <p className="vehicles-catalog__filter-label desktop-only-label">Condition</p>
-              <div className="chip-row vehicles-catalog__chips">
+            {/* 1. Condition */}
+            <div className="vehicles-catalog__filter-block filter-group tw:p-[18px_20px] tw:rounded-[20px] tw:bg-white/88 tw:border tw:border-black/9">
+              <p className="tw:m-0 tw:mb-3 tw:text-[0.8125rem] tw:font-bold tw:tracking-[0.04em] tw:uppercase tw:text-[#565c78]">Condition</p>
+              <div className="tw:flex tw:flex-col tw:gap-2">
                 {facets.conditions.map((value) => (
-                  <Link
-                    key={value}
-                    className={condition === value ? "chip chip--active" : "chip"}
-                    href={buildFilterHref(resolvedSearchParams, "condition", value)}
-                    scroll={false}
-                  >
+                  <Link key={value} className={condition === value ? "chip chip--active" : "chip"}
+                    href={buildFilterHref(resolvedSearchParams, "condition", value)} scroll={false}>
                     {value}
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* 2. Vehicle Type Filter Section */}
-            <div className={`vehicles-catalog__filter-block filter-group ${bodyStyle ? " js-mobile-expanded" : ""} ${activeMobileGroup === "bodyStyle" ? "is-expanded" : ""}`}>
-              <p className="vehicles-catalog__filter-label desktop-only-label">Vehicle type</p>
-              <div className="chip-row vehicles-catalog__chips">
+            {/* 2. Vehicle Type */}
+            <div className="vehicles-catalog__filter-block filter-group tw:p-[18px_20px] tw:rounded-[20px] tw:bg-white/88 tw:border tw:border-black/9">
+              <p className="tw:m-0 tw:mb-3 tw:text-[0.8125rem] tw:font-bold tw:tracking-[0.04em] tw:uppercase tw:text-[#565c78]">Vehicle type</p>
+              <div className="tw:flex tw:flex-col tw:gap-2">
                 {visibleCategories.map((value) => (
-                  <Link
-                    key={value}
-                    className={bodyStyle === value ? "chip chip--active" : "chip"}
-                    href={buildFilterHref(resolvedSearchParams, "bodyStyle", value)}
-                    scroll={false}
-                  >
+                  <Link key={value} className={bodyStyle === value ? "chip chip--active" : "chip"}
+                    href={buildFilterHref(resolvedSearchParams, "bodyStyle", value)} scroll={false}>
                     {value}
                   </Link>
                 ))}
-
                 {facets.categories.length > TYPE_LIMIT && (
-                  <Link
-                    className="vehicles-catalog__toggle-button"
-                    href={`/vehicles${buildQueryString({
-                      condition: condition,
-                      bodyStyle: bodyStyle,
-                      fuel: fuel,
-                      showAllFuels: showAllFuels ? "true" : undefined,
-                      showAllTypes: showAllTypes ? undefined : "true",
-                      activeMobileGroup: activeMobileGroup || undefined
-                    })}`}
-                    scroll={false}
-                  >
+                  <Link className="vehicles-catalog__toggle-button"
+                    href={`/vehicles${buildQueryString({ condition, bodyStyle, fuel, showAllFuels: showAllFuels ? "true" : undefined, showAllTypes: showAllTypes ? undefined : "true", activeMobileGroup: activeMobileGroup || undefined })}`}
+                    scroll={false}>
                     <span>{showAllTypes ? "Show less" : "Show more"}</span>
                     <span className="arrow">{showAllTypes ? "▲" : "▼"}</span>
                   </Link>
@@ -399,34 +523,20 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
               </div>
             </div>
 
-            {/* 3. Fuel Filter Section */}
-            <div className={`vehicles-catalog__filter-block filter-group ${fuel ? " js-mobile-expanded" : ""} ${activeMobileGroup === "fuel" ? "is-expanded" : ""}`}>
-              <p className="vehicles-catalog__filter-label desktop-only-label">Fuel</p>
-              <div className="chip-row vehicles-catalog__chips">
+            {/* 3. Fuel */}
+            <div className="vehicles-catalog__filter-block filter-group tw:p-[18px_20px] tw:rounded-[20px] tw:bg-white/88 tw:border tw:border-black/9">
+              <p className="tw:m-0 tw:mb-3 tw:text-[0.8125rem] tw:font-bold tw:tracking-[0.04em] tw:uppercase tw:text-[#565c78]">Fuel</p>
+              <div className="tw:flex tw:flex-col tw:gap-2">
                 {visibleFuels.map((value) => (
-                  <Link
-                    key={value}
-                    className={fuel === value ? "chip chip--active" : "chip"}
-                    href={buildFilterHref(resolvedSearchParams, "fuel", value)}
-                    scroll={false}
-                  >
+                  <Link key={value} className={fuel === value ? "chip chip--active" : "chip"}
+                    href={buildFilterHref(resolvedSearchParams, "fuel", value)} scroll={false}>
                     {value}
                   </Link>
                 ))}
-
                 {facets.fuels.length > FUEL_LIMIT && (
-                  <Link
-                    className="vehicles-catalog__toggle-button"
-                    href={`/vehicles${buildQueryString({
-                      condition: condition,
-                      bodyStyle: bodyStyle,
-                      fuel: fuel,
-                      showAllTypes: showAllTypes ? "true" : undefined,
-                      showAllFuels: showAllFuels ? undefined : "true",
-                      activeMobileGroup: activeMobileGroup || undefined
-                    })}`}
-                    scroll={false}
-                  >
+                  <Link className="vehicles-catalog__toggle-button"
+                    href={`/vehicles${buildQueryString({ condition, bodyStyle, fuel, showAllTypes: showAllTypes ? "true" : undefined, showAllFuels: showAllFuels ? undefined : "true", activeMobileGroup: activeMobileGroup || undefined })}`}
+                    scroll={false}>
                     <span>{showAllFuels ? "Show less" : "Show more"}</span>
                     <span className="arrow">{showAllFuels ? "▲" : "▼"}</span>
                   </Link>
@@ -434,98 +544,75 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
               </div>
             </div>
 
-            <article className="vehicles-catalog__panel">
-              <p className="eyebrow">Seller network</p>
-              <h3 className="vehicles-catalog__panel-title">Who lists here</h3>
-              <p className="vehicles-catalog__panel-copy">
+            <article className="vehicles-catalog__panel tw:p-[20px_22px] tw:rounded-[20px] tw:bg-white/92 tw:border tw:border-black/9 tw:shadow-[0_8px_28px_rgba(30,27,75,0.07)]">
+              <p className="eyebrow tw:m-0 tw:mb-3 tw:text-[0.8rem] tw:tracking-[0.18em] tw:uppercase tw:text-indigo-700">Seller network</p>
+              <h3 className="tw:m-0 tw:mb-[10px] tw:text-[1.08rem] tw:font-bold tw:tracking-[-0.02em]">Who lists here</h3>
+              <p className="tw:m-0 tw:mb-[14px] tw:text-[0.9rem] tw:leading-[1.5] tw:text-[#565c78]">
                 Compare garages, showrooms, and independents—same listing format across seller types.
               </p>
-              <ul className="vehicles-catalog__seller-list compact-list">
-                {partnerTypes.slice(0, 4).map((partnerType) => (
-                  <li key={partnerType.slug}>{partnerType.name}</li>
+              <ul className="tw:m-0 tw:pl-[18px] tw:text-[#565c78]">
+                {partnerTypes.slice(0, 4).map((pt) => (
+                  <li key={pt.slug}>{pt.name}</li>
                 ))}
               </ul>
             </article>
           </aside>
 
-          <div className="catalog-results vehicles-catalog__results">
-            <div className="vehicles-catalog__toolbar">
-              <div className="vehicles-catalog__toolbar-summary">
-                <strong>{filteredVehicles.length}</strong>
+          {/* ── Results Column ── */}
+          <div className="catalog-results vehicles-catalog__results tw:grid tw:gap-5 tw:w-full tw:relative">
+
+            {/* Desktop sticky toolbar */}
+            <div className="vehicles-catalog__toolbar tw:grid tw:gap-[14px] tw:p-[16px_18px] tw:mb-2 tw:rounded-[9px] tw:bg-white/95 tw:border tw:border-black/9 tw:shadow-[0_8px_28px_rgba(30,27,75,0.07)] tw:sticky tw:top-[71px] tw:z-10">
+              <div className="tw:m-0 tw:flex tw:flex-wrap tw:items-baseline tw:gap-x-3 tw:gap-y-2 tw:text-[0.9375rem] tw:text-[#565c78]">
+                <strong className="tw:text-[1.35rem] tw:font-extrabold tw:tracking-[-0.03em] tw:text-[#121329]">
+                  {filteredVehicles.length}
+                </strong>
                 <span>
                   {filteredVehicles.length === 1 ? "vehicle" : "vehicles"}
                   {hasActiveFilters ? " · filtered" : ""}
                 </span>
               </div>
-              {hasActiveFilters ? (
-                <div className="vehicles-catalog__active-row">
-                  <span className="vehicles-catalog__active-label">Active</span>
-                  <div className="vehicles-catalog__active-pills">
-                    {condition ? (
-                      <Link
-                        href={hrefClearingFilter(resolvedSearchParams, "condition")}
-                        className="vehicles-catalog__active-pill"
-                        aria-label={`Remove condition filter: ${condition}`}
-                        scroll={false}
-                      >
-                        <span>{condition}</span>
-                        <span className="vehicles-catalog__active-pill-x" aria-hidden>
-                          ×
-                        </span>
+              {hasActiveFilters && (
+                <div className="tw:flex tw:flex-wrap tw:items-center tw:gap-x-[14px] tw:gap-y-[10px] tw:pt-1 tw:border-t tw:border-black/6">
+                  <span className="tw:text-[0.72rem] tw:font-bold tw:tracking-[0.12em] tw:uppercase tw:text-[#565c78]">Active</span>
+                  <div className="tw:flex tw:flex-wrap tw:gap-2 tw:flex-1">
+                    {condition && (
+                      <Link href={hrefClearingFilter(resolvedSearchParams, "condition")} className={`vehicles-catalog__active-pill ${activeFilterPill}`} aria-label={`Remove condition filter: ${condition}`} scroll={false}>
+                        <span>{condition}</span><span className="tw:text-[1.1rem] tw:leading-none tw:opacity-75" aria-hidden>×</span>
                       </Link>
-                    ) : null}
-                    {bodyStyle ? (
-                      <Link
-                        href={hrefClearingFilter(resolvedSearchParams, "bodyStyle")}
-                        className="vehicles-catalog__active-pill"
-                        aria-label={`Remove vehicle type filter: ${bodyStyle}`}
-                        scroll={false}
-                      >
-                        <span>{bodyStyle}</span>
-                        <span className="vehicles-catalog__active-pill-x" aria-hidden>
-                          ×
-                        </span>
+                    )}
+                    {bodyStyle && (
+                      <Link href={hrefClearingFilter(resolvedSearchParams, "bodyStyle")} className={`vehicles-catalog__active-pill ${activeFilterPill}`} aria-label={`Remove vehicle type filter: ${bodyStyle}`} scroll={false}>
+                        <span>{bodyStyle}</span><span className="tw:text-[1.1rem] tw:leading-none tw:opacity-75" aria-hidden>×</span>
                       </Link>
-                    ) : null}
-                    {fuel ? (
-                      <Link
-                        href={hrefClearingFilter(resolvedSearchParams, "fuel")}
-                        className="vehicles-catalog__active-pill"
-                        aria-label={`Remove fuel filter: ${fuel}`}
-                        scroll={false}
-                      >
-                        <span>{fuel}</span>
-                        <span className="vehicles-catalog__active-pill-x" aria-hidden>
-                          ×
-                        </span>
+                    )}
+                    {fuel && (
+                      <Link href={hrefClearingFilter(resolvedSearchParams, "fuel")} className={`vehicles-catalog__active-pill ${activeFilterPill}`} aria-label={`Remove fuel filter: ${fuel}`} scroll={false}>
+                        <span>{fuel}</span><span className="tw:text-[1.1rem] tw:leading-none tw:opacity-75" aria-hidden>×</span>
                       </Link>
-                    ) : null}
+                    )}
                   </div>
-                  <Link className="vehicles-catalog__clear-all" href="/vehicles" scroll={false}>
+                  <Link className="tw:text-sm tw:font-bold tw:text-indigo-700 tw:underline tw:[text-underline-offset:3px]" href="/vehicles" scroll={false}>
                     Clear all
                   </Link>
                 </div>
-              ) : null}
+              )}
             </div>
 
+            {/* Vehicle grid or empty state */}
             {filteredVehicles.length === 0 ? (
-              <div className="vehicles-catalog__empty">
-                <p className="vehicles-catalog__empty-title">No listings match these filters</p>
-                <p className="vehicles-catalog__empty-copy">
-                  Try removing a filter or browse all vehicles again.
-                </p>
-                <Link className="button button--primary" href="/vehicles" scroll={false}>
+              <div className="vehicles-catalog__empty tw:p-[clamp(40px,8vw,64px)_24px] tw:rounded-[20px] tw:text-center tw:bg-white/85 tw:border tw:border-dashed tw:border-indigo-400/28">
+                <p className="tw:m-0 tw:mb-[10px] tw:text-[1.25rem] tw:font-bold tw:tracking-[-0.02em]">No listings match these filters</p>
+                <p className="tw:m-0 tw:mb-[22px] tw:text-[#565c78] tw:text-[0.98rem]">Try removing a filter or browse all vehicles again.</p>
+                <Link className="button button--primary tw:inline-flex tw:items-center tw:justify-center tw:gap-2 tw:min-h-[48px] tw:px-[18px] tw:rounded-full tw:font-bold tw:text-white tw:bg-gradient-to-br tw:from-indigo-500 tw:to-violet-500 tw:shadow-[0_14px_34px_rgba(79,70,229,0.28)] tw:transition-transform hover:tw:-translate-y-px"
+                  href="/vehicles" scroll={false}>
                   Show all vehicles
                 </Link>
               </div>
             ) : (
-              <div className="vehicle-grid vehicles-catalog__grid">
+              <div className="vehicle-grid vehicles-catalog__grid tw:grid tw:grid-cols-[repeat(auto-fill,minmax(min(100%,320px),1fr))] tw:gap-[22px] min-[1000px]:tw:grid-cols-2">
                 {filteredVehicles.map((vehicle) => (
-                  <VehicleCard
-                    key={vehicle.id}
-                    vehicle={vehicle}
-                    isSignedIn={isSignedIn}
-                  />
+                  <VehicleCard key={vehicle.id} vehicle={vehicle} isSignedIn={isSignedIn} />
                 ))}
               </div>
             )}
@@ -533,21 +620,39 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
         </div>
       </section>
 
-      {/* Kept fallback client toggle engine if routing feels slow on high-latency 3G screens */}
+      <style>{`
+        /* ── Scrollbar hiding ── */
+        .catalog-sidebar::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+        /* ── Mobile layout: show mobile block, hide desktop block ── */
+        @media (max-width: 681px) {
+          .mobile-catalog-layout { display: flex !important; }
+          .desktop-catalog-layout { display: none !important; }
+        }
+
+        /* ── Desktop: hide mobile block ── */
+        @media (min-width: 682px) {
+          .mobile-catalog-layout { display: none !important; }
+        }
+
+        /* ── Dropdown fade-in ── */
+        @keyframes filterDropdownIn {
+          from { opacity: 0; transform: translateY(-6px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .mobile-filter-dropdown-anim {
+          animation: filterDropdownIn 0.18s ease-out;
+        }
+      `}</style>
+
       <Script id="mobile-filter-toggle" strategy="afterInteractive">
 {`
   (function () {
-    function isMobile() {
-      return window.innerWidth <= 700;
-    }
-
+    function isMobile() { return window.innerWidth <= 680; }
     document.addEventListener("click", function (e) {
       if (!isMobile()) return;
-
       const pill = e.target.closest(".mobile-pill-btn");
       if (!pill) return;
-
-      // Handle direct responsive toggle smooth feedback before URL returns
       pill.classList.toggle("is-active-pill");
     });
   })();
