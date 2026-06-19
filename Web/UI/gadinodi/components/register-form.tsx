@@ -140,17 +140,7 @@ export function RegisterForm() {
   </p>
 
   <p>
-    Want to sell?{" "}
-    <Link
-      href="/partner/onboarding"
-      className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
-    >
-      Register as Seller
-    </Link>
-  </p>
-
-  <p>
-    Already a partner?{" "}
+    Partner?{" "}
     <Link
       href="/partner/login"
       className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"

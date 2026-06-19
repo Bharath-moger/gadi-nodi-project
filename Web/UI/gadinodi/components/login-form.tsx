@@ -117,17 +117,7 @@ export function LoginForm({ redirectTo }: LoginFormProps) {
        </p>
 
        <p className="auth-switch">
-         Want to sell?{" "}
-         <Link
-           href="/partner/onboarding"
-           className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
-         >
-           Register as Seller
-         </Link>
-       </p>
-
-       <p className="auth-switch">
-         Already a partner?{" "}
+         Partner?{" "}
          <Link
            href="/partner/login"
            className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"

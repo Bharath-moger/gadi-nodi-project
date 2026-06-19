@@ -256,16 +256,6 @@ export function PartnerOnboardingForm({
           Sign In as Buyer
         </Link>
       </p>
-
-      <p className="tw:text-slate-600">
-        New buyer?{" "}
-        <Link
-          href="/register"
-          className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
-        >
-          Create Account
-        </Link>
-      </p>
     </>
   ) : (
     <p className="tw:text-slate-600">

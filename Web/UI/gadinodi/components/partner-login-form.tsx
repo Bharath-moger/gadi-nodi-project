@@ -129,16 +129,6 @@ export function PartnerLoginForm() {
           Sign In as Buyer
         </Link>
       </p>
-
-      <p>
-        New buyer?{" "}
-        <Link
-          href="/register"
-          className="tw:font-bold! tw:text-slate-600! tw:no-underline! tw:underline-offset-4! tw:hover:text-blue-600! tw:hover:underline!"
-        >
-          Create Account
-        </Link>
-      </p>
     </div>
   </form>
 );
