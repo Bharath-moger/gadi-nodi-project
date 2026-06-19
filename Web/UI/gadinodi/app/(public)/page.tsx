@@ -52,7 +52,7 @@ export default async function HomePage() {
 
       <div className="home-page">
         {/* Hero */}
-        <section className="home-hero">
+        <section className="home-hero tw:!py-8 tw:!mb-0">
           <div className="home-hero__bg" aria-hidden />
           <div className="container home-hero__inner">
             <div className="home-hero__copy">
