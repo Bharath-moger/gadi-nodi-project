@@ -149,8 +149,9 @@ export function PartnerVehicleForm({ mode, initial }: PartnerVehicleFormProps) {
           setPending(false);
           return;
         }
-        const created = data as { slug?: string };
-        router.push(created.slug ? `/partner/inventory/${created.slug}` : "/partner/inventory");
+        
+        // Redirect directly to the main inventory listing page
+        router.push("/partner/inventory");
       } else if (initial?.slug) {
         const res = await fetch(`/api/partner/vehicles/${encodeURIComponent(initial.slug)}`, {
           method: "PATCH",
