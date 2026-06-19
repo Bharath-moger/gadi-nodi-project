@@ -112,9 +112,9 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
 
       {!apiAvailable ? <CatalogOfflineBanner /> : null}
 
-      <section className="vehicles-catalog__hero" aria-labelledby="vehicles-catalog-title">
+      <section className="vehicles-catalog__hero tw:!py-3 tw:!mb-0" aria-labelledby="vehicles-catalog-title">
         <div className="vehicles-catalog__hero-bg" aria-hidden />
-        <div className="container vehicles-catalog__hero-inner">
+        <div className="container vehicles-catalog__hero-inner tw:!gap-4">
           <nav className="vehicles-catalog__breadcrumb" aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span aria-hidden>/</span>
@@ -149,7 +149,7 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
             </div>
           </div>
 
-          <div className="vehicles-catalog__notice tw:flex tw:flex-col tw:gap-3 tw:p-4 tw:md:flex-row tw:md:items-center">
+          <div className="vehicles-catalog__notice tw:!mt-4 tw:flex tw:flex-col tw:gap-3 tw:p-4 tw:md:flex-row tw:md:items-center">
             <p className="vehicles-catalog__notice-text">
               {isSignedIn ? (
                 <>
@@ -184,8 +184,8 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
         </div>
       </section>
 
-<section className="vehicles-catalog__main tw:!pt-2 tw:md:!pt-[clamp(40px,6vw,72px)]">   
-     <div className="container catalog-layout vehicles-catalog__layout">
+<section className="vehicles-catalog__main tw:!pt-2 tw:md:!pt-[clamp(40px,6vw,72px)] tw:!py-6 tw:md:!py-10">   
+     <div className="container catalog-layout vehicles-catalog__layout tw:!gap-5">
           <aside className="catalog-sidebar vehicles-catalog__sidebar">
             <div className="vehicles-catalog__filters-head">
               <p className="eyebrow">Filters</p>
