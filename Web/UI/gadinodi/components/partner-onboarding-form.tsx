@@ -230,6 +230,18 @@ export function PartnerOnboardingForm({
         />
       </div>
 
+      <div className="field">
+        <label htmlFor="partner-city">City</label>
+        <input
+          id="partner-city"
+          name="city"
+          type="text"
+          autoComplete="address-level2"
+          required
+          disabled={pending}
+        />
+      </div>
+
       <button className="button button--primary auth-submit" type="submit" disabled={pending}>
   {pending ? "Saving…" : mode === "complete" ? "Finish setup" : "Create seller account"}
 </button>
