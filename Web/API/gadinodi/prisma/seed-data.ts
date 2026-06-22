@@ -961,6 +961,762 @@ export const vehicles: VehicleListing[] = [
     { label: "Insurance", value: "Active" }
   ]
 },
+{
+  id: "v22",
+  slug: "ktm-duke-390-2024",
+  title: "KTM Duke 390",
+  subtitle: "Performance street bike with quick handling and premium features",
+  make: "KTM",
+  model: "Duke 390",
+  year: 2024,
+  condition: "Used",
+  price: 289000,
+  mileage: "6,500 km",
+  fuel: "Petrol",
+  bodyStyle: "Motorcycle",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Orange Wheels",
+  sellerType: "Individual Dealer",
+  description:
+    "Well-maintained performance motorcycle featuring aggressive styling, ride-by-wire throttle, and advanced electronics for spirited city and highway riding.",
+  summary:
+    "Premium used streetfighter motorcycle with verified ownership and service history.",
+  color: "Electronic Orange",
+  seats: 2,
+  financeEstimate: 6200,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #ea580c, #f97316)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/9b/6f/fa/9b6ffaac3f27f5ee293f4c1f3e77131b.jpg"
+  ],
+  features: [
+    "TFT display",
+    "Ride-by-wire throttle",
+    "Quickshifter+",
+    "Service history available"
+  ],
+  specs: [
+    { label: "Engine", value: "399 cc" },
+    { label: "Mileage", value: "28 km/l" },
+    { label: "ABS", value: "Dual-channel" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v23",
+  slug: "yamaha-r15-v4-2024",
+  title: "Yamaha R15 V4",
+  subtitle: "Sport bike with advanced electronics and racing-inspired design",
+  make: "Yamaha",
+  model: "R15 V4",
+  year: 2024,
+  condition: "New",
+  price: 182000,
+  mileage: "7,400 km",
+  fuel: "Petrol",
+  bodyStyle: "Motorcycle",
+  transmission: "Manual",
+  location: "Mangalore",
+  sellerName: "Coastal Riders",
+  sellerType: "Individual Dealer",
+  description:
+    "Well-maintained sport motorcycle featuring a liquid-cooled engine, quick shifter, traction control, and aggressive supersport styling.",
+  summary:
+    "Popular entry-level sport bike with low mileage and complete service records.",
+  color: "Racing Blue",
+  seats: 2,
+  financeEstimate: 3900,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #1d4ed8, #3b82f6)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/4a/f5/e0/4af5e015459c8182211f479cd232376d.jpg"
+  ],
+  features: [
+    "Quick Shifter",
+    "Traction Control System",
+    "Assist & Slipper Clutch",
+    "LED Lighting"
+  ],
+  specs: [
+    { label: "Engine", value: "155 cc" },
+    { label: "Mileage", value: "45 km/l" },
+    { label: "ABS", value: "Dual-channel" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v24",
+  slug: "jawa-42-bobber-2024",
+  title: "Jawa 42 Bobber",
+  subtitle: "Factory bobber motorcycle with premium styling and strong road presence",
+  make: "Jawa",
+  model: "42 Bobber",
+  year: 2024,
+  condition: "Used",
+  price: 214000,
+  mileage: "5,800 km",
+  fuel: "Petrol",
+  bodyStyle: "Motorcycle",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Classic Ride Hub",
+  sellerType: "Individual Dealer",
+  description:
+    "Stylish bobber motorcycle featuring a low-slung stance, floating single seat, alloy wheels, and a powerful liquid-cooled engine for relaxed highway cruising.",
+  summary:
+    "Premium used bobber with low mileage, service records, and excellent condition.",
+  color: "Mystic Copper",
+  seats: 1,
+  financeEstimate: 4600,
+  rating: 4.7,
+  heroTone: "linear-gradient(135deg, #78350f, #d97706)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/30/34/e3/3034e3ee90e10dc8bde9eedf6913fd28.jpg"
+  ],
+  features: [
+    "Floating single seat",
+    "Full LED lighting",
+    "Digital instrument cluster",
+    "Dual-channel ABS"
+  ],
+  specs: [
+    { label: "Engine", value: "334 cc" },
+    { label: "Mileage", value: "30 km/l" },
+    { label: "ABS", value: "Dual-channel" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v25",
+  slug: "mazda-3-hatchback-2024",
+  title: "Mazda 3 Hatchback",
+  subtitle: "Premium hatchback with sporty styling and refined driving dynamics",
+  make: "Mazda",
+  model: "3 Hatchback",
+  year: 2024,
+  condition: "New",
+  price: 2495000,
+  mileage: "12,300 km",
+  fuel: "Petrol",
+  bodyStyle: "Hatchback",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Premium Auto Gallery",
+  sellerType: "Dealer",
+  description:
+    "Well-maintained premium hatchback featuring elegant design, a driver-focused cabin, advanced safety technologies, and responsive performance.",
+  summary:
+    "Low-mileage premium hatchback with complete service records and verified ownership.",
+  color: "Soul Red Crystal",
+  seats: 5,
+  financeEstimate: 52500,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #991b1b, #dc2626)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/76/d2/9c/76d29ca2c688e794f1cca7b2510d218a.jpg"
+  ],
+  features: [
+    "Leather upholstery",
+    "Adaptive cruise control",
+    "360-degree camera",
+    "Apple CarPlay & Android Auto"
+  ],
+  specs: [
+    { label: "Engine", value: "2.5L Petrol" },
+    { label: "Power", value: "191 hp" },
+    { label: "Transmission", value: "6-Speed Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v26",
+  slug: "hyundai-i20-n-line-n8-2024",
+  title: "Hyundai i20 N Line N8",
+  subtitle: "Sporty premium hatchback with turbocharged performance",
+  make: "Hyundai",
+  model: "i20 N Line N8",
+  year: 2024,
+  condition: "Used",
+  price: 1195000,
+  mileage: "14,500 km",
+  fuel: "Petrol",
+  bodyStyle: "Hatchback",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Prime Auto Hub",
+  sellerType: "Dealer",
+  description:
+    "Well-maintained performance hatchback featuring a 1.0L turbo-petrol engine, sporty N Line styling, and premium interior features for enthusiastic drivers.",
+  summary:
+    "Popular turbocharged hatchback with low mileage and complete service history.",
+  color: "Thunder Blue",
+  seats: 5,
+  financeEstimate: 24900,
+  rating: 4.7,
+  heroTone: "linear-gradient(135deg, #1d4ed8, #0ea5e9)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/00/71/b7/0071b79a734509d012106410c901adb8.jpg"
+  ],
+  features: [
+    "Electric sunroof",
+    "Bose premium audio",
+    "Wireless charger",
+    "Connected car technology"
+  ],
+  specs: [
+    { label: "Engine", value: "998 cc Turbo Petrol" },
+    { label: "Power", value: "120 PS" },
+    { label: "Transmission", value: "6-Speed Manual" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v27",
+  slug: "volkswagen-golf-gti-2025",
+  title: "Volkswagen Golf GTI",
+  subtitle: "Iconic hot hatch with turbocharged performance and premium features",
+  make: "Volkswagen",
+  model: "Golf GTI",
+  year: 2025,
+  condition: "Used",
+  price: 4890000,
+  mileage: "9,200 km",
+  fuel: "Petrol",
+  bodyStyle: "Hatchback",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Elite Performance Cars",
+  sellerType: "Dealer",
+  description:
+    "Performance-oriented hatchback featuring a powerful turbocharged engine, sporty suspension setup, and premium interior with advanced driver assistance features.",
+  summary:
+    "Low-mileage hot hatch offering an engaging driving experience and everyday practicality.",
+  color: "Moonstone Grey",
+  seats: 5,
+  financeEstimate: 102000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #374151, #111827)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/6f/d2/c8/6fd2c89b2edb44fd62f27d9473593b15.jpg"
+  ],
+  features: [
+    "Panoramic sunroof",
+    "Digital cockpit",
+    "Adaptive cruise control",
+    "Wireless Apple CarPlay & Android Auto"
+  ],
+  specs: [
+    { label: "Engine", value: "2.0L TSI Turbo Petrol" },
+    { label: "Power", value: "265 PS" },
+    { label: "Transmission", value: "7-Speed DSG" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v28",
+  slug: "bmw-m135i-xdrive-2025",
+  title: "BMW M135i xDrive",
+  subtitle: "Performance hatchback with all-wheel drive and M Sport dynamics",
+  make: "BMW",
+  model: "M135i xDrive",
+  year: 2025,
+  condition: "New",
+  price: 5690000,
+  mileage: "8,400 km",
+  fuel: "Petrol",
+  bodyStyle: "Hatchback",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Prestige Performance Motors",
+  sellerType: "Dealer",
+  description:
+    "Premium performance hatchback featuring BMW M engineering, intelligent xDrive all-wheel drive, adaptive suspension, and a powerful turbocharged engine.",
+  summary:
+    "High-performance luxury hatchback with low mileage and complete service records.",
+  color: "Alpine White",
+  seats: 5,
+  financeEstimate: 118000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #1e293b, #0f172a)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/10/84/47/10844728973a2ec07305158b7490d88d.jpg"
+  ],
+  features: [
+    "xDrive All-Wheel Drive",
+    "M Sport Package",
+    "Adaptive LED Headlights",
+    "Harman Kardon Sound System"
+  ],
+  specs: [
+    { label: "Engine", value: "2.0L TwinPower Turbo Petrol" },
+    { label: "Power", value: "300 hp" },
+    { label: "Transmission", value: "7-Speed Steptronic Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v29",
+  slug: "skoda-slavia-1-5-tsi-style-2024",
+  title: "Skoda Slavia 1.5 TSI Style",
+  subtitle: "Premium sedan with turbocharged performance and spacious cabin",
+  make: "Skoda",
+  model: "Slavia 1.5 TSI Style",
+  year: 2024,
+  condition: "Used",
+  price: 1545000,
+  mileage: "13,200 km",
+  fuel: "Petrol",
+  bodyStyle: "Sedan",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Prime Auto Hub",
+  sellerType: "Dealer",
+  description:
+    "Well-maintained premium sedan featuring a powerful turbo-petrol engine, ventilated seats, sunroof, and complete service history.",
+  summary:
+    "Low-mileage sedan with premium features and excellent highway comfort.",
+  color: "Candy White",
+  seats: 5,
+  financeEstimate: 32000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #0f172a, #475569)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/ff/99/e5/ff99e54f91c39c0673708b80df135a6c.jpg"
+  ],
+  features: [
+    "Electric sunroof",
+    "Ventilated front seats",
+    "Wireless Android Auto & Apple CarPlay",
+    "Cruise control"
+  ],
+  specs: [
+    { label: "Engine", value: "1498 cc TSI Petrol" },
+    { label: "Power", value: "150 PS" },
+    { label: "Transmission", value: "7-Speed DSG" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v30",
+  slug: "toyota-camry-hybrid-2024",
+  title: "Toyota Camry Hybrid",
+  subtitle: "Premium hybrid sedan with exceptional comfort and fuel efficiency",
+  make: "Toyota",
+  model: "Camry Hybrid",
+  year: 2024,
+  condition: "Used",
+  price: 4295000,
+  mileage: "11,800 km",
+  fuel: "Hybrid",
+  bodyStyle: "Sedan",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Prestige Toyota Select",
+  sellerType: "Dealer",
+  description:
+    "Luxury hybrid sedan featuring a refined cabin, advanced safety technologies, smooth automatic transmission, and outstanding fuel efficiency for city and highway driving.",
+  summary:
+    "Premium executive sedan with hybrid technology, low mileage, and complete service records.",
+  color: "Platinum White Pearl",
+  seats: 5,
+  financeEstimate: 89000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #334155, #0f172a)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/6f/6f/95/6f6f952ab8c020e56949561de9ae64a3.jpg"
+  ],
+  features: [
+    "Hybrid powertrain",
+    "JBL premium audio system",
+    "Wireless phone charger",
+    "Toyota Safety Sense"
+  ],
+  specs: [
+    { label: "Engine", value: "2487 cc Hybrid Petrol" },
+    { label: "Power", value: "230 PS" },
+    { label: "Mileage", value: "25 km/l" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v31",
+  slug: "mercedes-benz-c300-amg-line-2024",
+  title: "Mercedes-Benz C 300 AMG Line",
+  subtitle: "Luxury sedan with advanced technology and refined performance",
+  make: "Mercedes-Benz",
+  model: "C 300 AMG Line",
+  year: 2024,
+  condition: "New",
+  price: 6250000,
+  mileage: "9,600 km",
+  fuel: "Petrol",
+  bodyStyle: "Sedan",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Star Select Motors",
+  sellerType: "Dealer",
+  description:
+    "Premium luxury sedan featuring AMG styling, a turbocharged engine, digital cockpit, and advanced driver assistance systems. Maintained with authorized service records.",
+  summary:
+    "Executive luxury sedan with low mileage, premium features, and verified ownership.",
+  color: "Obsidian Black",
+  seats: 5,
+  financeEstimate: 129000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #111827, #374151)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/d8/42/af/d842af6afc1df43d48a3ea097129a850.jpg"
+  ],
+  features: [
+    "AMG Line Package",
+    "Burmester Surround Sound System",
+    "Panoramic Sunroof",
+    "Wireless Apple CarPlay & Android Auto"
+  ],
+  specs: [
+    { label: "Engine", value: "1999 cc Turbo Petrol" },
+    { label: "Power", value: "258 PS" },
+    { label: "Transmission", value: "9G-TRONIC Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v32",
+  slug: "toyota-innova-hycross-zx-hybrid-2024",
+  title: "Toyota Innova HyCross ZX Hybrid",
+  subtitle: "Premium MPV with hybrid efficiency and spacious 7-seater comfort",
+  make: "Toyota",
+  model: "Innova HyCross ZX Hybrid",
+  year: 2024,
+  condition: "Used",
+  price: 3295000,
+  mileage: "18,400 km",
+  fuel: "Hybrid",
+  bodyStyle: "MUV",
+  transmission: "Automatic",
+  location: "Mangalore",
+  sellerName: "Coastal Auto Select",
+  sellerType: "Dealer",
+  description:
+    "Premium family MPV with hybrid technology, panoramic sunroof, ottoman seats, and Toyota reliability. Ideal for long-distance travel and daily family use.",
+  summary:
+    "Well-maintained 7-seater hybrid MPV with low running costs and complete service history.",
+  color: "Attitude Black",
+  seats: 7,
+  financeEstimate: 68000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #0f172a, #334155)",
+  imageUrls: [
+    "https://images.unsplash.com/photo-1748215210939-ad8b6c8c086d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  features: [
+    "Panoramic sunroof",
+    "Ottoman second-row seats",
+    "360-degree camera",
+    "Toyota Safety Sense"
+  ],
+  specs: [
+    { label: "Engine", value: "1987 cc Hybrid Petrol" },
+    { label: "Power", value: "186 PS" },
+    { label: "Mileage", value: "21 km/l" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v33",
+  slug: "kia-carens-prestige-plus-2024",
+  title: "Kia Carens Prestige Plus",
+  subtitle: "Spacious family MPV with premium features and comfortable seating",
+  make: "Kia",
+  model: "Carens Prestige Plus",
+  year: 2024,
+  condition: "Used",
+  price: 1495000,
+  mileage: "18,700 km",
+  fuel: "Petrol",
+  bodyStyle: "MUV",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "South Star Motors",
+  sellerType: "Dealer",
+  description:
+    "Well-maintained 7-seater MPV featuring a spacious cabin, touchscreen infotainment system, rear AC vents, and complete service history.",
+  summary:
+    "Practical family MPV with low mileage, premium comfort, and verified ownership.",
+  color: "Imperial Blue",
+  seats: 7,
+  financeEstimate: 31500,
+  rating: 4.7,
+  heroTone: "linear-gradient(135deg, #1e3a8a, #2563eb)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/25/f7/21/25f721ebce86c7276e89ffe662bd356c.jpg"
+  ],
+  features: [
+    "10.25-inch touchscreen",
+    "Wireless Android Auto & Apple CarPlay",
+    "Rear AC vents",
+    "Cruise control"
+  ],
+  specs: [
+    { label: "Engine", value: "1497 cc Petrol" },
+    { label: "Power", value: "115 PS" },
+    { label: "Mileage", value: "16.5 km/l" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v34",
+  slug: "renault-triber-rxz-2024",
+  title: "Renault Triber RXZ",
+  subtitle: "Versatile 7-seater MPV with modular seating and excellent practicality",
+  make: "Renault",
+  model: "Triber RXZ",
+  year: 2024,
+  condition: "Used",
+  price: 765000,
+  mileage: "22,400 km",
+  fuel: "Petrol",
+  bodyStyle: "MUV",
+  transmission: "Manual",
+  location: "Mysuru",
+  sellerName: "City Drive Motors",
+  sellerType: "Dealer",
+  description:
+    "Well-maintained family MPV featuring flexible 7-seat configuration, touchscreen infotainment, and spacious cabin. Ideal for city commutes and weekend family trips.",
+  summary:
+    "Affordable 7-seater MPV with practical features and verified service history.",
+  color: "Moonlight Silver",
+  seats: 7,
+  financeEstimate: 15900,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #64748b, #334155)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/22/e9/64/22e964f7c4e6e89408ece401ccb6539a.jpg"
+  ],
+  features: [
+    "Flexible modular seating",
+    "8-inch touchscreen infotainment",
+    "Push-button start",
+    "Rear parking camera"
+  ],
+  specs: [
+    { label: "Engine", value: "999 cc Petrol" },
+    { label: "Power", value: "72 PS" },
+    { label: "Mileage", value: "19 km/l" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v35",
+  slug: "bmw-430i-m-sport-coupe-2024",
+  title: "BMW 430i M Sport Coupe",
+  subtitle: "Luxury coupe with sporty handling and premium features",
+  make: "BMW",
+  model: "430i M Sport Coupe",
+  year: 2024,
+  condition: "New",
+  price: 5895000,
+  mileage: "8,900 km",
+  fuel: "Petrol",
+  bodyStyle: "Coupe",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Prestige Auto Select",
+  sellerType: "Dealer",
+  description:
+    "Premium luxury coupe featuring BMW TwinPower Turbo performance, frameless doors, adaptive suspension, and a driver-focused cockpit.",
+  summary:
+    "Low-mileage luxury coupe with sporty dynamics and complete service history.",
+  color: "Brooklyn Grey",
+  seats: 4,
+  financeEstimate: 122000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #1f2937, #111827)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/58/f9/bc/58f9bc0ac5a1471795c8ff19f1107b9b.jpg"
+  ],
+  features: [
+    "M Sport Package",
+    "Adaptive LED Headlights",
+    "Harman Kardon Sound System",
+    "Wireless Apple CarPlay & Android Auto"
+  ],
+  specs: [
+    { label: "Engine", value: "1998 cc Turbo Petrol" },
+    { label: "Power", value: "258 PS" },
+    { label: "Transmission", value: "8-Speed Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v36",
+  slug: "porsche-911-carrera-2024",
+  title: "Porsche 911 Carrera",
+  subtitle: "Iconic sports coupe with precision handling and everyday usability",
+  make: "Porsche",
+  model: "911 Carrera",
+  year: 2024,
+  condition: "New",
+  price: 18500000,
+  mileage: "6,200 km",
+  fuel: "Petrol",
+  bodyStyle: "Coupe",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Elite Performance Cars",
+  sellerType: "Dealer",
+  description:
+    "Meticulously maintained sports coupe featuring Porsche's legendary rear-engine layout, rapid acceleration, premium craftsmanship, and cutting-edge technology.",
+  summary:
+    "Low-mileage luxury sports car with complete service history and verified ownership.",
+  color: "Guards Red",
+  seats: 4,
+  financeEstimate: 385000,
+  rating: 5.0,
+  heroTone: "linear-gradient(135deg, #991b1b, #dc2626)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/11/d1/1b/11d11bb564f0bdabcb2e94b969f11e32.jpg"
+  ],
+  features: [
+    "Sport Chrono Package",
+    "Porsche Active Suspension Management",
+    "Bose Surround Sound System",
+    "Wireless Apple CarPlay"
+  ],
+  specs: [
+    { label: "Engine", value: "2981 cc Twin-Turbo Flat-6" },
+    { label: "Power", value: "394 PS" },
+    { label: "Transmission", value: "8-Speed PDK Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v37",
+  slug: "bmw-z4-m40i-roadster-2024",
+  title: "BMW Z4 M40i Roadster",
+  subtitle: "Luxury convertible sports car with turbocharged performance",
+  make: "BMW",
+  model: "Z4 M40i Roadster",
+  year: 2024,
+  condition: "Used",
+  price: 8950000,
+  mileage: "7,800 km",
+  fuel: "Petrol",
+  bodyStyle: "Convertible",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Prestige Auto Select",
+  sellerType: "Dealer",
+  description:
+    "Premium two-seater convertible featuring a retractable soft-top roof, powerful inline-six engine, adaptive suspension, and luxurious cabin amenities.",
+  summary:
+    "Low-mileage luxury roadster with thrilling performance and complete service history.",
+  color: "San Francisco Red",
+  seats: 2,
+  financeEstimate: 186000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #991b1b, #dc2626)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/d7/de/2c/d7de2c8e0a1788bb6c304f5363c3c689.jpg"
+  ],
+  features: [
+    "Retractable soft-top roof",
+    "Harman Kardon surround sound",
+    "Adaptive M suspension",
+    "Wireless Apple CarPlay & Android Auto"
+  ],
+  specs: [
+    { label: "Engine", value: "2998 cc TwinPower Turbo Petrol" },
+    { label: "Power", value: "340 PS" },
+    { label: "Transmission", value: "8-Speed Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v38",
+  slug: "ford-mustang-gt-convertible-2024",
+  title: "Ford Mustang GT Convertible",
+  subtitle: "Iconic American muscle car with open-top driving experience",
+  make: "Ford",
+  model: "Mustang GT Convertible",
+  year: 2024,
+  condition: "Used",
+  price: 9250000,
+  mileage: "5,900 km",
+  fuel: "Petrol",
+  bodyStyle: "Convertible",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Performance Auto Gallery",
+  sellerType: "Dealer",
+  description:
+    "Powerful convertible sports car featuring a naturally aspirated V8 engine, premium interior, advanced driver technology, and an electrically operated soft-top roof.",
+  summary:
+    "Low-mileage muscle car offering thrilling performance and open-air driving enjoyment.",
+  color: "Race Red",
+  seats: 4,
+  financeEstimate: 192000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #7f1d1d, #dc2626)",
+  imageUrls: [
+    "https://images.unsplash.com/photo-1772593547280-d480065a9f73?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  features: [
+    "Power-operated soft-top roof",
+    "Digital instrument cluster",
+    "B&O premium sound system",
+    "Selectable drive modes"
+  ],
+  specs: [
+    { label: "Engine", value: "5.0L V8 Petrol" },
+    { label: "Power", value: "486 PS" },
+    { label: "Transmission", value: "10-Speed Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v39",
+  slug: "mercedes-benz-cle-300-cabriolet-2025",
+  title: "Mercedes-Benz CLE 300 Cabriolet",
+  subtitle: "Luxury four-seater convertible with premium comfort and elegant styling",
+  make: "Mercedes-Benz",
+  model: "CLE 300 Cabriolet",
+  year: 2025,
+  condition: "Used",
+  price: 11250000,
+  mileage: "4,800 km",
+  fuel: "Petrol",
+  bodyStyle: "Convertible",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Star Luxury Cars",
+  sellerType: "Dealer",
+  description:
+    "Premium convertible featuring a fully automatic soft-top roof, advanced driver assistance systems, Burmester audio, and a luxurious cabin designed for comfortable open-air cruising.",
+  summary:
+    "Low-mileage luxury cabriolet with premium features, verified ownership, and complete service history.",
+  color: "Obsidian Black",
+  seats: 4,
+  financeEstimate: 234000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #111827, #4b5563)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/61/04/5d/61045d46094aec07c1da11773b67d9b9.jpg"
+  ],
+  features: [
+    "Fully automatic soft-top roof",
+    "Burmester 3D surround sound",
+    "AIRSCARF neck-level heating",
+    "MBUX infotainment system"
+  ],
+  specs: [
+    { label: "Engine", value: "1999 cc Turbo Petrol" },
+    { label: "Power", value: "258 PS" },
+    { label: "Transmission", value: "9G-TRONIC Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+}
 
 
 ];
