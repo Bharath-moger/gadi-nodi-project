@@ -27,8 +27,7 @@ type DashboardPayload = {
 
 export default async function PartnerDashboardPage() {
   const { ok, data } = await fetchPartnerApi<DashboardPayload>("dashboard");
-
-  if (!ok || !data) {
+if (!ok || !data) {
     return (
       <div className="partner-admin-page">
         <header className="partner-admin-page__header">
