@@ -279,22 +279,15 @@ pdp-tag
               {vehicle.imageUrls.map((url, index) => (
                 <div
                   key={url}
-                  className="vehicle-gallery__item tw:relative tw:h-[180px] tw:min-w-[min(78vw,360px)] tw:snap-start tw:overflow-hidden tw:rounded-2xl tw:bg-white"
+                  className="vehicle-gallery__item tw:relative tw:h-[180px] tw:min-w-[min(78vw,360px)] tw:snap-start tw:overflow-hidden tw:rounded-2xl tw:bg-white tw:flex tw:items-center tw:justify-center"
                 >
                   <Image
-  src={vehicle.imageUrls[0]}
-  alt={vehicle.title}
-  width={650}
-  height={420}
-  sizes="(max-width: 900px) 100vw, 40vw"
-  className="
-    tw:rounded-full
-    tw:object-contain
-    tw:shadow-lg
-    tw:w-[75%]
-    tw:p-2
-  "
-/>
+                    src={url}
+                    alt={`${vehicle.title} image ${index + 1}`}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 40vw"
+                    className="vehicle-gallery__image tw:object-cover tw:object-center"
+                  />
                 </div>
               ))}
             </div>
