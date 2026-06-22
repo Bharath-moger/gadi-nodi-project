@@ -594,6 +594,80 @@ export const vehicles: VehicleListing[] = [
       { label: "Hours", value: "Verified meter" },
     ],
   },
+  {
+    id: "v13",
+    slug: "hero-sprint-pro-mtb-2024",
+    title: "Hero Sprint Pro MTB",
+    subtitle: "Adventure-ready mountain bike with durable steel frame",
+    make: "Hero",
+    model: "Sprint Pro",
+    year: 2024,
+    condition: "New",
+    price: 15999,
+    mileage: "N/A",
+    fuel: "Other",
+    bodyStyle: "Bicycle",
+    transmission: "Manual",
+    location: "Bengaluru",
+    sellerName: "Cycle Hub",
+    sellerType: "Individual Dealer",
+    description:
+      "Designed for trails and city roads with front suspension and multi-speed gearing.",
+    summary: "Affordable mountain bike for fitness and weekend adventures.",
+    color: "Red & Black",
+    seats: 1,
+    financeEstimate: 380,
+    rating: 4.4,
+    heroTone: "linear-gradient(135deg, #dc2626, #991b1b)",
+    imageUrls: ["https://i.pinimg.com/736x/17/ff/7b/17ff7b8c9a741bf64c5f708b3afd265a.jpg"],
+    features: ["Front suspension", "21-speed gear system", "All-terrain tires"],
+    specs: [
+      { label: "Frame", value: "High-tensile Steel" },
+      { label: "Brakes", value: "Disc Brakes" },
+      { label: "Speeds", value: "21-speed" },
+      { label: "Weight", value: "~15 kg" },
+    ],
+  },
+  {
+  id: "v14",
+  slug: "trek-marlin-5-gen-3",
+  title: "Trek Marlin 5 Gen 3",
+  subtitle: "Trail-ready hardtail mountain bike",
+  make: "Trek",
+  model: "Marlin 5 Gen 3",
+  year: 2025,
+  condition: "New",
+  price: 58199,
+  mileage: "N/A",
+  fuel: "Other",
+  bodyStyle: "Bicycle",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Trek Bicycle Store",
+  sellerType: "Authorized Dealer",
+  description:
+    "Trail-worthy mountain bike with aluminum frame, Shimano CUES drivetrain and hydraulic disc brakes.",
+  summary: "Popular entry-level MTB from Trek.",
+  color: "Fury Red",
+  seats: 1,
+  financeEstimate: 1400,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #dc2626, #991b1b)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/76/fa/0a/76fa0ac486f0c4368453e2e6d9255259.jpg"
+  ],
+  features: [
+    "Hydraulic disc brakes",
+    "Internal cable routing",
+    "Shimano CUES 9-speed"
+  ],
+  specs: [
+    { label: "Frame", value: "Alpha Silver Aluminum" },
+    { label: "Fork", value: "SR Suntour XCE 28" },
+    { label: "Brakes", value: "Hydraulic Disc" },
+    { label: "Weight", value: "≈14.5 kg" }
+  ]
+}
 ];
 
 export const featuredVehicleSlugs = [
