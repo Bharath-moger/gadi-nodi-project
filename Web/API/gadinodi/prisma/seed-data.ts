@@ -266,11 +266,11 @@ export const vehicles: VehicleListing[] = [
     make: "Toyota",
     model: "Innova Crysta GX",
     year: 2022,
-    condition: "Used",
+    condition: "New",
     price: 1890000,
     mileage: "38,400 km",
     fuel: "Diesel",
-    bodyStyle: "Van",
+    bodyStyle: "MUV",
     transmission: "Manual",
     location: "Patna",
     sellerName: "Metro Fleet Exchange",
@@ -386,7 +386,7 @@ export const vehicles: VehicleListing[] = [
     make: "Isuzu",
     model: "D-Max V-Cross",
     year: 2022,
-    condition: "Used",
+    condition: "New",
     price: 2125000,
     mileage: "29,100 km",
     fuel: "Diesel",
@@ -1716,7 +1716,385 @@ export const vehicles: VehicleListing[] = [
     { label: "Transmission", value: "9G-TRONIC Automatic" },
     { label: "Ownership", value: "1st owner" }
   ]
+},
+{
+  id: "v40",
+  slug: "volvo-v60-cross-country-2024",
+  title: "Volvo V60 Cross Country",
+  subtitle: "Luxury estate wagon with all-road capability and premium comfort",
+  make: "Volvo",
+  model: "V60 Cross Country",
+  year: 2024,
+  condition: "New",
+  price: 5890000,
+  mileage: "12,500 km",
+  fuel: "Petrol",
+  bodyStyle: "Wagon",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Scandinavian Auto Select",
+  sellerType: "Dealer",
+  description:
+    "Premium estate wagon offering exceptional comfort, advanced safety features, spacious cargo capacity, and all-road versatility.",
+  summary:
+    "Luxury wagon with practical space, premium features, and complete service history.",
+  color: "Crystal White Pearl",
+  seats: 5,
+  financeEstimate: 122000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #475569, #0f172a)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/33/4b/a1/334ba12470cb556fd38e85ab65997bd8.jpg"
+  ],
+  features: [
+    "Panoramic sunroof",
+    "Pilot Assist",
+    "Harman Kardon audio",
+    "All-wheel drive"
+  ],
+  specs: [
+    { label: "Engine", value: "1969 cc Turbo Petrol" },
+    { label: "Power", value: "250 PS" },
+    { label: "Transmission", value: "8-Speed Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},{
+  id: "v41",
+  slug: "audi-a4-avant-2024",
+  title: "Audi A4 Avant",
+  subtitle: "Premium estate wagon with sporty styling and versatile cargo space",
+  make: "Audi",
+  model: "A4 Avant",
+  year: 2024,
+  condition: "Used",
+  price: 5490000,
+  mileage: "11,300 km",
+  fuel: "Petrol",
+  bodyStyle: "Wagon",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Prestige Luxury Motors",
+  sellerType: "Dealer",
+  description:
+    "Elegant premium estate featuring Audi's signature design, spacious luggage capacity, advanced technology, and refined driving dynamics for both city and long-distance travel.",
+  summary:
+    "Luxury wagon with low mileage, premium features, and complete service records.",
+  color: "Daytona Grey Pearl",
+  seats: 5,
+  financeEstimate: 114000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #374151, #111827)",
+  imageUrls: [
+    "https://images.unsplash.com/photo-1741029482311-0b8e2493c7e5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  features: [
+    "Virtual Cockpit",
+    "Panoramic Sunroof",
+    "Wireless Apple CarPlay & Android Auto",
+    "Powered Tailgate"
+  ],
+  specs: [
+    { label: "Engine", value: "1984 cc TFSI Petrol" },
+    { label: "Power", value: "204 PS" },
+    { label: "Transmission", value: "7-Speed S tronic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v42",
+  slug: "porsche-taycan-cross-turismo-2025",
+  title: "Porsche Taycan Cross Turismo",
+  subtitle: "High-performance electric estate with sports car dynamics and everyday practicality",
+  make: "Porsche",
+  model: "Taycan Cross Turismo",
+  year: 2025,
+  condition: "New",
+  price: 16500000,
+  mileage: "8,100 km",
+  fuel: "Electric",
+  bodyStyle: "Wagon",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Elite EV Motors",
+  sellerType: "Dealer",
+  description:
+    "Premium electric wagon combining Porsche performance with a spacious cabin, advanced technology, and long-range capability. Ideal for luxury touring and daily driving.",
+  summary:
+    "Luxury electric estate with low mileage, premium features, and verified ownership.",
+  color: "Ice Grey Metallic",
+  seats: 5,
+  financeEstimate: 343000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #0f172a, #475569)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/31/83/98/3183988fa09163680ea61b71f5104328.jpg"
+  ],
+  features: [
+    "Panoramic fixed glass roof",
+    "Adaptive air suspension",
+    "Bose surround sound system",
+    "Fast DC charging"
+  ],
+  specs: [
+    { label: "Battery", value: "93.4 kWh Performance Battery Plus" },
+    { label: "Power", value: "476 PS" },
+    { label: "Range", value: "Up to 500 km" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v43",
+  slug: "bmw-m3-touring-competition-xdrive-2025",
+  title: "BMW M3 Touring Competition xDrive",
+  subtitle: "High-performance sports wagon with supercar-rivaling performance",
+  make: "BMW",
+  model: "M3 Touring Competition xDrive",
+  year: 2025,
+  condition: "New",
+  price: 14500000,
+  mileage: "5,400 km",
+  fuel: "Petrol",
+  bodyStyle: "Wagon",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Performance Garage India",
+  sellerType: "Dealer",
+  description:
+    "Performance-focused luxury wagon combining everyday practicality with BMW M engineering. Features xDrive all-wheel drive, adaptive suspension, and a spacious cargo area for long-distance touring.",
+  summary:
+    "Premium sports estate offering exceptional performance, practicality, and low ownership history.",
+  color: "Isle of Man Green",
+  seats: 5,
+  financeEstimate: 302000,
+  rating: 5.0,
+  heroTone: "linear-gradient(135deg, #14532d, #166534)",
+  imageUrls: [
+    "https://images.unsplash.com/photo-1701985203003-1e52f637cf98?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  features: [
+    "M xDrive All-Wheel Drive",
+    "Adaptive M Suspension",
+    "M Carbon Interior Trim",
+    "Harman Kardon Surround Sound"
+  ],
+  specs: [
+    { label: "Engine", value: "2993 cc Twin-Turbo Inline-6" },
+    { label: "Power", value: "530 PS" },
+    { label: "Transmission", value: "8-Speed M Steptronic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v44",
+  slug: "force-traveller-3350-super-2024",
+  title: "Force Traveller 3350 Super",
+  subtitle: "Passenger van designed for staff transport and tour operations",
+  make: "Force Motors",
+  model: "Traveller 3350 Super",
+  year: 2024,
+  condition: "New",
+  price: 1895000,
+  mileage: "38,600 km",
+  fuel: "Diesel",
+  bodyStyle: "Van",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Commercial Vehicle Hub",
+  sellerType: "Dealer",
+  description:
+    "Reliable passenger van ideal for shuttle services, tourism operators, school transportation, and staff movement. Maintained with complete service records.",
+  summary:
+    "Well-maintained passenger van offering high seating capacity and dependable diesel performance.",
+  color: "Arctic White",
+  seats: 14,
+  financeEstimate: 39500,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #334155, #64748b)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/0c/18/85/0c1885e0760d2e17a0fe667d4eda3a69.jpg"
+  ],
+  features: [
+    "High-roof cabin",
+    "Power steering",
+    "Rear AC vents",
+    "Large luggage space"
+  ],
+  specs: [
+    { label: "Engine", value: "2596 cc Diesel" },
+    { label: "Power", value: "115 PS" },
+    { label: "Transmission", value: "5-Speed Manual" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v45",
+  slug: "tata-winger-tourist-2024",
+  title: "Tata Winger Tourist",
+  subtitle: "Comfortable passenger van for shuttle, staff transport, and tour operations",
+  make: "Tata",
+  model: "Winger Tourist",
+  year: 2024,
+  condition: "New",
+  price: 1745000,
+  mileage: "42,800 km",
+  fuel: "Diesel",
+  bodyStyle: "Van",
+  transmission: "Manual",
+  location: "Mangalore",
+  sellerName: "Coastal Commercial Vehicles",
+  sellerType: "Dealer",
+  description:
+    "Well-maintained passenger van designed for staff transportation, airport transfers, tourism, and institutional use. Features a spacious cabin, comfortable seating, and dependable diesel performance.",
+  summary:
+    "Reliable passenger van with high seating capacity, verified ownership, and complete service records.",
+  color: "Pearl White",
+  seats: 13,
+  financeEstimate: 36500,
+  rating: 4.4,
+  heroTone: "linear-gradient(135deg, #1e293b, #475569)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/f2/eb/30/f2eb30e40531db99287ca42eac6f4a78.jpg"
+  ],
+  features: [
+    "High-roof cabin",
+    "Rear air-conditioning",
+    "Power steering",
+    "Large luggage compartment"
+  ],
+  specs: [
+    { label: "Engine", value: "2179 cc Diesel" },
+    { label: "Power", value: "100 PS" },
+    { label: "Transmission", value: "5-Speed Manual" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v46",
+  slug: "maruti-eeco-cargo-2024",
+  title: "Maruti Eeco Cargo",
+  subtitle: "Compact cargo van built for deliveries and small business operations",
+  make: "Maruti Suzuki",
+  model: "Eeco Cargo",
+  year: 2024,
+  condition: "New",
+  price: 545000,
+  mileage: "28,900 km",
+  fuel: "Petrol",
+  bodyStyle: "Van",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "City Commercial Vehicles",
+  sellerType: "Dealer",
+  description:
+    "Practical cargo van ideal for local deliveries, courier services, and small business transportation. Offers low running costs, easy maintenance, and a spacious load area.",
+  summary:
+    "Reliable commercial cargo van with verified service records and excellent utility.",
+  color: "Superior White",
+  seats: 2,
+  financeEstimate: 11400,
+  rating: 4.3,
+  heroTone: "linear-gradient(135deg, #475569, #1e293b)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/45/87/aa/4587aaebecdc5cf614f04f52f4f9b833.jpg"
+  ],
+  features: [
+    "Large cargo compartment",
+    "Sliding side doors",
+    "Low maintenance costs",
+    "Compact city-friendly dimensions"
+  ],
+  specs: [
+    { label: "Engine", value: "1197 cc Petrol" },
+    { label: "Power", value: "80 PS" },
+    { label: "Transmission", value: "5-Speed Manual" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v47",
+  slug: "toyota-hilux-high-4x4-at-2024",
+  title: "Toyota Hilux High 4x4 AT",
+  subtitle: "Rugged pickup truck with off-road capability and premium comfort",
+  make: "Toyota",
+  model: "Hilux High 4x4 AT",
+  year: 2024,
+  condition: "New",
+  price: 3495000,
+  mileage: "16,800 km",
+  fuel: "Diesel",
+  bodyStyle: "Pickup",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Adventure Motors",
+  sellerType: "Dealer",
+  description:
+    "Premium lifestyle pickup truck designed for off-road adventures, farm work, towing, and commercial utility. Features a robust ladder-frame chassis and proven Toyota reliability.",
+  summary:
+    "Well-maintained 4x4 pickup with low mileage, premium features, and complete service records.",
+  color: "Super White",
+  seats: 5,
+  financeEstimate: 73000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #1f2937, #111827)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/4c/96/c8/4c96c8bbb3acec9b07f72eda17fa0711.jpg"
+  ],
+  features: [
+    "4x4 drivetrain",
+    "Automatic transmission",
+    "8-inch touchscreen infotainment",
+    "Rear differential lock"
+  ],
+  specs: [
+    { label: "Engine", value: "2755 cc Diesel" },
+    { label: "Power", value: "204 PS" },
+    { label: "Transmission", value: "6-Speed Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v48",
+  slug: "mahindra-scorpio-getaway-4x4-2024",
+  title: "Mahindra Scorpio Getaway 4x4",
+  subtitle: "Rugged double-cab pickup built for work, adventure, and utility",
+  make: "Mahindra",
+  model: "Scorpio Getaway 4x4",
+  year: 2024,
+  condition: "New",
+  price: 1395000,
+  mileage: "34,200 km",
+  fuel: "Diesel",
+  bodyStyle: "Pickup",
+  transmission: "Manual",
+  location: "Mysuru",
+  sellerName: "Western Commercial Motors",
+  sellerType: "Dealer",
+  description:
+    "Reliable pickup truck designed for farm operations, construction work, cargo transport, and weekend off-road adventures. Combines Scorpio toughness with an open cargo bed.",
+  summary:
+    "Versatile double-cab pickup offering 4x4 capability, cargo-carrying practicality, and proven Mahindra durability.",
+  color: "Napoli Black",
+  seats: 5,
+  financeEstimate: 29000,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #374151, #111827)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/15/e5/10/15e51005ed6b241a0b478d4612d9a797.jpg"
+  ],
+  features: [
+    "4x4 drivetrain",
+    "Double-cab configuration",
+    "Large cargo bed",
+    "Heavy-duty suspension"
+  ],
+  specs: [
+    { label: "Engine", value: "2179 cc mHawk Diesel" },
+    { label: "Power", value: "120 PS" },
+    { label: "Transmission", value: "5-Speed Manual" },
+    { label: "Ownership", value: "1st owner" }
+  ]
 }
+
 
 
 ];
