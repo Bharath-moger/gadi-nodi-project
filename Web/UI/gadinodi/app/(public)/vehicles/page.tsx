@@ -204,9 +204,9 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
         </div>
       </section>
 
-<section className="vehicles-catalog__main tw:!pt-2 tw:md:!pt-[clamp(40px,6vw,72px)] tw:!py-6 tw:md:!py-10">   
-     <div className="container catalog-layout vehicles-catalog__layout tw:!gap-5">
-          <aside className="catalog-sidebar vehicles-catalog__sidebar">
+<section className="vehicles-catalog__main tw:!pt-2 tw:md:!pt-[clamp(40px,6vw,72px)] ">   
+     <div className="container catalog-layout vehicles-catalog__layout tw:!gap-5 tw:h-[90vh]">
+          <aside className="catalog-sidebar vehicles-catalog__sidebar ">
             <div
               className="
                 tw:sticky
@@ -214,6 +214,8 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
                 tw:z-20
                 tw:bg-white/80
                 tw:backdrop-blur-md
+                tw:rounded-2xl
+                tw:p-3
               "
             >
               <div className="vehicles-catalog__filters-head">
@@ -394,7 +396,7 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
             </article>
           </aside>
 
-          <div className="catalog-results vehicles-catalog__results tw:h-[710px] tw:overflow-y-scroll">
+          <div className="catalog-results vehicles-catalog__results tw:h-[100%] tw:overflow-y-scroll">
 
             {/*
               ════════════════════════════════════════════════════════════════
