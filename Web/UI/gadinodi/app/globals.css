@@ -552,10 +552,10 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
+  min-height: 30px;
   padding: 0 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(99, 102, 241, 0.06);
   border: 1px solid rgba(24, 33, 47, 0.08);
   color: var(--foreground);
 }
