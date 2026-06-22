@@ -47,7 +47,7 @@ export async function POST(request: Request) {
   const apiKey = process.env.IMGBB_API_KEY;
   if (!apiKey) {
     return NextResponse.json(
-      { message: "IMGBB_API_KEY is missing in Web/UI/gadinodi/.env.local" },
+      { message: "IMGBB_API_KEY is missing in Web/UI/gadinodi/.env" },
       { status: 500 },
     );
   }

@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: ["127.0.0.1"],
   outputFileTracingRoot: path.join(__dirname, "..", "..", "..", ".."),
   images: {
+    // Forces Next.js to load images directly from the source link, bypassing private IP security blocks completely
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",

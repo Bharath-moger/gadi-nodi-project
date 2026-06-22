@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image"; 
 
 import { fetchPartnerApi } from "@/lib/partner-server";
 import { InventoryActions } from "./inventory-actions";
@@ -19,10 +20,12 @@ type InventoryRow = {
   price: number;
   location: string;
   updatedAt: string;
+  imageUrls?: string[]; 
 };
 
 export default async function PartnerInventoryPage() {
   const { ok, data } = await fetchPartnerApi<InventoryRow[]>("vehicles");
+  
 
   if (!ok || !data) {
     return (
@@ -38,7 +41,6 @@ export default async function PartnerInventoryPage() {
   }
 
   return (
-    /* FIXED OVERFLOW BOUNDS: Stripped container limits out entirely to allow absolute overlays to pop cleanly outside lines */
     <div className="partner-admin-page tw:overflow-visible">
       
       <header className="partner-admin-page__header tw:overflow-visible">
@@ -63,7 +65,6 @@ export default async function PartnerInventoryPage() {
           </Link>
         </div>
       ) : (
-        /* FIXED PARENT CARD WRAPPER: Overrode native template padding cards to prevent row container box stretching bugs */
         <div className="partner-admin-card partner-admin-card--table !tw:overflow-visible !tw:max-h-none tw:mb-20">
           <div className="tw:w-full !tw:overflow-visible">
             
@@ -82,10 +83,36 @@ export default async function PartnerInventoryPage() {
               <tbody className="!tw:overflow-visible">
                 {data.map((row) => (
                   <tr key={row.slug} className="!tw:overflow-visible">
-                    <td>
-                      <strong>{row.title}</strong>
-                      <div className="partner-inventory-meta">
-                        {row.make} {row.model}
+                    <td className="!tw:overflow-visible">
+                      <div className="tw:flex tw:items-center tw:gap-4">
+                        
+                        {/* 1. Thumbnail Box Layout */}
+                        {/* CHANGED: Swapped tw:w-12 to tw:w-16 (wider box) to give landscape vehicle pictures a naturally clean aspect ratio space */}
+                        <div className="tw:w-16 tw:h-12 tw:rounded-md tw:overflow-hidden tw:bg-neutral-100 tw:flex-shrink-0 tw:relative tw:border tw:border-neutral-200/80">
+                          {row.imageUrls && row.imageUrls.length > 0 ? (
+                            <Image
+                              src={row.imageUrls[0]}
+                              alt={row.title}
+                              fill
+                              sizes="64px"
+                              /* ─── FIXED HERE: Changed from tw:object-cover to tw:object-contain so the whole car is fully visible ─── */
+                              className="tw:object-contain tw:p-0.5"
+                            />
+                          ) : (
+                            <div className="tw:w-full tw:h-full tw:flex tw:items-center tw:justify-center tw:text-neutral-400 tw:text-[9px] tw:font-bold tw:bg-neutral-100 tw:select-none">
+                              NO IMG
+                            </div>
+                          )}
+                        </div>
+
+                        {/* 2. Text Layout block */}
+                        <div>
+                          <strong className="tw:block">{row.title}</strong>
+                          <div className="partner-inventory-meta">
+                            {row.make} {row.model}
+                          </div>
+                        </div>
+
                       </div>
                     </td>
                     <td>{row.year}</td>
@@ -94,7 +121,6 @@ export default async function PartnerInventoryPage() {
                     <td>{row.location}</td>
                     <td>{new Date(row.updatedAt).toLocaleDateString()}</td>
                     
-                    {/* Fixed row cell layout with fully controlled custom click dropdown handles */}
                     <td className="tw:text-right !tw:overflow-visible tw:relative">
                       <InventoryActions slug={row.slug} />
                     </td>
