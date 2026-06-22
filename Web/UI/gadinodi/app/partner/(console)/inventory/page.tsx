@@ -25,8 +25,6 @@ type InventoryRow = {
 
 export default async function PartnerInventoryPage() {
   const { ok, data } = await fetchPartnerApi<InventoryRow[]>("vehicles");
-  
-
   if (!ok || !data) {
     return (
       <div className="partner-admin-page">
