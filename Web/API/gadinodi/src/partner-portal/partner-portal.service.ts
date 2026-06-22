@@ -53,6 +53,7 @@ export class PartnerPortalService {
           price: true,
           condition: true,
           updatedAt: true,
+          imageUrls: true, // Retains thumbnails inside dashboard summary widgets if requested
         },
       }),
     ]);
@@ -119,6 +120,7 @@ export class PartnerPortalService {
         price: true,
         location: true,
         updatedAt: true,
+        imageUrls: true, // ◄ Retains and passes the image array safely to your inventory view table
       },
     });
   }

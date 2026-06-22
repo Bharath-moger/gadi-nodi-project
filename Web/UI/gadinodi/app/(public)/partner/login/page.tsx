@@ -23,7 +23,7 @@ export default function PartnerLoginPage() {
 
         <div className="panel auth-panel">
           <p className="eyebrow">Seller portal</p>
-          <h1>Sign in</h1>
+          <h1>Seller sign in</h1> 
           <p className="page-copy auth-lead">
             Use the email and password for your seller account. If you still need a seller profile, complete
             onboarding first.

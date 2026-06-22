@@ -121,7 +121,7 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
     <>
       <StructuredData data={schema} />
 
-      <section className="page-hero">
+      <section className="page-hero tw:!py-3 tw:!mb-0">
         <div className="container">
           <div className="breadcrumb">
             <Link href="/">Home</Link>
@@ -131,23 +131,94 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
             <span>{vehicle.title}</span>
           </div>
 
-          <div className="pdp-hero pdp-hero--image-first tw:gap-6">
+          <div className="pdp-hero pdp-hero--image-first tw:gap-4">
             <div
-              className="pdp-hero__media pdp-hero__media--contain tw:min-h-[420px] tw:overflow-hidden tw:bg-white"
-              style={{ background: vehicle.imageUrls[0] ? "#ffffff" : vehicle.heroTone }}
-            >
-              {vehicle.imageUrls[0] ? (
-                <Image
-                  src={vehicle.imageUrls[0]}
-                  alt={vehicle.title}
-                  fill
-                  sizes="(max-width: 900px) 100vw, 40vw"
-                  className="pdp-hero__image"
-                />
-              ) : null}
-              <span className="vehicle-card__badge">{vehicle.condition}</span>
-              <span className="vehicle-card__seller">{vehicle.sellerType}</span>
-            </div>
+  className="
+    pdp-hero__media
+    pdp-hero__media--contain
+    tw:relative
+    tw:h-[200px]
+    md:tw:h-[300px]
+    tw:flex
+    tw:items-center
+    tw:justify-center
+    tw:bg-transparent
+    tw:rounded-[var(--radius-lg)]
+    tw:border
+    tw:border-gray-200
+    tw:shadow-2xl
+    tw:overflow-hidden
+  "
+>
+  {vehicle.imageUrls[0] ? (
+    <Image
+      src={vehicle.imageUrls[0]}
+      alt={vehicle.title}
+      fill
+      sizes="(max-width: 900px) 100vw, 40vw"
+      className="tw:object-cover tw:shadow-lg"
+    />
+  ) : null}
+
+ <div
+  className="
+    tw:absolute
+    tw:-drop-shadow-lg
+    tw:top-3
+    tw:left-3
+    tw:flex
+    tw:gap-2
+    tw:z-20
+  "
+>
+<span
+className="
+pdp-tag
+  tw:rounded-full
+  tw:bg-purple-500/40
+  tw:backdrop-blur-md
+  tw:border
+  tw:border-white/20
+
+  tw:px-3
+  tw:py-2
+  tw:text-xs
+
+  tw:font-medium
+  tw:text-white
+  tw:shadow-sm
+  tw:h-fit
+  tw:leading-none
+"
+>
+
+      {vehicle.condition}
+    </span>
+
+<span
+className="
+pdp-tag
+  tw:rounded-full
+  tw:bg-purple-500/40
+  tw:backdrop-blur-md
+  tw:border
+  tw:border-white/20
+
+  tw:px-3
+  tw:py-2
+  tw:text-xs
+
+  tw:font-medium
+  tw:text-white
+  tw:shadow-sm
+  tw:h-fit
+  tw:leading-none
+"
+>
+      {vehicle.sellerType}
+    </span>
+  </div>
+</div>
 
             <div className="pdp-hero__content">
               <p className="eyebrow">{vehicle.location}</p>
@@ -177,20 +248,25 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
                 {formatCurrency(vehicle.price)}
               </strong>
               <p>Indicative EMI from {formatCurrency(vehicle.financeEstimate)}/month</p>
-              <div className="purchase-panel__actions">
-                {isSignedIn ? (
-                  <Link className="button button--primary" href={enquiryMailto(vehicle.title)}>
-                    Email your enquiry
-                  </Link>
-                ) : (
-                  <Link className="button button--primary" href="/login">
-                    Sign in to enquire
-                  </Link>
-                )}
-                <Link className="button button--secondary" href="/partners">
-                  Seller types on Gadinodi
-                </Link>
-              </div>
+            <div className="purchase-panel__actions">
+  {isSignedIn ? (
+    <Link className="button button--primary" href={enquiryMailto(vehicle.title)}>
+      Email your enquiry
+    </Link>
+  ) : (
+    <Link className="button button--primary" href="/login">
+      Sign in to enquire
+    </Link>
+  )}
+  
+  {/* Contact Seller CTA (Replaced Seller Types button) */}
+  <a 
+    className="button button--secondary tw:flex tw:items-center tw:justify-center tw:gap-2" 
+    href="tel:+919876543210"
+  >
+    Contact us
+  </a>
+</div>
               <ul className="compact-list">
                 <li>Seller: {vehicle.sellerName}</li>
                 <li>Colour: {vehicle.color}</li>
@@ -201,21 +277,21 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
           </div>
 
           {vehicle.imageUrls.length > 1 ? (
-            <div
-              className="vehicle-gallery tw:flex tw:gap-4 tw:overflow-x-auto tw:scroll-smooth tw:snap-x tw:snap-mandatory tw:pb-2"
+           <div
+  className="vehicle-gallery tw:flex tw:gap-3 tw:overflow-x-auto tw:scroll-smooth tw:snap-x tw:snap-mandatory tw:pb-2 tw:!mt-4"
               aria-label={`${vehicle.title} image gallery`}
             >
               {vehicle.imageUrls.map((url, index) => (
                 <div
                   key={url}
-                  className="vehicle-gallery__item tw:relative tw:h-[180px] tw:min-w-[min(78vw,360px)] tw:snap-start tw:overflow-hidden tw:rounded-2xl tw:bg-white"
+                  className="vehicle-gallery__item tw:relative tw:h-[180px] tw:min-w-[min(78vw,360px)] tw:snap-start tw:overflow-hidden tw:rounded-2xl tw:bg-white tw:flex tw:items-center tw:justify-center"
                 >
                   <Image
                     src={url}
                     alt={`${vehicle.title} image ${index + 1}`}
                     fill
-                    sizes="(max-width: 900px) 78vw, 360px"
-                    className="vehicle-gallery__image tw:object-contain tw:p-3"
+                    sizes="(max-width: 900px) 100vw, 40vw"
+                    className="vehicle-gallery__image tw:object-cover tw:object-center"
                   />
                 </div>
               ))}
@@ -224,9 +300,9 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
         </div>
       </section>
 
-      <section className="section">
-        <div className="container pdp-layout">
-          <div className="pdp-content">
+      <section className="section tw:!py-8 tw:md:!py-12">
+        <div className="container pdp-layout tw:!gap-5">
+          <div className="pdp-content tw:!gap-4">
             <article className="panel">
               <p className="eyebrow">Overview</p>
               <h2>Why buyers shortlist this vehicle</h2>
@@ -259,7 +335,7 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
             </article>
           </div>
 
-          <aside className="pdp-sidebar">
+          <aside className="pdp-sidebar tw:!gap-4">
             <article className="panel">
               <p className="eyebrow">Seller details</p>
               <h3>{vehicle.sellerName}</h3>
@@ -283,7 +359,7 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
         </div>
       </section>
 
-      <section className="section section--muted">
+      <section className="section section--muted tw:!py-8 tw:md:!py-12">
         <div className="container">
           <div className="section-heading">
             <p className="eyebrow">Similar stock</p>
