@@ -248,20 +248,25 @@ pdp-tag
                 {formatCurrency(vehicle.price)}
               </strong>
               <p>Indicative EMI from {formatCurrency(vehicle.financeEstimate)}/month</p>
-              <div className="purchase-panel__actions">
-                {isSignedIn ? (
-                  <Link className="button button--primary" href={enquiryMailto(vehicle.title)}>
-                    Email your enquiry
-                  </Link>
-                ) : (
-                  <Link className="button button--primary" href="/login">
-                    Sign in to enquire
-                  </Link>
-                )}
-                <Link className="button button--secondary" href="/partners">
-                  Seller types on Gadinodi
-                </Link>
-              </div>
+            <div className="purchase-panel__actions">
+  {isSignedIn ? (
+    <Link className="button button--primary" href={enquiryMailto(vehicle.title)}>
+      Email your enquiry
+    </Link>
+  ) : (
+    <Link className="button button--primary" href="/login">
+      Sign in to enquire
+    </Link>
+  )}
+  
+  {/* Contact Seller CTA (Replaced Seller Types button) */}
+  <a 
+    className="button button--secondary tw:flex tw:items-center tw:justify-center tw:gap-2" 
+    href="tel:+919876543210"
+  >
+    Contact us
+  </a>
+</div>
               <ul className="compact-list">
                 <li>Seller: {vehicle.sellerName}</li>
                 <li>Colour: {vehicle.color}</li>
