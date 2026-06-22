@@ -66,7 +66,7 @@ if (!ok || !data) {
         <div>
           <h2 className="partner-admin-page__title">Dashboard</h2>
           <p className="partner-admin-page__subtitle">
-            Welcome back, {profile.businessName}
+            {profile.businessName} · {profile.city} · {profile.phone}
           </p>
         </div>
         <div className="partner-admin-page__actions">
