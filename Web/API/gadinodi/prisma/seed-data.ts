@@ -667,7 +667,302 @@ export const vehicles: VehicleListing[] = [
     { label: "Brakes", value: "Hydraulic Disc" },
     { label: "Weight", value: "≈14.5 kg" }
   ]
-}
+},
+{
+  id: "v15",
+  slug: "montra-madrock-27-5",
+  title: "Montra Madrock 27.5",
+  subtitle: "Entry-level MTB for city and trail riding",
+  make: "Montra",
+  model: "Madrock 27.5",
+  year: 2025,
+  condition: "New",
+  price: 21999,
+  mileage: "N/A",
+  fuel: "Other",
+  bodyStyle: "Bicycle",
+  transmission: "Manual",
+  location: "Mangalore",
+  sellerName: "Cycling Boutique",
+  sellerType: "Authorized Dealer",
+  description:
+    "Reliable mountain bike with Shimano drivetrain and mechanical disc brakes.",
+  summary: "One of India's most popular budget MTBs.",
+  color: "Grey Orange",
+  seats: 1,
+  financeEstimate: 550,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #f97316, #ea580c)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/8d/da/09/8dda093c3275556f9c965620d09d3f2a.jpg"
+  ],
+  features: [
+    "27.5-inch wheels",
+    "Shimano gears",
+    "Double-wall alloy rims"
+  ],
+  specs: [
+    { label: "Frame", value: "Alloy MTB Frame" },
+    { label: "Brakes", value: "Mechanical Disc" },
+    { label: "Speeds", value: "21-Speed" },
+    { label: "Tyres", value: "27.5 x 2.35" }
+  ]
+},
+{
+  id: "v16",
+  slug: "timp-peak-2-0-pro-charcoal-black-outlet",
+  title: "Timp Peak 2.0 Pro",
+  subtitle: "Premium full-suspension electric enduro mountain bike",
+  make: "Ari Bikes",
+  model: "Timp Peak 2.0 Pro",
+  year: 2025,
+  condition: "New",
+  price: 9299,
+  mileage: "N/A",
+  fuel: "Electric",
+  bodyStyle: "EBike",
+  transmission: "Manual",
+  location: "Bengaluru, Karnataka",
+  sellerName: "E-MTB Hub Bengaluru",
+  sellerType: "Authorized Dealer",
+  description:
+    "High-performance electric enduro bike featuring Bosch Performance Line CX Gen 5 motor, 800Wh battery, 170mm suspension travel, and SRAM X0 Eagle Transmission.",
+  summary:
+    "Carbon-frame eMTB built for aggressive trail and enduro riding.",
+  color: "Charcoal Black",
+  seats: 1,
+  financeEstimate: 220,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #111827, #374151)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/bb/e5/4b/bbe54b09a389a5adf2a8ae9f48b10b9c.jpg"
+  ],
+  features: [
+    "Bosch Performance Line CX Gen 5",
+    "800Wh Bosch PowerTube battery",
+    "170mm front and rear travel",
+    "SRAM X0 Eagle Transmission",
+    "Carbon frame"
+  ],
+  specs: [
+    { label: "Frame", value: "CleanCast Carbon" },
+    { label: "Motor", value: "Bosch Performance Line CX Gen 5" },
+    { label: "Battery", value: "800Wh Bosch PowerTube" },
+    { label: "Fork", value: "RockShox ZEB Ultimate RC2" },
+    { label: "Rear Shock", value: "RockShox Vivid Ultimate RC2T" },
+    { label: "Drivetrain", value: "SRAM X0 Eagle Transmission" },
+    { label: "Travel", value: "170mm / 170mm" },
+    { label: "Brakes", value: "SRAM Maven Silver" }
+  ]
+},
+{
+  id: "v17",
+  slug: "dengfu-e82-m560-750w",
+  title: "Dengfu E82 Carbon E-MTB",
+  subtitle: "Full-suspension carbon electric mountain bike",
+  make: "Dengfu",
+  model: "E82 M560",
+  year: 2025,
+  condition: "New",
+  price: 439900,
+  mileage: "N/A",
+  fuel: "Electric",
+  bodyStyle: "EBike",
+  transmission: "Manual",
+  location: "Mangalore, Karnataka",
+  sellerName: "Coastal E-Bikes",
+  sellerType: "Premium Dealer",
+  description:
+    "Premium carbon-fiber enduro eMTB powered by the Bafang M560 mid-drive motor. Designed for aggressive trail and mountain riding with long-travel suspension and a high-capacity battery.",
+  summary:
+    "750W carbon electric mountain bike with 1008Wh battery and 170mm suspension.",
+  color: "Black Matt",
+  seats: 1,
+  financeEstimate: 10500,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #111827, #374151)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/62/9a/a2/629aa22514d0ac927cc2c51650e7d849.jpg"
+  ],
+  features: [
+    "Toray T700/T800 carbon frame",
+    "Bafang M560 750W mid-drive motor",
+    "1008Wh battery",
+    "170mm rear suspension travel",
+    "Internal cable routing",
+    "29-inch wheel compatibility"
+  ],
+  specs: [
+    { label: "Motor", value: "Bafang M560 750W" },
+    { label: "Torque", value: "130 Nm" },
+    { label: "Battery", value: "48V 21Ah (1008Wh)" },
+    { label: "Frame", value: "Toray T700/T800 Carbon Fiber" },
+    { label: "Travel", value: "170mm" },
+    { label: "Wheel Size", value: "29 x 2.6 / 27.5 x 2.8" },
+    { label: "Brakes", value: "Hydraulic Disc" },
+    { label: "Top Speed", value: "45 km/h" }
+  ]
+},
+{
+  id: "v18",
+  slug: "m600-carbon-fiber-electric-mountain-bike",
+  title: "M600 Carbon Fiber Electric Mountain Bicycle",
+  subtitle: "High-performance carbon eMTB with mid-drive motor",
+  make: "Dengfu",
+  model: "M600 Carbon E-MTB",
+  year: 2025,
+  condition: "Used",
+  price: 349999,
+  mileage: "N/A",
+  fuel: "Electric",
+  bodyStyle: "EBike",
+  transmission: "Manual",
+  location: "Bengaluru, Karnataka",
+  sellerName: "E-Bike World",
+  sellerType: "Authorized Dealer",
+  description:
+    "Premium electric mountain bike built with a lightweight carbon fiber frame and powerful Bafang M600 mid-drive motor. Designed for trail riding, climbing, and long-distance adventures.",
+  summary:
+    "Carbon-frame electric MTB with powerful mid-drive motor and long-range battery.",
+  color: "Matte Black",
+  seats: 1,
+  financeEstimate: 8400,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #111827, #374151)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/8b/59/f2/8b59f2ffa43ee9ca1c9ecf8062cd271d.jpg",
+  ],
+  features: [
+    "Carbon fiber frame",
+    "Bafang M600 mid-drive motor",
+    "Integrated battery",
+    "Full suspension",
+    "Hydraulic disc brakes",
+    "29-inch wheels"
+  ],
+  specs: [
+    { label: "Motor", value: "Bafang M600 500W" },
+    { label: "Torque", value: "120 Nm" },
+    { label: "Battery", value: "48V 17.5Ah Lithium-ion" },
+    { label: "Frame", value: "Carbon Fiber" },
+    { label: "Range", value: "Up to 120 km" },
+    { label: "Top Speed", value: "45 km/h" },
+    { label: "Brakes", value: "Hydraulic Disc" },
+    { label: "Wheel Size", value: "29 inch" }
+  ]
+},
+{
+  id: "v19",
+  slug: "tvs-jupiter-125-smartxconnect-2024",
+  title: "TVS Jupiter 125 SmartXonnect",
+  subtitle: "Feature-rich scooter with Bluetooth connectivity",
+  make: "TVS",
+  model: "Jupiter 125 SmartXonnect",
+  year: 2024,
+  condition: "New",
+  price: 89500,
+  mileage: "8,500 km",
+  fuel: "Petrol",
+  bodyStyle: "Scooter",
+  transmission: "Automatic",
+  location: "Mangalore",
+  sellerName: "Coastal Wheels",
+  sellerType: "Garage",
+  description:
+    "Well-maintained family scooter with excellent ride comfort, spacious storage, and connected features.",
+  summary:
+    "Popular 125cc scooter with verified service history and low mileage.",
+  color: "Dawn Orange",
+  seats: 2,
+  financeEstimate: 1900,
+  rating: 4.7,
+  heroTone: "linear-gradient(135deg, #ea580c, #f97316)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/89/d9/00/89d900db66340cd4abff82d59fdbc293.jpg"
+  ],
+  features: [
+    "Bluetooth connectivity",
+    "Turn-by-turn navigation",
+    "External fuel fill",
+    "LED headlamp"
+  ],
+  specs: [
+    { label: "Engine", value: "124.8 cc" },
+    { label: "Mileage", value: "~50 km/l" },
+    { label: "Ownership", value: "1st owner" },
+    { label: "Insurance", value: "Comprehensive active" }
+  ]
+},
+{
+  id: "v20",
+  slug: "suzuki-access-125-2024",
+  title: "Suzuki Access 125",
+  subtitle: "Comfortable family scooter with excellent mileage",
+  make: "Suzuki",
+  model: "Access 125",
+  year: 2024,
+  condition: "New",
+  price: 84500,
+  mileage: "9,800 km",
+  fuel: "Petrol",
+  bodyStyle: "Scooter",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Metro Wheels",
+  sellerType: "Garage",
+  description:
+    "Well-maintained scooter with smooth engine performance and spacious under-seat storage.",
+  summary: "Popular 125cc scooter with good resale value.",
+  color: "Metallic Matte Black",
+  seats: 2,
+  financeEstimate: 1800,
+  rating: 4.6,
+  heroTone: "linear-gradient(135deg, #111827, #4b5563)",
+  imageUrls: ["https://i.pinimg.com/1200x/06/ea/51/06ea51359bdb01d058a50ae8e14fa1e7.jpg"],
+  features: ["LED headlamp", "External fuel lid", "Large storage"],
+  specs: [
+    { label: "Engine", value: "124cc" },
+    { label: "Mileage", value: "~50 km/l" },
+    { label: "Ownership", value: "1st owner" },
+    { label: "Insurance", value: "Active" }
+  ]
+},
+{
+  id: "v21",
+  slug: "yamaha-fascino-125-fi-hybrid-2024",
+  title: "Yamaha Fascino 125 Fi Hybrid",
+  subtitle: "Stylish hybrid scooter with smart motor assist",
+  make: "Yamaha",
+  model: "Fascino 125 Fi Hybrid",
+  year: 2024,
+  condition: "Used",
+  price: 89900,
+  mileage: "7,200 km",
+  fuel: "Petrol",
+  bodyStyle: "Scooter",
+  transmission: "Automatic",
+  location: "Udupi",
+  sellerName: "Coastal Motors",
+  sellerType: "Dealer",
+  description:
+    "Elegant scooter with hybrid assist technology and premium styling.",
+  summary: "Lightweight scooter with impressive fuel economy.",
+  color: "Dark Matte Blue",
+  seats: 2,
+  financeEstimate: 1900,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #1d4ed8, #3b82f6)",
+  imageUrls: ["https://i.pinimg.com/1200x/f9/4b/5f/f94b5f5cea170d2b42d84c40aed400a9.jpg"],
+  features: ["Hybrid assist", "Bluetooth", "Side stand engine cut-off"],
+  specs: [
+    { label: "Engine", value: "125cc" },
+    { label: "Mileage", value: "~55 km/l" },
+    { label: "Ownership", value: "1st owner" },
+    { label: "Insurance", value: "Active" }
+  ]
+},
+
+
 ];
 
 export const featuredVehicleSlugs = [
