@@ -133,21 +133,92 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
 
           <div className="pdp-hero pdp-hero--image-first tw:gap-4">
             <div
-              className="pdp-hero__media pdp-hero__media--contain tw:min-h-[420px] tw:overflow-hidden tw:bg-white"
-              style={{ background: vehicle.imageUrls[0] ? "#ffffff" : vehicle.heroTone }}
-            >
-              {vehicle.imageUrls[0] ? (
-                <Image
-                  src={vehicle.imageUrls[0]}
-                  alt={vehicle.title}
-                  fill
-                  sizes="(max-width: 900px) 100vw, 40vw"
-                  className="pdp-hero__image"
-                />
-              ) : null}
-              <span className="vehicle-card__badge">{vehicle.condition}</span>
-              <span className="vehicle-card__seller">{vehicle.sellerType}</span>
-            </div>
+  className="
+    pdp-hero__media
+    pdp-hero__media--contain
+    tw:relative
+    tw:h-[200px]
+    md:tw:h-[300px]
+    tw:flex
+    tw:items-center
+    tw:justify-center
+    tw:bg-transparent
+    tw:rounded-[var(--radius-lg)]
+    tw:border
+    tw:border-gray-200
+    tw:shadow-2xl
+    tw:overflow-hidden
+  "
+>
+  {vehicle.imageUrls[0] ? (
+    <Image
+      src={vehicle.imageUrls[0]}
+      alt={vehicle.title}
+      fill
+      sizes="(max-width: 900px) 100vw, 40vw"
+      className="tw:object-cover tw:shadow-lg"
+    />
+  ) : null}
+
+ <div
+  className="
+    tw:absolute
+    tw:-drop-shadow-lg
+    tw:top-3
+    tw:left-3
+    tw:flex
+    tw:gap-2
+    tw:z-20
+  "
+>
+<span
+className="
+pdp-tag
+  tw:rounded-full
+  tw:bg-purple-500/40
+  tw:backdrop-blur-md
+  tw:border
+  tw:border-white/20
+
+  tw:px-3
+  tw:py-2
+  tw:text-xs
+
+  tw:font-medium
+  tw:text-white
+  tw:shadow-sm
+  tw:h-fit
+  tw:leading-none
+"
+>
+
+      {vehicle.condition}
+    </span>
+
+<span
+className="
+pdp-tag
+  tw:rounded-full
+  tw:bg-purple-500/40
+  tw:backdrop-blur-md
+  tw:border
+  tw:border-white/20
+
+  tw:px-3
+  tw:py-2
+  tw:text-xs
+
+  tw:font-medium
+  tw:text-white
+  tw:shadow-sm
+  tw:h-fit
+  tw:leading-none
+"
+>
+      {vehicle.sellerType}
+    </span>
+  </div>
+</div>
 
             <div className="pdp-hero__content">
               <p className="eyebrow">{vehicle.location}</p>
@@ -208,14 +279,14 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
               {vehicle.imageUrls.map((url, index) => (
                 <div
                   key={url}
-                  className="vehicle-gallery__item tw:relative tw:h-[180px] tw:min-w-[min(78vw,360px)] tw:snap-start tw:overflow-hidden tw:rounded-2xl tw:bg-white"
+                  className="vehicle-gallery__item tw:relative tw:h-[180px] tw:min-w-[min(78vw,360px)] tw:snap-start tw:overflow-hidden tw:rounded-2xl tw:bg-white tw:flex tw:items-center tw:justify-center"
                 >
                   <Image
                     src={url}
                     alt={`${vehicle.title} image ${index + 1}`}
                     fill
-                    sizes="(max-width: 900px) 78vw, 360px"
-                    className="vehicle-gallery__image tw:object-contain tw:p-3"
+                    sizes="(max-width: 900px) 100vw, 40vw"
+                    className="vehicle-gallery__image tw:object-cover tw:object-center"
                   />
                 </div>
               ))}
