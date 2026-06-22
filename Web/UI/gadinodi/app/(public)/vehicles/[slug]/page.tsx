@@ -133,92 +133,87 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
 
           <div className="pdp-hero pdp-hero--image-first tw:gap-4">
             <div
-  className="
-    pdp-hero__media
-    pdp-hero__media--contain
-    tw:relative
-    tw:h-[200px]
-    md:tw:h-[300px]
-    tw:flex
-    tw:items-center
-    tw:justify-center
-    tw:bg-transparent
-    tw:rounded-[var(--radius-lg)]
-    tw:border
-    tw:border-gray-200
-    tw:shadow-2xl
-    tw:overflow-hidden
-  "
->
-  {vehicle.imageUrls[0] ? (
-    <Image
-      src={vehicle.imageUrls[0]}
-      alt={vehicle.title}
-      fill
-      sizes="(max-width: 900px) 100vw, 40vw"
-      className="tw:object-cover tw:shadow-lg"
-    />
-  ) : null}
+              className="
+                pdp-hero__media
+                pdp-hero__media--contain
+                tw:relative
+                tw:h-[200px]
+                md:tw:h-[300px]
+                tw:flex
+                tw:items-center
+                tw:justify-center
+                tw:bg-transparent
+                tw:rounded-[var(--radius-lg)]
+                tw:border
+                tw:border-gray-200
+                tw:shadow-2xl
+                tw:overflow-hidden
+              "
+            >
+              {vehicle.imageUrls[0] ? (
+                <Image
+                  src={vehicle.imageUrls[0]}
+                  alt={vehicle.title}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 40vw"
+                  className="tw:object-cover tw:shadow-lg"
+                />
+              ) : null}
 
- <div
-  className="
-    tw:absolute
-    tw:-drop-shadow-lg
-    tw:top-3
-    tw:left-3
-    tw:flex
-    tw:gap-2
-    tw:z-20
-  "
->
-<span
-className="
-pdp-tag
-  tw:rounded-full
-  tw:bg-purple-500/40
-  tw:backdrop-blur-md
-  tw:border
-  tw:border-white/20
+              <div
+                className="
+                  tw:absolute
+                  tw:-drop-shadow-lg
+                  tw:top-3
+                  tw:left-3
+                  tw:flex
+                  tw:gap-2
+                  tw:z-20
+                "
+              >
+                <span
+                  className="
+                    pdp-tag
+                    tw:rounded-full
+                    tw:bg-purple-500/40
+                    tw:backdrop-blur-md
+                    tw:border
+                    tw:border-white/20
+                    tw:px-3
+                    tw:py-2
+                    tw:text-xs
+                    tw:font-medium
+                    tw:text-white
+                    tw:shadow-sm
+                    tw:h-fit
+                    tw:leading-none
+                  "
+                >
+                  {vehicle.condition}
+                </span>
 
-  tw:px-3
-  tw:py-2
-  tw:text-xs
-
-  tw:font-medium
-  tw:text-white
-  tw:shadow-sm
-  tw:h-fit
-  tw:leading-none
-"
->
-
-      {vehicle.condition}
-    </span>
-
-<span
-className="
-pdp-tag
-  tw:rounded-full
-  tw:bg-purple-500/40
-  tw:backdrop-blur-md
-  tw:border
-  tw:border-white/20
-
-  tw:px-3
-  tw:py-2
-  tw:text-xs
-
-  tw:font-medium
-  tw:text-white
-  tw:shadow-sm
-  tw:h-fit
-  tw:leading-none
-"
->
-      {vehicle.sellerType}
-    </span>
-  </div>
-</div>
+                <span
+                  className="
+                    pdp-tag
+                    tw:rounded-full
+                    tw:bg-purple-500/40
+                    tw:backdrop-blur-md
+                    tw:border
+                    tw:border-white/20
+                    tw:px-3
+                    tw:py-2
+                    tw:text-xs
+                    tw:font-medium
+                    tw:text-white
+                    tw:shadow-sm
+                    tw:h-fit
+                    tw:leading-none
+                  "
+                >
+                  {vehicle.sellerType}
+                </span>
+              </div>
+            </div>
 
             <div className="pdp-hero__content">
               <p className="eyebrow">{vehicle.location}</p>
@@ -248,6 +243,7 @@ pdp-tag
                 {formatCurrency(vehicle.price)}
               </strong>
               <p>Indicative EMI from {formatCurrency(vehicle.financeEstimate)}/month</p>
+              
               <div className="purchase-panel__actions">
                 {isSignedIn ? (
                   <Link className="button button--primary" href={enquiryMailto(vehicle.title)}>
@@ -258,10 +254,12 @@ pdp-tag
                     Sign in to enquire
                   </Link>
                 )}
-                <Link className="button button--secondary" href="/partners">
-                  Seller types on Gadinodi
+                {/* Replaced 'Seller types' link with the native 'Contact Seller' dialer pipeline */}
+                <Link className="button button--secondary" href="tel:+919876543210">
+                  Contact us
                 </Link>
               </div>
+
               <ul className="compact-list">
                 <li>Seller: {vehicle.sellerName}</li>
                 <li>Colour: {vehicle.color}</li>
@@ -272,8 +270,8 @@ pdp-tag
           </div>
 
           {vehicle.imageUrls.length > 1 ? (
-           <div
-  className="vehicle-gallery tw:flex tw:gap-3 tw:overflow-x-auto tw:scroll-smooth tw:snap-x tw:snap-mandatory tw:pb-2 tw:!mt-4"
+            <div
+              className="vehicle-gallery tw:flex tw:gap-3 tw:overflow-x-auto tw:scroll-smooth tw:snap-x tw:snap-mandatory tw:pb-2 tw:!mt-4"
               aria-label={`${vehicle.title} image gallery`}
             >
               {vehicle.imageUrls.map((url, index) => (
@@ -282,19 +280,19 @@ pdp-tag
                   className="vehicle-gallery__item tw:relative tw:h-[180px] tw:min-w-[min(78vw,360px)] tw:snap-start tw:overflow-hidden tw:rounded-2xl tw:bg-white"
                 >
                   <Image
-  src={vehicle.imageUrls[0]}
-  alt={vehicle.title}
-  width={650}
-  height={420}
-  sizes="(max-width: 900px) 100vw, 40vw"
-  className="
-    tw:rounded-full
-    tw:object-contain
-    tw:shadow-lg
-    tw:w-[75%]
-    tw:p-2
-  "
-/>
+                    src={url}
+                    alt={`${vehicle.title} gallery image ${index + 1}`}
+                    width={650}
+                    height={420}
+                    sizes="(max-width: 900px) 100vw, 40vw"
+                    className="
+                      tw:rounded-full
+                      tw:object-contain
+                      tw:shadow-lg
+                      tw:w-[75%]
+                      tw:p-2
+                    "
+                  />
                 </div>
               ))}
             </div>
