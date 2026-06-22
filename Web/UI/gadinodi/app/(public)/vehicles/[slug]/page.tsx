@@ -291,13 +291,17 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
             <p>Browse related vehicles from the same filters sellers use on Gadinodi.</p>
           </div>
 
-          <div className="vehicle-grid">
+          <div className="vehicle-grid related-vehicle-grid">
             {relatedVehicles.map((candidate) => (
-              <VehicleCard
+              <div
                 key={candidate.id}
-                vehicle={candidate}
-                isSignedIn={isSignedIn}
-              />
+                className="related-vehicle-card"
+              >
+                <VehicleCard
+                  vehicle={candidate}
+                  isSignedIn={isSignedIn}
+                />
+              </div>
             ))}
           </div>
         </div>

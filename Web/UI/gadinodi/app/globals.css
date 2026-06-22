@@ -4119,6 +4119,90 @@ main {
   .home-types-grid {
     grid-template-columns: 1fr !important;
   }
+
+  .related-vehicle-grid.vehicle-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    touch-action: pan-x;
+    padding-bottom: 12px;
+    scrollbar-width: none;
+  }
+
+  .related-vehicle-grid.vehicle-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .related-vehicle-card {
+    display: flex;
+    flex: 0 0 clamp(200px, 72vw, 220px);
+    scroll-snap-align: start;
+  }
+
+  .related-vehicle-card .vehicle-card {
+    width: 100%;
+  }
+
+  .related-vehicle-card .vehicle-card__media {
+    min-height: 0;
+    height: 104px;
+    padding: 8px;
+  }
+
+  .related-vehicle-card .vehicle-card__media-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .related-vehicle-card .vehicle-card__badge,
+  .related-vehicle-card .vehicle-card__seller {
+    min-height: 24px;
+    padding: 0 8px;
+    font-size: 0.75rem;
+  }
+
+  .related-vehicle-card .vehicle-card__content {
+    gap: 4px;
+    padding: 8px;
+  }
+
+  .related-vehicle-card .vehicle-card__heading h3 {
+    min-height: 2.4em;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .related-vehicle-card .vehicle-card__heading p,
+  .related-vehicle-card .vehicle-card__meta,
+  .related-vehicle-card .vehicle-card__pricing span,
+  .related-vehicle-card .vehicle-card__features,
+  .related-vehicle-card .vehicle-card__actions .subtle-text {
+    display: none;
+  }
+
+  .related-vehicle-card .vehicle-card__pricing {
+    gap: 0;
+  }
+
+  .related-vehicle-card .vehicle-card__pricing strong {
+    font-size: 0.94rem;
+  }
+
+  .related-vehicle-card .vehicle-card__actions {
+    margin-top: 0;
+  }
+
+  .related-vehicle-card .button {
+    min-height: 32px;
+    padding: 0 12px;
+    font-size: 0.75rem;
+  }
 }
 
 html, body {
