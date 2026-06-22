@@ -277,21 +277,14 @@ export default async function VehicleDetailPage({ params }: VehicleDetailPagePro
               {vehicle.imageUrls.map((url, index) => (
                 <div
                   key={url}
-                  className="vehicle-gallery__item tw:relative tw:h-[180px] tw:min-w-[min(78vw,360px)] tw:snap-start tw:overflow-hidden tw:rounded-2xl tw:bg-white"
+                  className="vehicle-gallery__item tw:relative tw:h-[180px] tw:min-w-[min(78vw,360px)] tw:snap-start tw:overflow-hidden tw:rounded-2xl tw:bg-white tw:flex tw:items-center tw:justify-center"
                 >
                   <Image
                     src={url}
-                    alt={`${vehicle.title} gallery image ${index + 1}`}
-                    width={650}
-                    height={420}
+                    alt={`${vehicle.title} image ${index + 1}`}
+                    fill
                     sizes="(max-width: 900px) 100vw, 40vw"
-                    className="
-                      tw:rounded-full
-                      tw:object-contain
-                      tw:shadow-lg
-                      tw:w-[75%]
-                      tw:p-2
-                    "
+                    className="vehicle-gallery__image tw:object-cover tw:object-center"
                   />
                 </div>
               ))}
