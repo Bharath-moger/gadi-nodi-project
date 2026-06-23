@@ -2093,7 +2093,428 @@ export const vehicles: VehicleListing[] = [
     { label: "Transmission", value: "5-Speed Manual" },
     { label: "Ownership", value: "1st owner" }
   ]
-}
+},
+{
+  id: "v49",
+  slug: "tata-ace-gold-petrol-cx-2024",
+  title: "Tata Ace Gold Petrol CX",
+  subtitle: "Compact mini truck for last-mile deliveries and business logistics",
+  make: "Tata",
+  model: "Ace Gold Petrol CX",
+  year: 2024,
+  condition: "New",
+  price: 485000,
+  mileage: "31,500 km",
+  fuel: "Petrol",
+  bodyStyle: "MiniTruck",
+  transmission: "Manual",
+  location: "Hubballi",
+  sellerName: "Karnataka Commercial Vehicles",
+  sellerType: "Dealer",
+  description:
+    "Reliable mini truck designed for city deliveries, kirana distribution, e-commerce logistics, and small business transportation. Easy to maneuver through narrow urban roads.",
+  summary:
+    "Well-maintained cargo carrier with low running costs and verified service history.",
+  color: "Arctic White",
+  seats: 2,
+  financeEstimate: 10200,
+  rating: 4.4,
+  heroTone: "linear-gradient(135deg, #475569, #1e293b)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/c6/91/fa/c691faead2b0ceaf7fa5339fadb6a5e3.jpg"
+  ],
+  features: [
+    "Large cargo deck",
+    "Compact turning radius",
+    "Fuel-efficient engine",
+    "Heavy-duty chassis"
+  ],
+  specs: [
+    { label: "Engine", value: "694 cc Petrol" },
+    { label: "Power", value: "30 PS" },
+    { label: "Payload", value: "750 kg" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v50",
+  slug: "mahindra-jeeto-plus-cng-2024",
+  title: "Mahindra Jeeto Plus CNG",
+  subtitle: "Fuel-efficient mini truck for urban cargo and distribution",
+  make: "Mahindra",
+  model: "Jeeto Plus CNG",
+  year: 2024,
+  condition: "New",
+  price: 525000,
+  mileage: "27,800 km",
+  fuel: "CNG",
+  bodyStyle: "MiniTruck",
+  transmission: "Manual",
+  location: "Mangalore",
+  sellerName: "Coastal Commercial Motors",
+  sellerType: "Dealer",
+  description:
+    "Economical mini truck designed for daily goods transport, grocery distribution, and last-mile logistics with low operating costs.",
+  summary:
+    "Compact CNG cargo carrier with excellent fuel economy and verified service history.",
+  color: "Diamond White",
+  seats: 2,
+  financeEstimate: 11000,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #166534, #22c55e)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/05/9e/46/059e463947173a9bd31351f7f1d47d01.jpg"
+  ],
+  features: [
+    "Factory-fitted CNG",
+    "Large cargo deck",
+    "Low maintenance costs",
+    "High fuel efficiency"
+  ],
+  specs: [
+    { label: "Engine", value: "625 cc CNG" },
+    { label: "Power", value: "26 PS" },
+    { label: "Payload", value: "715 kg" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v51",
+  slug: "maruti-super-carry-petrol-2024",
+  title: "Maruti Suzuki Super Carry",
+  subtitle: "Versatile mini truck built for daily commercial transportation",
+  make: "Maruti Suzuki",
+  model: "Super Carry",
+  year: 2024,
+  condition: "New",
+  price: 615000,
+  mileage: "24,500 km",
+  fuel: "Petrol",
+  bodyStyle: "MiniTruck",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Metro Commercial Vehicles",
+  sellerType: "Dealer",
+  description:
+    "Practical commercial vehicle ideal for retail deliveries, market supplies, and local transport operations with dependable Maruti reliability.",
+  summary:
+    "Well-maintained mini truck with strong payload capacity and complete service records.",
+  color: "Silky Silver",
+  seats: 2,
+  financeEstimate: 12800,
+  rating: 4.6,
+  heroTone: "linear-gradient(135deg, #1e293b, #64748b)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/1d/4f/30/1d4f306ffe27c9b3757537c3bc74a8d0.jpg"
+  ],
+  features: [
+    "Spacious cargo deck",
+    "Power steering",
+    "Strong ladder-frame chassis",
+    "Low running costs"
+  ],
+  specs: [
+    { label: "Engine", value: "1196 cc Petrol" },
+    { label: "Power", value: "73 PS" },
+    { label: "Payload", value: "740 kg" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v52",
+  slug: "bharatbenz-4228r-2023",
+  title: "BharatBenz 4228R",
+  subtitle: "Heavy-duty freight truck engineered for long-haul logistics operations",
+  make: "BharatBenz",
+  model: "4228R",
+  year: 2023,
+  condition: "Used",
+  price: 3895000,
+  mileage: "72,400 km",
+  fuel: "Diesel",
+  bodyStyle: "Tipper",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Elite Commercial Vehicles",
+  sellerType: "Dealer",
+  description:
+    "Reliable heavy commercial truck designed for interstate cargo transportation, fleet operations, and logistics businesses with excellent fuel efficiency and durability.",
+  summary:
+    "Certified freight truck with documented service history and strong payload capabilities.",
+  color: "White",
+  seats: 2,
+  financeEstimate: 81200,
+  rating: 4.7,
+  heroTone: "linear-gradient(135deg, #1f2937, #374151)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/b0/46/67/b04667a44aa52915ac0a4038b06932c8.jpg"
+  ],
+  features: [
+    "Sleeper cabin",
+    "Air brakes",
+    "Fleet telematics support",
+    "Heavy-duty chassis"
+  ],
+  specs: [
+    { label: "Engine", value: "7200 cc Diesel" },
+    { label: "Power", value: "281 HP" },
+    { label: "GVW", value: "42000 kg" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v53",
+  slug: "ashok-leyland-4825-tractor-2022",
+  title: "Ashok Leyland 4825 Tractor",
+  subtitle: "Long-haul tractor truck built for fleet and logistics operations",
+  make: "Ashok Leyland",
+  model: "4825 Tractor",
+  year: 2022,
+  condition: "New",
+  price: 3295000,
+  mileage: "118,600 km",
+  fuel: "Diesel",
+  bodyStyle: "Tipper",
+  transmission: "Manual",
+  location: "Hubballi",
+  sellerName: "Karnataka Freight Trucks",
+  sellerType: "Dealer",
+  description:
+    "Heavy-duty tractor unit designed for container movement, interstate freight transport, and logistics operations. Maintained under a scheduled fleet service program.",
+  summary:
+    "Dependable haulage truck offering high GVW capacity and verified ownership records.",
+  color: "Blue",
+  seats: 2,
+  financeEstimate: 68800,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #1e3a8a, #2563eb)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/1b/52/18/1b521893eb0a0db1d29ba1ae9acd302c.jpg"
+  ],
+  features: [
+    "Sleeper cabin",
+    "Power steering",
+    "Air braking system",
+    "Long-haul drivetrain"
+  ],
+  specs: [
+    { label: "Engine", value: "5660 cc Diesel" },
+    { label: "Power", value: "250 HP" },
+    { label: "GVW", value: "47500 kg" },
+    { label: "Ownership", value: "2nd owner" }
+  ]
+},
+{
+  id: "v54",
+  slug: "eicher-pro-6028t-2023",
+  title: "Eicher Pro 6028T",
+  subtitle: "Heavy-duty tipper truck for construction, quarry, and mining operations",
+  make: "Eicher",
+  model: "Pro 6028T",
+  year: 2023,
+  condition: "Used",
+  price: 3750000,
+  mileage: "64,800 km",
+  fuel: "Diesel",
+  bodyStyle: "Truck",
+  transmission: "Manual",
+  location: "Belagavi",
+  sellerName: "Western Earthmovers",
+  sellerType: "Dealer",
+  description:
+    "Robust tipper designed for infrastructure projects, quarry operations, and bulk material transportation. Features a durable chassis and high-capacity hydraulic tipping body.",
+  summary:
+    "Certified commercial tipper with strong payload capability and verified maintenance records.",
+  color: "Construction Yellow",
+  seats: 3,
+  financeEstimate: 78200,
+  rating: 4.6,
+  heroTone: "linear-gradient(135deg, #a16207, #ca8a04)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/24/33/df/2433df072a040c6a51beab7e3a234ec5.jpg"
+  ],
+  features: [
+    "Hydraulic tipping mechanism",
+    "Heavy-duty chassis",
+    "Air brakes",
+    "Fleet-maintained vehicle"
+  ],
+  specs: [
+    { label: "Engine", value: "7698 cc Diesel" },
+    { label: "Power", value: "280 HP" },
+    { label: "GVW", value: "28000 kg" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+
+{
+  id: "v55",
+  slug: "tata-container-flatbed-trailer-2021",
+  title: "Container Flatbed Trailer",
+  subtitle: "Heavy-duty flatbed trailer for container and cargo transport",
+  make: "Tata",
+  model: "40ft Flatbed Trailer",
+  year: 2021,
+  condition: "Used",
+  price: 1250000,
+  mileage: "N/A",
+  fuel: "Other",
+  bodyStyle: "Trailer",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "National Trailer Exchange",
+  sellerType: "Dealer",
+  description:
+    "Commercial flatbed trailer designed for container hauling, industrial freight movement, and logistics operations across long distances.",
+  summary:
+    "Fleet-maintained trailer with strong chassis construction and compliance documentation.",
+  color: "Red",
+  seats: 0,
+  financeEstimate: 26000,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #374151, #111827)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/23/3f/12/233f1216b101755013093103ceb2d4c0.jpg"
+  ],
+  features: [
+    "40-foot platform",
+    "Container lock system",
+    "Heavy-duty suspension",
+    "Fleet maintained"
+  ],
+  specs: [
+    { label: "Type", value: "Flatbed Trailer" },
+    { label: "Length", value: "40 ft" },
+    { label: "Payload", value: "35000 kg" },
+    { label: "Axles", value: "3" }
+  ]
+},
+{
+  id: "v56",
+  slug: "skeletal-container-trailer-2022",
+  title: "Skeletal Container Trailer",
+  subtitle: "Purpose-built trailer for port and container logistics",
+  make: "York",
+  model: "Skeletal Trailer",
+  year: 2022,
+  condition: "New",
+  price: 1450000,
+  mileage: "N/A",
+  fuel: "Other",
+  bodyStyle: "Trailer",
+  transmission: "Manual",
+  location: "Mangalore",
+  sellerName: "Coastal Logistics Equipment",
+  sellerType: "Dealer",
+  description:
+    "Container transport trailer engineered for port operations, freight corridors, and logistics fleets handling ISO containers.",
+  summary:
+    "Certified trailer with container locking points and documented maintenance history.",
+  color: "Blue",
+  seats: 0,
+  financeEstimate: 30200,
+  rating: 4.6,
+  heroTone: "linear-gradient(135deg, #1e3a8a, #2563eb)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/20/ba/34/20ba3403b62e8dfefc2510086c2e951d.jpg"
+  ],
+  features: [
+    "ISO container locks",
+    "Triple-axle setup",
+    "Reinforced steel frame",
+    "Fleet-ready condition"
+  ],
+  specs: [
+    { label: "Type", value: "Skeletal Trailer" },
+    { label: "Length", value: "40 ft" },
+    { label: "Payload", value: "37000 kg" },
+    { label: "Axles", value: "3" }
+  ]
+},
+{
+  id: "v57",
+  slug: "volvo-9400-b11r-sleeper-2022",
+  title: "Volvo 9400 B11R Sleeper",
+  subtitle: "Premium intercity coach designed for long-distance passenger travel",
+  make: "Volvo",
+  model: "9400 B11R Sleeper",
+  year: 2022,
+  condition: "New",
+  price: 8500000,
+  mileage: "185,000 km",
+  fuel: "Diesel",
+  bodyStyle: "Bus",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "South India Coach Sales",
+  sellerType: "Dealer",
+  description:
+    "Luxury sleeper coach featuring air suspension, reclining berths, onboard entertainment, and excellent passenger comfort for long-distance routes.",
+  summary:
+    "Premium intercity coach with documented service history and fleet-maintained condition.",
+  color: "Silver",
+  seats: 40,
+  financeEstimate: 177000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #0f172a, #334155)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/25/b7/bd/25b7bd289ee44a8f3b5b16073b882c38.jpg"
+  ],
+  features: [
+    "Air suspension",
+    "Sleeper berths",
+    "Air conditioning",
+    "Passenger entertainment system"
+  ],
+  specs: [
+    { label: "Engine", value: "10800 cc Diesel" },
+    { label: "Power", value: "430 HP" },
+    { label: "Seating Capacity", value: "40 Sleeper" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v58",
+  slug: "tata-starbus-ultra-2023",
+  title: "Tata Starbus Ultra",
+  subtitle: "Reliable passenger bus for city and staff transportation",
+  make: "Tata",
+  model: "Starbus Ultra",
+  year: 2023,
+  condition: "Used",
+  price: 3250000,
+  mileage: "96,000 km",
+  fuel: "Diesel",
+  bodyStyle: "Bus",
+  transmission: "Manual",
+  location: "Mysuru",
+  sellerName: "Karnataka Bus Exchange",
+  sellerType: "Dealer",
+  description:
+    "Comfortable passenger bus suitable for staff transport, school routes, and city operations with dependable Tata reliability.",
+  summary:
+    "Fleet-maintained passenger bus with verified service records.",
+  color: "White",
+  seats: 36,
+  financeEstimate: 67700,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #1e293b, #475569)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/c4/81/46/c48146d4ad218af69c4d8051c68c696c.jpg"
+  ],
+  features: [
+    "Power steering",
+    "Air brakes",
+    "Spacious passenger cabin",
+    "Emergency exit system"
+  ],
+  specs: [
+    { label: "Engine", value: "5005 cc Diesel" },
+    { label: "Power", value: "180 HP" },
+    { label: "Seating Capacity", value: "36 Seats" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
 
 
 
