@@ -552,10 +552,10 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
+  min-height: 30px;
   padding: 0 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(99, 102, 241, 0.06);
   border: 1px solid rgba(24, 33, 47, 0.08);
   color: var(--foreground);
 }
@@ -3224,7 +3224,7 @@ main {
 }
 
 .vehicles-catalog__main {
-  padding: clamp(40px, 6vw, 72px) 0 clamp(56px, 8vw, 96px);
+  padding: clamp(40px, 6vw, 72px) 0 clamp(13px, 8vw, 30px);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(237, 242, 252, 0.65) 100%);
 }
 
