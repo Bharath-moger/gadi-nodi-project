@@ -2481,7 +2481,7 @@ export const vehicles: VehicleListing[] = [
   make: "Tata",
   model: "Starbus Ultra",
   year: 2023,
-  condition: "Used",
+  condition: "New",
   price: 3250000,
   mileage: "96,000 km",
   fuel: "Diesel",
@@ -2515,7 +2515,924 @@ export const vehicles: VehicleListing[] = [
     { label: "Ownership", value: "1st owner" }
   ]
 },
+{
+  id: "v59",
+  slug: "jcb-220lc-xtra-2021",
+  title: "JCB 220LC Xtra",
+  subtitle: "Tracked excavator built for mining, roadworks, and infrastructure projects",
+  make: "JCB",
+  model: "220LC Xtra",
+  year: 2021,
+  condition: "New",
+  price: 4850000,
+  mileage: "4,850 operating hours",
+  fuel: "Diesel",
+  bodyStyle: "Excavator",
+  transmission: "Manual",
+  location: "Ballari",
+  sellerName: "Karnataka Earthmovers",
+  sellerType: "Dealer",
+  description:
+    "Heavy-duty crawler excavator designed for quarry operations, large-scale construction, and infrastructure development with excellent fuel efficiency and digging performance.",
+  summary:
+    "Fleet-maintained excavator with verified service records and transparent hour-meter history.",
+  color: "JCB Yellow",
+  seats: 1,
+  financeEstimate: 101000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #ca8a04, #f59e0b)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/6c/34/5d/6c345d9fb0cbdd5f92abb00a3e1541d3.jpg"
+  ],
+  features: [
+    "Reinforced undercarriage",
+    "Eco-mode fuel management",
+    "ROPS-certified cabin",
+    "Telematics monitoring"
+  ],
+  specs: [
+    { label: "Engine", value: "173 HP Diesel" },
+    { label: "Operating Weight", value: "22,000 kg" },
+    { label: "Bucket Capacity", value: "1.2 m³" },
+    { label: "Operating Hours", value: "4,850 hrs" }
+  ]
+},
+{
+  id: "v60",
+  slug: "tata-hitachi-ex-210lc-2023",
+  title: "Tata Hitachi EX 210LC",
+  subtitle: "Reliable hydraulic excavator for construction and earthmoving operations",
+  make: "Tata Hitachi",
+  model: "EX 210LC",
+  year: 2023,
+  condition: "New",
+  price: 5650000,
+  mileage: "2,120 operating hours",
+  fuel: "Diesel",
+  bodyStyle: "Excavator",
+  transmission: "Manual",
+  location: "Hubballi",
+  sellerName: "Prime Construction Equipment",
+  sellerType: "Authorized Dealer",
+  description:
+    "Modern crawler excavator engineered for heavy-duty excavation, site preparation, and infrastructure projects with low operating hours and documented maintenance history.",
+  summary:
+    "Certified construction machine with strong resale value and complete service documentation.",
+  color: "Orange",
+  seats: 1,
+  financeEstimate: 118000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #ea580c, #c2410c)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/62/3f/3c/623f3c692a3ec7d63607ad4f3f926546.jpg"
+  ],
+  features: [
+    "Advanced hydraulic system",
+    "GPS fleet tracking",
+    "Comfort operator cabin",
+    "Fuel-saving work modes"
+  ],
+  specs: [
+    { label: "Engine", value: "166 HP Diesel" },
+    { label: "Operating Weight", value: "21,000 kg" },
+    { label: "Bucket Capacity", value: "1.0 m³" },
+    { label: "Operating Hours", value: "2,120 hrs" }
+  ]
+},
+{
+  id: "v61",
+  slug: "caterpillar-d6r-xl-2019",
+  title: "Caterpillar D6R XL",
+  subtitle: "Heavy-duty crawler bulldozer for grading, land clearing, and infrastructure projects",
+  make: "Caterpillar",
+  model: "D6R XL",
+  year: 2019,
+  condition: "Used",
+  price: 8950000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Bulldozer",
+  transmission: "Manual",
+  location: "Ballari",
+  sellerName: "South India Earthmovers",
+  sellerType: "Dealer",
+  description:
+    "Reliable tracked bulldozer built for mining, road construction, and large-scale earthmoving operations. Maintained with complete service and inspection records.",
+  summary:
+    "Contractor-ready dozer with verified hour meter, heavy-duty undercarriage, and wide grading blade.",
+  color: "CAT Yellow",
+  seats: 1,
+  financeEstimate: 186500,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #ca8a04, #f59e0b)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/87/90/1a/87901a2133a4f01b88b88f71fab5a13f.jpg"
+  ],
+  features: [
+    "Semi-U blade configuration",
+    "ROPS/FOPS operator cabin",
+    "Advanced hydraulic controls",
+    "Heavy-duty undercarriage"
+  ],
+  specs: [
+    { label: "Engine", value: "Cat C9 ACERT Diesel" },
+    { label: "Power", value: "215 HP" },
+    { label: "Operating Weight", value: "22.4 Ton" },
+    { label: "Blade Width", value: "3.96 m" },
+    { label: "Hour Meter", value: "6,850 hrs" }
+  ]
+},
+{
+  id: "v62",
+  slug: "komatsu-d85ex-18-2021",
+  title: "Komatsu D85EX-18",
+  subtitle: "Tracked bulldozer designed for quarrying, grading, and site preparation",
+  make: "Komatsu",
+  model: "D85EX-18",
+  year: 2021,
+  condition: "Used",
+  price: 10450000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Bulldozer",
+  transmission: "Manual",
+  location: "Hubballi",
+  sellerName: "Karnataka Construction Equipment",
+  sellerType: "Dealer",
+  description:
+    "High-performance crawler dozer engineered for demanding construction, mining, and land-clearing applications with excellent reliability and fuel efficiency.",
+  summary:
+    "Fleet-maintained bulldozer featuring low operating hours and documented service history.",
+  color: "Komatsu Yellow",
+  seats: 1,
+  financeEstimate: 217800,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #1e40af, #2563eb)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/92/77/58/927758a7a448b906334f8b50ededc263.jpg"
+  ],
+  features: [
+    "PAT blade",
+    "Air-conditioned cabin",
+    "Heavy-duty track system",
+    "Fleet telematics integration"
+  ],
+  specs: [
+    { label: "Engine", value: "Komatsu SAA6D125E-5" },
+    { label: "Power", value: "264 HP" },
+    { label: "Operating Weight", value: "28.7 Ton" },
+    { label: "Blade Width", value: "4.05 m" },
+    { label: "Hour Meter", value: "3,420 hrs" }
+  ]
+},
+{
+  id: "v63",
+  slug: "shantui-sd16-2021",
+  title: "Shantui SD16",
+  subtitle: "Tracked bulldozer built for grading, land clearing, and infrastructure projects",
+  make: "Shantui",
+  model: "SD16",
+  year: 2021,
+  condition: "Used",
+  price: 6250000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Bulldozer",
+  transmission: "Manual",
+  location: "Ballari",
+  sellerName: "Karnataka Earthmoving Solutions",
+  sellerType: "Dealer",
+  description:
+    "Heavy-duty crawler bulldozer designed for road construction, mining operations, quarry work, and land development. Maintained with complete service documentation and operator logs.",
+  summary:
+    "Reliable 17-ton dozer with verified hour meter, multiple blade configurations, and proven fleet performance.",
+  color: "Construction Yellow",
+  seats: 1,
+  financeEstimate: 130500,
+  rating: 4.6,
+  heroTone: "linear-gradient(135deg, #ca8a04, #f59e0b)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/d3/01/00/d30100a051831891328b5eff72c49e07.jpg"
+  ],
+  features: [
+    "Straight tilt blade",
+    "Three-shank ripper",
+    "ROPS operator cabin",
+    "Heavy-duty undercarriage"
+  ],
+  specs: [
+    { label: "Engine", value: "Weichai WD10G178E25" },
+    { label: "Power", value: "160 HP" },
+    { label: "Operating Weight", value: "17 Ton" },
+    { label: "Blade Width", value: "3.46 m" },
+    { label: "Hour Meter", value: "4,280 hrs" }
+  ]
+},
+{
+  id: "v64",
+  slug: "jcb-455zx-wheel-loader-2022",
+  title: "JCB 455ZX",
+  subtitle: "Heavy-duty wheel loader for quarry, mining, and bulk material handling",
+  make: "JCB",
+  model: "455ZX",
+  year: 2022,
+  condition: "New",
+  price: 6950000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Loader",
+  transmission: "Automatic",
+  location: "Ballari",
+  sellerName: "Karnataka Earthmovers",
+  sellerType: "Dealer",
+  description:
+    "High-capacity wheel loader designed for quarry operations, aggregate handling, and large-scale construction projects. Maintained with complete service and inspection records.",
+  summary:
+    "Contractor-ready loader with powerful hydraulics, low operating hours, and a large-capacity bucket.",
+  color: "JCB Yellow",
+  seats: 1,
+  financeEstimate: 145000,
+  rating: 4.7,
+  heroTone: "linear-gradient(135deg, #ca8a04, #f59e0b)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/6c/34/5d/6c345d9fb0cbdd5f92abb00a3e1541d3.jpg"
+  ],
+  features: [
+    "Ride control system",
+    "Air-conditioned operator cabin",
+    "Heavy-duty Z-bar linkage",
+    "Automatic transmission"
+  ],
+  specs: [
+    { label: "Engine", value: "Cummins QSB6.7 Diesel" },
+    { label: "Power", value: "173 HP" },
+    { label: "Bucket Capacity", value: "3.5 m³" },
+    { label: "Breakout Force", value: "155 kN" },
+    { label: "Operating Weight", value: "18.5 Ton" },
+    { label: "Hour Meter", value: "4,120 hrs" }
+  ]
+},
+{
+  id: "v65",
+  slug: "caterpillar-950-gc-wheel-loader-2021",
+  title: "Caterpillar 950 GC",
+  subtitle: "Premium front-end loader for ports, quarries, and industrial operations",
+  make: "Caterpillar",
+  model: "950 GC",
+  year: 2021,
+  condition: "Used",
+  price: 11250000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Loader",
+  transmission: "Automatic",
+  location: "Mangaluru",
+  sellerName: "Coastal Heavy Machinery",
+  sellerType: "Dealer",
+  description:
+    "High-performance wheel loader built for continuous material handling in ports, mines, and infrastructure projects with excellent fuel efficiency and reliability.",
+  summary:
+    "Fleet-maintained loader with documented service history and strong breakout performance.",
+  color: "CAT Yellow",
+  seats: 1,
+  financeEstimate: 234500,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #111827, #374151)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/8a/75/5f/8a755faf2537a42f6111f365f7bdc872.jpg"
+  ],
+  features: [
+    "Load-sensing hydraulics",
+    "Comfort suspension seat",
+    "Automatic ride control",
+    "Integrated payload monitoring"
+  ],
+  specs: [
+    { label: "Engine", value: "Cat C7.1 Diesel" },
+    { label: "Power", value: "232 HP" },
+    { label: "Bucket Capacity", value: "4.3 m³" },
+    { label: "Breakout Force", value: "179 kN" },
+    { label: "Operating Weight", value: "19.2 Ton" },
+    { label: "Hour Meter", value: "3,280 hrs" }
+  ]
+},
+{
+  id: "v66",
+  slug: "case-821g-wheel-loader-2021",
+  title: "CASE 821G",
+  subtitle: "High-capacity front-end loader for quarries, ports, and material handling operations",
+  make: "CASE",
+  model: "821G",
+  year: 2021,
+  condition: "New",
+  price: 11850000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Loader",
+  transmission: "Manual",
+  location: "Mangaluru",
+  sellerName: "Coastal Heavy Equipment",
+  sellerType: "Dealer",
+  description:
+    "Premium wheel loader designed for aggregate plants, port operations, mining sites, and infrastructure projects. Features powerful hydraulics, excellent visibility, and high breakout force for demanding loading applications.",
+  summary:
+    "Fleet-maintained wheel loader with verified service history, large bucket capacity, and low operating hours.",
+  color: "CASE Orange",
+  seats: 1,
+  financeEstimate: 247000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #ea580c, #9a3412)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/4c/fa/41/4cfa4127d23c7c778c9915cf88a604aa.jpg"
+  ],
+  features: [
+    "Ride Control system",
+    "Load-sensing hydraulics",
+    "ROPS/FOPS air-conditioned cabin",
+    "Integrated payload monitoring"
+  ],
+  specs: [
+    { label: "Engine", value: "FPT F4HFE613S Diesel" },
+    { label: "Power", value: "230 HP" },
+    { label: "Bucket Capacity", value: "3.6 m³" },
+    { label: "Breakout Force", value: "157 kN" },
+    { label: "Operating Weight", value: "19.2 Ton" },
+    { label: "Hour Meter", value: "3,480 hrs" }
+  ]
+},
+{
+  id: "v67",
+  slug: "toyota-8fbe20-electric-forklift-2023",
+  title: "Toyota 8FBE20 Electric Forklift",
+  subtitle: "Battery-powered warehouse forklift for indoor logistics and material handling",
+  make: "Toyota",
+  model: "8FBE20",
+  year: 2023,
+  condition: "New",
+  price: 1450000,
+  mileage: "N/A",
+  fuel: "Electric",
+  bodyStyle: "Forklift",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Metro Material Handling Solutions",
+  sellerType: "Dealer",
+  description:
+    "Efficient electric forklift designed for warehouses, manufacturing facilities, and distribution centers. Offers zero emissions, quiet operation, and excellent maneuverability in confined spaces.",
+  summary:
+    "Well-maintained electric forklift with low operating hours and documented battery maintenance history.",
+  color: "Orange",
+  seats: 1,
+  financeEstimate: 30200,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #16a34a, #15803d)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/67/df/a2/67dfa24314ff6e7f8a8b7be316224305.jpg"
+  ],
+  features: [
+    "Zero-emission electric drivetrain",
+    "Regenerative braking",
+    "Compact turning radius",
+    "Operator safety system"
+  ],
+  specs: [
+    { label: "Power Source", value: "80V Electric Battery" },
+    { label: "Lifting Capacity", value: "2000 kg" },
+    { label: "Lift Height", value: "4.7 m" },
+    { label: "Mast Type", value: "Triplex" },
+    { label: "Operating Weight", value: "3.8 Ton" },
+    { label: "Hour Meter", value: "1,420 hrs" }
+  ]
+},
+{
+  id: "v68",
+  slug: "mitsubishi-fbc30ln-electric-forklift-2023",
+  title: "Mitsubishi FBC30LN",
+  subtitle: "Electric warehouse forklift built for high-throughput logistics and material handling",
+  make: "Mitsubishi",
+  model: "FBC30LN",
+  year: 2023,
+  condition: "New",
+  price: 1650000,
+  mileage: "N/A",
+  fuel: "Electric",
+  bodyStyle: "Forklift",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Metro Material Handling Solutions",
+  sellerType: "Authorized Dealer",
+  description:
+    "High-performance AC-powered electric forklift designed for warehouses, manufacturing facilities, and distribution centers. Delivers quiet operation, low maintenance costs, and zero emissions for indoor applications.",
+  summary:
+    "Fleet-maintained electric forklift with advanced regenerative braking, ergonomic controls, and documented battery service history.",
+  color: "Mitsubishi Green",
+  seats: 1,
+  financeEstimate: 34500,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #166534, #22c55e)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/5e/58/23/5e5823b1ead4672dea7a54ff33fe524d.jpg"
+  ],
+  features: [
+    "AC drive technology",
+    "Regenerative braking system",
+    "Triplex mast configuration",
+    "Ergonomic operator cabin"
+  ],
+  specs: [
+    { label: "Power Source", value: "48V Electric Battery" },
+    { label: "Lifting Capacity", value: "3000 kg" },
+    { label: "Lift Height", value: "3.34 m" },
+    { label: "Turning Radius", value: "2.02 m" },
+    { label: "Operating Weight", value: "5.03 Ton" },
+    { label: "Hour Meter", value: "1,860 hrs" }
+  ]
+},
+{
+  id: "v69",
+  slug: "hyster-h2-5xt-lpg-forklift-2021",
+  title: "Hyster H2.5XT",
+  subtitle: "LPG-powered counterbalance forklift for warehouses, yards, and industrial logistics",
+  make: "Hyster",
+  model: "H2.5XT",
+  year: 2021,
+  condition: "New",
+  price: 1325000,
+  mileage: "N/A",
+  fuel: "Other",
+  bodyStyle: "Forklift",
+  transmission: "Automatic",
+  location: "Hosur",
+  sellerName: "Southern Material Handling Solutions",
+  sellerType: "Dealer",
+  description:
+    "Reliable LPG forklift engineered for indoor and outdoor material handling operations. Delivers fast refueling, strong lifting performance, and lower emissions than traditional diesel alternatives.",
+  summary:
+    "Fleet-maintained counterbalance forklift with documented service history and verified operating hours.",
+  color: "Hyster Yellow",
+  seats: 1,
+  financeEstimate: 27600,
+  rating: 4.7,
+  heroTone: "linear-gradient(135deg, #f59e0b, #92400e)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/98/e6/24/98e62467cddf485f9e0d43839f9638f1.jpg"
+  ],
+  features: [
+    "LPG counterbalance design",
+    "Duplex mast configuration",
+    "Ergonomic operator cabin",
+    "Indoor and outdoor operation"
+  ],
+  specs: [
+    { label: "Power Source", value: "LPG" },
+    { label: "Lifting Capacity", value: "2500 kg" },
+    { label: "Lift Height", value: "3.29 m" },
+    { label: "Turning Radius", value: "2.24 m" },
+    { label: "Operating Weight", value: "4.04 Ton" },
+    { label: "Engine Power", value: "46 kW" },
+    { label: "Hour Meter", value: "3,180 hrs" }
+  ]
+},
+{
+  id: "v70",
+  slug: "hamm-3411-vibratory-road-roller-2025",
+  title: "HAMM 3411",
+  subtitle: "Single-drum vibratory compactor for highway, infrastructure, and earthwork projects",
+  make: "HAMM",
+  model: "3411",
+  year: 2025,
+  condition: "New",
+  price: 6850000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "RoadRoller",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Wirtgen India Equipment",
+  sellerType: "Authorized Dealer",
+  description:
+    "Brand-new vibratory road roller engineered for highway construction, industrial parks, and large-scale infrastructure developments. Offers excellent compaction performance with advanced operator controls and fuel-efficient operation.",
+  summary:
+    "New-generation soil compactor featuring high centrifugal force, intelligent vibration control, and manufacturer warranty coverage.",
+  color: "HAMM Orange",
+  seats: 1,
+  financeEstimate: 142500,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #ea580c, #c2410c)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/1d/a4/da/1da4daa23d77ac0b2dbf2d2a633f8a5c.jpg"
+  ],
+  features: [
+    "Dual-frequency vibration system",
+    "ROPS-certified operator cabin",
+    "Hydrostatic drive",
+    "Manufacturer warranty included"
+  ],
+  specs: [
+    { label: "Operating Weight", value: "11.5 Ton" },
+    { label: "Drum Width", value: "2.14 m" },
+    { label: "Centrifugal Force", value: "246 kN" },
+    { label: "Vibration Frequency", value: "30/36 Hz" },
+    { label: "Engine", value: "Deutz Diesel" },
+    { label: "Power", value: "136 HP" }
+  ]
+},
+{
+  id: "v71",
+  slug: "volvo-sd110b-2025",
+  title: "Volvo SD110B",
+  subtitle: "Single-drum soil compactor engineered for highways, industrial parks, and infrastructure projects",
+  make: "Volvo",
+  model: "SD110B",
+  year: 2025,
+  condition: "New",
+  price: 7450000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "RoadRoller",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Volvo Construction Equipment India",
+  sellerType: "Authorized Dealer",
+  description:
+    "Brand-new vibratory soil compactor designed for road construction, embankments, and large-scale earthwork projects. Delivers high productivity, operator comfort, and fuel-efficient performance.",
+  summary:
+    "New-generation road roller with advanced vibration technology, excellent gradeability, and full manufacturer warranty.",
+  color: "Volvo Yellow",
+  seats: 1,
+  financeEstimate: 155000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #facc15, #ca8a04)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/41/91/ab/4191ab7bd8fb45c91aea917ddff9f472.jpg"
+  ],
+  features: [
+    "Dual-amplitude vibration system",
+    "ROPS/FOPS certified cabin",
+    "Automatic traction control",
+    "3-year manufacturer warranty"
+  ],
+  specs: [
+    { label: "Operating Weight", value: "11.3 Ton" },
+    { label: "Drum Width", value: "2.13 m" },
+    { label: "Centrifugal Force", value: "256 kN" },
+    { label: "Vibration Frequency", value: "31/35 Hz" },
+    { label: "Engine", value: "Volvo D4 Diesel" },
+    { label: "Power", value: "130 HP" }
+  ]
+},
+{
+  id: "v72",
+  slug: "caterpillar-cs11-gc-2025",
+  title: "Caterpillar CS11 GC",
+  subtitle: "Single-drum vibratory soil compactor for road construction and earthwork projects",
+  make: "Caterpillar",
+  model: "CS11 GC",
+  year: 2025,
+  condition: "Used",
+  price: 7895000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "RoadRoller",
+  transmission: "Manual",
+  location: "Mysuru",
+  sellerName: "GMMCO Karnataka",
+  sellerType: "Authorized Dealer",
+  description:
+    "Brand-new Caterpillar soil compactor engineered for highway construction, industrial developments, and large-scale infrastructure projects. Combines high compaction performance with low operating costs and exceptional reliability.",
+  summary:
+    "Factory-fresh vibratory roller featuring advanced drum technology, efficient fuel consumption, and full manufacturer warranty coverage.",
+  color: "CAT Yellow",
+  seats: 1,
+  financeEstimate: 164500,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #facc15, #eab308)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/87/cc/e9/87cce927f1aefb0de3282872574915ba.jpg"
+  ],
+  features: [
+    "Dual-amplitude vibratory system",
+    "ROPS/FOPS operator platform",
+    "Automatic traction control",
+    "3-year manufacturer warranty"
+  ],
+  specs: [
+    { label: "Engine", value: "Cat C3.6 Diesel" },
+    { label: "Power", value: "131 HP" },
+    { label: "Operating Weight", value: "11.4 Ton" },
+    { label: "Drum Width", value: "2.13 m" },
+    { label: "Centrifugal Force", value: "250 kN" },
+    { label: "Vibration Frequency", value: "30.5 Hz" }
+  ]
+},
+{
+  id: "v73",
+  slug: "caterpillar-140-gc-motor-grader-2025",
+  title: "Caterpillar 140 GC",
+  subtitle: "Precision motor grader for highway construction and large-scale infrastructure projects",
+  make: "Caterpillar",
+  model: "140 GC",
+  year: 2025,
+  condition: "New",
+  price: 13250000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "MotorGrader",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "GMMCO Karnataka",
+  sellerType: "Authorized Dealer",
+  description:
+    "Brand-new motor grader engineered for road construction, site preparation, and precision grading applications. Features advanced controls, excellent visibility, and efficient fuel consumption.",
+  summary:
+    "High-performance grading equipment with full manufacturer warranty and contractor-ready specifications.",
+  color: "CAT Yellow",
+  seats: 1,
+  financeEstimate: 276000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #facc15, #ca8a04)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/e1/5c/75/e15c7548a5b78fe73e2efc8eec2052b2.jpg"
+  ],
+  features: [
+    "Joystick hydraulic controls",
+    "ROPS/FOPS operator cabin",
+    "Rear-view camera system",
+    "Factory warranty included"
+  ],
+  specs: [
+    { label: "Engine", value: "Cat C7.1 Diesel" },
+    { label: "Power", value: "196 HP" },
+    { label: "Operating Weight", value: "18.4 Ton" },
+    { label: "Mouldboard Width", value: "3.7 m" },
+    { label: "Blade Height", value: "610 mm" },
+    { label: "Maximum Speed", value: "40 km/h" }
+  ]
+},
+{
+  id: "v74",
+  slug: "komatsu-gd535-5-motor-grader-2024",
+  title: "Komatsu GD535-5",
+  subtitle: "Heavy-duty grader built for road maintenance and infrastructure development",
+  make: "Komatsu",
+  model: "GD535-5",
+  year: 2024,
+  condition: "New",
+  price: 11890000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "MotorGrader",
+  transmission: "Automatic",
+  location: "Hubballi",
+  sellerName: "North Karnataka Equipment Hub",
+  sellerType: "Authorized Dealer",
+  description:
+    "Modern motor grader optimized for highway projects, land development, and municipal road maintenance with precise blade control and high productivity.",
+  summary:
+    "Contractor-focused grader with advanced hydraulics and manufacturer-backed support.",
+  color: "Komatsu Yellow",
+  seats: 1,
+  financeEstimate: 248000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #1d4ed8, #2563eb)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/64/db/40/64db40a6adef6fc9a4b63c985ea9046d.jpg"
+  ],
+  features: [
+    "Hydraulic blade positioning",
+    "Air-conditioned cabin",
+    "Rear ripper attachment",
+    "LED work lighting"
+  ],
+  specs: [
+    { label: "Engine", value: "Komatsu SAA6D107E-1 Diesel" },
+    { label: "Power", value: "155 HP" },
+    { label: "Operating Weight", value: "13.9 Ton" },
+    { label: "Mouldboard Width", value: "3.66 m" },
+    { label: "Blade Height", value: "610 mm" },
+    { label: "Maximum Speed", value: "41 km/h" }
+  ]
+},
+{
+  id: "v75",
+  slug: "xcmg-gr215a-motor-grader-2025",
+  title: "XCMG GR215A",
+  subtitle: "Heavy-duty motor grader for highway construction and precision earthmoving projects",
+  make: "XCMG",
+  model: "GR215A",
+  year: 2025,
+  condition: "Used",
+  price: 10250000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "MotorGrader",
+  transmission: "Automatic",
+  location: "Davanagere",
+  sellerName: "XCMG Equipment Karnataka",
+  sellerType: "Authorized Dealer",
+  description:
+    "Brand-new motor grader designed for highway construction, industrial site development, and large-scale land leveling operations. Delivers precise blade control, excellent traction, and reliable performance under demanding conditions.",
+  summary:
+    "Contractor-ready grading machine with factory warranty, advanced hydraulics, and optimized mouldboard performance.",
+  color: "XCMG Yellow",
+  seats: 1,
+  financeEstimate: 214000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #eab308, #ca8a04)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/37/22/f3/3722f3c1e91f03bcd77c0481c953de0b.jpg"
+  ],
+  features: [
+    "Electro-hydraulic control system",
+    "ROPS/FOPS certified cabin",
+    "Rear ripper attachment",
+    "LED work lighting package"
+  ],
+  specs: [
+    { label: "Engine", value: "Cummins 6CTA8.3 Diesel" },
+    { label: "Power", value: "215 HP" },
+    { label: "Operating Weight", value: "16.5 Ton" },
+    { label: "Mouldboard Width", value: "4.27 m" },
+    { label: "Blade Height", value: "610 mm" },
+    { label: "Maximum Speed", value: "38 km/h" }
+  ]
+},
 
+{
+  id: "v76",
+  slug: "ace-f230-mobile-crane-2025",
+  title: "ACE F 230 Mobile Crane",
+  subtitle: "Pick-and-carry crane for construction, logistics, and industrial lifting",
+  make: "ACE",
+  model: "F 230",
+  year: 2025,
+  condition: "New",
+  price: 4250000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Crane",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "ACE Equipment Karnataka",
+  sellerType: "Authorized Dealer",
+  description:
+    "Modern pick-and-carry crane engineered for infrastructure projects, factories, and construction sites with strong lifting capability and easy maneuverability.",
+  summary:
+    "Factory-fresh 23-ton mobile crane with telescopic boom and advanced safety systems.",
+  color: "Industrial Yellow",
+  seats: 1,
+  financeEstimate: 88500,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #f59e0b, #b45309)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/15/12/66/151266ee90fbd1295447100b3cf3c4ea.jpg"
+  ],
+  features: [
+    "23-ton lifting capacity",
+    "Telescopic boom",
+    "Hydraulic outriggers",
+    "ROPS-certified operator cabin"
+  ],
+  specs: [
+    { label: "Lifting Capacity", value: "23 Ton" },
+    { label: "Boom Length", value: "21.6 m" },
+    { label: "Maximum Reach", value: "24 m" },
+    { label: "Engine", value: "Ashok Leyland H6 Diesel" },
+    { label: "Drive Type", value: "4x2" }
+  ]
+},
+{
+  id: "v77",
+  slug: "sany-stc250c-truck-crane-2025",
+  title: "SANY STC250C",
+  subtitle: "25-ton truck-mounted crane for infrastructure and industrial projects",
+  make: "SANY",
+  model: "STC250C",
+  year: 2025,
+  condition: "New",
+  price: 9150000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Crane",
+  transmission: "Automatic",
+  location: "Hubballi",
+  sellerName: "SANY Heavy Equipment Karnataka",
+  sellerType: "Authorized Dealer",
+  description:
+    "Heavy-duty truck crane designed for bridge construction, industrial maintenance, and infrastructure development with advanced load management systems.",
+  summary:
+    "New 25-ton crane featuring a long telescopic boom and full factory warranty.",
+  color: "SANY Red",
+  seats: 2,
+  financeEstimate: 191000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #991b1b, #dc2626)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/4f/1d/ac/4f1dac47feeb58d86e61b63aa9e99453.jpg"
+  ],
+  features: [
+    "25-ton lifting capacity",
+    "42.5 m telescopic boom",
+    "Load moment indicator",
+    "360° continuous rotation"
+  ],
+  specs: [
+    { label: "Lifting Capacity", value: "25 Ton" },
+    { label: "Boom Length", value: "42.5 m" },
+    { label: "Maximum Lifting Height", value: "50.5 m" },
+    { label: "Drive Configuration", value: "6x4" },
+    { label: "Engine", value: "Cummins Diesel" }
+  ]
+},
+
+{
+  id: "v78",
+  slug: "schwing-stetter-am7-c3-transit-mixer-2025",
+  title: "Schwing Stetter AM7 C3",
+  subtitle: "7 m³ transit mixer built for ready-mix concrete fleets and infrastructure projects",
+  make: "Schwing Stetter",
+  model: "AM7 C3",
+  year: 2025,
+  condition: "New",
+  price: 4250000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "ConcreteMixer",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Schwing Stetter India",
+  sellerType: "Authorized Dealer",
+  description:
+    "Factory-fresh transit mixer engineered for urban construction sites, highways, and commercial projects. The high-efficiency drum ensures consistent concrete quality during transportation.",
+  summary:
+    "New 7-cubic-metre mixer with robust hydraulics, low maintenance requirements, and nationwide service support.",
+  color: "White",
+  seats: 2,
+  financeEstimate: 88500,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #2563eb, #1d4ed8)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/21/3a/ca/213acab532ab4087387a0a719541352f.jpg"
+  ],
+  features: [
+    "7 m³ drum capacity",
+    "Heavy-duty hydraulic drive",
+    "Anti-spillage drum design",
+    "Manufacturer warranty included"
+  ],
+  specs: [
+    { label: "Drum Capacity", value: "7 m³" },
+    { label: "Water Tank Capacity", value: "650 L" },
+    { label: "Drum Rotation Speed", value: "0–14 rpm" },
+    { label: "Discharge Rate", value: "1.2 m³/min" },
+    { label: "Chassis", value: "Ashok Leyland 2820" }
+  ]
+},
+{
+  id: "v79",
+  slug: "sany-sy308c-8-concrete-mixer-truck-2025",
+  title: "SANY SY308C-8",
+  subtitle: "8 m³ diesel transit mixer for ready-mix fleets and large infrastructure projects",
+  make: "SANY",
+  model: "SY308C-8",
+  year: 2025,
+  condition: "New",
+  price: 4650000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "ConcreteMixer",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "SANY Heavy Equipment Karnataka",
+  sellerType: "Authorized Dealer",
+  description:
+    "Factory-fresh transit mixer engineered for commercial concrete operations, highways, metro projects, and large construction sites. Features intelligent power matching, anti-buildup drum technology, and improved braking performance.",
+  summary:
+    "New 8-cubic-metre diesel mixer truck with advanced hydraulics, low-deck design, and manufacturer-backed support.",
+  color: "SANY White",
+  seats: 2,
+  financeEstimate: 97000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #991b1b, #dc2626)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/05/b3/82/05b382245f1a10d07d23712babf1b24e.jpg"
+  ],
+  features: [
+    "8 m³ mixing drum",
+    "Anti-buildup drum technology",
+    "Low-deck chassis design",
+    "Intelligent fuel-saving system",
+    "Panoramic monitoring support"
+  ],
+  specs: [
+    { label: "Mix Capacity", value: "8 m³" },
+    { label: "Discharge Rate", value: "5 m³/min" },
+    { label: "Water Tank Capacity", value: "450 L" },
+    { label: "Engine", value: "Hino J08E-VA Diesel" },
+    { label: "Power", value: "202 kW" },
+    { label: "GVW", value: "31.2 Ton" }
+  ]
+}
 
 
 ];
