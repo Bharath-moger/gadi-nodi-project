@@ -266,11 +266,11 @@ export const vehicles: VehicleListing[] = [
     make: "Toyota",
     model: "Innova Crysta GX",
     year: 2022,
-    condition: "Used",
+    condition: "New",
     price: 1890000,
     mileage: "38,400 km",
     fuel: "Diesel",
-    bodyStyle: "Van",
+    bodyStyle: "MUV",
     transmission: "Manual",
     location: "Patna",
     sellerName: "Metro Fleet Exchange",
@@ -386,7 +386,7 @@ export const vehicles: VehicleListing[] = [
     make: "Isuzu",
     model: "D-Max V-Cross",
     year: 2022,
-    condition: "Used",
+    condition: "New",
     price: 2125000,
     mileage: "29,100 km",
     fuel: "Diesel",
@@ -594,6 +594,2847 @@ export const vehicles: VehicleListing[] = [
       { label: "Hours", value: "Verified meter" },
     ],
   },
+  {
+    id: "v13",
+    slug: "hero-sprint-pro-mtb-2024",
+    title: "Hero Sprint Pro MTB",
+    subtitle: "Adventure-ready mountain bike with durable steel frame",
+    make: "Hero",
+    model: "Sprint Pro",
+    year: 2024,
+    condition: "New",
+    price: 15999,
+    mileage: "N/A",
+    fuel: "Other",
+    bodyStyle: "Bicycle",
+    transmission: "Manual",
+    location: "Bengaluru",
+    sellerName: "Cycle Hub",
+    sellerType: "Individual Dealer",
+    description:
+      "Designed for trails and city roads with front suspension and multi-speed gearing.",
+    summary: "Affordable mountain bike for fitness and weekend adventures.",
+    color: "Red & Black",
+    seats: 1,
+    financeEstimate: 380,
+    rating: 4.4,
+    heroTone: "linear-gradient(135deg, #dc2626, #991b1b)",
+    imageUrls: ["https://i.pinimg.com/736x/17/ff/7b/17ff7b8c9a741bf64c5f708b3afd265a.jpg"],
+    features: ["Front suspension", "21-speed gear system", "All-terrain tires"],
+    specs: [
+      { label: "Frame", value: "High-tensile Steel" },
+      { label: "Brakes", value: "Disc Brakes" },
+      { label: "Speeds", value: "21-speed" },
+      { label: "Weight", value: "~15 kg" },
+    ],
+  },
+  {
+  id: "v14",
+  slug: "trek-marlin-5-gen-3",
+  title: "Trek Marlin 5 Gen 3",
+  subtitle: "Trail-ready hardtail mountain bike",
+  make: "Trek",
+  model: "Marlin 5 Gen 3",
+  year: 2025,
+  condition: "New",
+  price: 58199,
+  mileage: "N/A",
+  fuel: "Other",
+  bodyStyle: "Bicycle",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Trek Bicycle Store",
+  sellerType: "Authorized Dealer",
+  description:
+    "Trail-worthy mountain bike with aluminum frame, Shimano CUES drivetrain and hydraulic disc brakes.",
+  summary: "Popular entry-level MTB from Trek.",
+  color: "Fury Red",
+  seats: 1,
+  financeEstimate: 1400,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #dc2626, #991b1b)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/76/fa/0a/76fa0ac486f0c4368453e2e6d9255259.jpg"
+  ],
+  features: [
+    "Hydraulic disc brakes",
+    "Internal cable routing",
+    "Shimano CUES 9-speed"
+  ],
+  specs: [
+    { label: "Frame", value: "Alpha Silver Aluminum" },
+    { label: "Fork", value: "SR Suntour XCE 28" },
+    { label: "Brakes", value: "Hydraulic Disc" },
+    { label: "Weight", value: "≈14.5 kg" }
+  ]
+},
+{
+  id: "v15",
+  slug: "montra-madrock-27-5",
+  title: "Montra Madrock 27.5",
+  subtitle: "Entry-level MTB for city and trail riding",
+  make: "Montra",
+  model: "Madrock 27.5",
+  year: 2025,
+  condition: "New",
+  price: 21999,
+  mileage: "N/A",
+  fuel: "Other",
+  bodyStyle: "Bicycle",
+  transmission: "Manual",
+  location: "Mangalore",
+  sellerName: "Cycling Boutique",
+  sellerType: "Authorized Dealer",
+  description:
+    "Reliable mountain bike with Shimano drivetrain and mechanical disc brakes.",
+  summary: "One of India's most popular budget MTBs.",
+  color: "Grey Orange",
+  seats: 1,
+  financeEstimate: 550,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #f97316, #ea580c)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/8d/da/09/8dda093c3275556f9c965620d09d3f2a.jpg"
+  ],
+  features: [
+    "27.5-inch wheels",
+    "Shimano gears",
+    "Double-wall alloy rims"
+  ],
+  specs: [
+    { label: "Frame", value: "Alloy MTB Frame" },
+    { label: "Brakes", value: "Mechanical Disc" },
+    { label: "Speeds", value: "21-Speed" },
+    { label: "Tyres", value: "27.5 x 2.35" }
+  ]
+},
+{
+  id: "v16",
+  slug: "timp-peak-2-0-pro-charcoal-black-outlet",
+  title: "Timp Peak 2.0 Pro",
+  subtitle: "Premium full-suspension electric enduro mountain bike",
+  make: "Ari Bikes",
+  model: "Timp Peak 2.0 Pro",
+  year: 2025,
+  condition: "New",
+  price: 9299,
+  mileage: "N/A",
+  fuel: "Electric",
+  bodyStyle: "EBike",
+  transmission: "Manual",
+  location: "Bengaluru, Karnataka",
+  sellerName: "E-MTB Hub Bengaluru",
+  sellerType: "Authorized Dealer",
+  description:
+    "High-performance electric enduro bike featuring Bosch Performance Line CX Gen 5 motor, 800Wh battery, 170mm suspension travel, and SRAM X0 Eagle Transmission.",
+  summary:
+    "Carbon-frame eMTB built for aggressive trail and enduro riding.",
+  color: "Charcoal Black",
+  seats: 1,
+  financeEstimate: 220,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #111827, #374151)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/bb/e5/4b/bbe54b09a389a5adf2a8ae9f48b10b9c.jpg"
+  ],
+  features: [
+    "Bosch Performance Line CX Gen 5",
+    "800Wh Bosch PowerTube battery",
+    "170mm front and rear travel",
+    "SRAM X0 Eagle Transmission",
+    "Carbon frame"
+  ],
+  specs: [
+    { label: "Frame", value: "CleanCast Carbon" },
+    { label: "Motor", value: "Bosch Performance Line CX Gen 5" },
+    { label: "Battery", value: "800Wh Bosch PowerTube" },
+    { label: "Fork", value: "RockShox ZEB Ultimate RC2" },
+    { label: "Rear Shock", value: "RockShox Vivid Ultimate RC2T" },
+    { label: "Drivetrain", value: "SRAM X0 Eagle Transmission" },
+    { label: "Travel", value: "170mm / 170mm" },
+    { label: "Brakes", value: "SRAM Maven Silver" }
+  ]
+},
+{
+  id: "v17",
+  slug: "dengfu-e82-m560-750w",
+  title: "Dengfu E82 Carbon E-MTB",
+  subtitle: "Full-suspension carbon electric mountain bike",
+  make: "Dengfu",
+  model: "E82 M560",
+  year: 2025,
+  condition: "New",
+  price: 439900,
+  mileage: "N/A",
+  fuel: "Electric",
+  bodyStyle: "EBike",
+  transmission: "Manual",
+  location: "Mangalore, Karnataka",
+  sellerName: "Coastal E-Bikes",
+  sellerType: "Premium Dealer",
+  description:
+    "Premium carbon-fiber enduro eMTB powered by the Bafang M560 mid-drive motor. Designed for aggressive trail and mountain riding with long-travel suspension and a high-capacity battery.",
+  summary:
+    "750W carbon electric mountain bike with 1008Wh battery and 170mm suspension.",
+  color: "Black Matt",
+  seats: 1,
+  financeEstimate: 10500,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #111827, #374151)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/62/9a/a2/629aa22514d0ac927cc2c51650e7d849.jpg"
+  ],
+  features: [
+    "Toray T700/T800 carbon frame",
+    "Bafang M560 750W mid-drive motor",
+    "1008Wh battery",
+    "170mm rear suspension travel",
+    "Internal cable routing",
+    "29-inch wheel compatibility"
+  ],
+  specs: [
+    { label: "Motor", value: "Bafang M560 750W" },
+    { label: "Torque", value: "130 Nm" },
+    { label: "Battery", value: "48V 21Ah (1008Wh)" },
+    { label: "Frame", value: "Toray T700/T800 Carbon Fiber" },
+    { label: "Travel", value: "170mm" },
+    { label: "Wheel Size", value: "29 x 2.6 / 27.5 x 2.8" },
+    { label: "Brakes", value: "Hydraulic Disc" },
+    { label: "Top Speed", value: "45 km/h" }
+  ]
+},
+{
+  id: "v18",
+  slug: "m600-carbon-fiber-electric-mountain-bike",
+  title: "M600 Carbon Fiber Electric Mountain Bicycle",
+  subtitle: "High-performance carbon eMTB with mid-drive motor",
+  make: "Dengfu",
+  model: "M600 Carbon E-MTB",
+  year: 2025,
+  condition: "Used",
+  price: 349999,
+  mileage: "N/A",
+  fuel: "Electric",
+  bodyStyle: "EBike",
+  transmission: "Manual",
+  location: "Bengaluru, Karnataka",
+  sellerName: "E-Bike World",
+  sellerType: "Authorized Dealer",
+  description:
+    "Premium electric mountain bike built with a lightweight carbon fiber frame and powerful Bafang M600 mid-drive motor. Designed for trail riding, climbing, and long-distance adventures.",
+  summary:
+    "Carbon-frame electric MTB with powerful mid-drive motor and long-range battery.",
+  color: "Matte Black",
+  seats: 1,
+  financeEstimate: 8400,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #111827, #374151)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/8b/59/f2/8b59f2ffa43ee9ca1c9ecf8062cd271d.jpg",
+  ],
+  features: [
+    "Carbon fiber frame",
+    "Bafang M600 mid-drive motor",
+    "Integrated battery",
+    "Full suspension",
+    "Hydraulic disc brakes",
+    "29-inch wheels"
+  ],
+  specs: [
+    { label: "Motor", value: "Bafang M600 500W" },
+    { label: "Torque", value: "120 Nm" },
+    { label: "Battery", value: "48V 17.5Ah Lithium-ion" },
+    { label: "Frame", value: "Carbon Fiber" },
+    { label: "Range", value: "Up to 120 km" },
+    { label: "Top Speed", value: "45 km/h" },
+    { label: "Brakes", value: "Hydraulic Disc" },
+    { label: "Wheel Size", value: "29 inch" }
+  ]
+},
+{
+  id: "v19",
+  slug: "tvs-jupiter-125-smartxconnect-2024",
+  title: "TVS Jupiter 125 SmartXonnect",
+  subtitle: "Feature-rich scooter with Bluetooth connectivity",
+  make: "TVS",
+  model: "Jupiter 125 SmartXonnect",
+  year: 2024,
+  condition: "New",
+  price: 89500,
+  mileage: "8,500 km",
+  fuel: "Petrol",
+  bodyStyle: "Scooter",
+  transmission: "Automatic",
+  location: "Mangalore",
+  sellerName: "Coastal Wheels",
+  sellerType: "Garage",
+  description:
+    "Well-maintained family scooter with excellent ride comfort, spacious storage, and connected features.",
+  summary:
+    "Popular 125cc scooter with verified service history and low mileage.",
+  color: "Dawn Orange",
+  seats: 2,
+  financeEstimate: 1900,
+  rating: 4.7,
+  heroTone: "linear-gradient(135deg, #ea580c, #f97316)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/89/d9/00/89d900db66340cd4abff82d59fdbc293.jpg"
+  ],
+  features: [
+    "Bluetooth connectivity",
+    "Turn-by-turn navigation",
+    "External fuel fill",
+    "LED headlamp"
+  ],
+  specs: [
+    { label: "Engine", value: "124.8 cc" },
+    { label: "Mileage", value: "~50 km/l" },
+    { label: "Ownership", value: "1st owner" },
+    { label: "Insurance", value: "Comprehensive active" }
+  ]
+},
+{
+  id: "v20",
+  slug: "suzuki-access-125-2024",
+  title: "Suzuki Access 125",
+  subtitle: "Comfortable family scooter with excellent mileage",
+  make: "Suzuki",
+  model: "Access 125",
+  year: 2024,
+  condition: "New",
+  price: 84500,
+  mileage: "9,800 km",
+  fuel: "Petrol",
+  bodyStyle: "Scooter",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Metro Wheels",
+  sellerType: "Garage",
+  description:
+    "Well-maintained scooter with smooth engine performance and spacious under-seat storage.",
+  summary: "Popular 125cc scooter with good resale value.",
+  color: "Metallic Matte Black",
+  seats: 2,
+  financeEstimate: 1800,
+  rating: 4.6,
+  heroTone: "linear-gradient(135deg, #111827, #4b5563)",
+  imageUrls: ["https://i.pinimg.com/1200x/06/ea/51/06ea51359bdb01d058a50ae8e14fa1e7.jpg"],
+  features: ["LED headlamp", "External fuel lid", "Large storage"],
+  specs: [
+    { label: "Engine", value: "124cc" },
+    { label: "Mileage", value: "~50 km/l" },
+    { label: "Ownership", value: "1st owner" },
+    { label: "Insurance", value: "Active" }
+  ]
+},
+{
+  id: "v21",
+  slug: "yamaha-fascino-125-fi-hybrid-2024",
+  title: "Yamaha Fascino 125 Fi Hybrid",
+  subtitle: "Stylish hybrid scooter with smart motor assist",
+  make: "Yamaha",
+  model: "Fascino 125 Fi Hybrid",
+  year: 2024,
+  condition: "Used",
+  price: 89900,
+  mileage: "7,200 km",
+  fuel: "Petrol",
+  bodyStyle: "Scooter",
+  transmission: "Automatic",
+  location: "Udupi",
+  sellerName: "Coastal Motors",
+  sellerType: "Dealer",
+  description:
+    "Elegant scooter with hybrid assist technology and premium styling.",
+  summary: "Lightweight scooter with impressive fuel economy.",
+  color: "Dark Matte Blue",
+  seats: 2,
+  financeEstimate: 1900,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #1d4ed8, #3b82f6)",
+  imageUrls: ["https://i.pinimg.com/1200x/f9/4b/5f/f94b5f5cea170d2b42d84c40aed400a9.jpg"],
+  features: ["Hybrid assist", "Bluetooth", "Side stand engine cut-off"],
+  specs: [
+    { label: "Engine", value: "125cc" },
+    { label: "Mileage", value: "~55 km/l" },
+    { label: "Ownership", value: "1st owner" },
+    { label: "Insurance", value: "Active" }
+  ]
+},
+{
+  id: "v22",
+  slug: "ktm-duke-390-2024",
+  title: "KTM Duke 390",
+  subtitle: "Performance street bike with quick handling and premium features",
+  make: "KTM",
+  model: "Duke 390",
+  year: 2024,
+  condition: "Used",
+  price: 289000,
+  mileage: "6,500 km",
+  fuel: "Petrol",
+  bodyStyle: "Motorcycle",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Orange Wheels",
+  sellerType: "Individual Dealer",
+  description:
+    "Well-maintained performance motorcycle featuring aggressive styling, ride-by-wire throttle, and advanced electronics for spirited city and highway riding.",
+  summary:
+    "Premium used streetfighter motorcycle with verified ownership and service history.",
+  color: "Electronic Orange",
+  seats: 2,
+  financeEstimate: 6200,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #ea580c, #f97316)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/9b/6f/fa/9b6ffaac3f27f5ee293f4c1f3e77131b.jpg"
+  ],
+  features: [
+    "TFT display",
+    "Ride-by-wire throttle",
+    "Quickshifter+",
+    "Service history available"
+  ],
+  specs: [
+    { label: "Engine", value: "399 cc" },
+    { label: "Mileage", value: "28 km/l" },
+    { label: "ABS", value: "Dual-channel" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v23",
+  slug: "yamaha-r15-v4-2024",
+  title: "Yamaha R15 V4",
+  subtitle: "Sport bike with advanced electronics and racing-inspired design",
+  make: "Yamaha",
+  model: "R15 V4",
+  year: 2024,
+  condition: "New",
+  price: 182000,
+  mileage: "7,400 km",
+  fuel: "Petrol",
+  bodyStyle: "Motorcycle",
+  transmission: "Manual",
+  location: "Mangalore",
+  sellerName: "Coastal Riders",
+  sellerType: "Individual Dealer",
+  description:
+    "Well-maintained sport motorcycle featuring a liquid-cooled engine, quick shifter, traction control, and aggressive supersport styling.",
+  summary:
+    "Popular entry-level sport bike with low mileage and complete service records.",
+  color: "Racing Blue",
+  seats: 2,
+  financeEstimate: 3900,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #1d4ed8, #3b82f6)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/4a/f5/e0/4af5e015459c8182211f479cd232376d.jpg"
+  ],
+  features: [
+    "Quick Shifter",
+    "Traction Control System",
+    "Assist & Slipper Clutch",
+    "LED Lighting"
+  ],
+  specs: [
+    { label: "Engine", value: "155 cc" },
+    { label: "Mileage", value: "45 km/l" },
+    { label: "ABS", value: "Dual-channel" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v24",
+  slug: "jawa-42-bobber-2024",
+  title: "Jawa 42 Bobber",
+  subtitle: "Factory bobber motorcycle with premium styling and strong road presence",
+  make: "Jawa",
+  model: "42 Bobber",
+  year: 2024,
+  condition: "Used",
+  price: 214000,
+  mileage: "5,800 km",
+  fuel: "Petrol",
+  bodyStyle: "Motorcycle",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Classic Ride Hub",
+  sellerType: "Individual Dealer",
+  description:
+    "Stylish bobber motorcycle featuring a low-slung stance, floating single seat, alloy wheels, and a powerful liquid-cooled engine for relaxed highway cruising.",
+  summary:
+    "Premium used bobber with low mileage, service records, and excellent condition.",
+  color: "Mystic Copper",
+  seats: 1,
+  financeEstimate: 4600,
+  rating: 4.7,
+  heroTone: "linear-gradient(135deg, #78350f, #d97706)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/30/34/e3/3034e3ee90e10dc8bde9eedf6913fd28.jpg"
+  ],
+  features: [
+    "Floating single seat",
+    "Full LED lighting",
+    "Digital instrument cluster",
+    "Dual-channel ABS"
+  ],
+  specs: [
+    { label: "Engine", value: "334 cc" },
+    { label: "Mileage", value: "30 km/l" },
+    { label: "ABS", value: "Dual-channel" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v25",
+  slug: "mazda-3-hatchback-2024",
+  title: "Mazda 3 Hatchback",
+  subtitle: "Premium hatchback with sporty styling and refined driving dynamics",
+  make: "Mazda",
+  model: "3 Hatchback",
+  year: 2024,
+  condition: "New",
+  price: 2495000,
+  mileage: "12,300 km",
+  fuel: "Petrol",
+  bodyStyle: "Hatchback",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Premium Auto Gallery",
+  sellerType: "Dealer",
+  description:
+    "Well-maintained premium hatchback featuring elegant design, a driver-focused cabin, advanced safety technologies, and responsive performance.",
+  summary:
+    "Low-mileage premium hatchback with complete service records and verified ownership.",
+  color: "Soul Red Crystal",
+  seats: 5,
+  financeEstimate: 52500,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #991b1b, #dc2626)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/76/d2/9c/76d29ca2c688e794f1cca7b2510d218a.jpg"
+  ],
+  features: [
+    "Leather upholstery",
+    "Adaptive cruise control",
+    "360-degree camera",
+    "Apple CarPlay & Android Auto"
+  ],
+  specs: [
+    { label: "Engine", value: "2.5L Petrol" },
+    { label: "Power", value: "191 hp" },
+    { label: "Transmission", value: "6-Speed Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v26",
+  slug: "hyundai-i20-n-line-n8-2024",
+  title: "Hyundai i20 N Line N8",
+  subtitle: "Sporty premium hatchback with turbocharged performance",
+  make: "Hyundai",
+  model: "i20 N Line N8",
+  year: 2024,
+  condition: "Used",
+  price: 1195000,
+  mileage: "14,500 km",
+  fuel: "Petrol",
+  bodyStyle: "Hatchback",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Prime Auto Hub",
+  sellerType: "Dealer",
+  description:
+    "Well-maintained performance hatchback featuring a 1.0L turbo-petrol engine, sporty N Line styling, and premium interior features for enthusiastic drivers.",
+  summary:
+    "Popular turbocharged hatchback with low mileage and complete service history.",
+  color: "Thunder Blue",
+  seats: 5,
+  financeEstimate: 24900,
+  rating: 4.7,
+  heroTone: "linear-gradient(135deg, #1d4ed8, #0ea5e9)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/00/71/b7/0071b79a734509d012106410c901adb8.jpg"
+  ],
+  features: [
+    "Electric sunroof",
+    "Bose premium audio",
+    "Wireless charger",
+    "Connected car technology"
+  ],
+  specs: [
+    { label: "Engine", value: "998 cc Turbo Petrol" },
+    { label: "Power", value: "120 PS" },
+    { label: "Transmission", value: "6-Speed Manual" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v27",
+  slug: "volkswagen-golf-gti-2025",
+  title: "Volkswagen Golf GTI",
+  subtitle: "Iconic hot hatch with turbocharged performance and premium features",
+  make: "Volkswagen",
+  model: "Golf GTI",
+  year: 2025,
+  condition: "Used",
+  price: 4890000,
+  mileage: "9,200 km",
+  fuel: "Petrol",
+  bodyStyle: "Hatchback",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Elite Performance Cars",
+  sellerType: "Dealer",
+  description:
+    "Performance-oriented hatchback featuring a powerful turbocharged engine, sporty suspension setup, and premium interior with advanced driver assistance features.",
+  summary:
+    "Low-mileage hot hatch offering an engaging driving experience and everyday practicality.",
+  color: "Moonstone Grey",
+  seats: 5,
+  financeEstimate: 102000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #374151, #111827)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/6f/d2/c8/6fd2c89b2edb44fd62f27d9473593b15.jpg"
+  ],
+  features: [
+    "Panoramic sunroof",
+    "Digital cockpit",
+    "Adaptive cruise control",
+    "Wireless Apple CarPlay & Android Auto"
+  ],
+  specs: [
+    { label: "Engine", value: "2.0L TSI Turbo Petrol" },
+    { label: "Power", value: "265 PS" },
+    { label: "Transmission", value: "7-Speed DSG" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v28",
+  slug: "bmw-m135i-xdrive-2025",
+  title: "BMW M135i xDrive",
+  subtitle: "Performance hatchback with all-wheel drive and M Sport dynamics",
+  make: "BMW",
+  model: "M135i xDrive",
+  year: 2025,
+  condition: "New",
+  price: 5690000,
+  mileage: "8,400 km",
+  fuel: "Petrol",
+  bodyStyle: "Hatchback",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Prestige Performance Motors",
+  sellerType: "Dealer",
+  description:
+    "Premium performance hatchback featuring BMW M engineering, intelligent xDrive all-wheel drive, adaptive suspension, and a powerful turbocharged engine.",
+  summary:
+    "High-performance luxury hatchback with low mileage and complete service records.",
+  color: "Alpine White",
+  seats: 5,
+  financeEstimate: 118000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #1e293b, #0f172a)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/10/84/47/10844728973a2ec07305158b7490d88d.jpg"
+  ],
+  features: [
+    "xDrive All-Wheel Drive",
+    "M Sport Package",
+    "Adaptive LED Headlights",
+    "Harman Kardon Sound System"
+  ],
+  specs: [
+    { label: "Engine", value: "2.0L TwinPower Turbo Petrol" },
+    { label: "Power", value: "300 hp" },
+    { label: "Transmission", value: "7-Speed Steptronic Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v29",
+  slug: "skoda-slavia-1-5-tsi-style-2024",
+  title: "Skoda Slavia 1.5 TSI Style",
+  subtitle: "Premium sedan with turbocharged performance and spacious cabin",
+  make: "Skoda",
+  model: "Slavia 1.5 TSI Style",
+  year: 2024,
+  condition: "Used",
+  price: 1545000,
+  mileage: "13,200 km",
+  fuel: "Petrol",
+  bodyStyle: "Sedan",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Prime Auto Hub",
+  sellerType: "Dealer",
+  description:
+    "Well-maintained premium sedan featuring a powerful turbo-petrol engine, ventilated seats, sunroof, and complete service history.",
+  summary:
+    "Low-mileage sedan with premium features and excellent highway comfort.",
+  color: "Candy White",
+  seats: 5,
+  financeEstimate: 32000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #0f172a, #475569)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/ff/99/e5/ff99e54f91c39c0673708b80df135a6c.jpg"
+  ],
+  features: [
+    "Electric sunroof",
+    "Ventilated front seats",
+    "Wireless Android Auto & Apple CarPlay",
+    "Cruise control"
+  ],
+  specs: [
+    { label: "Engine", value: "1498 cc TSI Petrol" },
+    { label: "Power", value: "150 PS" },
+    { label: "Transmission", value: "7-Speed DSG" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v30",
+  slug: "toyota-camry-hybrid-2024",
+  title: "Toyota Camry Hybrid",
+  subtitle: "Premium hybrid sedan with exceptional comfort and fuel efficiency",
+  make: "Toyota",
+  model: "Camry Hybrid",
+  year: 2024,
+  condition: "Used",
+  price: 4295000,
+  mileage: "11,800 km",
+  fuel: "Hybrid",
+  bodyStyle: "Sedan",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Prestige Toyota Select",
+  sellerType: "Dealer",
+  description:
+    "Luxury hybrid sedan featuring a refined cabin, advanced safety technologies, smooth automatic transmission, and outstanding fuel efficiency for city and highway driving.",
+  summary:
+    "Premium executive sedan with hybrid technology, low mileage, and complete service records.",
+  color: "Platinum White Pearl",
+  seats: 5,
+  financeEstimate: 89000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #334155, #0f172a)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/6f/6f/95/6f6f952ab8c020e56949561de9ae64a3.jpg"
+  ],
+  features: [
+    "Hybrid powertrain",
+    "JBL premium audio system",
+    "Wireless phone charger",
+    "Toyota Safety Sense"
+  ],
+  specs: [
+    { label: "Engine", value: "2487 cc Hybrid Petrol" },
+    { label: "Power", value: "230 PS" },
+    { label: "Mileage", value: "25 km/l" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v31",
+  slug: "mercedes-benz-c300-amg-line-2024",
+  title: "Mercedes-Benz C 300 AMG Line",
+  subtitle: "Luxury sedan with advanced technology and refined performance",
+  make: "Mercedes-Benz",
+  model: "C 300 AMG Line",
+  year: 2024,
+  condition: "New",
+  price: 6250000,
+  mileage: "9,600 km",
+  fuel: "Petrol",
+  bodyStyle: "Sedan",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Star Select Motors",
+  sellerType: "Dealer",
+  description:
+    "Premium luxury sedan featuring AMG styling, a turbocharged engine, digital cockpit, and advanced driver assistance systems. Maintained with authorized service records.",
+  summary:
+    "Executive luxury sedan with low mileage, premium features, and verified ownership.",
+  color: "Obsidian Black",
+  seats: 5,
+  financeEstimate: 129000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #111827, #374151)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/d8/42/af/d842af6afc1df43d48a3ea097129a850.jpg"
+  ],
+  features: [
+    "AMG Line Package",
+    "Burmester Surround Sound System",
+    "Panoramic Sunroof",
+    "Wireless Apple CarPlay & Android Auto"
+  ],
+  specs: [
+    { label: "Engine", value: "1999 cc Turbo Petrol" },
+    { label: "Power", value: "258 PS" },
+    { label: "Transmission", value: "9G-TRONIC Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v32",
+  slug: "toyota-innova-hycross-zx-hybrid-2024",
+  title: "Toyota Innova HyCross ZX Hybrid",
+  subtitle: "Premium MPV with hybrid efficiency and spacious 7-seater comfort",
+  make: "Toyota",
+  model: "Innova HyCross ZX Hybrid",
+  year: 2024,
+  condition: "Used",
+  price: 3295000,
+  mileage: "18,400 km",
+  fuel: "Hybrid",
+  bodyStyle: "MUV",
+  transmission: "Automatic",
+  location: "Mangalore",
+  sellerName: "Coastal Auto Select",
+  sellerType: "Dealer",
+  description:
+    "Premium family MPV with hybrid technology, panoramic sunroof, ottoman seats, and Toyota reliability. Ideal for long-distance travel and daily family use.",
+  summary:
+    "Well-maintained 7-seater hybrid MPV with low running costs and complete service history.",
+  color: "Attitude Black",
+  seats: 7,
+  financeEstimate: 68000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #0f172a, #334155)",
+  imageUrls: [
+    "https://images.unsplash.com/photo-1748215210939-ad8b6c8c086d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  features: [
+    "Panoramic sunroof",
+    "Ottoman second-row seats",
+    "360-degree camera",
+    "Toyota Safety Sense"
+  ],
+  specs: [
+    { label: "Engine", value: "1987 cc Hybrid Petrol" },
+    { label: "Power", value: "186 PS" },
+    { label: "Mileage", value: "21 km/l" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v33",
+  slug: "kia-carens-prestige-plus-2024",
+  title: "Kia Carens Prestige Plus",
+  subtitle: "Spacious family MPV with premium features and comfortable seating",
+  make: "Kia",
+  model: "Carens Prestige Plus",
+  year: 2024,
+  condition: "Used",
+  price: 1495000,
+  mileage: "18,700 km",
+  fuel: "Petrol",
+  bodyStyle: "MUV",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "South Star Motors",
+  sellerType: "Dealer",
+  description:
+    "Well-maintained 7-seater MPV featuring a spacious cabin, touchscreen infotainment system, rear AC vents, and complete service history.",
+  summary:
+    "Practical family MPV with low mileage, premium comfort, and verified ownership.",
+  color: "Imperial Blue",
+  seats: 7,
+  financeEstimate: 31500,
+  rating: 4.7,
+  heroTone: "linear-gradient(135deg, #1e3a8a, #2563eb)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/25/f7/21/25f721ebce86c7276e89ffe662bd356c.jpg"
+  ],
+  features: [
+    "10.25-inch touchscreen",
+    "Wireless Android Auto & Apple CarPlay",
+    "Rear AC vents",
+    "Cruise control"
+  ],
+  specs: [
+    { label: "Engine", value: "1497 cc Petrol" },
+    { label: "Power", value: "115 PS" },
+    { label: "Mileage", value: "16.5 km/l" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v34",
+  slug: "renault-triber-rxz-2024",
+  title: "Renault Triber RXZ",
+  subtitle: "Versatile 7-seater MPV with modular seating and excellent practicality",
+  make: "Renault",
+  model: "Triber RXZ",
+  year: 2024,
+  condition: "Used",
+  price: 765000,
+  mileage: "22,400 km",
+  fuel: "Petrol",
+  bodyStyle: "MUV",
+  transmission: "Manual",
+  location: "Mysuru",
+  sellerName: "City Drive Motors",
+  sellerType: "Dealer",
+  description:
+    "Well-maintained family MPV featuring flexible 7-seat configuration, touchscreen infotainment, and spacious cabin. Ideal for city commutes and weekend family trips.",
+  summary:
+    "Affordable 7-seater MPV with practical features and verified service history.",
+  color: "Moonlight Silver",
+  seats: 7,
+  financeEstimate: 15900,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #64748b, #334155)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/22/e9/64/22e964f7c4e6e89408ece401ccb6539a.jpg"
+  ],
+  features: [
+    "Flexible modular seating",
+    "8-inch touchscreen infotainment",
+    "Push-button start",
+    "Rear parking camera"
+  ],
+  specs: [
+    { label: "Engine", value: "999 cc Petrol" },
+    { label: "Power", value: "72 PS" },
+    { label: "Mileage", value: "19 km/l" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v35",
+  slug: "bmw-430i-m-sport-coupe-2024",
+  title: "BMW 430i M Sport Coupe",
+  subtitle: "Luxury coupe with sporty handling and premium features",
+  make: "BMW",
+  model: "430i M Sport Coupe",
+  year: 2024,
+  condition: "New",
+  price: 5895000,
+  mileage: "8,900 km",
+  fuel: "Petrol",
+  bodyStyle: "Coupe",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Prestige Auto Select",
+  sellerType: "Dealer",
+  description:
+    "Premium luxury coupe featuring BMW TwinPower Turbo performance, frameless doors, adaptive suspension, and a driver-focused cockpit.",
+  summary:
+    "Low-mileage luxury coupe with sporty dynamics and complete service history.",
+  color: "Brooklyn Grey",
+  seats: 4,
+  financeEstimate: 122000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #1f2937, #111827)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/58/f9/bc/58f9bc0ac5a1471795c8ff19f1107b9b.jpg"
+  ],
+  features: [
+    "M Sport Package",
+    "Adaptive LED Headlights",
+    "Harman Kardon Sound System",
+    "Wireless Apple CarPlay & Android Auto"
+  ],
+  specs: [
+    { label: "Engine", value: "1998 cc Turbo Petrol" },
+    { label: "Power", value: "258 PS" },
+    { label: "Transmission", value: "8-Speed Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v36",
+  slug: "porsche-911-carrera-2024",
+  title: "Porsche 911 Carrera",
+  subtitle: "Iconic sports coupe with precision handling and everyday usability",
+  make: "Porsche",
+  model: "911 Carrera",
+  year: 2024,
+  condition: "New",
+  price: 18500000,
+  mileage: "6,200 km",
+  fuel: "Petrol",
+  bodyStyle: "Coupe",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Elite Performance Cars",
+  sellerType: "Dealer",
+  description:
+    "Meticulously maintained sports coupe featuring Porsche's legendary rear-engine layout, rapid acceleration, premium craftsmanship, and cutting-edge technology.",
+  summary:
+    "Low-mileage luxury sports car with complete service history and verified ownership.",
+  color: "Guards Red",
+  seats: 4,
+  financeEstimate: 385000,
+  rating: 5.0,
+  heroTone: "linear-gradient(135deg, #991b1b, #dc2626)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/11/d1/1b/11d11bb564f0bdabcb2e94b969f11e32.jpg"
+  ],
+  features: [
+    "Sport Chrono Package",
+    "Porsche Active Suspension Management",
+    "Bose Surround Sound System",
+    "Wireless Apple CarPlay"
+  ],
+  specs: [
+    { label: "Engine", value: "2981 cc Twin-Turbo Flat-6" },
+    { label: "Power", value: "394 PS" },
+    { label: "Transmission", value: "8-Speed PDK Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v37",
+  slug: "bmw-z4-m40i-roadster-2024",
+  title: "BMW Z4 M40i Roadster",
+  subtitle: "Luxury convertible sports car with turbocharged performance",
+  make: "BMW",
+  model: "Z4 M40i Roadster",
+  year: 2024,
+  condition: "Used",
+  price: 8950000,
+  mileage: "7,800 km",
+  fuel: "Petrol",
+  bodyStyle: "Convertible",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Prestige Auto Select",
+  sellerType: "Dealer",
+  description:
+    "Premium two-seater convertible featuring a retractable soft-top roof, powerful inline-six engine, adaptive suspension, and luxurious cabin amenities.",
+  summary:
+    "Low-mileage luxury roadster with thrilling performance and complete service history.",
+  color: "San Francisco Red",
+  seats: 2,
+  financeEstimate: 186000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #991b1b, #dc2626)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/d7/de/2c/d7de2c8e0a1788bb6c304f5363c3c689.jpg"
+  ],
+  features: [
+    "Retractable soft-top roof",
+    "Harman Kardon surround sound",
+    "Adaptive M suspension",
+    "Wireless Apple CarPlay & Android Auto"
+  ],
+  specs: [
+    { label: "Engine", value: "2998 cc TwinPower Turbo Petrol" },
+    { label: "Power", value: "340 PS" },
+    { label: "Transmission", value: "8-Speed Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v38",
+  slug: "ford-mustang-gt-convertible-2024",
+  title: "Ford Mustang GT Convertible",
+  subtitle: "Iconic American muscle car with open-top driving experience",
+  make: "Ford",
+  model: "Mustang GT Convertible",
+  year: 2024,
+  condition: "Used",
+  price: 9250000,
+  mileage: "5,900 km",
+  fuel: "Petrol",
+  bodyStyle: "Convertible",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Performance Auto Gallery",
+  sellerType: "Dealer",
+  description:
+    "Powerful convertible sports car featuring a naturally aspirated V8 engine, premium interior, advanced driver technology, and an electrically operated soft-top roof.",
+  summary:
+    "Low-mileage muscle car offering thrilling performance and open-air driving enjoyment.",
+  color: "Race Red",
+  seats: 4,
+  financeEstimate: 192000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #7f1d1d, #dc2626)",
+  imageUrls: [
+    "https://images.unsplash.com/photo-1772593547280-d480065a9f73?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  features: [
+    "Power-operated soft-top roof",
+    "Digital instrument cluster",
+    "B&O premium sound system",
+    "Selectable drive modes"
+  ],
+  specs: [
+    { label: "Engine", value: "5.0L V8 Petrol" },
+    { label: "Power", value: "486 PS" },
+    { label: "Transmission", value: "10-Speed Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v39",
+  slug: "mercedes-benz-cle-300-cabriolet-2025",
+  title: "Mercedes-Benz CLE 300 Cabriolet",
+  subtitle: "Luxury four-seater convertible with premium comfort and elegant styling",
+  make: "Mercedes-Benz",
+  model: "CLE 300 Cabriolet",
+  year: 2025,
+  condition: "Used",
+  price: 11250000,
+  mileage: "4,800 km",
+  fuel: "Petrol",
+  bodyStyle: "Convertible",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Star Luxury Cars",
+  sellerType: "Dealer",
+  description:
+    "Premium convertible featuring a fully automatic soft-top roof, advanced driver assistance systems, Burmester audio, and a luxurious cabin designed for comfortable open-air cruising.",
+  summary:
+    "Low-mileage luxury cabriolet with premium features, verified ownership, and complete service history.",
+  color: "Obsidian Black",
+  seats: 4,
+  financeEstimate: 234000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #111827, #4b5563)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/61/04/5d/61045d46094aec07c1da11773b67d9b9.jpg"
+  ],
+  features: [
+    "Fully automatic soft-top roof",
+    "Burmester 3D surround sound",
+    "AIRSCARF neck-level heating",
+    "MBUX infotainment system"
+  ],
+  specs: [
+    { label: "Engine", value: "1999 cc Turbo Petrol" },
+    { label: "Power", value: "258 PS" },
+    { label: "Transmission", value: "9G-TRONIC Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v40",
+  slug: "volvo-v60-cross-country-2024",
+  title: "Volvo V60 Cross Country",
+  subtitle: "Luxury estate wagon with all-road capability and premium comfort",
+  make: "Volvo",
+  model: "V60 Cross Country",
+  year: 2024,
+  condition: "New",
+  price: 5890000,
+  mileage: "12,500 km",
+  fuel: "Petrol",
+  bodyStyle: "Wagon",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Scandinavian Auto Select",
+  sellerType: "Dealer",
+  description:
+    "Premium estate wagon offering exceptional comfort, advanced safety features, spacious cargo capacity, and all-road versatility.",
+  summary:
+    "Luxury wagon with practical space, premium features, and complete service history.",
+  color: "Crystal White Pearl",
+  seats: 5,
+  financeEstimate: 122000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #475569, #0f172a)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/33/4b/a1/334ba12470cb556fd38e85ab65997bd8.jpg"
+  ],
+  features: [
+    "Panoramic sunroof",
+    "Pilot Assist",
+    "Harman Kardon audio",
+    "All-wheel drive"
+  ],
+  specs: [
+    { label: "Engine", value: "1969 cc Turbo Petrol" },
+    { label: "Power", value: "250 PS" },
+    { label: "Transmission", value: "8-Speed Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},{
+  id: "v41",
+  slug: "audi-a4-avant-2024",
+  title: "Audi A4 Avant",
+  subtitle: "Premium estate wagon with sporty styling and versatile cargo space",
+  make: "Audi",
+  model: "A4 Avant",
+  year: 2024,
+  condition: "Used",
+  price: 5490000,
+  mileage: "11,300 km",
+  fuel: "Petrol",
+  bodyStyle: "Wagon",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Prestige Luxury Motors",
+  sellerType: "Dealer",
+  description:
+    "Elegant premium estate featuring Audi's signature design, spacious luggage capacity, advanced technology, and refined driving dynamics for both city and long-distance travel.",
+  summary:
+    "Luxury wagon with low mileage, premium features, and complete service records.",
+  color: "Daytona Grey Pearl",
+  seats: 5,
+  financeEstimate: 114000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #374151, #111827)",
+  imageUrls: [
+    "https://images.unsplash.com/photo-1741029482311-0b8e2493c7e5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  features: [
+    "Virtual Cockpit",
+    "Panoramic Sunroof",
+    "Wireless Apple CarPlay & Android Auto",
+    "Powered Tailgate"
+  ],
+  specs: [
+    { label: "Engine", value: "1984 cc TFSI Petrol" },
+    { label: "Power", value: "204 PS" },
+    { label: "Transmission", value: "7-Speed S tronic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v42",
+  slug: "porsche-taycan-cross-turismo-2025",
+  title: "Porsche Taycan Cross Turismo",
+  subtitle: "High-performance electric estate with sports car dynamics and everyday practicality",
+  make: "Porsche",
+  model: "Taycan Cross Turismo",
+  year: 2025,
+  condition: "New",
+  price: 16500000,
+  mileage: "8,100 km",
+  fuel: "Electric",
+  bodyStyle: "Wagon",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Elite EV Motors",
+  sellerType: "Dealer",
+  description:
+    "Premium electric wagon combining Porsche performance with a spacious cabin, advanced technology, and long-range capability. Ideal for luxury touring and daily driving.",
+  summary:
+    "Luxury electric estate with low mileage, premium features, and verified ownership.",
+  color: "Ice Grey Metallic",
+  seats: 5,
+  financeEstimate: 343000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #0f172a, #475569)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/31/83/98/3183988fa09163680ea61b71f5104328.jpg"
+  ],
+  features: [
+    "Panoramic fixed glass roof",
+    "Adaptive air suspension",
+    "Bose surround sound system",
+    "Fast DC charging"
+  ],
+  specs: [
+    { label: "Battery", value: "93.4 kWh Performance Battery Plus" },
+    { label: "Power", value: "476 PS" },
+    { label: "Range", value: "Up to 500 km" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v43",
+  slug: "bmw-m3-touring-competition-xdrive-2025",
+  title: "BMW M3 Touring Competition xDrive",
+  subtitle: "High-performance sports wagon with supercar-rivaling performance",
+  make: "BMW",
+  model: "M3 Touring Competition xDrive",
+  year: 2025,
+  condition: "New",
+  price: 14500000,
+  mileage: "5,400 km",
+  fuel: "Petrol",
+  bodyStyle: "Wagon",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Performance Garage India",
+  sellerType: "Dealer",
+  description:
+    "Performance-focused luxury wagon combining everyday practicality with BMW M engineering. Features xDrive all-wheel drive, adaptive suspension, and a spacious cargo area for long-distance touring.",
+  summary:
+    "Premium sports estate offering exceptional performance, practicality, and low ownership history.",
+  color: "Isle of Man Green",
+  seats: 5,
+  financeEstimate: 302000,
+  rating: 5.0,
+  heroTone: "linear-gradient(135deg, #14532d, #166534)",
+  imageUrls: [
+    "https://images.unsplash.com/photo-1701985203003-1e52f637cf98?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  features: [
+    "M xDrive All-Wheel Drive",
+    "Adaptive M Suspension",
+    "M Carbon Interior Trim",
+    "Harman Kardon Surround Sound"
+  ],
+  specs: [
+    { label: "Engine", value: "2993 cc Twin-Turbo Inline-6" },
+    { label: "Power", value: "530 PS" },
+    { label: "Transmission", value: "8-Speed M Steptronic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v44",
+  slug: "force-traveller-3350-super-2024",
+  title: "Force Traveller 3350 Super",
+  subtitle: "Passenger van designed for staff transport and tour operations",
+  make: "Force Motors",
+  model: "Traveller 3350 Super",
+  year: 2024,
+  condition: "New",
+  price: 1895000,
+  mileage: "38,600 km",
+  fuel: "Diesel",
+  bodyStyle: "Van",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Commercial Vehicle Hub",
+  sellerType: "Dealer",
+  description:
+    "Reliable passenger van ideal for shuttle services, tourism operators, school transportation, and staff movement. Maintained with complete service records.",
+  summary:
+    "Well-maintained passenger van offering high seating capacity and dependable diesel performance.",
+  color: "Arctic White",
+  seats: 14,
+  financeEstimate: 39500,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #334155, #64748b)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/0c/18/85/0c1885e0760d2e17a0fe667d4eda3a69.jpg"
+  ],
+  features: [
+    "High-roof cabin",
+    "Power steering",
+    "Rear AC vents",
+    "Large luggage space"
+  ],
+  specs: [
+    { label: "Engine", value: "2596 cc Diesel" },
+    { label: "Power", value: "115 PS" },
+    { label: "Transmission", value: "5-Speed Manual" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v45",
+  slug: "tata-winger-tourist-2024",
+  title: "Tata Winger Tourist",
+  subtitle: "Comfortable passenger van for shuttle, staff transport, and tour operations",
+  make: "Tata",
+  model: "Winger Tourist",
+  year: 2024,
+  condition: "New",
+  price: 1745000,
+  mileage: "42,800 km",
+  fuel: "Diesel",
+  bodyStyle: "Van",
+  transmission: "Manual",
+  location: "Mangalore",
+  sellerName: "Coastal Commercial Vehicles",
+  sellerType: "Dealer",
+  description:
+    "Well-maintained passenger van designed for staff transportation, airport transfers, tourism, and institutional use. Features a spacious cabin, comfortable seating, and dependable diesel performance.",
+  summary:
+    "Reliable passenger van with high seating capacity, verified ownership, and complete service records.",
+  color: "Pearl White",
+  seats: 13,
+  financeEstimate: 36500,
+  rating: 4.4,
+  heroTone: "linear-gradient(135deg, #1e293b, #475569)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/f2/eb/30/f2eb30e40531db99287ca42eac6f4a78.jpg"
+  ],
+  features: [
+    "High-roof cabin",
+    "Rear air-conditioning",
+    "Power steering",
+    "Large luggage compartment"
+  ],
+  specs: [
+    { label: "Engine", value: "2179 cc Diesel" },
+    { label: "Power", value: "100 PS" },
+    { label: "Transmission", value: "5-Speed Manual" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v46",
+  slug: "maruti-eeco-cargo-2024",
+  title: "Maruti Eeco Cargo",
+  subtitle: "Compact cargo van built for deliveries and small business operations",
+  make: "Maruti Suzuki",
+  model: "Eeco Cargo",
+  year: 2024,
+  condition: "New",
+  price: 545000,
+  mileage: "28,900 km",
+  fuel: "Petrol",
+  bodyStyle: "Van",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "City Commercial Vehicles",
+  sellerType: "Dealer",
+  description:
+    "Practical cargo van ideal for local deliveries, courier services, and small business transportation. Offers low running costs, easy maintenance, and a spacious load area.",
+  summary:
+    "Reliable commercial cargo van with verified service records and excellent utility.",
+  color: "Superior White",
+  seats: 2,
+  financeEstimate: 11400,
+  rating: 4.3,
+  heroTone: "linear-gradient(135deg, #475569, #1e293b)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/45/87/aa/4587aaebecdc5cf614f04f52f4f9b833.jpg"
+  ],
+  features: [
+    "Large cargo compartment",
+    "Sliding side doors",
+    "Low maintenance costs",
+    "Compact city-friendly dimensions"
+  ],
+  specs: [
+    { label: "Engine", value: "1197 cc Petrol" },
+    { label: "Power", value: "80 PS" },
+    { label: "Transmission", value: "5-Speed Manual" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v47",
+  slug: "toyota-hilux-high-4x4-at-2024",
+  title: "Toyota Hilux High 4x4 AT",
+  subtitle: "Rugged pickup truck with off-road capability and premium comfort",
+  make: "Toyota",
+  model: "Hilux High 4x4 AT",
+  year: 2024,
+  condition: "New",
+  price: 3495000,
+  mileage: "16,800 km",
+  fuel: "Diesel",
+  bodyStyle: "Pickup",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Adventure Motors",
+  sellerType: "Dealer",
+  description:
+    "Premium lifestyle pickup truck designed for off-road adventures, farm work, towing, and commercial utility. Features a robust ladder-frame chassis and proven Toyota reliability.",
+  summary:
+    "Well-maintained 4x4 pickup with low mileage, premium features, and complete service records.",
+  color: "Super White",
+  seats: 5,
+  financeEstimate: 73000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #1f2937, #111827)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/4c/96/c8/4c96c8bbb3acec9b07f72eda17fa0711.jpg"
+  ],
+  features: [
+    "4x4 drivetrain",
+    "Automatic transmission",
+    "8-inch touchscreen infotainment",
+    "Rear differential lock"
+  ],
+  specs: [
+    { label: "Engine", value: "2755 cc Diesel" },
+    { label: "Power", value: "204 PS" },
+    { label: "Transmission", value: "6-Speed Automatic" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v48",
+  slug: "mahindra-scorpio-getaway-4x4-2024",
+  title: "Mahindra Scorpio Getaway 4x4",
+  subtitle: "Rugged double-cab pickup built for work, adventure, and utility",
+  make: "Mahindra",
+  model: "Scorpio Getaway 4x4",
+  year: 2024,
+  condition: "New",
+  price: 1395000,
+  mileage: "34,200 km",
+  fuel: "Diesel",
+  bodyStyle: "Pickup",
+  transmission: "Manual",
+  location: "Mysuru",
+  sellerName: "Western Commercial Motors",
+  sellerType: "Dealer",
+  description:
+    "Reliable pickup truck designed for farm operations, construction work, cargo transport, and weekend off-road adventures. Combines Scorpio toughness with an open cargo bed.",
+  summary:
+    "Versatile double-cab pickup offering 4x4 capability, cargo-carrying practicality, and proven Mahindra durability.",
+  color: "Napoli Black",
+  seats: 5,
+  financeEstimate: 29000,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #374151, #111827)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/15/e5/10/15e51005ed6b241a0b478d4612d9a797.jpg"
+  ],
+  features: [
+    "4x4 drivetrain",
+    "Double-cab configuration",
+    "Large cargo bed",
+    "Heavy-duty suspension"
+  ],
+  specs: [
+    { label: "Engine", value: "2179 cc mHawk Diesel" },
+    { label: "Power", value: "120 PS" },
+    { label: "Transmission", value: "5-Speed Manual" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v49",
+  slug: "tata-ace-gold-petrol-cx-2024",
+  title: "Tata Ace Gold Petrol CX",
+  subtitle: "Compact mini truck for last-mile deliveries and business logistics",
+  make: "Tata",
+  model: "Ace Gold Petrol CX",
+  year: 2024,
+  condition: "New",
+  price: 485000,
+  mileage: "31,500 km",
+  fuel: "Petrol",
+  bodyStyle: "MiniTruck",
+  transmission: "Manual",
+  location: "Hubballi",
+  sellerName: "Karnataka Commercial Vehicles",
+  sellerType: "Dealer",
+  description:
+    "Reliable mini truck designed for city deliveries, kirana distribution, e-commerce logistics, and small business transportation. Easy to maneuver through narrow urban roads.",
+  summary:
+    "Well-maintained cargo carrier with low running costs and verified service history.",
+  color: "Arctic White",
+  seats: 2,
+  financeEstimate: 10200,
+  rating: 4.4,
+  heroTone: "linear-gradient(135deg, #475569, #1e293b)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/c6/91/fa/c691faead2b0ceaf7fa5339fadb6a5e3.jpg"
+  ],
+  features: [
+    "Large cargo deck",
+    "Compact turning radius",
+    "Fuel-efficient engine",
+    "Heavy-duty chassis"
+  ],
+  specs: [
+    { label: "Engine", value: "694 cc Petrol" },
+    { label: "Power", value: "30 PS" },
+    { label: "Payload", value: "750 kg" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v50",
+  slug: "mahindra-jeeto-plus-cng-2024",
+  title: "Mahindra Jeeto Plus CNG",
+  subtitle: "Fuel-efficient mini truck for urban cargo and distribution",
+  make: "Mahindra",
+  model: "Jeeto Plus CNG",
+  year: 2024,
+  condition: "New",
+  price: 525000,
+  mileage: "27,800 km",
+  fuel: "CNG",
+  bodyStyle: "MiniTruck",
+  transmission: "Manual",
+  location: "Mangalore",
+  sellerName: "Coastal Commercial Motors",
+  sellerType: "Dealer",
+  description:
+    "Economical mini truck designed for daily goods transport, grocery distribution, and last-mile logistics with low operating costs.",
+  summary:
+    "Compact CNG cargo carrier with excellent fuel economy and verified service history.",
+  color: "Diamond White",
+  seats: 2,
+  financeEstimate: 11000,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #166534, #22c55e)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/05/9e/46/059e463947173a9bd31351f7f1d47d01.jpg"
+  ],
+  features: [
+    "Factory-fitted CNG",
+    "Large cargo deck",
+    "Low maintenance costs",
+    "High fuel efficiency"
+  ],
+  specs: [
+    { label: "Engine", value: "625 cc CNG" },
+    { label: "Power", value: "26 PS" },
+    { label: "Payload", value: "715 kg" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v51",
+  slug: "maruti-super-carry-petrol-2024",
+  title: "Maruti Suzuki Super Carry",
+  subtitle: "Versatile mini truck built for daily commercial transportation",
+  make: "Maruti Suzuki",
+  model: "Super Carry",
+  year: 2024,
+  condition: "New",
+  price: 615000,
+  mileage: "24,500 km",
+  fuel: "Petrol",
+  bodyStyle: "MiniTruck",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Metro Commercial Vehicles",
+  sellerType: "Dealer",
+  description:
+    "Practical commercial vehicle ideal for retail deliveries, market supplies, and local transport operations with dependable Maruti reliability.",
+  summary:
+    "Well-maintained mini truck with strong payload capacity and complete service records.",
+  color: "Silky Silver",
+  seats: 2,
+  financeEstimate: 12800,
+  rating: 4.6,
+  heroTone: "linear-gradient(135deg, #1e293b, #64748b)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/1d/4f/30/1d4f306ffe27c9b3757537c3bc74a8d0.jpg"
+  ],
+  features: [
+    "Spacious cargo deck",
+    "Power steering",
+    "Strong ladder-frame chassis",
+    "Low running costs"
+  ],
+  specs: [
+    { label: "Engine", value: "1196 cc Petrol" },
+    { label: "Power", value: "73 PS" },
+    { label: "Payload", value: "740 kg" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v52",
+  slug: "bharatbenz-4228r-2023",
+  title: "BharatBenz 4228R",
+  subtitle: "Heavy-duty freight truck engineered for long-haul logistics operations",
+  make: "BharatBenz",
+  model: "4228R",
+  year: 2023,
+  condition: "Used",
+  price: 3895000,
+  mileage: "72,400 km",
+  fuel: "Diesel",
+  bodyStyle: "Tipper",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Elite Commercial Vehicles",
+  sellerType: "Dealer",
+  description:
+    "Reliable heavy commercial truck designed for interstate cargo transportation, fleet operations, and logistics businesses with excellent fuel efficiency and durability.",
+  summary:
+    "Certified freight truck with documented service history and strong payload capabilities.",
+  color: "White",
+  seats: 2,
+  financeEstimate: 81200,
+  rating: 4.7,
+  heroTone: "linear-gradient(135deg, #1f2937, #374151)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/b0/46/67/b04667a44aa52915ac0a4038b06932c8.jpg"
+  ],
+  features: [
+    "Sleeper cabin",
+    "Air brakes",
+    "Fleet telematics support",
+    "Heavy-duty chassis"
+  ],
+  specs: [
+    { label: "Engine", value: "7200 cc Diesel" },
+    { label: "Power", value: "281 HP" },
+    { label: "GVW", value: "42000 kg" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v53",
+  slug: "ashok-leyland-4825-tractor-2022",
+  title: "Ashok Leyland 4825 Tractor",
+  subtitle: "Long-haul tractor truck built for fleet and logistics operations",
+  make: "Ashok Leyland",
+  model: "4825 Tractor",
+  year: 2022,
+  condition: "New",
+  price: 3295000,
+  mileage: "118,600 km",
+  fuel: "Diesel",
+  bodyStyle: "Tipper",
+  transmission: "Manual",
+  location: "Hubballi",
+  sellerName: "Karnataka Freight Trucks",
+  sellerType: "Dealer",
+  description:
+    "Heavy-duty tractor unit designed for container movement, interstate freight transport, and logistics operations. Maintained under a scheduled fleet service program.",
+  summary:
+    "Dependable haulage truck offering high GVW capacity and verified ownership records.",
+  color: "Blue",
+  seats: 2,
+  financeEstimate: 68800,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #1e3a8a, #2563eb)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/1b/52/18/1b521893eb0a0db1d29ba1ae9acd302c.jpg"
+  ],
+  features: [
+    "Sleeper cabin",
+    "Power steering",
+    "Air braking system",
+    "Long-haul drivetrain"
+  ],
+  specs: [
+    { label: "Engine", value: "5660 cc Diesel" },
+    { label: "Power", value: "250 HP" },
+    { label: "GVW", value: "47500 kg" },
+    { label: "Ownership", value: "2nd owner" }
+  ]
+},
+{
+  id: "v54",
+  slug: "eicher-pro-6028t-2023",
+  title: "Eicher Pro 6028T",
+  subtitle: "Heavy-duty tipper truck for construction, quarry, and mining operations",
+  make: "Eicher",
+  model: "Pro 6028T",
+  year: 2023,
+  condition: "Used",
+  price: 3750000,
+  mileage: "64,800 km",
+  fuel: "Diesel",
+  bodyStyle: "Truck",
+  transmission: "Manual",
+  location: "Belagavi",
+  sellerName: "Western Earthmovers",
+  sellerType: "Dealer",
+  description:
+    "Robust tipper designed for infrastructure projects, quarry operations, and bulk material transportation. Features a durable chassis and high-capacity hydraulic tipping body.",
+  summary:
+    "Certified commercial tipper with strong payload capability and verified maintenance records.",
+  color: "Construction Yellow",
+  seats: 3,
+  financeEstimate: 78200,
+  rating: 4.6,
+  heroTone: "linear-gradient(135deg, #a16207, #ca8a04)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/24/33/df/2433df072a040c6a51beab7e3a234ec5.jpg"
+  ],
+  features: [
+    "Hydraulic tipping mechanism",
+    "Heavy-duty chassis",
+    "Air brakes",
+    "Fleet-maintained vehicle"
+  ],
+  specs: [
+    { label: "Engine", value: "7698 cc Diesel" },
+    { label: "Power", value: "280 HP" },
+    { label: "GVW", value: "28000 kg" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+
+{
+  id: "v55",
+  slug: "tata-container-flatbed-trailer-2021",
+  title: "Container Flatbed Trailer",
+  subtitle: "Heavy-duty flatbed trailer for container and cargo transport",
+  make: "Tata",
+  model: "40ft Flatbed Trailer",
+  year: 2021,
+  condition: "Used",
+  price: 1250000,
+  mileage: "N/A",
+  fuel: "Other",
+  bodyStyle: "Trailer",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "National Trailer Exchange",
+  sellerType: "Dealer",
+  description:
+    "Commercial flatbed trailer designed for container hauling, industrial freight movement, and logistics operations across long distances.",
+  summary:
+    "Fleet-maintained trailer with strong chassis construction and compliance documentation.",
+  color: "Red",
+  seats: 0,
+  financeEstimate: 26000,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #374151, #111827)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/23/3f/12/233f1216b101755013093103ceb2d4c0.jpg"
+  ],
+  features: [
+    "40-foot platform",
+    "Container lock system",
+    "Heavy-duty suspension",
+    "Fleet maintained"
+  ],
+  specs: [
+    { label: "Type", value: "Flatbed Trailer" },
+    { label: "Length", value: "40 ft" },
+    { label: "Payload", value: "35000 kg" },
+    { label: "Axles", value: "3" }
+  ]
+},
+{
+  id: "v56",
+  slug: "skeletal-container-trailer-2022",
+  title: "Skeletal Container Trailer",
+  subtitle: "Purpose-built trailer for port and container logistics",
+  make: "York",
+  model: "Skeletal Trailer",
+  year: 2022,
+  condition: "New",
+  price: 1450000,
+  mileage: "N/A",
+  fuel: "Other",
+  bodyStyle: "Trailer",
+  transmission: "Manual",
+  location: "Mangalore",
+  sellerName: "Coastal Logistics Equipment",
+  sellerType: "Dealer",
+  description:
+    "Container transport trailer engineered for port operations, freight corridors, and logistics fleets handling ISO containers.",
+  summary:
+    "Certified trailer with container locking points and documented maintenance history.",
+  color: "Blue",
+  seats: 0,
+  financeEstimate: 30200,
+  rating: 4.6,
+  heroTone: "linear-gradient(135deg, #1e3a8a, #2563eb)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/20/ba/34/20ba3403b62e8dfefc2510086c2e951d.jpg"
+  ],
+  features: [
+    "ISO container locks",
+    "Triple-axle setup",
+    "Reinforced steel frame",
+    "Fleet-ready condition"
+  ],
+  specs: [
+    { label: "Type", value: "Skeletal Trailer" },
+    { label: "Length", value: "40 ft" },
+    { label: "Payload", value: "37000 kg" },
+    { label: "Axles", value: "3" }
+  ]
+},
+{
+  id: "v57",
+  slug: "volvo-9400-b11r-sleeper-2022",
+  title: "Volvo 9400 B11R Sleeper",
+  subtitle: "Premium intercity coach designed for long-distance passenger travel",
+  make: "Volvo",
+  model: "9400 B11R Sleeper",
+  year: 2022,
+  condition: "New",
+  price: 8500000,
+  mileage: "185,000 km",
+  fuel: "Diesel",
+  bodyStyle: "Bus",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "South India Coach Sales",
+  sellerType: "Dealer",
+  description:
+    "Luxury sleeper coach featuring air suspension, reclining berths, onboard entertainment, and excellent passenger comfort for long-distance routes.",
+  summary:
+    "Premium intercity coach with documented service history and fleet-maintained condition.",
+  color: "Silver",
+  seats: 40,
+  financeEstimate: 177000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #0f172a, #334155)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/25/b7/bd/25b7bd289ee44a8f3b5b16073b882c38.jpg"
+  ],
+  features: [
+    "Air suspension",
+    "Sleeper berths",
+    "Air conditioning",
+    "Passenger entertainment system"
+  ],
+  specs: [
+    { label: "Engine", value: "10800 cc Diesel" },
+    { label: "Power", value: "430 HP" },
+    { label: "Seating Capacity", value: "40 Sleeper" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v58",
+  slug: "tata-starbus-ultra-2023",
+  title: "Tata Starbus Ultra",
+  subtitle: "Reliable passenger bus for city and staff transportation",
+  make: "Tata",
+  model: "Starbus Ultra",
+  year: 2023,
+  condition: "New",
+  price: 3250000,
+  mileage: "96,000 km",
+  fuel: "Diesel",
+  bodyStyle: "Bus",
+  transmission: "Manual",
+  location: "Mysuru",
+  sellerName: "Karnataka Bus Exchange",
+  sellerType: "Dealer",
+  description:
+    "Comfortable passenger bus suitable for staff transport, school routes, and city operations with dependable Tata reliability.",
+  summary:
+    "Fleet-maintained passenger bus with verified service records.",
+  color: "White",
+  seats: 36,
+  financeEstimate: 67700,
+  rating: 4.5,
+  heroTone: "linear-gradient(135deg, #1e293b, #475569)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/c4/81/46/c48146d4ad218af69c4d8051c68c696c.jpg"
+  ],
+  features: [
+    "Power steering",
+    "Air brakes",
+    "Spacious passenger cabin",
+    "Emergency exit system"
+  ],
+  specs: [
+    { label: "Engine", value: "5005 cc Diesel" },
+    { label: "Power", value: "180 HP" },
+    { label: "Seating Capacity", value: "36 Seats" },
+    { label: "Ownership", value: "1st owner" }
+  ]
+},
+{
+  id: "v59",
+  slug: "jcb-220lc-xtra-2021",
+  title: "JCB 220LC Xtra",
+  subtitle: "Tracked excavator built for mining, roadworks, and infrastructure projects",
+  make: "JCB",
+  model: "220LC Xtra",
+  year: 2021,
+  condition: "New",
+  price: 4850000,
+  mileage: "4,850 operating hours",
+  fuel: "Diesel",
+  bodyStyle: "Excavator",
+  transmission: "Manual",
+  location: "Ballari",
+  sellerName: "Karnataka Earthmovers",
+  sellerType: "Dealer",
+  description:
+    "Heavy-duty crawler excavator designed for quarry operations, large-scale construction, and infrastructure development with excellent fuel efficiency and digging performance.",
+  summary:
+    "Fleet-maintained excavator with verified service records and transparent hour-meter history.",
+  color: "JCB Yellow",
+  seats: 1,
+  financeEstimate: 101000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #ca8a04, #f59e0b)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/6c/34/5d/6c345d9fb0cbdd5f92abb00a3e1541d3.jpg"
+  ],
+  features: [
+    "Reinforced undercarriage",
+    "Eco-mode fuel management",
+    "ROPS-certified cabin",
+    "Telematics monitoring"
+  ],
+  specs: [
+    { label: "Engine", value: "173 HP Diesel" },
+    { label: "Operating Weight", value: "22,000 kg" },
+    { label: "Bucket Capacity", value: "1.2 m³" },
+    { label: "Operating Hours", value: "4,850 hrs" }
+  ]
+},
+{
+  id: "v60",
+  slug: "tata-hitachi-ex-210lc-2023",
+  title: "Tata Hitachi EX 210LC",
+  subtitle: "Reliable hydraulic excavator for construction and earthmoving operations",
+  make: "Tata Hitachi",
+  model: "EX 210LC",
+  year: 2023,
+  condition: "New",
+  price: 5650000,
+  mileage: "2,120 operating hours",
+  fuel: "Diesel",
+  bodyStyle: "Excavator",
+  transmission: "Manual",
+  location: "Hubballi",
+  sellerName: "Prime Construction Equipment",
+  sellerType: "Authorized Dealer",
+  description:
+    "Modern crawler excavator engineered for heavy-duty excavation, site preparation, and infrastructure projects with low operating hours and documented maintenance history.",
+  summary:
+    "Certified construction machine with strong resale value and complete service documentation.",
+  color: "Orange",
+  seats: 1,
+  financeEstimate: 118000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #ea580c, #c2410c)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/62/3f/3c/623f3c692a3ec7d63607ad4f3f926546.jpg"
+  ],
+  features: [
+    "Advanced hydraulic system",
+    "GPS fleet tracking",
+    "Comfort operator cabin",
+    "Fuel-saving work modes"
+  ],
+  specs: [
+    { label: "Engine", value: "166 HP Diesel" },
+    { label: "Operating Weight", value: "21,000 kg" },
+    { label: "Bucket Capacity", value: "1.0 m³" },
+    { label: "Operating Hours", value: "2,120 hrs" }
+  ]
+},
+{
+  id: "v61",
+  slug: "caterpillar-d6r-xl-2019",
+  title: "Caterpillar D6R XL",
+  subtitle: "Heavy-duty crawler bulldozer for grading, land clearing, and infrastructure projects",
+  make: "Caterpillar",
+  model: "D6R XL",
+  year: 2019,
+  condition: "Used",
+  price: 8950000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Bulldozer",
+  transmission: "Manual",
+  location: "Ballari",
+  sellerName: "South India Earthmovers",
+  sellerType: "Dealer",
+  description:
+    "Reliable tracked bulldozer built for mining, road construction, and large-scale earthmoving operations. Maintained with complete service and inspection records.",
+  summary:
+    "Contractor-ready dozer with verified hour meter, heavy-duty undercarriage, and wide grading blade.",
+  color: "CAT Yellow",
+  seats: 1,
+  financeEstimate: 186500,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #ca8a04, #f59e0b)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/87/90/1a/87901a2133a4f01b88b88f71fab5a13f.jpg"
+  ],
+  features: [
+    "Semi-U blade configuration",
+    "ROPS/FOPS operator cabin",
+    "Advanced hydraulic controls",
+    "Heavy-duty undercarriage"
+  ],
+  specs: [
+    { label: "Engine", value: "Cat C9 ACERT Diesel" },
+    { label: "Power", value: "215 HP" },
+    { label: "Operating Weight", value: "22.4 Ton" },
+    { label: "Blade Width", value: "3.96 m" },
+    { label: "Hour Meter", value: "6,850 hrs" }
+  ]
+},
+{
+  id: "v62",
+  slug: "komatsu-d85ex-18-2021",
+  title: "Komatsu D85EX-18",
+  subtitle: "Tracked bulldozer designed for quarrying, grading, and site preparation",
+  make: "Komatsu",
+  model: "D85EX-18",
+  year: 2021,
+  condition: "Used",
+  price: 10450000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Bulldozer",
+  transmission: "Manual",
+  location: "Hubballi",
+  sellerName: "Karnataka Construction Equipment",
+  sellerType: "Dealer",
+  description:
+    "High-performance crawler dozer engineered for demanding construction, mining, and land-clearing applications with excellent reliability and fuel efficiency.",
+  summary:
+    "Fleet-maintained bulldozer featuring low operating hours and documented service history.",
+  color: "Komatsu Yellow",
+  seats: 1,
+  financeEstimate: 217800,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #1e40af, #2563eb)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/92/77/58/927758a7a448b906334f8b50ededc263.jpg"
+  ],
+  features: [
+    "PAT blade",
+    "Air-conditioned cabin",
+    "Heavy-duty track system",
+    "Fleet telematics integration"
+  ],
+  specs: [
+    { label: "Engine", value: "Komatsu SAA6D125E-5" },
+    { label: "Power", value: "264 HP" },
+    { label: "Operating Weight", value: "28.7 Ton" },
+    { label: "Blade Width", value: "4.05 m" },
+    { label: "Hour Meter", value: "3,420 hrs" }
+  ]
+},
+{
+  id: "v63",
+  slug: "shantui-sd16-2021",
+  title: "Shantui SD16",
+  subtitle: "Tracked bulldozer built for grading, land clearing, and infrastructure projects",
+  make: "Shantui",
+  model: "SD16",
+  year: 2021,
+  condition: "Used",
+  price: 6250000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Bulldozer",
+  transmission: "Manual",
+  location: "Ballari",
+  sellerName: "Karnataka Earthmoving Solutions",
+  sellerType: "Dealer",
+  description:
+    "Heavy-duty crawler bulldozer designed for road construction, mining operations, quarry work, and land development. Maintained with complete service documentation and operator logs.",
+  summary:
+    "Reliable 17-ton dozer with verified hour meter, multiple blade configurations, and proven fleet performance.",
+  color: "Construction Yellow",
+  seats: 1,
+  financeEstimate: 130500,
+  rating: 4.6,
+  heroTone: "linear-gradient(135deg, #ca8a04, #f59e0b)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/d3/01/00/d30100a051831891328b5eff72c49e07.jpg"
+  ],
+  features: [
+    "Straight tilt blade",
+    "Three-shank ripper",
+    "ROPS operator cabin",
+    "Heavy-duty undercarriage"
+  ],
+  specs: [
+    { label: "Engine", value: "Weichai WD10G178E25" },
+    { label: "Power", value: "160 HP" },
+    { label: "Operating Weight", value: "17 Ton" },
+    { label: "Blade Width", value: "3.46 m" },
+    { label: "Hour Meter", value: "4,280 hrs" }
+  ]
+},
+{
+  id: "v64",
+  slug: "jcb-455zx-wheel-loader-2022",
+  title: "JCB 455ZX",
+  subtitle: "Heavy-duty wheel loader for quarry, mining, and bulk material handling",
+  make: "JCB",
+  model: "455ZX",
+  year: 2022,
+  condition: "New",
+  price: 6950000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Loader",
+  transmission: "Automatic",
+  location: "Ballari",
+  sellerName: "Karnataka Earthmovers",
+  sellerType: "Dealer",
+  description:
+    "High-capacity wheel loader designed for quarry operations, aggregate handling, and large-scale construction projects. Maintained with complete service and inspection records.",
+  summary:
+    "Contractor-ready loader with powerful hydraulics, low operating hours, and a large-capacity bucket.",
+  color: "JCB Yellow",
+  seats: 1,
+  financeEstimate: 145000,
+  rating: 4.7,
+  heroTone: "linear-gradient(135deg, #ca8a04, #f59e0b)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/6c/34/5d/6c345d9fb0cbdd5f92abb00a3e1541d3.jpg"
+  ],
+  features: [
+    "Ride control system",
+    "Air-conditioned operator cabin",
+    "Heavy-duty Z-bar linkage",
+    "Automatic transmission"
+  ],
+  specs: [
+    { label: "Engine", value: "Cummins QSB6.7 Diesel" },
+    { label: "Power", value: "173 HP" },
+    { label: "Bucket Capacity", value: "3.5 m³" },
+    { label: "Breakout Force", value: "155 kN" },
+    { label: "Operating Weight", value: "18.5 Ton" },
+    { label: "Hour Meter", value: "4,120 hrs" }
+  ]
+},
+{
+  id: "v65",
+  slug: "caterpillar-950-gc-wheel-loader-2021",
+  title: "Caterpillar 950 GC",
+  subtitle: "Premium front-end loader for ports, quarries, and industrial operations",
+  make: "Caterpillar",
+  model: "950 GC",
+  year: 2021,
+  condition: "Used",
+  price: 11250000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Loader",
+  transmission: "Automatic",
+  location: "Mangaluru",
+  sellerName: "Coastal Heavy Machinery",
+  sellerType: "Dealer",
+  description:
+    "High-performance wheel loader built for continuous material handling in ports, mines, and infrastructure projects with excellent fuel efficiency and reliability.",
+  summary:
+    "Fleet-maintained loader with documented service history and strong breakout performance.",
+  color: "CAT Yellow",
+  seats: 1,
+  financeEstimate: 234500,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #111827, #374151)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/8a/75/5f/8a755faf2537a42f6111f365f7bdc872.jpg"
+  ],
+  features: [
+    "Load-sensing hydraulics",
+    "Comfort suspension seat",
+    "Automatic ride control",
+    "Integrated payload monitoring"
+  ],
+  specs: [
+    { label: "Engine", value: "Cat C7.1 Diesel" },
+    { label: "Power", value: "232 HP" },
+    { label: "Bucket Capacity", value: "4.3 m³" },
+    { label: "Breakout Force", value: "179 kN" },
+    { label: "Operating Weight", value: "19.2 Ton" },
+    { label: "Hour Meter", value: "3,280 hrs" }
+  ]
+},
+{
+  id: "v66",
+  slug: "case-821g-wheel-loader-2021",
+  title: "CASE 821G",
+  subtitle: "High-capacity front-end loader for quarries, ports, and material handling operations",
+  make: "CASE",
+  model: "821G",
+  year: 2021,
+  condition: "New",
+  price: 11850000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Loader",
+  transmission: "Manual",
+  location: "Mangaluru",
+  sellerName: "Coastal Heavy Equipment",
+  sellerType: "Dealer",
+  description:
+    "Premium wheel loader designed for aggregate plants, port operations, mining sites, and infrastructure projects. Features powerful hydraulics, excellent visibility, and high breakout force for demanding loading applications.",
+  summary:
+    "Fleet-maintained wheel loader with verified service history, large bucket capacity, and low operating hours.",
+  color: "CASE Orange",
+  seats: 1,
+  financeEstimate: 247000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #ea580c, #9a3412)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/4c/fa/41/4cfa4127d23c7c778c9915cf88a604aa.jpg"
+  ],
+  features: [
+    "Ride Control system",
+    "Load-sensing hydraulics",
+    "ROPS/FOPS air-conditioned cabin",
+    "Integrated payload monitoring"
+  ],
+  specs: [
+    { label: "Engine", value: "FPT F4HFE613S Diesel" },
+    { label: "Power", value: "230 HP" },
+    { label: "Bucket Capacity", value: "3.6 m³" },
+    { label: "Breakout Force", value: "157 kN" },
+    { label: "Operating Weight", value: "19.2 Ton" },
+    { label: "Hour Meter", value: "3,480 hrs" }
+  ]
+},
+{
+  id: "v67",
+  slug: "toyota-8fbe20-electric-forklift-2023",
+  title: "Toyota 8FBE20 Electric Forklift",
+  subtitle: "Battery-powered warehouse forklift for indoor logistics and material handling",
+  make: "Toyota",
+  model: "8FBE20",
+  year: 2023,
+  condition: "New",
+  price: 1450000,
+  mileage: "N/A",
+  fuel: "Electric",
+  bodyStyle: "Forklift",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Metro Material Handling Solutions",
+  sellerType: "Dealer",
+  description:
+    "Efficient electric forklift designed for warehouses, manufacturing facilities, and distribution centers. Offers zero emissions, quiet operation, and excellent maneuverability in confined spaces.",
+  summary:
+    "Well-maintained electric forklift with low operating hours and documented battery maintenance history.",
+  color: "Orange",
+  seats: 1,
+  financeEstimate: 30200,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #16a34a, #15803d)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/67/df/a2/67dfa24314ff6e7f8a8b7be316224305.jpg"
+  ],
+  features: [
+    "Zero-emission electric drivetrain",
+    "Regenerative braking",
+    "Compact turning radius",
+    "Operator safety system"
+  ],
+  specs: [
+    { label: "Power Source", value: "80V Electric Battery" },
+    { label: "Lifting Capacity", value: "2000 kg" },
+    { label: "Lift Height", value: "4.7 m" },
+    { label: "Mast Type", value: "Triplex" },
+    { label: "Operating Weight", value: "3.8 Ton" },
+    { label: "Hour Meter", value: "1,420 hrs" }
+  ]
+},
+{
+  id: "v68",
+  slug: "mitsubishi-fbc30ln-electric-forklift-2023",
+  title: "Mitsubishi FBC30LN",
+  subtitle: "Electric warehouse forklift built for high-throughput logistics and material handling",
+  make: "Mitsubishi",
+  model: "FBC30LN",
+  year: 2023,
+  condition: "New",
+  price: 1650000,
+  mileage: "N/A",
+  fuel: "Electric",
+  bodyStyle: "Forklift",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "Metro Material Handling Solutions",
+  sellerType: "Authorized Dealer",
+  description:
+    "High-performance AC-powered electric forklift designed for warehouses, manufacturing facilities, and distribution centers. Delivers quiet operation, low maintenance costs, and zero emissions for indoor applications.",
+  summary:
+    "Fleet-maintained electric forklift with advanced regenerative braking, ergonomic controls, and documented battery service history.",
+  color: "Mitsubishi Green",
+  seats: 1,
+  financeEstimate: 34500,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #166534, #22c55e)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/5e/58/23/5e5823b1ead4672dea7a54ff33fe524d.jpg"
+  ],
+  features: [
+    "AC drive technology",
+    "Regenerative braking system",
+    "Triplex mast configuration",
+    "Ergonomic operator cabin"
+  ],
+  specs: [
+    { label: "Power Source", value: "48V Electric Battery" },
+    { label: "Lifting Capacity", value: "3000 kg" },
+    { label: "Lift Height", value: "3.34 m" },
+    { label: "Turning Radius", value: "2.02 m" },
+    { label: "Operating Weight", value: "5.03 Ton" },
+    { label: "Hour Meter", value: "1,860 hrs" }
+  ]
+},
+{
+  id: "v69",
+  slug: "hyster-h2-5xt-lpg-forklift-2021",
+  title: "Hyster H2.5XT",
+  subtitle: "LPG-powered counterbalance forklift for warehouses, yards, and industrial logistics",
+  make: "Hyster",
+  model: "H2.5XT",
+  year: 2021,
+  condition: "New",
+  price: 1325000,
+  mileage: "N/A",
+  fuel: "Other",
+  bodyStyle: "Forklift",
+  transmission: "Automatic",
+  location: "Hosur",
+  sellerName: "Southern Material Handling Solutions",
+  sellerType: "Dealer",
+  description:
+    "Reliable LPG forklift engineered for indoor and outdoor material handling operations. Delivers fast refueling, strong lifting performance, and lower emissions than traditional diesel alternatives.",
+  summary:
+    "Fleet-maintained counterbalance forklift with documented service history and verified operating hours.",
+  color: "Hyster Yellow",
+  seats: 1,
+  financeEstimate: 27600,
+  rating: 4.7,
+  heroTone: "linear-gradient(135deg, #f59e0b, #92400e)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/98/e6/24/98e62467cddf485f9e0d43839f9638f1.jpg"
+  ],
+  features: [
+    "LPG counterbalance design",
+    "Duplex mast configuration",
+    "Ergonomic operator cabin",
+    "Indoor and outdoor operation"
+  ],
+  specs: [
+    { label: "Power Source", value: "LPG" },
+    { label: "Lifting Capacity", value: "2500 kg" },
+    { label: "Lift Height", value: "3.29 m" },
+    { label: "Turning Radius", value: "2.24 m" },
+    { label: "Operating Weight", value: "4.04 Ton" },
+    { label: "Engine Power", value: "46 kW" },
+    { label: "Hour Meter", value: "3,180 hrs" }
+  ]
+},
+{
+  id: "v70",
+  slug: "hamm-3411-vibratory-road-roller-2025",
+  title: "HAMM 3411",
+  subtitle: "Single-drum vibratory compactor for highway, infrastructure, and earthwork projects",
+  make: "HAMM",
+  model: "3411",
+  year: 2025,
+  condition: "New",
+  price: 6850000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "RoadRoller",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Wirtgen India Equipment",
+  sellerType: "Authorized Dealer",
+  description:
+    "Brand-new vibratory road roller engineered for highway construction, industrial parks, and large-scale infrastructure developments. Offers excellent compaction performance with advanced operator controls and fuel-efficient operation.",
+  summary:
+    "New-generation soil compactor featuring high centrifugal force, intelligent vibration control, and manufacturer warranty coverage.",
+  color: "HAMM Orange",
+  seats: 1,
+  financeEstimate: 142500,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #ea580c, #c2410c)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/1d/a4/da/1da4daa23d77ac0b2dbf2d2a633f8a5c.jpg"
+  ],
+  features: [
+    "Dual-frequency vibration system",
+    "ROPS-certified operator cabin",
+    "Hydrostatic drive",
+    "Manufacturer warranty included"
+  ],
+  specs: [
+    { label: "Operating Weight", value: "11.5 Ton" },
+    { label: "Drum Width", value: "2.14 m" },
+    { label: "Centrifugal Force", value: "246 kN" },
+    { label: "Vibration Frequency", value: "30/36 Hz" },
+    { label: "Engine", value: "Deutz Diesel" },
+    { label: "Power", value: "136 HP" }
+  ]
+},
+{
+  id: "v71",
+  slug: "volvo-sd110b-2025",
+  title: "Volvo SD110B",
+  subtitle: "Single-drum soil compactor engineered for highways, industrial parks, and infrastructure projects",
+  make: "Volvo",
+  model: "SD110B",
+  year: 2025,
+  condition: "New",
+  price: 7450000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "RoadRoller",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Volvo Construction Equipment India",
+  sellerType: "Authorized Dealer",
+  description:
+    "Brand-new vibratory soil compactor designed for road construction, embankments, and large-scale earthwork projects. Delivers high productivity, operator comfort, and fuel-efficient performance.",
+  summary:
+    "New-generation road roller with advanced vibration technology, excellent gradeability, and full manufacturer warranty.",
+  color: "Volvo Yellow",
+  seats: 1,
+  financeEstimate: 155000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #facc15, #ca8a04)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/41/91/ab/4191ab7bd8fb45c91aea917ddff9f472.jpg"
+  ],
+  features: [
+    "Dual-amplitude vibration system",
+    "ROPS/FOPS certified cabin",
+    "Automatic traction control",
+    "3-year manufacturer warranty"
+  ],
+  specs: [
+    { label: "Operating Weight", value: "11.3 Ton" },
+    { label: "Drum Width", value: "2.13 m" },
+    { label: "Centrifugal Force", value: "256 kN" },
+    { label: "Vibration Frequency", value: "31/35 Hz" },
+    { label: "Engine", value: "Volvo D4 Diesel" },
+    { label: "Power", value: "130 HP" }
+  ]
+},
+{
+  id: "v72",
+  slug: "caterpillar-cs11-gc-2025",
+  title: "Caterpillar CS11 GC",
+  subtitle: "Single-drum vibratory soil compactor for road construction and earthwork projects",
+  make: "Caterpillar",
+  model: "CS11 GC",
+  year: 2025,
+  condition: "Used",
+  price: 7895000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "RoadRoller",
+  transmission: "Manual",
+  location: "Mysuru",
+  sellerName: "GMMCO Karnataka",
+  sellerType: "Authorized Dealer",
+  description:
+    "Brand-new Caterpillar soil compactor engineered for highway construction, industrial developments, and large-scale infrastructure projects. Combines high compaction performance with low operating costs and exceptional reliability.",
+  summary:
+    "Factory-fresh vibratory roller featuring advanced drum technology, efficient fuel consumption, and full manufacturer warranty coverage.",
+  color: "CAT Yellow",
+  seats: 1,
+  financeEstimate: 164500,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #facc15, #eab308)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/87/cc/e9/87cce927f1aefb0de3282872574915ba.jpg"
+  ],
+  features: [
+    "Dual-amplitude vibratory system",
+    "ROPS/FOPS operator platform",
+    "Automatic traction control",
+    "3-year manufacturer warranty"
+  ],
+  specs: [
+    { label: "Engine", value: "Cat C3.6 Diesel" },
+    { label: "Power", value: "131 HP" },
+    { label: "Operating Weight", value: "11.4 Ton" },
+    { label: "Drum Width", value: "2.13 m" },
+    { label: "Centrifugal Force", value: "250 kN" },
+    { label: "Vibration Frequency", value: "30.5 Hz" }
+  ]
+},
+{
+  id: "v73",
+  slug: "caterpillar-140-gc-motor-grader-2025",
+  title: "Caterpillar 140 GC",
+  subtitle: "Precision motor grader for highway construction and large-scale infrastructure projects",
+  make: "Caterpillar",
+  model: "140 GC",
+  year: 2025,
+  condition: "New",
+  price: 13250000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "MotorGrader",
+  transmission: "Automatic",
+  location: "Bengaluru",
+  sellerName: "GMMCO Karnataka",
+  sellerType: "Authorized Dealer",
+  description:
+    "Brand-new motor grader engineered for road construction, site preparation, and precision grading applications. Features advanced controls, excellent visibility, and efficient fuel consumption.",
+  summary:
+    "High-performance grading equipment with full manufacturer warranty and contractor-ready specifications.",
+  color: "CAT Yellow",
+  seats: 1,
+  financeEstimate: 276000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #facc15, #ca8a04)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/e1/5c/75/e15c7548a5b78fe73e2efc8eec2052b2.jpg"
+  ],
+  features: [
+    "Joystick hydraulic controls",
+    "ROPS/FOPS operator cabin",
+    "Rear-view camera system",
+    "Factory warranty included"
+  ],
+  specs: [
+    { label: "Engine", value: "Cat C7.1 Diesel" },
+    { label: "Power", value: "196 HP" },
+    { label: "Operating Weight", value: "18.4 Ton" },
+    { label: "Mouldboard Width", value: "3.7 m" },
+    { label: "Blade Height", value: "610 mm" },
+    { label: "Maximum Speed", value: "40 km/h" }
+  ]
+},
+{
+  id: "v74",
+  slug: "komatsu-gd535-5-motor-grader-2024",
+  title: "Komatsu GD535-5",
+  subtitle: "Heavy-duty grader built for road maintenance and infrastructure development",
+  make: "Komatsu",
+  model: "GD535-5",
+  year: 2024,
+  condition: "New",
+  price: 11890000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "MotorGrader",
+  transmission: "Automatic",
+  location: "Hubballi",
+  sellerName: "North Karnataka Equipment Hub",
+  sellerType: "Authorized Dealer",
+  description:
+    "Modern motor grader optimized for highway projects, land development, and municipal road maintenance with precise blade control and high productivity.",
+  summary:
+    "Contractor-focused grader with advanced hydraulics and manufacturer-backed support.",
+  color: "Komatsu Yellow",
+  seats: 1,
+  financeEstimate: 248000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #1d4ed8, #2563eb)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/64/db/40/64db40a6adef6fc9a4b63c985ea9046d.jpg"
+  ],
+  features: [
+    "Hydraulic blade positioning",
+    "Air-conditioned cabin",
+    "Rear ripper attachment",
+    "LED work lighting"
+  ],
+  specs: [
+    { label: "Engine", value: "Komatsu SAA6D107E-1 Diesel" },
+    { label: "Power", value: "155 HP" },
+    { label: "Operating Weight", value: "13.9 Ton" },
+    { label: "Mouldboard Width", value: "3.66 m" },
+    { label: "Blade Height", value: "610 mm" },
+    { label: "Maximum Speed", value: "41 km/h" }
+  ]
+},
+{
+  id: "v75",
+  slug: "xcmg-gr215a-motor-grader-2025",
+  title: "XCMG GR215A",
+  subtitle: "Heavy-duty motor grader for highway construction and precision earthmoving projects",
+  make: "XCMG",
+  model: "GR215A",
+  year: 2025,
+  condition: "Used",
+  price: 10250000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "MotorGrader",
+  transmission: "Automatic",
+  location: "Davanagere",
+  sellerName: "XCMG Equipment Karnataka",
+  sellerType: "Authorized Dealer",
+  description:
+    "Brand-new motor grader designed for highway construction, industrial site development, and large-scale land leveling operations. Delivers precise blade control, excellent traction, and reliable performance under demanding conditions.",
+  summary:
+    "Contractor-ready grading machine with factory warranty, advanced hydraulics, and optimized mouldboard performance.",
+  color: "XCMG Yellow",
+  seats: 1,
+  financeEstimate: 214000,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #eab308, #ca8a04)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/37/22/f3/3722f3c1e91f03bcd77c0481c953de0b.jpg"
+  ],
+  features: [
+    "Electro-hydraulic control system",
+    "ROPS/FOPS certified cabin",
+    "Rear ripper attachment",
+    "LED work lighting package"
+  ],
+  specs: [
+    { label: "Engine", value: "Cummins 6CTA8.3 Diesel" },
+    { label: "Power", value: "215 HP" },
+    { label: "Operating Weight", value: "16.5 Ton" },
+    { label: "Mouldboard Width", value: "4.27 m" },
+    { label: "Blade Height", value: "610 mm" },
+    { label: "Maximum Speed", value: "38 km/h" }
+  ]
+},
+
+{
+  id: "v76",
+  slug: "ace-f230-mobile-crane-2025",
+  title: "ACE F 230 Mobile Crane",
+  subtitle: "Pick-and-carry crane for construction, logistics, and industrial lifting",
+  make: "ACE",
+  model: "F 230",
+  year: 2025,
+  condition: "New",
+  price: 4250000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Crane",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "ACE Equipment Karnataka",
+  sellerType: "Authorized Dealer",
+  description:
+    "Modern pick-and-carry crane engineered for infrastructure projects, factories, and construction sites with strong lifting capability and easy maneuverability.",
+  summary:
+    "Factory-fresh 23-ton mobile crane with telescopic boom and advanced safety systems.",
+  color: "Industrial Yellow",
+  seats: 1,
+  financeEstimate: 88500,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #f59e0b, #b45309)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/15/12/66/151266ee90fbd1295447100b3cf3c4ea.jpg"
+  ],
+  features: [
+    "23-ton lifting capacity",
+    "Telescopic boom",
+    "Hydraulic outriggers",
+    "ROPS-certified operator cabin"
+  ],
+  specs: [
+    { label: "Lifting Capacity", value: "23 Ton" },
+    { label: "Boom Length", value: "21.6 m" },
+    { label: "Maximum Reach", value: "24 m" },
+    { label: "Engine", value: "Ashok Leyland H6 Diesel" },
+    { label: "Drive Type", value: "4x2" }
+  ]
+},
+{
+  id: "v77",
+  slug: "sany-stc250c-truck-crane-2025",
+  title: "SANY STC250C",
+  subtitle: "25-ton truck-mounted crane for infrastructure and industrial projects",
+  make: "SANY",
+  model: "STC250C",
+  year: 2025,
+  condition: "New",
+  price: 9150000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "Crane",
+  transmission: "Automatic",
+  location: "Hubballi",
+  sellerName: "SANY Heavy Equipment Karnataka",
+  sellerType: "Authorized Dealer",
+  description:
+    "Heavy-duty truck crane designed for bridge construction, industrial maintenance, and infrastructure development with advanced load management systems.",
+  summary:
+    "New 25-ton crane featuring a long telescopic boom and full factory warranty.",
+  color: "SANY Red",
+  seats: 2,
+  financeEstimate: 191000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #991b1b, #dc2626)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/4f/1d/ac/4f1dac47feeb58d86e61b63aa9e99453.jpg"
+  ],
+  features: [
+    "25-ton lifting capacity",
+    "42.5 m telescopic boom",
+    "Load moment indicator",
+    "360° continuous rotation"
+  ],
+  specs: [
+    { label: "Lifting Capacity", value: "25 Ton" },
+    { label: "Boom Length", value: "42.5 m" },
+    { label: "Maximum Lifting Height", value: "50.5 m" },
+    { label: "Drive Configuration", value: "6x4" },
+    { label: "Engine", value: "Cummins Diesel" }
+  ]
+},
+
+{
+  id: "v78",
+  slug: "schwing-stetter-am7-c3-transit-mixer-2025",
+  title: "Schwing Stetter AM7 C3",
+  subtitle: "7 m³ transit mixer built for ready-mix concrete fleets and infrastructure projects",
+  make: "Schwing Stetter",
+  model: "AM7 C3",
+  year: 2025,
+  condition: "New",
+  price: 4250000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "ConcreteMixer",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "Schwing Stetter India",
+  sellerType: "Authorized Dealer",
+  description:
+    "Factory-fresh transit mixer engineered for urban construction sites, highways, and commercial projects. The high-efficiency drum ensures consistent concrete quality during transportation.",
+  summary:
+    "New 7-cubic-metre mixer with robust hydraulics, low maintenance requirements, and nationwide service support.",
+  color: "White",
+  seats: 2,
+  financeEstimate: 88500,
+  rating: 4.8,
+  heroTone: "linear-gradient(135deg, #2563eb, #1d4ed8)",
+  imageUrls: [
+    "https://i.pinimg.com/736x/21/3a/ca/213acab532ab4087387a0a719541352f.jpg"
+  ],
+  features: [
+    "7 m³ drum capacity",
+    "Heavy-duty hydraulic drive",
+    "Anti-spillage drum design",
+    "Manufacturer warranty included"
+  ],
+  specs: [
+    { label: "Drum Capacity", value: "7 m³" },
+    { label: "Water Tank Capacity", value: "650 L" },
+    { label: "Drum Rotation Speed", value: "0–14 rpm" },
+    { label: "Discharge Rate", value: "1.2 m³/min" },
+    { label: "Chassis", value: "Ashok Leyland 2820" }
+  ]
+},
+{
+  id: "v79",
+  slug: "sany-sy308c-8-concrete-mixer-truck-2025",
+  title: "SANY SY308C-8",
+  subtitle: "8 m³ diesel transit mixer for ready-mix fleets and large infrastructure projects",
+  make: "SANY",
+  model: "SY308C-8",
+  year: 2025,
+  condition: "New",
+  price: 4650000,
+  mileage: "N/A",
+  fuel: "Diesel",
+  bodyStyle: "ConcreteMixer",
+  transmission: "Manual",
+  location: "Bengaluru",
+  sellerName: "SANY Heavy Equipment Karnataka",
+  sellerType: "Authorized Dealer",
+  description:
+    "Factory-fresh transit mixer engineered for commercial concrete operations, highways, metro projects, and large construction sites. Features intelligent power matching, anti-buildup drum technology, and improved braking performance.",
+  summary:
+    "New 8-cubic-metre diesel mixer truck with advanced hydraulics, low-deck design, and manufacturer-backed support.",
+  color: "SANY White",
+  seats: 2,
+  financeEstimate: 97000,
+  rating: 4.9,
+  heroTone: "linear-gradient(135deg, #991b1b, #dc2626)",
+  imageUrls: [
+    "https://i.pinimg.com/1200x/05/b3/82/05b382245f1a10d07d23712babf1b24e.jpg"
+  ],
+  features: [
+    "8 m³ mixing drum",
+    "Anti-buildup drum technology",
+    "Low-deck chassis design",
+    "Intelligent fuel-saving system",
+    "Panoramic monitoring support"
+  ],
+  specs: [
+    { label: "Mix Capacity", value: "8 m³" },
+    { label: "Discharge Rate", value: "5 m³/min" },
+    { label: "Water Tank Capacity", value: "450 L" },
+    { label: "Engine", value: "Hino J08E-VA Diesel" },
+    { label: "Power", value: "202 kW" },
+    { label: "GVW", value: "31.2 Ton" }
+  ]
+}
+
+
 ];
 
 export const featuredVehicleSlugs = [
