@@ -169,7 +169,7 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
             </div>
           </div>
 
-          <div className="vehicles-catalog__notice tw:!mt-4 tw:flex tw:flex-col tw:gap-3 tw:p-4 tw:md:flex-row tw:md:items-center">
+          {/* <div className="vehicles-catalog__notice tw:!mt-4 tw:flex tw:flex-col tw:gap-3 tw:p-4 tw:md:flex-row tw:md:items-center">
             <p className="vehicles-catalog__notice-text">
               {isSignedIn ? (
                 <>
@@ -200,7 +200,7 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
                 Seller types
               </Link>
             )}
-          </div>
+          </div> */}
         </div>
       </section>
 
