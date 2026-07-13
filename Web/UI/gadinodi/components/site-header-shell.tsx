@@ -58,9 +58,43 @@ export function SiteHeaderShell({ isSignedIn, email }: SiteHeaderShellProps) {
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+  const handleScroll = () => {
+    setIsSticky(window.scrollY > 0);
+  };
+
+  handleScroll();
+
+  window.addEventListener("scroll", handleScroll, {
+    passive: true,
+  });
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+
+useEffect(() => {
+  const mainElement = document.querySelector("main");
+
+  if (mainElement) {
+    mainElement.style.paddingTop = "72.8px"; // or "80px"
+  }
+}, []);
 
   return (
-    <header className="site-header">
+    <header
+  className={`tw:fixed tw:top-0 tw:left-0 tw:right-0 tw:z-[1000]
+  tw:bg-white/95 tw:backdrop-blur-md
+  tw:transition-all tw:duration-300
+  ${
+    isSticky
+      ? "tw:shadow-md tw:border-b tw:border-gray-200"
+      : "tw:border-b tw:border-transparent"
+  }`}
+>
       <div className="container site-header__inner">
         <Link href="/" className="brand" onClick={closeMenu}>
           <span className="brand__mark">GN</span>
@@ -134,6 +168,7 @@ export function SiteHeaderShell({ isSignedIn, email }: SiteHeaderShellProps) {
               );
             })}
           </nav>
+          
 
           <div className="site-actions">
             {isSignedIn ? (
