@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, "feature/**" ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  api:
+    name: API (NestJS + Prisma)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Web/API/gadinodi
+    env:
+      DATABASE_URL: "postgresql://gadinodi:gadinodi@localhost:5432/gadinodi"
+
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: gadinodi
+          POSTGRES_USER: gadinodi
+          POSTGRES_PASSWORD: gadinodi
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U gadinodi -d gadinodi"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.12.0'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+  ui:
+    name: UI (Next.js)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Web/UI/gadinodi
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.12.0'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
