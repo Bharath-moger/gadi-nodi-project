@@ -1,4 +1,3 @@
-const x = ;
 export function formatCurrency(value: number) {
   return new Intl.NumberFormat("en-IN", {
     style: "currency",
