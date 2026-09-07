@@ -76,7 +76,7 @@ jobs:
   build-and-push-api:
     name: Build & Push API Docker Image
     needs: api
-    if: github.event_name == 'push'
+    if: github.ref == 'refs/heads/tejas-ci-cd-setup'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -98,7 +98,7 @@ jobs:
   build-and-push-ui:
     name: Build & Push UI Docker Image
     needs: ui
-    if: github.event_name == 'push'
+    if: github.ref == 'refs/heads/tejas-ci-cd-setup'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
