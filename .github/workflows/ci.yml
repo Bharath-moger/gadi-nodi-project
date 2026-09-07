@@ -73,3 +73,46 @@ jobs:
 
       - name: Build
         run: npm run build
+  build-and-push-api:
+    name: Build & Push API Docker Image
+    needs: api
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push API image
+        uses: docker/build-push-action@v6
+        with:
+          context: Web/API/gadinodi
+          push: true
+          tags: tejasmr/gadinodi-api:latest
+
+  build-and-push-ui:
+    name: Build & Push UI Docker Image
+    needs: ui
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push UI image
+        uses: docker/build-push-action@v6
+        with:
+          context: Web/UI/gadinodi
+          push: true
+          tags: tejasmr/gadinodi-ui:latest
