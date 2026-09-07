@@ -13,6 +13,7 @@ export class HealthController {
     return {
       status: "ok",
       service: "gadinodi-api",
+      version: "1.0.1",
       database: "ok",
       timestamp: new Date().toISOString(),
     };
